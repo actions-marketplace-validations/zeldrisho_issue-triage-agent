@@ -95,7 +95,7 @@ export async function loadConfig(
     },
     llm: {
       provider,
-      model: repoConfig.llm?.model ?? DEFAULT_MODELS[provider],
+      model: process.env.LLM_MODEL?.trim() || repoConfig.llm?.model || DEFAULT_MODELS[provider],
       maxTokens: repoConfig.llm?.max_tokens ?? DEFAULT_CONFIG.llm.maxTokens,
     },
   };

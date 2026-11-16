@@ -20,6 +20,9 @@ inputs:
   llm-provider:
     description: "LLM provider to use (anthropic or openai); overrides repository configuration"
     required: false
+  llm-model:
+    description: "LLM model identifier; overrides repository configuration"
+    required: false
   llm-base-url:
     description: "Custom base URL for LLM API (applies to the selected provider)"
     required: false

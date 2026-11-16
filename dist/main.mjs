@@ -78095,7 +78095,7 @@ async function loadConfig(owner, repo, octokit, configPath = ".github/issue-tria
 		},
 		llm: {
 			provider,
-			model: repoConfig.llm?.model ?? DEFAULT_MODELS[provider],
+			model: process.env.LLM_MODEL?.trim() || repoConfig.llm?.model || DEFAULT_MODELS[provider],
 			maxTokens: repoConfig.llm?.max_tokens ?? DEFAULT_CONFIG.llm.maxTokens
 		}
 	};
@@ -78759,6 +78759,8 @@ async function main() {
 		return;
 	}
 	if (llmProvider) process.env.LLM_PROVIDER = llmProvider;
+	const llmModel = getInput("llm-model");
+	if (llmModel) process.env.LLM_MODEL = llmModel;
 	const llmBaseURL = getInput("llm-base-url");
 	if (llmBaseURL) process.env.LLM_BASE_URL = llmBaseURL;
 	const octokit = getOctokit(token);

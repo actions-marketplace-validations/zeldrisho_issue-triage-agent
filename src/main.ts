@@ -88,6 +88,10 @@ async function main(): Promise<void> {
 
   if (llmProvider) process.env.LLM_PROVIDER = llmProvider;
 
+  const llmModel = core.getInput("llm-model");
+
+  if (llmModel) process.env.LLM_MODEL = llmModel;
+
   const llmBaseURL = core.getInput("llm-base-url");
 
   if (llmBaseURL) process.env.LLM_BASE_URL = llmBaseURL;

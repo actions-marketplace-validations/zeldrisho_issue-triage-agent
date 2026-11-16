@@ -38,10 +38,10 @@ All in ~8 seconds, powered by your LLM of choice.
 
 ### Step 1: Add a workflow file
 
-Create `.github/workflows/issue-triage-agent.yml` in your repository:
+Create `.github/workflows/issue-triage.yml` in your repository:
 
 ```yaml
-name: Issue Triage Agent
+name: Issue Triage
 
 on:
   issues:
@@ -120,7 +120,16 @@ For compatible gateways, select the API protocol supported by the endpoint and s
 
 Provider selection uses the Action input first, then `llm.provider` in repository configuration, then available credentials (OpenAI before Anthropic), defaulting to Anthropic. The custom base URL applies to the selected provider. If no key is available for that provider, issue triage uses mock responses and comment replies are skipped.
 
-If you use a custom model, create `.github/issue-triage-agent.yml` in your repo to specify it:
+To select a model in GitHub settings, go to **Settings > Secrets and variables > Actions > Variables** and create a repository variable named `LLM_MODEL`. Pass it to the Action in your workflow:
+
+```yaml
+with:
+  llm-model: ${{ vars.LLM_MODEL }}
+```
+
+The `llm-model` input requires v0.3.0 or later; the v0.2.0 pin above does not support it. An unset variable leaves the repository configuration or provider default in effect. The input takes precedence over `llm.model`.
+
+Alternatively, create `.github/issue-triage-agent.yml` in your repo to specify a custom model:
 
 ```yaml
 llm:
@@ -190,6 +199,7 @@ llm:
 | `anthropic-api-key` | No       |                                  | Anthropic API key                                          |
 | `openai-api-key`    | No       |                                  | OpenAI API key                                             |
 | `llm-provider`      | No       | Auto-detected                    | LLM provider; overrides repository configuration           |
+| `llm-model`         | No       | Provider-specific                | Model identifier; overrides repository configuration       |
 | `llm-base-url`      | No       |                                  | Custom base URL for LLM API (applies to selected provider) |
 | `config-path`       | No       | `.github/issue-triage-agent.yml` | Path to config file in repo                                |
 
