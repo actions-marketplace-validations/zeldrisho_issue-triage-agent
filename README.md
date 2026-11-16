@@ -56,7 +56,7 @@ jobs:
       issues: write
       contents: read
     steps:
-      - uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+      - uses: zeldrisho/issue-triage-agent@3d3ef07a810fcb56c57137a9dafa9e17064d0986 # v0.2.0
         with:
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
@@ -79,7 +79,7 @@ The bot supports any Anthropic or OpenAI API. Use the three inputs — `<provide
 ### Anthropic
 
 ```yaml
-- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@3d3ef07a810fcb56c57137a9dafa9e17064d0986 # v0.2.0
   with:
     anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
     llm-provider: anthropic
@@ -88,7 +88,7 @@ The bot supports any Anthropic or OpenAI API. Use the three inputs — `<provide
 ### OpenAI
 
 ```yaml
-- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@3d3ef07a810fcb56c57137a9dafa9e17064d0986 # v0.2.0
   with:
     openai-api-key: ${{ secrets.OPENAI_API_KEY }}
     llm-provider: openai
@@ -100,7 +100,7 @@ If your provider exposes an Anthropic or OpenAI compatible API, point `llm-base-
 
 ```yaml
 # Anthropic-compatible endpoint
-- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@3d3ef07a810fcb56c57137a9dafa9e17064d0986 # v0.2.0
   with:
     anthropic-api-key: ${{ secrets.LLM_API_KEY }}
     llm-provider: anthropic
@@ -109,7 +109,7 @@ If your provider exposes an Anthropic or OpenAI compatible API, point `llm-base-
 
 ```yaml
 # OpenAI-compatible endpoint
-- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@3d3ef07a810fcb56c57137a9dafa9e17064d0986 # v0.2.0
   with:
     openai-api-key: ${{ secrets.LLM_API_KEY }}
     llm-provider: openai
