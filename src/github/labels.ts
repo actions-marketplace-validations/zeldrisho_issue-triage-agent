@@ -1,9 +1,6 @@
 import type { IssueClassification, Logger, RepoConfig } from "../types.js";
 
-export function resolveLabels(
-  classification: IssueClassification,
-  config: RepoConfig,
-): string[] {
+export function resolveLabels(classification: IssueClassification, config: RepoConfig): string[] {
   const mappedLabels: string[] = [];
 
   const categoryLabels = config.labelMapping[classification.category];

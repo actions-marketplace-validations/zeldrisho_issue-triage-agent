@@ -9,10 +9,7 @@ import { resolveLabels, applyLabels } from "./github/labels.js";
 import { searchSimilarIssues } from "./github/search.js";
 import { detectDuplicates } from "./duplicate.js";
 
-function shouldExclude(
-  payload: ActionContext["payload"],
-  config: RepoConfig,
-): boolean {
+function shouldExclude(payload: ActionContext["payload"], config: RepoConfig): boolean {
   const issue = payload.issue;
   const existingLabels = (issue.labels ?? []).map((l: { name: string }) => l.name);
 
@@ -29,9 +26,7 @@ function shouldExclude(
   return false;
 }
 
-export async function runPipeline(
-  actx: ActionContext,
-): Promise<PipelineResult> {
+export async function runPipeline(actx: ActionContext): Promise<PipelineResult> {
   const result: PipelineResult = {
     classification: null,
     labelsApplied: [],
@@ -70,9 +65,10 @@ export async function runPipeline(
     body: actx.payload.issue.body ?? null,
     html_url: actx.payload.issue.html_url,
     user: { login: actx.payload.issue.user?.login ?? "unknown" },
-    labels: (actx.payload.issue.labels ?? []).map(
-      (l: { name: string; id: number }) => ({ name: l.name, id: l.id }),
-    ),
+    labels: (actx.payload.issue.labels ?? []).map((l: { name: string; id: number }) => ({
+      name: l.name,
+      id: l.id,
+    })),
     created_at: actx.payload.issue.created_at,
   };
 
@@ -101,15 +97,24 @@ export async function runPipeline(
         log.info({ issueNumber: issue.number, devMode: true }, "Mock classification applied");
       } else {
         result.classification = await classifyIssue(
-          issue, sanitizedBody, sanitizedTitle, config, llmClient, log,
+          issue,
+          sanitizedBody,
+          sanitizedTitle,
+          config,
+          llmClient,
+          log,
         );
       }
 
       try {
         const labels = resolveLabels(result.classification, config);
         result.labelsApplied = await applyLabels(
-          actx.owner, actx.repo, actx.payload.issue.number,
-          labels, actx.octokit, actx.logger,
+          actx.owner,
+          actx.repo,
+          actx.payload.issue.number,
+          labels,
+          actx.octokit,
+          actx.logger,
         );
         log.info({ labels: result.labelsApplied }, "Labels applied");
       } catch (error) {
@@ -131,13 +136,18 @@ export async function runPipeline(
   if (config.features.duplicateSearch && llmClient) {
     try {
       const candidates = await searchSimilarIssues(
-        actx.owner, actx.repo, sanitizedTitle, issue.number, actx.octokit,
+        actx.owner,
+        actx.repo,
+        sanitizedTitle,
+        issue.number,
+        actx.octokit,
       );
       if (candidates.length > 0) {
-        log.info({ candidateCount: candidates.length }, "Found similar issues, checking for duplicates");
-        const duplicates = await detectDuplicates(
-          issue, candidates, llmClient, config, log,
+        log.info(
+          { candidateCount: candidates.length },
+          "Found similar issues, checking for duplicates",
         );
+        const duplicates = await detectDuplicates(issue, candidates, llmClient, config, log);
         if (result.classification) {
           result.classification.relatedIssues = duplicates;
         }

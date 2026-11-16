@@ -23,7 +23,10 @@ export async function searchSimilarIssues(
   });
 
   return response.data.items
-    .filter((item: { number: number; pull_request?: unknown }) => item.number !== issueNumber && !item.pull_request)
+    .filter(
+      (item: { number: number; pull_request?: unknown }) =>
+        item.number !== issueNumber && !item.pull_request,
+    )
     .map((item: { number: number; title: string; html_url: string }) => ({
       number: item.number,
       title: item.title,
@@ -31,7 +34,25 @@ export async function searchSimilarIssues(
     }));
 }
 
-export const STOP_WORDS = new Set(["the", "and", "for", "not", "but", "are", "was", "has", "this", "that", "with", "from", "into", "can", "all", "its", "our"]);
+export const STOP_WORDS = new Set([
+  "the",
+  "and",
+  "for",
+  "not",
+  "but",
+  "are",
+  "was",
+  "has",
+  "this",
+  "that",
+  "with",
+  "from",
+  "into",
+  "can",
+  "all",
+  "its",
+  "our",
+]);
 
 export function buildSearchQuery(title: string, owner: string, repo: string): string {
   const words = title

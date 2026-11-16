@@ -37,7 +37,11 @@ export class AnthropicProvider implements LLMProvider {
       }
 
       this.logger.info(
-        { model, inputTokens: response.usage.input_tokens, outputTokens: response.usage.output_tokens },
+        {
+          model,
+          inputTokens: response.usage.input_tokens,
+          outputTokens: response.usage.output_tokens,
+        },
         "Claude response received",
       );
 

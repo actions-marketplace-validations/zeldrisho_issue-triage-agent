@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "vite-plus/test";
 import { resolveLabels } from "../src/github/labels.js";
 import { DEFAULT_CONFIG } from "../src/config/schema.js";
 import type { IssueClassification } from "../src/types.js";

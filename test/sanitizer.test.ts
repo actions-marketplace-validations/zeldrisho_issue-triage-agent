@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "vite-plus/test";
 import { sanitizeIssueBody, sanitizeIssueTitle, buildSafeIssueContent } from "../src/sanitizer.js";
 import { DEFAULT_CONFIG } from "../src/config/schema.js";
 

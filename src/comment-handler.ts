@@ -8,9 +8,7 @@ import { COMMENT_REPLY_SYSTEM_PROMPT, buildCommentReplyMessage } from "./prompts
 const MAX_COMMENT_REPLY_LENGTH = 4000;
 const MAX_COMMENT_LENGTH = 5000;
 
-export async function handleComment(
-  actx: ActionContext,
-): Promise<void> {
+export async function handleComment(actx: ActionContext): Promise<void> {
   if (actx.payload.sender?.type === "Bot") {
     return;
   }

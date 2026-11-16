@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vite-plus/test";
 import { handleComment } from "../src/comment-handler.js";
 import type { ActionContext } from "../src/types.js";
 import { DEFAULT_CONFIG } from "../src/config/schema.js";
@@ -18,8 +18,13 @@ vi.mock("../src/config/loader.js", () => ({
     enabled: true,
     features: { classify: true, reply: true, duplicateSearch: true, commentReply: true },
     labelMapping: {
-      bug: ["bug"], feature: ["enhancement"], question: ["question"],
-      docs: ["documentation"], duplicate: ["duplicate"], invalid: ["invalid"], security: ["security"],
+      bug: ["bug"],
+      feature: ["enhancement"],
+      question: ["question"],
+      docs: ["documentation"],
+      duplicate: ["duplicate"],
+      invalid: ["invalid"],
+      security: ["security"],
     },
     security: { maxIssueLength: 10000 },
     exclude: { labels: ["wontfix", "skip-ai"], users: ["dependabot[bot]"] },

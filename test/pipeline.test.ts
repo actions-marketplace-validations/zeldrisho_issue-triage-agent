@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vite-plus/test";
 import { runPipeline } from "../src/pipeline.js";
 import type { ActionContext } from "../src/types.js";
 import { createProvider } from "../src/llm/factory.js";
@@ -51,8 +51,13 @@ vi.mock("../src/config/loader.js", () => ({
     enabled: true,
     features: { classify: true, reply: true, duplicateSearch: true, commentReply: true },
     labelMapping: {
-      bug: ["bug"], feature: ["enhancement"], question: ["question"],
-      docs: ["documentation"], duplicate: ["duplicate"], invalid: ["invalid"], security: ["security"],
+      bug: ["bug"],
+      feature: ["enhancement"],
+      question: ["question"],
+      docs: ["documentation"],
+      duplicate: ["duplicate"],
+      invalid: ["invalid"],
+      security: ["security"],
     },
     security: { maxIssueLength: 10000 },
     exclude: { labels: ["wontfix", "skip-ai"], users: ["dependabot[bot]"] },
@@ -191,7 +196,8 @@ describe("runPipeline", () => {
     ]);
 
     const mockProvider = {
-      complete: vi.fn()
+      complete: vi
+        .fn()
         .mockResolvedValueOnce({
           text: JSON.stringify({
             category: "duplicate",

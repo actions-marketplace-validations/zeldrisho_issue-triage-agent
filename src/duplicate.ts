@@ -23,9 +23,10 @@ export function parseDuplicateResponse(raw: string): DuplicateResponse {
       duplicates: Array.isArray(parsed.duplicates)
         ? parsed.duplicates.filter((n: unknown) => typeof n === "number")
         : [],
-      reasoning: typeof parsed.reasoning === "string"
-        ? parsed.reasoning.slice(0, 300)
-        : "No reasoning provided",
+      reasoning:
+        typeof parsed.reasoning === "string"
+          ? parsed.reasoning.slice(0, 300)
+          : "No reasoning provided",
     };
   } catch {
     return { duplicates: [], reasoning: "Failed to parse duplicate detection response" };

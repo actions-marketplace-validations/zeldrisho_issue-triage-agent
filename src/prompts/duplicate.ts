@@ -22,9 +22,7 @@ export function buildDuplicateUserMessage(
   newIssue: { title: string; body: string | null },
   candidates: Array<{ number: number; title: string; url: string }>,
 ): string {
-  const candidateList = candidates
-    .map((c) => `- #${c.number}: ${c.title} (${c.url})`)
-    .join("\n");
+  const candidateList = candidates.map((c) => `- #${c.number}: ${c.title} (${c.url})`).join("\n");
 
   return `New issue:
 Title: ${newIssue.title}

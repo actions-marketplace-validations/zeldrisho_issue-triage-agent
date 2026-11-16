@@ -1,10 +1,24 @@
 import type { Logger } from "./types.js";
-import type { GitHubIssue, IssueClassification, IssueCategory, IssuePriority, RepoConfig } from "./types.js";
+import type {
+  GitHubIssue,
+  IssueClassification,
+  IssueCategory,
+  IssuePriority,
+  RepoConfig,
+} from "./types.js";
 import type { LLMProvider } from "./llm/provider.js";
 import { CLASSIFY_SYSTEM_PROMPT } from "./prompts/classify.js";
 import { buildSafeIssueContent } from "./sanitizer.js";
 
-const VALID_CATEGORIES: IssueCategory[] = ["bug", "feature", "question", "docs", "duplicate", "invalid", "security"];
+const VALID_CATEGORIES: IssueCategory[] = [
+  "bug",
+  "feature",
+  "question",
+  "docs",
+  "duplicate",
+  "invalid",
+  "security",
+];
 const VALID_PRIORITIES: IssuePriority[] = ["critical", "high", "medium", "low"];
 
 export function parseClassificationResponse(raw: string): IssueClassification {
@@ -69,7 +83,12 @@ export async function classifyIssue(
   const classification = parseClassificationResponse(response.text);
 
   logger.info(
-    { issueNumber: issue.number, category: classification.category, priority: classification.priority, confidence: classification.confidence },
+    {
+      issueNumber: issue.number,
+      category: classification.category,
+      priority: classification.priority,
+      confidence: classification.confidence,
+    },
     "Issue classified",
   );
 

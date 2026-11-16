@@ -5,10 +5,7 @@ import { OpenAIProvider } from "./openai.js";
 
 export type ProviderName = "anthropic" | "openai";
 
-export function createProvider(
-  provider: ProviderName,
-  logger: Logger,
-): LLMProvider | null {
+export function createProvider(provider: ProviderName, logger: Logger): LLMProvider | null {
   if (provider === "openai") {
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) return null;

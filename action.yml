@@ -1,6 +1,6 @@
 name: "Issue AI Agent"
 description: "AI-powered GitHub Issue triage: classify, label, detect duplicates, and reply"
-author: "alexyan0431"
+author: "zeldrisho"
 
 branding:
   icon: "zap"
@@ -40,5 +40,5 @@ outputs:
     description: "Whether a reply comment was posted"
 
 runs:
-  using: "node20"
+  using: "node24"
   main: "dist/index.js"
