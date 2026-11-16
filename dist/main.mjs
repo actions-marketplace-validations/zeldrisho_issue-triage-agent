@@ -75371,10 +75371,6 @@ function createProvider(provider, logger) {
 	if (!apiKey) return null;
 	return new AnthropicProvider(apiKey, logger, process.env.LLM_BASE_URL || process.env.ANTHROPIC_BASE_URL);
 }
-function detectProvider() {
-	if (process.env.OPENAI_API_KEY) return "openai";
-	return "anthropic";
-}
 // node_modules/.pnpm/js-yaml@5.5.0/node_modules/js-yaml/dist/js-yaml.mjs
 /*! js-yaml 5.5.0 https://github.com/nodeca/js-yaml @license MIT */
 /**
@@ -78095,13 +78091,13 @@ async function loadConfig(owner, repo, octokit, configPath = ".github/issue-tria
 		},
 		llm: {
 			provider,
-			model: repoConfig.llm?.model ?? DEFAULT_MODELS[provider],
+			model: process.env.LLM_MODEL?.trim() || (repoConfig.llm?.model ?? DEFAULT_MODELS[provider]),
 			maxTokens: repoConfig.llm?.max_tokens ?? DEFAULT_CONFIG.llm.maxTokens
 		}
 	};
 }
 // src/sanitizer.ts
-const INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u202A-\u202E\uFEFF\u00AD\u2060-\u2064\u180E]/g;
+const INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u202A-\u202E\uFEFF\u00AD\u2060-\u2064\u2066-\u2069\u180E\u{E0000}-\u{E007F}]/gu;
 const CONTROL_CHARS_REGEX = /(?![\t\n\r\u0080-\u009F])\p{Cc}/gu;
 function sanitizeIssueBody(body, config) {
 	if (!body) return "(No issue body provided)";
@@ -78457,18 +78453,7 @@ async function runPipeline(actx) {
 		errors: []
 	};
 	const log = actx.logger;
-	let config;
-	try {
-		config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
-	} catch (error) {
-		log.error({ err: error }, "Failed to load config");
-		result.errors.push({
-			step: "classify",
-			message: "Config loading failed",
-			cause: error instanceof Error ? error : new Error(String(error))
-		});
-		return result;
-	}
+	const config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
 	if (!config.enabled) {
 		log.info("Bot disabled for this repo, skipping");
 		return result;
@@ -78491,7 +78476,7 @@ async function runPipeline(actx) {
 	};
 	const sanitizedTitle = sanitizeIssueTitle(issue.title);
 	const sanitizedBody = sanitizeIssueBody(issue.body, config);
-	const llmClient = createProvider(config.llm.provider ?? detectProvider(), log);
+	const llmClient = createProvider(config.llm.provider, log);
 	const devMode = !llmClient;
 	if (devMode) log.warn("No LLM API key configured — running in dev mode with mock responses");
 	if (config.features.classify) try {
@@ -78638,17 +78623,11 @@ async function handleComment(actx) {
 		issueNumber,
 		commentAuthor: comment.user?.login
 	}, "Comment created on issue");
-	let config;
-	try {
-		config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
-	} catch (error) {
-		actx.logger.error({ err: error }, "Failed to load config for comment handler");
-		return;
-	}
+	const config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
 	if (!config.enabled || !config.features.commentReply) return;
 	if (comment.user && config.exclude.users.includes(comment.user.login)) return;
 	const commentBody = (comment.body ?? "").slice(0, MAX_COMMENT_LENGTH);
-	const llmClient = createProvider(config.llm.provider ?? detectProvider(), actx.logger);
+	const llmClient = createProvider(config.llm.provider, actx.logger);
 	if (!llmClient) {
 		actx.logger.warn("No LLM API key configured, skipping comment reply");
 		return;
@@ -78710,7 +78689,7 @@ const eventPayloadSchema = object({
 		user: object({
 			login: string(),
 			type: string().optional()
-		}).optional(),
+		}).nullish(),
 		labels: array(object({
 			name: string(),
 			id: number()
@@ -78759,6 +78738,8 @@ async function main() {
 		return;
 	}
 	if (llmProvider) process.env.LLM_PROVIDER = llmProvider;
+	const llmModel = getInput("llm-model");
+	if (llmModel) process.env.LLM_MODEL = llmModel;
 	const llmBaseURL = getInput("llm-base-url");
 	if (llmBaseURL) process.env.LLM_BASE_URL = llmBaseURL;
 	const octokit = getOctokit(token);

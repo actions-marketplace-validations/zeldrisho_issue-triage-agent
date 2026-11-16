@@ -22,9 +22,3 @@ export function createProvider(provider: ProviderName, logger: Logger): LLMProvi
 
   return new AnthropicProvider(apiKey, logger, baseURL);
 }
-
-export function detectProvider(): ProviderName {
-  if (process.env.OPENAI_API_KEY) return "openai";
-
-  return "anthropic";
-}

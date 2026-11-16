@@ -129,6 +129,12 @@ describe("runPipeline", () => {
     delete process.env.OPENAI_API_KEY;
   });
 
+  it("propagates configuration errors", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockRejectedValueOnce(new Error("invalid config"));
+    await expect(runPipeline(createMockActionContext())).rejects.toThrow("invalid config");
+  });
+
   it("skips when bot is disabled", async () => {
     const { loadConfig } = await import("../src/config/loader.js");
     vi.mocked(loadConfig).mockResolvedValueOnce({ ...DEFAULT_CONFIG, enabled: false });

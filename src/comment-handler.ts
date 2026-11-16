@@ -1,7 +1,7 @@
-import type { ActionContext, RepoConfig } from "./types.js";
+import type { ActionContext } from "./types.js";
 import { loadConfig } from "./config/loader.js";
 import { sanitizeIssueBody, sanitizeIssueTitle } from "./sanitizer.js";
-import { createProvider, detectProvider } from "./llm/factory.js";
+import { createProvider } from "./llm/factory.js";
 import { COMMENT_REPLY_SYSTEM_PROMPT, buildCommentReplyMessage } from "./prompts/comment-reply.js";
 
 const MAX_COMMENT_REPLY_LENGTH = 4000;
@@ -31,15 +31,7 @@ export async function handleComment(actx: ActionContext): Promise<void> {
     "Comment created on issue",
   );
 
-  let config: RepoConfig;
-
-  try {
-    config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
-  } catch (error) {
-    actx.logger.error({ err: error }, "Failed to load config for comment handler");
-
-    return;
-  }
+  const config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
 
   if (!config.enabled || !config.features.commentReply) {
     return;
@@ -51,8 +43,7 @@ export async function handleComment(actx: ActionContext): Promise<void> {
 
   const commentBody = (comment.body ?? "").slice(0, MAX_COMMENT_LENGTH);
 
-  const providerName = config.llm.provider ?? detectProvider();
-  const llmClient = createProvider(providerName, actx.logger);
+  const llmClient = createProvider(config.llm.provider, actx.logger);
 
   if (!llmClient) {
     actx.logger.warn("No LLM API key configured, skipping comment reply");

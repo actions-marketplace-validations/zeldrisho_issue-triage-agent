@@ -1,5 +1,5 @@
 import type { ActionContext, GitHubIssue, Logger, PipelineResult, RepoConfig } from "./types.js";
-import { createProvider, detectProvider } from "./llm/factory.js";
+import { createProvider } from "./llm/factory.js";
 import { loadConfig } from "./config/loader.js";
 import { sanitizeIssueBody, sanitizeIssueTitle } from "./sanitizer.js";
 import { classifyIssue } from "./classifier.js";
@@ -35,20 +35,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
 
   const log: Logger = actx.logger;
 
-  let config: RepoConfig;
-
-  try {
-    config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
-  } catch (error) {
-    log.error({ err: error }, "Failed to load config");
-    result.errors.push({
-      step: "classify",
-      message: "Config loading failed",
-      cause: error instanceof Error ? error : new Error(String(error)),
-    });
-
-    return result;
-  }
+  const config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
 
   if (!config.enabled) {
     log.info("Bot disabled for this repo, skipping");
@@ -78,8 +65,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
   const sanitizedTitle = sanitizeIssueTitle(issue.title);
   const sanitizedBody = sanitizeIssueBody(issue.body, config);
 
-  const providerName = config.llm.provider ?? detectProvider();
-  const llmClient = createProvider(providerName, log);
+  const llmClient = createProvider(config.llm.provider, log);
   const devMode = !llmClient;
 
   if (devMode) {

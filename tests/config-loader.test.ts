@@ -17,6 +17,7 @@ function octokitFor(content: string) {
 describe("loadConfig", () => {
   beforeEach(() => {
     vi.stubEnv("LLM_PROVIDER", "");
+    vi.stubEnv("LLM_MODEL", "");
     vi.stubEnv("OPENAI_API_KEY", "");
   });
   afterEach(() => vi.unstubAllEnvs());
@@ -42,6 +43,19 @@ describe("loadConfig", () => {
       (await loadConfig("owner", "repo", octokitFor("llm:\n  model: custom\n"))).llm.model,
     ).toBe("custom");
   });
+  it("prioritizes the model input over repository configuration, ignoring empty values", async () => {
+    const yaml = "llm:\n  model: configured-model\n";
+    vi.stubEnv("LLM_MODEL", "  settings-model  ");
+    expect((await loadConfig("owner", "repo", octokitFor(yaml))).llm.model).toBe("settings-model");
+    vi.stubEnv("LLM_MODEL", "   ");
+    expect((await loadConfig("owner", "repo", octokitFor(yaml))).llm.model).toBe(
+      "configured-model",
+    );
+    expect((await loadConfig("owner", "repo", octokitFor(""))).llm.model).toBe(
+      DEFAULT_CONFIG.llm.model,
+    );
+  });
+
   it("uses the issue-triage-agent config path by default and accepts an override", async () => {
     const octokit = octokitFor("");
     await loadConfig("owner", "repo", octokit);
@@ -92,6 +106,7 @@ describe("loadConfig", () => {
 
   it.each([
     "llm:\n  provider: invalid\n",
+    "llm:\n  model: ''\n",
     "llm:\n  max_tokens: -1\n",
     "features:\n  reply: nope\n",
     "security:\n  max_issue_length: 0\n",

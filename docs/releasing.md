@@ -25,16 +25,14 @@ tagged commit; a successful TypeScript build alone is not enough.
    comparison. The release workflow supports stable `vX.Y.Z` tags and requires
    a matching package version and a dated changelog entry with at least one item.
 3. Run `vp install`, `vp check`, `vp run build`, and `vp test --coverage`.
-   Run the checks with Node 24 as well as the current LTS. Run `vp pm audit`
-   and investigate applicable advisories.
+   Run `vp pm audit` and investigate applicable advisories.
 4. With Node.js LTS, run `vp run bundle`. Review and commit all generated `dist/`
    changes with the version and changelog changes in a pull request. Run the
    bundle again and confirm `git status --short -- dist/` is empty. Merge the
    pull request after CI passes, and verify CI on the merged commit.
-5. Update the README usage examples to pin the release commit's full SHA.
-   Avoid a circular dependency between the documentation commit and its own
-   hash: update the examples in a follow-up commit after the release, or pin
-   the previously released commit and update them in the next change.
+5. README usage pins are examples and do not need updating for every release.
+   If updating them, pin an existing release commit; a release commit cannot
+   contain its own SHA.
 
 ## Publish
 

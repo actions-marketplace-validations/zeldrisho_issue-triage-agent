@@ -6,6 +6,17 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-16
+
+### Added
+
+- Set the LLM model with the `llm-model` Action input, including from a GitHub Actions variable.
+
+### Fixed
+
+- Fail the Action visibly when repository configuration cannot be loaded or is invalid.
+- Accept issues with a deleted user and strip additional invisible Unicode characters from issue content.
+
 ## [0.2.0] - 2026-11-16
 
 ### Added
@@ -27,5 +38,6 @@ follow [Semantic Versioning](https://semver.org/).
 
 - Register supplied GitHub and LLM credentials for masking in workflow logs.
 
-[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/zeldrisho/issue-triage-agent/releases/tag/v0.2.0

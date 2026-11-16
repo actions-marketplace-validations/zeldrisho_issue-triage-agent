@@ -30,7 +30,7 @@ const eventPayloadSchema = z.object({
     title: z.string(),
     body: z.string().nullable(),
     html_url: z.string(),
-    user: z.object({ login: z.string(), type: z.string().optional() }).optional(),
+    user: z.object({ login: z.string(), type: z.string().optional() }).nullish(),
     labels: z.array(z.object({ name: z.string(), id: z.number() })).optional(),
     created_at: z.string(),
     pull_request: z.unknown().optional(),
@@ -87,6 +87,10 @@ async function main(): Promise<void> {
   }
 
   if (llmProvider) process.env.LLM_PROVIDER = llmProvider;
+
+  const llmModel = core.getInput("llm-model");
+
+  if (llmModel) process.env.LLM_MODEL = llmModel;
 
   const llmBaseURL = core.getInput("llm-base-url");
 
