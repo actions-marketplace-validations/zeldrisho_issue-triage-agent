@@ -58,10 +58,13 @@ jobs:
       issues: write
       contents: read
     steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: zeldrisho/issue-triage-agent@3d3ef07a810fcb56c57137a9dafa9e17064d0986 # v0.2.0
         with:
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
+
+> **Repository context:** Adding `actions/checkout` lets the agent read your source files (`ls`, `cat`, `grep`, etc.) to give more specific replies — for example, checking if a reported config option actually exists, or reading `CONTRIBUTING.md` before responding to a question. If checkout is omitted the agent still works but replies without file access.
 
 ### Step 2: Add your API key
 

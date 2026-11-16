@@ -9,6 +9,7 @@ follow [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Analyze supported GitHub-hosted issue and comment images with vision-capable models.
+- Repository context: when `actions/checkout` is present the agent can run read-only shell commands (`ls`, `cat`, `grep`, `find`, `head`, `tail`, `wc`) against the checked-out repo to give more specific replies.
 
 ## [0.3.0] - 2026-11-16
 
