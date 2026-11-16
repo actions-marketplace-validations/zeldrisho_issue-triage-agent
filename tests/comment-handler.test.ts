@@ -10,7 +10,6 @@ vi.mock("../src/llm/factory.js", () => ({
       usage: { inputTokens: 100, outputTokens: 30 },
     }),
   })),
-  detectProvider: vi.fn().mockReturnValue("anthropic"),
 }));
 
 vi.mock("../src/config/loader.js", () => ({
@@ -92,6 +91,12 @@ describe("handleComment", () => {
     vi.clearAllMocks();
     process.env.ANTHROPIC_API_KEY = "test-api-key";
     delete process.env.OPENAI_API_KEY;
+  });
+
+  it("propagates configuration errors", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockRejectedValueOnce(new Error("invalid config"));
+    await expect(handleComment(createMockActionContext())).rejects.toThrow("invalid config");
   });
 
   it("skips bot comments", async () => {

@@ -12,6 +12,11 @@ follow [Semantic Versioning](https://semver.org/).
 
 - Set the LLM model with the `llm-model` Action input, including from a GitHub Actions variable.
 
+### Fixed
+
+- Fail the Action visibly when repository configuration cannot be loaded or is invalid.
+- Accept issues with a deleted user and strip additional invisible Unicode characters from issue content.
+
 ## [0.2.0] - 2026-11-16
 
 ### Added

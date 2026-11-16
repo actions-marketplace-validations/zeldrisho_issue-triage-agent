@@ -119,7 +119,7 @@ export interface ActionContext {
       title: string;
       body: string | null;
       html_url: string;
-      user?: { login: string; type?: string };
+      user?: { login: string; type?: string } | null;
       labels?: Array<{ name: string; id: number }>;
       created_at: string;
       pull_request?: unknown;

@@ -12,6 +12,12 @@ describe("sanitizeIssueBody", () => {
     expect(sanitizeIssueBody(input, DEFAULT_CONFIG)).toBe("HelloWorld");
   });
 
+  it("removes bidi isolates and Unicode tag characters from titles and bodies", () => {
+    const input = "a\u2066\u2067\u2068\u2069\u{E0000}\u{E0061}\u{E007F}b😀";
+    expect(sanitizeIssueTitle(input)).toBe("ab😀");
+    expect(sanitizeIssueBody(input, DEFAULT_CONFIG)).toBe("ab😀");
+  });
+
   it("removes control characters", () => {
     const input = "Hello\x00\x01World\x07";
     expect(sanitizeIssueBody(input, DEFAULT_CONFIG)).toBe("HelloWorld");
