@@ -3,6 +3,7 @@ import type { ESTree } from "vite-plus/lint/plugins";
 import {
 	createTypeAliasEnvironment,
 	hasVisibleTypeBinding,
+	isVisibleModuleInterface,
 	visibleTypeAlias,
 	type TypeAliasEnvironment as LexicalTypeAliasEnvironment,
 } from "./type-alias-resolution.ts";
@@ -164,11 +165,12 @@ function aliasSubstitution(
 ): TypeAliasEnvironment | null {
 	const parameters = alias.typeParameters?.params ?? [];
 	const arguments_ = type.typeArguments?.params ?? [];
-	const next = new Map(base);
+	const next = new Map<string, ESTree.TSType>();
 	for (const [index, parameter] of parameters.entries()) {
-		const argument = arguments_[index] ?? parameter.default;
+		const explicit = arguments_[index];
+		const argument = explicit ?? parameter.default;
 		if (argument === null || argument === undefined) return null;
-		next.set(parameter.name.name, resolvedSubstitutionArgument(argument, next));
+		next.set(parameter.name.name, resolvedSubstitutionArgument(argument, explicit === undefined ? next : base));
 	}
 	return next;
 }
@@ -217,7 +219,7 @@ function unsafeDirectValue(
 			: unsafeDirectValue(substitution, environment, substitutions, resolvingAliases);
 	}
 	const interfaceDeclarations = environment.interfaces.get(name);
-	if (interfaceDeclarations !== undefined) {
+	if (interfaceDeclarations !== undefined && isVisibleModuleInterface(name, unwrapped, environment.typeAliases)) {
 		return isEffectivelyEmptyInterface(interfaceDeclarations) ? "empty-object" : null;
 	}
 	const alias = visibleTypeAlias(name, unwrapped, environment.typeAliases);

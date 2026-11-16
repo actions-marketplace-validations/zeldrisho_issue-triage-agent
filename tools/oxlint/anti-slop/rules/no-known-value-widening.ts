@@ -63,6 +63,7 @@ function hasKnownEvidence(
 	if (
 		declarator === null ||
 		declarator.init === null ||
+		declarator.id.type !== "Identifier" ||
 		!isStableConstVariable(variable, declarator)
 	) {
 		return false;

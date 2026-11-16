@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vite-plus/test";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { loadConfig } from "../src/config/loader.js";
 import { DEFAULT_CONFIG } from "../src/config/schema.js";
 
@@ -15,6 +15,33 @@ function octokitFor(content: string) {
 }
 
 describe("loadConfig", () => {
+  beforeEach(() => {
+    vi.stubEnv("LLM_PROVIDER", "");
+    vi.stubEnv("OPENAI_API_KEY", "");
+  });
+  afterEach(() => vi.unstubAllEnvs());
+
+  it("uses the resolved provider's default model and preserves explicit models", async () => {
+    vi.stubEnv("OPENAI_API_KEY", "key");
+    expect((await loadConfig("owner", "repo", octokitFor(""))).llm.model).toBe("gpt-4o-mini");
+    const missing = octokitFor("");
+    missing.rest.repos.getContent.mockRejectedValue({ status: 404 });
+    expect((await loadConfig("owner", "repo", missing)).llm.model).toBe("gpt-4o-mini");
+    expect(
+      (await loadConfig("owner", "repo", octokitFor("llm:\n  provider: anthropic\n"))).llm.model,
+    ).toBe(DEFAULT_CONFIG.llm.model);
+    vi.stubEnv("OPENAI_API_KEY", "");
+    expect(
+      (await loadConfig("owner", "repo", octokitFor("llm:\n  provider: openai\n"))).llm.model,
+    ).toBe("gpt-4o-mini");
+    vi.stubEnv("LLM_PROVIDER", "openai");
+    expect(
+      (await loadConfig("owner", "repo", octokitFor("llm:\n  provider: anthropic\n"))).llm.model,
+    ).toBe("gpt-4o-mini");
+    expect(
+      (await loadConfig("owner", "repo", octokitFor("llm:\n  model: custom\n"))).llm.model,
+    ).toBe("custom");
+  });
   it("uses the issue-triage-agent config path by default and accepts an override", async () => {
     const octokit = octokitFor("");
     await loadConfig("owner", "repo", octokit);

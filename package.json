@@ -12,7 +12,7 @@
     "bundle": "tsc --noEmit && vp pack",
     "dev": "tsc --watch",
     "test": "vp test run",
-    "test:watch": "vp test"
+    "test:watch": "vp test watch"
   },
   "dependencies": {
     "@actions/core": "^3.0.1",
@@ -32,7 +32,7 @@
     "vitest": "catalog:"
   },
   "engines": {
-    "node": ">= 22"
+    "node": "^22.22.1 || ^24.11.0 || >=26.0.0"
   },
   "packageManager": "pnpm@12.21.0"
 }

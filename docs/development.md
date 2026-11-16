@@ -15,6 +15,8 @@ vp run dev            # TypeScript watch mode
 
 Tests and reusable fixtures live in `tests/`. Run a single test file with `vp test tests/classifier.test.ts`.
 
+The Oxlint plugins under `tools/oxlint/` are loaded directly as TypeScript by Node. Their relative imports use `.ts` extensions: changing them to `.js` fails because no corresponding JavaScript files exist. Application imports use `.js` for the compiled ESM output.
+
 The Action runs the generated, tracked `dist/` bundle. After changing runtime source, regenerate it with `vp run bundle`; `vp run build` only emits to `lib/`. Vite+ Pack bundles runtime dependencies and generates `dist/licenses.txt`.
 
 See the [user guide](../README.md) for configuration and usage.

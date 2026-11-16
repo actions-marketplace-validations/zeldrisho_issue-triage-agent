@@ -1,7 +1,7 @@
 import { CORE_SCHEMA, loadAll, mergeTag, timestampTag, binaryTag, legacyMapTag } from "js-yaml";
 import { z } from "zod";
 import type { RepoConfig } from "../types.js";
-import { DEFAULT_CONFIG } from "./schema.js";
+import { DEFAULT_CONFIG, DEFAULT_MODELS } from "./schema.js";
 
 const providerSchema = z.enum(["anthropic", "openai"]);
 
@@ -95,7 +95,7 @@ export async function loadConfig(
     },
     llm: {
       provider,
-      model: repoConfig.llm?.model ?? DEFAULT_CONFIG.llm.model,
+      model: repoConfig.llm?.model ?? DEFAULT_MODELS[provider],
       maxTokens: repoConfig.llm?.max_tokens ?? DEFAULT_CONFIG.llm.maxTokens,
     },
   };

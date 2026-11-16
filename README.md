@@ -165,20 +165,20 @@ llm:
 
 ### Config Reference
 
-| Key                         | Default                     | Description                                   |
-| --------------------------- | --------------------------- | --------------------------------------------- |
-| `enabled`                   | `true`                      | Master on/off switch                          |
-| `features.classify`         | `true`                      | Enable issue classification + labeling        |
-| `features.reply`            | `true`                      | Enable AI-drafted reply comments              |
-| `features.duplicateSearch`  | `true`                      | Search for duplicate issues and link them     |
-| `features.commentReply`     | `true`                      | Reply to follow-up comments on issues         |
-| `label_mapping`             | _(see defaults above)_      | Maps AI categories to your repo's label names |
-| `security.max_issue_length` | `10000`                     | Truncate issue body beyond this length        |
-| `exclude.labels`            | `["wontfix", "skip-ai"]`    | Skip issues carrying these labels             |
-| `exclude.users`             | `["dependabot[bot]"]`       | Skip issues opened by these users             |
-| `llm.provider`              | `"anthropic"`               | LLM provider: `"anthropic"` or `"openai"`     |
-| `llm.model`                 | `claude-haiku-4-5-20251001` | Model identifier                              |
-| `llm.max_tokens`            | `2048`                      | Max tokens for LLM responses                  |
+| Key                         | Default                  | Description                                                                                         |
+| --------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------- |
+| `enabled`                   | `true`                   | Master on/off switch                                                                                |
+| `features.classify`         | `true`                   | Enable issue classification + labeling                                                              |
+| `features.reply`            | `true`                   | Enable AI-drafted reply comments                                                                    |
+| `features.duplicateSearch`  | `true`                   | Search for duplicate issues and link them                                                           |
+| `features.commentReply`     | `true`                   | Reply to follow-up comments on issues                                                               |
+| `label_mapping`             | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
+| `security.max_issue_length` | `10000`                  | Truncate issue body beyond this length                                                              |
+| `exclude.labels`            | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
+| `exclude.users`             | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
+| `llm.provider`              | `"anthropic"`            | LLM provider: `"anthropic"` or `"openai"`                                                           |
+| `llm.model`                 | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
+| `llm.max_tokens`            | `2048`                   | Max tokens for LLM responses                                                                        |
 
 ## Action Inputs & Outputs
 

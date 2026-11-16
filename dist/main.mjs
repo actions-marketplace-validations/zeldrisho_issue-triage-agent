@@ -77974,6 +77974,10 @@ CHOMPING_MODE.CLIP;
 CHOMPING_MODE.STRIP;
 CHOMPING_MODE.KEEP;
 // src/config/schema.ts
+const DEFAULT_MODELS = {
+	anthropic: "claude-haiku-4-5-20251001",
+	openai: "gpt-4o-mini"
+};
 const DEFAULT_CONFIG = {
 	enabled: true,
 	features: {
@@ -77998,7 +78002,7 @@ const DEFAULT_CONFIG = {
 	},
 	llm: {
 		provider: "anthropic",
-		model: "claude-haiku-4-5-20251001",
+		model: DEFAULT_MODELS.anthropic,
 		maxTokens: 2048
 	}
 };
@@ -78059,7 +78063,7 @@ async function loadConfig(owner, repo, octokit, configPath = ".github/issue-tria
 		},
 		llm: {
 			provider,
-			model: repoConfig.llm?.model ?? DEFAULT_CONFIG.llm.model,
+			model: repoConfig.llm?.model ?? DEFAULT_MODELS[provider],
 			maxTokens: repoConfig.llm?.max_tokens ?? DEFAULT_CONFIG.llm.maxTokens
 		}
 	};

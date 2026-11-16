@@ -35,6 +35,15 @@ describe("release notes", () => {
     expect(last.stdout.trim()).toBe("### Fixed\n\n- Fix the issue.");
   });
 
+  it("retains referenced definitions from outside the release section", () => {
+    const result = run(
+      "v1.2.3",
+      "## [1.2.3] - 2026-11-16\n\n- See [guide][docs].\n\n## [1.0.0] - 2026-01-01\n\n- Old.\n\n[docs]: https://example.com\n",
+    );
+
+    expect(result.stdout.trim()).toBe("- See [guide][docs].\n\n[docs]: https://example.com");
+  });
+
   it("rejects invalid tags, mismatched versions, and missing or duplicate entries", () => {
     for (const [tag, text, version] of [
       ["v1.2.3-rc.1", entry, "1.2.3"],

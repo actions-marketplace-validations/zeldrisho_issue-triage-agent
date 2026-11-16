@@ -19,7 +19,7 @@
 ## Rules
 
 - Use Conventional Commits.
-- Use `.js` extensions in relative TypeScript imports, matching the existing ESM code.
+- Use `.js` extensions in relative TypeScript imports, except `tools/oxlint/` plugins, which Node loads directly from `.ts` files.
 - Put tests in `tests/*.test.ts`; reusable event payloads belong in `tests/fixtures/`.
 - Keep LLM integrations behind `LLMProvider` in `src/llm/provider.ts` and provider selection in `src/llm/factory.ts`.
 - Preserve per-step error isolation in `src/pipeline.ts`; one failed step must not block later steps.

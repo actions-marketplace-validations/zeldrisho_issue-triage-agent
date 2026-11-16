@@ -15,5 +15,9 @@ follow [Semantic Versioning](https://semver.org/).
 - Configure features, labels, security limits, and LLM settings through `.github/issue-triage-agent.yml` or a custom configuration path.
 - Use Anthropic or OpenAI-compatible providers, including custom API endpoints.
 
+### Fixed
+
+- Default to an OpenAI model when the OpenAI provider is selected without an explicit model.
+
 [Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.2.0...HEAD
 [0.2.0]: https://github.com/zeldrisho/issue-triage-agent/releases/tag/v0.2.0

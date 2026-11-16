@@ -16,6 +16,7 @@ function collectInferTypeParameterNames(
 	visitorKeys: VisitorKeys,
 	names: Set<string>,
 ): void {
+	if (node.type === "TSConditionalType") return;
 	if (node.type === "TSInferType") names.add(node.typeParameter.name.name);
 	const record = node as unknown as Readonly<Record<string, unknown>>;
 	for (const key of visitorKeys[node.type] ?? []) {
@@ -58,4 +59,28 @@ export function lexicalTypeParameterNames(
 		current = current.parent;
 	}
 	return names;
+}
+
+/** Distance to the closest enclosing scope introducing a type parameter. */
+export function lexicalTypeParameterDistance(
+	name: string,
+	node: ESTree.Node,
+	visitorKeys: VisitorKeys,
+): number | null {
+	let current: ESTree.Node | null = node;
+	let descendant: ESTree.Node = node;
+	let distance = 0;
+	while (current !== null && current.type !== "Program") {
+		if ("typeParameters" in current && current.typeParameters?.params.some((parameter) => parameter.name.name === name)) return distance;
+		if (current.type === "TSMappedType" && (descendant === current.nameType || descendant === current.typeAnnotation) && current.key.name === name) return distance;
+		if (current.type === "TSConditionalType" && descendant === current.trueType) {
+			const names = new Set<string>();
+			collectInferTypeParameterNames(current.extendsType, visitorKeys, names);
+			if (names.has(name)) return distance;
+		}
+		descendant = current;
+		current = current.parent;
+		distance += 1;
+	}
+	return null;
 }

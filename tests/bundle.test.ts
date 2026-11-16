@@ -110,14 +110,26 @@ async function runBundle(provider: "anthropic" | "openai", eventName: "issues" |
     const result = await new Promise<{ code: number | null; output: string }>((done, reject) => {
       const child = spawn(process.execPath, [join(dir, "dist/main.mjs")], { cwd: dir, env });
       let output = "";
+
+      const timer = setTimeout(() => {
+        child.kill("SIGKILL");
+        reject(new Error("Bundle subprocess timed out"));
+      }, 15_000);
+
       child.stdout.on("data", (chunk: Buffer) => {
         output += chunk.toString();
       });
       child.stderr.on("data", (chunk: Buffer) => {
         output += chunk.toString();
       });
-      child.on("error", reject);
-      child.on("close", (code) => done({ code, output }));
+      child.on("error", (error) => {
+        clearTimeout(timer);
+        reject(error);
+      });
+      child.on("close", (code) => {
+        clearTimeout(timer);
+        done({ code, output });
+      });
     });
 
     expect(result.code, result.output).toBe(0);
@@ -152,9 +164,9 @@ describe("isolated Action bundle", () => {
   for (const provider of ["anthropic", "openai"] as const) {
     it(`handles issue triage with ${provider}`, async () => {
       await runBundle(provider, "issues");
-    });
+    }, 20_000);
     it(`handles follow-up comments with ${provider}`, async () => {
       await runBundle(provider, "issue_comment");
-    });
+    }, 20_000);
   }
 });

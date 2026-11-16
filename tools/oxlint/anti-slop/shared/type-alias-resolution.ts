@@ -1,6 +1,6 @@
 import type { ESTree } from "vite-plus/lint/plugins";
 
-import { lexicalTypeParameterNames } from "./lexical-type-parameters.ts";
+import { lexicalTypeParameterDistance, lexicalTypeParameterNames } from "./lexical-type-parameters.ts";
 
 type VisitorKeys = Readonly<Record<string, readonly string[]>>;
 type TypeScope = ESTree.Node;
@@ -12,6 +12,7 @@ type TypeBinding = {
 };
 
 type Substitution = {
+	readonly owner: ESTree.TSTypeAliasDeclaration;
 	readonly substitutions: Substitutions;
 	readonly type: ESTree.TSType;
 };
@@ -91,7 +92,7 @@ function collectTypeBindings(
 	const declared = declaredTypeBinding(node);
 	if (declared !== null) {
 		const bindings = bindingsByName.get(declared.name) ?? [];
-		bindings.push({ ...declared, scope: enclosingTypeScope(node) });
+		bindings.push({ ...declared, scope: node.type === "ClassExpression" ? node : enclosingTypeScope(node) });
 		bindingsByName.set(declared.name, bindings);
 		if (declared.alias !== null) aliases.push(declared.alias);
 	}
@@ -166,9 +167,20 @@ export function visibleTypeAlias(
 	use: ESTree.Node,
 	environment: TypeAliasEnvironment,
 ): ESTree.TSTypeAliasDeclaration | null {
-	if (lexicalTypeParameterNames(use, environment.visitorKeys).has(name)) return null;
 	const bindings = nearestTypeBindings(name, use, environment);
-	return bindings.length === 1 ? (bindings[0]?.alias ?? null) : null;
+	const parameterDistance = lexicalTypeParameterDistance(name, use, environment.visitorKeys);
+	const binding = bindings[0];
+	if (parameterDistance !== null && (binding === undefined || parameterDistance <= (ancestorDistance(binding.scope, use) ?? Infinity))) return null;
+	return bindings.length === 1 ? (binding?.alias ?? null) : null;
+}
+
+/** Return whether the module-level interface is the nearest type binding. */
+export function isVisibleModuleInterface(name: string, use: ESTree.Node, environment: TypeAliasEnvironment): boolean {
+	const bindings = nearestTypeBindings(name, use, environment);
+	const binding = bindings[0];
+	if (binding === undefined || binding.scope.type !== "Program") return false;
+	const distance = lexicalTypeParameterDistance(name, use, environment.visitorKeys);
+	return distance === null || distance > (ancestorDistance(binding.scope, use) ?? Infinity);
 }
 
 /** Return whether a local declaration shadows a built-in type at this use. */
@@ -194,13 +206,14 @@ function aliasSubstitutions(
 ): Substitutions | null {
 	const parameters = alias.typeParameters?.params ?? [];
 	const arguments_ = reference.typeArguments?.params ?? [];
-	const next = new Map(base);
+	const next = new Map<string, Substitution>();
 	for (const [index, parameter] of parameters.entries()) {
 		const explicitArgument = arguments_[index];
 		const argument = explicitArgument ?? parameter.default;
 		if (argument === null || argument === undefined) return null;
 		const argumentSubstitutions = explicitArgument === undefined ? next : base;
 		next.set(parameter.name.name, {
+			owner: alias,
 			type: argument,
 			substitutions: new Map(argumentSubstitutions),
 		});
@@ -224,10 +237,12 @@ export function resolvedTypeMatches(
 			if (name !== null) {
 				const substitution = substitutions.get(name);
 				if (substitution !== undefined && !current.typeArguments?.params.length) {
+					const nextResolving = new Set(resolvingAliases);
+					nextResolving.delete(substitution.owner);
 					return evaluate(
 						substitution.type,
 						substitution.substitutions,
-						resolvingAliases,
+						nextResolving,
 					);
 				}
 				const alias = visibleTypeAlias(name, current, environment);

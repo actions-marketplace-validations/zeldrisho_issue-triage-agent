@@ -4,6 +4,7 @@ import type { ESTree } from "vite-plus/lint/plugins";
 
 import {
   createTypeAliasEnvironment,
+  hasVisibleTypeBinding,
   resolvedTypeMatches,
   type TypeAliasEnvironment,
 } from "../shared/type-alias-resolution.ts";
@@ -49,6 +50,7 @@ export const noUnknownReturnsRule = defineRule({
         ) {
           return false;
         }
+        if (hasVisibleTypeBinding(resolved.typeName.name, resolved, environment)) return false;
         const value = resolved.typeArguments?.params[0];
         return value !== undefined && matches(value);
       });

@@ -26,11 +26,15 @@ def main():
     start = matches[0].end()
     next_section = re.search(r"^## \[", changelog[start:], re.MULTILINE)
     notes = changelog[start : start + next_section.start() if next_section else None].strip()
-    # Reference definitions at the end of the file are not release notes.
-    notes = re.sub(r"(?m)^\[[^\]]+\]:\s+\S+.*$", "", notes).strip()
+    # Remove definitions from the section, then include definitions referenced by its text.
+    definition_pattern = r"(?m)^\[([^\]]+)\]:\s+\S+.*$"
+    notes = re.sub(definition_pattern, "", notes).strip()
     if not notes or not re.search(r"(?m)^-\s+\S", notes):
         raise ValueError(f"Changelog section for {version} has no release entries")
-    print(notes)
+    references = {match.group(1).casefold() for match in re.finditer(r"\[([^\]]+)\]", notes)}
+    definitions = [match.group(0) for match in re.finditer(definition_pattern, changelog)
+                   if match.group(1).casefold() in references]
+    print(notes + ("\n\n" + "\n".join(definitions) if definitions else ""))
 
 
 if __name__ == "__main__":
