@@ -151,6 +151,7 @@ features:
   reply: true # Post AI-drafted replies
   duplicateSearch: true # Detect duplicate issues
   commentReply: true # Reply to follow-up comments
+  media: true # Analyze supported GitHub-hosted images
 
 label_mapping:
   bug: ["bug"]
@@ -183,6 +184,7 @@ llm:
 | `features.reply`            | `true`                   | Enable AI-drafted reply comments                                                                    |
 | `features.duplicateSearch`  | `true`                   | Search for duplicate issues and link them                                                           |
 | `features.commentReply`     | `true`                   | Reply to follow-up comments on issues                                                               |
+| `features.media`            | `true`                   | Download supported GitHub images and send them to the model                                         |
 | `label_mapping`             | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
 | `security.max_issue_length` | `10000`                  | Truncate issue body beyond this length                                                              |
 | `exclude.labels`            | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
@@ -190,6 +192,12 @@ llm:
 | `llm.provider`              | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                           |
 | `llm.model`                 | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
 | `llm.max_tokens`            | `2048`                   | Max tokens for LLM responses                                                                        |
+
+### Attachments
+
+With `features.media` enabled, issue descriptions and follow-up comments are scanned for URLs on approved GitHub attachment hosts, including HTML images. Follow-up replies also include images from the original issue. Images are sent to the configured LLM provider (or custom endpoint), so use a vision-capable model and consider the privacy implications. Image content is untrusted. Disable this feature to prevent attachment downloads and image transmission. Videos are not supported.
+
+Up to four attachments are checked, each limited to 4 MiB and 15 seconds per download. Only PNG, JPEG, GIF and WebP images are supported. Unsupported, inaccessible, oversized, or failed attachments are reported as unavailable to the model; processing continues text-only when needed. Only HTTPS URLs on approved hosts and redirects to approved hosts are fetched. Private or expired links may be inaccessible because downloads do not use GitHub credentials.
 
 ## Action Inputs & Outputs
 

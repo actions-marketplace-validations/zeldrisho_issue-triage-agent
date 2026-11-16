@@ -6,6 +6,10 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Analyze supported GitHub-hosted issue and comment images with vision-capable models.
+
 ## [0.3.0] - 2026-11-16
 
 ### Added

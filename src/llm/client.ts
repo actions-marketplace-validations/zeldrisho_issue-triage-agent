@@ -29,7 +29,22 @@ export class AnthropicProvider implements LLMProvider {
         model,
         max_tokens: maxTokens,
         system: systemPrompt,
-        messages: messages.map((m) => ({ role: m.role, content: m.content })),
+        messages: messages.map((m) => ({
+          role: m.role,
+          content: m.images?.length
+            ? [
+                { type: "text" as const, text: m.content },
+                ...m.images.map((image) => ({
+                  type: "image" as const,
+                  source: {
+                    type: "base64" as const,
+                    media_type: image.mediaType,
+                    data: image.data,
+                  },
+                })),
+              ]
+            : m.content,
+        })),
       });
 
       const textBlock = response.content.find(

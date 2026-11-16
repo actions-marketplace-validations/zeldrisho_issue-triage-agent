@@ -13,6 +13,7 @@ const configSchema = z.object({
       reply: z.boolean().optional(),
       duplicateSearch: z.boolean().optional(),
       commentReply: z.boolean().optional(),
+      media: z.boolean().optional(),
     })
     .optional(),
   label_mapping: z.record(z.string(), z.array(z.string())).optional(),
@@ -83,6 +84,7 @@ export async function loadConfig(
       duplicateSearch:
         repoConfig.features?.duplicateSearch ?? DEFAULT_CONFIG.features.duplicateSearch,
       commentReply: repoConfig.features?.commentReply ?? DEFAULT_CONFIG.features.commentReply,
+      media: repoConfig.features?.media ?? DEFAULT_CONFIG.features.media,
     },
     labelMapping: repoConfig.label_mapping ?? DEFAULT_CONFIG.labelMapping,
     security: {

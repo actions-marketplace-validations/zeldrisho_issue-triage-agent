@@ -30,7 +30,22 @@ export class OpenAIProvider implements LLMProvider {
         max_tokens: maxTokens,
         messages: [
           { role: "system", content: systemPrompt },
-          ...messages.map((m) => ({ role: m.role, content: m.content })),
+          ...messages.map((m): OpenAI.Chat.Completions.ChatCompletionMessageParam => {
+            if (m.role === "assistant" || !m.images?.length) {
+              return { role: m.role, content: m.content };
+            }
+
+            return {
+              role: "user",
+              content: [
+                { type: "text", text: m.content },
+                ...m.images.map((image) => ({
+                  type: "image_url" as const,
+                  image_url: { url: `data:${image.mediaType};base64,${image.data}` },
+                })),
+              ],
+            };
+          }),
         ],
       });
 

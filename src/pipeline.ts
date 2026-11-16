@@ -7,6 +7,7 @@ import { draftReply } from "./replier.js";
 import { resolveLabels, applyLabels } from "./github/labels.js";
 import { searchSimilarIssues } from "./github/search.js";
 import { detectDuplicates } from "./duplicate.js";
+import { processMedia } from "./media.js";
 
 function shouldExclude(payload: ActionContext["payload"], config: RepoConfig): boolean {
   const issue = payload.issue;
@@ -72,6 +73,11 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
     log.warn("No LLM API key configured — running in dev mode with mock responses");
   }
 
+  const media =
+    llmClient && (config.features.classify || config.features.reply)
+      ? await processMedia([issue.body ?? ""], config.features.media)
+      : undefined;
+
   if (config.features.classify) {
     try {
       if (devMode || !llmClient) {
@@ -92,6 +98,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
           config,
           llmClient,
           log,
+          media,
         );
       }
 
@@ -188,6 +195,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
           config,
           llmClient,
           log,
+          media,
         );
       }
 

@@ -42,6 +42,7 @@ export interface RepoConfig {
     reply: boolean;
     duplicateSearch: boolean;
     commentReply: boolean;
+    media: boolean;
   };
   labelMapping: Record<string, string[]>;
   security: {
