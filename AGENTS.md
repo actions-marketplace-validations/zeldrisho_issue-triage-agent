@@ -9,8 +9,8 @@
 
 | Task | Command |
 | --- | --- |
-| Test one file | `vp test test/classifier.test.ts` |
-| Test one case | `vp test test/classifier.test.ts -t 'parses valid JSON response'` |
+| Test one file | `vp test tests/classifier.test.ts` |
+| Test one case | `vp test tests/classifier.test.ts -t 'parses valid JSON response'` |
 | Typecheck source | `vp exec tsc --noEmit` |
 | Test with coverage (CI) | `vp test --coverage` |
 | Compile to `lib/` (CI) | `vp run build` |
@@ -20,7 +20,7 @@
 
 - Use Conventional Commits.
 - Use `.js` extensions in relative TypeScript imports, matching the existing ESM code.
-- Put tests in `test/*.test.ts`; reusable event payloads belong in `test/fixtures/`.
+- Put tests in `tests/*.test.ts`; reusable event payloads belong in `tests/fixtures/`.
 - Keep LLM integrations behind `LLMProvider` in `src/llm/provider.ts` and provider selection in `src/llm/factory.ts`.
 - Preserve per-step error isolation in `src/pipeline.ts`; one failed step must not block later steps.
 - Preserve input sanitization and prompt boundaries that treat issue/comment content as untrusted data.
@@ -33,8 +33,8 @@
 
 | Need | File |
 | --- | --- |
-| Setup and development | `README.md#development` |
-| Architecture | `README.md#architecture` |
+| Setup and development | `docs/development.md` |
+| Architecture | `docs/development.md#architecture` |
 | Configuration contract | `README.md#configuration`, `src/config/schema.ts` |
 | Action interface and runtime | `action.yml` |
 | CI checks | `.github/workflows/ci.yml` |

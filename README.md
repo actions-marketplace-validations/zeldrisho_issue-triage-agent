@@ -26,7 +26,7 @@ All in ~8 seconds, powered by your LLM of choice.
 
 ## Demo
 
-![Demo: Issue AI Agent classifying and replying to a new issue](docs/demo.gif)
+![Demo: Issue AI Agent classifying and replying to a new issue](.github/assets/demo.gif)
 
 1. **User opens an issue** — describes a login page crash
 2. **Bot classifies** — labels it `bug` / `priority: high` in ~8 seconds
@@ -200,38 +200,9 @@ At least one API key is required. If neither is set, the bot runs in **dev mode*
 | `labels-applied` | Comma-separated list of applied labels |
 | `reply-posted`   | Whether a reply comment was posted     |
 
-## Development
+## Contributing
 
-Use Vite+ and the latest Node.js LTS. Vite+ uses the pinned pnpm package manager.
-
-```bash
-vp install            # Install dependencies
-vp check              # Check formatting, lint, and types
-vp run build          # Compile TypeScript to lib/
-vp run bundle         # Bundle for GitHub Action (dist/index.js)
-vp test               # Run tests
-vp test --coverage    # Run tests with coverage
-vp run test:watch     # Watch mode
-vp run dev            # TypeScript watch mode
-```
-
-### Architecture
-
-```
-GitHub Action (issues.opened / issue_comment.created)
-  → loadConfig()    — Fetch .github/issue-ai.yml via GitHub API
-  → shouldExclude() — Check exclude rules
-  → classify        — LLM classifies the issue (category + priority)
-  → label           — Maps classification to repo labels via GitHub API
-  → duplicate       — Searches similar issues, LLM confirms duplicates
-  → reply           — Drafts and posts a contextual comment via LLM
-```
-
-Key design decisions:
-
-- **Stateless** — no database; reads config from each repo's `.github/issue-ai.yml`
-- **Error-resilient** — each pipeline step catches its own errors, so a classification failure doesn't block the reply
-- **Security-first** — input sanitization (zero-width chars, control chars, length limits) + explicit untrusted-data markers in prompts
+See the [development guide](docs/development.md), including the architecture overview.
 
 ## License
 
