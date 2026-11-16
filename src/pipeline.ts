@@ -139,9 +139,15 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
             actx.octokit,
             actx.logger,
           );
-          result.labelingStatus =
-            result.labelsApplied.length === labels.length ? "applied" : "partial";
-          log.info({ labels: result.labelsApplied }, "Labels applied");
+
+          if (labels.length > 0 && result.labelsApplied.length === 0) {
+            result.labelingStatus = "failed";
+            result.errors.push({ step: "label", message: "Failed to apply labels" });
+          } else {
+            result.labelingStatus =
+              result.labelsApplied.length === labels.length ? "applied" : "partial";
+            log.info({ labels: result.labelsApplied }, "Labels applied");
+          }
         } else {
           log.info("Labeling skipped by eligibility policy");
         }

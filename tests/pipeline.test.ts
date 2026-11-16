@@ -313,6 +313,29 @@ describe("runPipeline", () => {
     expect(actx.octokit.rest.issues.addLabels).not.toHaveBeenCalled();
   });
 
+  it("reports complete label failure without blocking replies", async () => {
+    const actx = createMockActionContext();
+    actx.octokit.rest.issues.addLabels.mockRejectedValue(new Error("label unavailable"));
+    const result = await runPipeline(actx);
+    expect(result.labelingStatus).toBe("failed");
+    expect(result.errors).toEqual(
+      expect.arrayContaining([expect.objectContaining({ step: "label" })]),
+    );
+    expect(result.replyPosted).toBe(true);
+  });
+
+  it("reports partially applied labels as partial", async () => {
+    const actx = createMockActionContext();
+    actx.octokit.rest.issues.addLabels
+      .mockRejectedValueOnce(new Error("bulk failed"))
+      .mockResolvedValueOnce({})
+      .mockRejectedValueOnce(new Error("label unavailable"));
+    const result = await runPipeline(actx);
+    expect(result.labelingStatus).toBe("partial");
+    expect(result.labelsApplied).toHaveLength(1);
+    expect(result.errors.filter((error) => error.step === "label")).toEqual([]);
+  });
+
   it("isolates a related pull request search failure from the reply", async () => {
     const { searchRelatedPullRequests } = await import("../src/github/search.js");
     vi.mocked(searchRelatedPullRequests).mockRejectedValueOnce(new Error("unavailable"));

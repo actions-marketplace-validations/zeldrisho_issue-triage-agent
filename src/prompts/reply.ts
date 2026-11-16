@@ -10,7 +10,7 @@ Guidelines for your reply:
 2. Be helpful and professional
 3. Based on the classification, follow the appropriate strategy. If classification is unavailable, do not assume a category or priority:
    - BUG: Acknowledge the report, ask for reproduction steps if missing, suggest checking known issues
-   - FEATURE: Acknowledge the request, ask about use case if unclear, note it will be reviewed
+   - FEATURE: Acknowledge the request, ask about use case if unclear
    - QUESTION: Provide a direct answer if possible, point to relevant docs
    - DOCS: Acknowledge the documentation gap, thank the reporter
    - DUPLICATE: Reference the specific related issues listed below (include links), suggest the reporter check those first

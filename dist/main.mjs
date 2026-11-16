@@ -78599,7 +78599,7 @@ Guidelines for your reply:
 2. Be helpful and professional
 3. Based on the classification, follow the appropriate strategy. If classification is unavailable, do not assume a category or priority:
    - BUG: Acknowledge the report, ask for reproduction steps if missing, suggest checking known issues
-   - FEATURE: Acknowledge the request, ask about use case if unclear, note it will be reviewed
+   - FEATURE: Acknowledge the request, ask about use case if unclear
    - QUESTION: Provide a direct answer if possible, point to relevant docs
    - DOCS: Acknowledge the documentation gap, thank the reporter
    - DUPLICATE: Reference the specific related issues listed below (include links), suggest the reporter check those first
@@ -79249,8 +79249,16 @@ async function runPipeline(actx) {
 			if (eligible) {
 				const labels = resolveLabels(result.classification, config);
 				result.labelsApplied = await applyLabels(actx.owner, actx.repo, actx.payload.issue.number, labels, actx.octokit, actx.logger);
-				result.labelingStatus = result.labelsApplied.length === labels.length ? "applied" : "partial";
-				log.info({ labels: result.labelsApplied }, "Labels applied");
+				if (labels.length > 0 && result.labelsApplied.length === 0) {
+					result.labelingStatus = "failed";
+					result.errors.push({
+						step: "label",
+						message: "Failed to apply labels"
+					});
+				} else {
+					result.labelingStatus = result.labelsApplied.length === labels.length ? "applied" : "partial";
+					log.info({ labels: result.labelsApplied }, "Labels applied");
+				}
 			} else log.info("Labeling skipped by eligibility policy");
 		} catch (error) {
 			result.labelingStatus = "failed";

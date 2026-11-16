@@ -122,7 +122,7 @@ If your provider exposes an Anthropic or OpenAI compatible API, point `llm-base-
 
 For compatible gateways, select the API protocol supported by the endpoint and set `llm.model` to a model ID available through that gateway. Selecting `openai` specifies the protocol, not necessarily the model provider.
 
-Provider selection uses the Action input first, then `llm.provider` in repository configuration, then available credentials (OpenAI before Anthropic), defaulting to Anthropic. The custom base URL applies to the selected provider. If no key is available for that provider, issue triage and comment replies are skipped without changing the issue.
+Provider selection uses the Action input first, then `llm.provider` in repository configuration, then available credentials (OpenAI before Anthropic), defaulting to Anthropic. The custom base URL applies to the selected provider. Starting with v0.5.0, if no key is available for that provider, issue triage and comment replies are skipped without changing the issue. Earlier versions, including the pinned v0.2.0 example, apply mock labels and post a mock reply for new issues.
 
 To select a model in GitHub settings, first update your workflow to a v0.3.0 or later release SHA; the v0.2.0 example above does not support `llm-model`. Then go to **Settings > Secrets and variables > Actions > Variables**, create a repository variable named `LLM_MODEL`, and pass it to the Action:
 
@@ -195,9 +195,9 @@ llm:
 | `features.media`             | `true`                   | Download supported GitHub images and send them to the model                                         |
 | `features.repositoryContext` | `true`                   | Allow replies to inspect repository files                                                           |
 | `label_mapping`              | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
-| `labeling.min_confidence`    | `0`                      | Minimum classification confidence for applying labels (0–1)                                         |
-| `labeling.skip_assigned`     | `false`                  | Skip labeling if the current issue has an assignee                                                  |
-| `labeling.skip_labeled`      | `false`                  | Skip labeling if the current issue already has labels                                               |
+| `labeling.min_confidence`    | `0`                      | Minimum classification confidence for applying labels (0–1); requires v0.5.0 or later               |
+| `labeling.skip_assigned`     | `false`                  | Skip labeling if the current issue has an assignee; requires v0.5.0 or later                        |
+| `labeling.skip_labeled`      | `false`                  | Skip labeling if the current issue already has labels; requires v0.5.0 or later                     |
 | `security.max_issue_length`  | `10000`                  | Truncate issue body beyond this length                                                              |
 | `exclude.labels`             | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
 | `exclude.users`              | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
@@ -234,7 +234,7 @@ Up to four attachments are checked, each limited to 4 MiB and 15 seconds per dow
 | `bot-login`         | No       | `github-actions[bot]`            | Login used to identify existing Action replies             |
 | `config-path`       | No       | `.github/issue-triage-agent.yml` | Path to config file in repo                                |
 
-At least one API key for the selected provider is required. Without one, the Action skips triage and does not modify the issue.
+At least one API key for the selected provider is required. Starting with v0.5.0, without one the Action skips triage and does not modify the issue.
 
 ### Outputs
 
