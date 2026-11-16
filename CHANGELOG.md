@@ -6,14 +6,14 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-### Fixed
+## [0.2.0] - 2026-11-16
 
-- Honor the Action provider input and apply custom endpoints to the selected provider.
-- Validate repository configuration before using it.
+### Added
 
-### Changed
+- Classify issues, apply labels, detect potential duplicates, and draft replies.
+- Respond to follow-up issue comments.
+- Configure features, labels, security limits, and LLM settings through `.github/issue-triage-agent.yml` or a custom configuration path.
+- Use Anthropic or OpenAI-compatible providers, including custom API endpoints.
 
-- Rename the Action and repository to Issue Triage Agent.
-- Rename the default repository configuration file to `.github/issue-triage-agent.yml`.
-
-[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/commits/main
+[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/zeldrisho/issue-triage-agent/releases/tag/v0.2.0
