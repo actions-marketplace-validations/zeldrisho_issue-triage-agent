@@ -1,4 +1,5 @@
 import { defineConfig } from "vite-plus";
+import { licensePlugin } from "rolldown-license-plugin";
 
 const agentAndVendorIgnores = [
   ".agent/**",
@@ -16,6 +17,32 @@ const agentAndVendorIgnores = [
 ];
 
 export default defineConfig({
+  pack: {
+    entry: ["src/main.ts"],
+    format: "esm",
+    platform: "node",
+    target: "node24",
+    deps: { alwaysBundle: [/.*/] },
+    shims: true,
+    sourcemap: true,
+    dts: false,
+    plugins: [
+      licensePlugin({
+        done(dependencies, context) {
+          context.emitFile({
+            type: "asset",
+            fileName: "licenses.txt",
+            source: dependencies
+              .map(({ name, version, license, licenseText }) =>
+                `${name}@${version} - ${license}\n${licenseText ?? ""}`.trim(),
+              )
+              .sort()
+              .join("\n\n"),
+          });
+        },
+      }),
+    ],
+  },
   staged: { "*": "vp check" },
   test: {
     include: ["tests/**/*.test.ts"],

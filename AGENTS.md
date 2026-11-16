@@ -27,6 +27,8 @@
 - Treat `dist/` as generated, tracked Action runtime files; regenerate the bundle with `vp run bundle`, not manual edits.
 - Source changes intended for the published Action need a refreshed `dist/` bundle; `vp run build` only emits to `lib/`.
 - Keep Action input/output changes aligned across `action.yml`, `src/main.ts`, and `README.md`.
+- Use a GitHub-supported explicit Node runtime in `action.yml`; CI's LTS version does not control it.
+- Record notable user-facing changes in `CHANGELOG.md` under Unreleased.
 - Keep configuration changes aligned across `src/config/schema.ts`, `src/config/loader.ts`, and `README.md`.
 
 ## References
@@ -38,4 +40,5 @@
 | Configuration contract | `README.md#configuration`, `src/config/schema.ts` |
 | Action interface and runtime | `action.yml` |
 | CI checks | `.github/workflows/ci.yml` |
+| Release process | `docs/releasing.md` |
 | Input sanitization and prompt safety | `src/sanitizer.ts`, `src/prompts/` |

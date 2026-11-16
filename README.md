@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Issue AI Agent
+# ⚡ Issue Triage Assistant
 
 **AI-powered GitHub Issue triage — classify, label, and reply automatically**
 
@@ -14,7 +14,7 @@ Forked from [alexyan0431/issue-ai-agent](https://github.com/alexyan0431/issue-ai
 
 ## What It Does
 
-When someone opens an issue in your repository, Issue AI Agent:
+When someone opens an issue in your repository, Issue Triage Assistant:
 
 1. **Classifies** the issue into a category (bug, feature, question, docs, duplicate, invalid, security)
 2. **Labels** it with matching labels and a priority level (critical, high, medium, low)
@@ -26,7 +26,7 @@ All in ~8 seconds, powered by your LLM of choice.
 
 ## Demo
 
-![Demo: Issue AI Agent classifying and replying to a new issue](.github/assets/demo.gif)
+![Demo: Issue Triage Assistant classifying and replying to a new issue](.github/assets/demo.gif)
 
 1. **User opens an issue** — describes a login page crash
 2. **Bot classifies** — labels it `bug` / `priority: high` in ~8 seconds
@@ -41,7 +41,7 @@ All in ~8 seconds, powered by your LLM of choice.
 Create `.github/workflows/issue-ai.yml` in your repository:
 
 ```yaml
-name: Issue AI Agent
+name: Issue Triage Assistant
 
 on:
   issues:

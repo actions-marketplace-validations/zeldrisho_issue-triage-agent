@@ -5,11 +5,11 @@
   "description": "AI-powered GitHub Issue triage and auto-reply Action",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/main.mjs",
   "scripts": {
     "prepare": "vp config --no-agent",
     "build": "tsc",
-    "bundle": "tsc && tsc --emitDeclarationOnly --outDir dist && ncc build lib/main.js --out dist --source-map --license licenses.txt",
+    "bundle": "tsc --noEmit && vp pack",
     "dev": "tsc --watch",
     "test": "vp test run",
     "test:watch": "vp test"
@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
-    "@vercel/ncc": "^0.45.0",
     "@vitest/coverage-v8": "catalog:",
+    "rolldown-license-plugin": "^3.0.15",
     "typescript": "^7.0.2",
     "vite": "catalog:",
     "vite-plus": "catalog:",

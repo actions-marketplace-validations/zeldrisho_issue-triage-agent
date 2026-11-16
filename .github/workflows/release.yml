@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v[0-9]*"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: voidzero-dev/setup-vp@cab1ab9eaff52d4857875f4f2c016e36af8f2c76 # v1.22.0
+        with:
+          node-version: lts
+          cache: true
+      - name: Verify tag and release notes
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          git merge-base --is-ancestor HEAD origin/main
+          python3 scripts/release-notes.py "$RELEASE_TAG" > "$RUNNER_TEMP/release-notes.md"
+      - run: vp check
+      - run: vp run build
+      - run: vp test --coverage
+      - name: Verify Action bundle
+        run: |
+          vp run bundle
+          test -z "$(git status --porcelain -- dist/)" || { git status --short -- dist/; exit 1; }
+
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_SHA: ${{ github.sha }}
+        run: |
+          test "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")" = "$RELEASE_SHA"
+          python3 scripts/release-notes.py "$RELEASE_TAG" > "$RUNNER_TEMP/release-notes.md"
+          gh release create "$RELEASE_TAG" --verify-tag --title "$RELEASE_TAG" --notes-file "$RUNNER_TEMP/release-notes.md"

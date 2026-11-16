@@ -1,4 +1,4 @@
-name: "Issue AI Agent"
+name: "Issue Triage Assistant"
 description: "AI-powered GitHub Issue triage: classify, label, detect duplicates, and reply"
 author: "zeldrisho"
 
@@ -41,4 +41,4 @@ outputs:
 
 runs:
   using: "node24"
-  main: "dist/index.js"
+  main: "dist/main.mjs"

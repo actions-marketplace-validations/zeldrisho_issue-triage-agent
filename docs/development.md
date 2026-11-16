@@ -6,7 +6,7 @@ Use Vite+ and the latest Node.js LTS. Vite+ uses the pinned pnpm package manager
 vp install            # Install dependencies
 vp check              # Check formatting, lint, and types
 vp run build          # Compile TypeScript to lib/
-vp run bundle         # Bundle for GitHub Action (dist/index.js)
+vp run bundle         # Bundle for GitHub Action (dist/main.mjs)
 vp test               # Run tests
 vp test --coverage    # Run tests with coverage
 vp run test:watch     # Watch mode
@@ -15,7 +15,7 @@ vp run dev            # TypeScript watch mode
 
 Tests and reusable fixtures live in `tests/`. Run a single test file with `vp test tests/classifier.test.ts`.
 
-The Action runs the generated, tracked `dist/` bundle. After changing runtime source, regenerate it with `vp run bundle`; `vp run build` only emits to `lib/`.
+The Action runs the generated, tracked `dist/` bundle. After changing runtime source, regenerate it with `vp run bundle`; `vp run build` only emits to `lib/`. Vite+ Pack bundles runtime dependencies and generates `dist/licenses.txt`.
 
 See the [user guide](../README.md) for configuration and usage.
 
