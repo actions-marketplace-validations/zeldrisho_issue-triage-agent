@@ -18,6 +18,7 @@
 
 ## Rules
 
+- Use Conventional Commits.
 - Use `.js` extensions in relative TypeScript imports, matching the existing ESM code.
 - Put tests in `test/*.test.ts`; reusable event payloads belong in `test/fixtures/`.
 - Keep LLM integrations behind `LLMProvider` in `src/llm/provider.ts` and provider selection in `src/llm/factory.ts`.
