@@ -77,6 +77,19 @@ describe("loadConfig", () => {
     }
   });
 
+  it("validates and loads labeling policy", async () => {
+    const config = await loadConfig(
+      "owner",
+      "repo",
+      octokitFor("labeling:\n  min_confidence: 0.8\n  skip_assigned: true\n  skip_labeled: true\n"),
+    );
+
+    expect(config.labeling).toEqual({ minConfidence: 0.8, skipAssigned: true, skipLabeled: true });
+    await expect(
+      loadConfig("owner", "repo", octokitFor("labeling:\n  min_confidence: 1.1\n")),
+    ).rejects.toThrow();
+  });
+
   it("allows repository context to be disabled", async () => {
     const config = await loadConfig(
       "owner",

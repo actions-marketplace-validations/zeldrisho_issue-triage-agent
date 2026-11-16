@@ -1,11 +1,19 @@
-import type { ActionContext, GitHubIssue, Logger, PipelineResult, RepoConfig } from "./types.js";
+import { z } from "zod";
+import type {
+  ActionContext,
+  GitHubIssue,
+  Logger,
+  PipelineResult,
+  RelatedIssue,
+  RepoConfig,
+} from "./types.js";
 import { createProvider } from "./llm/factory.js";
 import { loadConfig } from "./config/loader.js";
 import { sanitizeIssueBody, sanitizeIssueTitle } from "./sanitizer.js";
 import { classifyIssue } from "./classifier.js";
 import { draftReply } from "./replier.js";
 import { resolveLabels, applyLabels } from "./github/labels.js";
-import { searchSimilarIssues } from "./github/search.js";
+import { searchSimilarIssues, searchRelatedPullRequests } from "./github/search.js";
 import { detectDuplicates } from "./duplicate.js";
 import { processMedia } from "./media.js";
 import { repositoryTools } from "./github/repository-context.js";
@@ -33,6 +41,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
     classification: null,
     labelsApplied: [],
     replyPosted: false,
+    labelingStatus: "not-run",
     errors: [],
   };
 
@@ -69,10 +78,11 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
   const sanitizedBody = sanitizeIssueBody(issue.body, config);
 
   const llmClient = createProvider(config.llm.provider, log, actx.signal);
-  const devMode = !llmClient;
 
-  if (devMode) {
-    log.warn("No LLM API key configured — running in dev mode with mock responses");
+  if (!llmClient) {
+    log.warn("No LLM API key configured — skipping issue triage without making changes");
+
+    return result;
   }
 
   const media =
@@ -84,40 +94,65 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
 
   if (config.features.classify) {
     try {
-      if (devMode || !llmClient) {
-        result.classification = {
-          category: "bug" as const,
-          priority: "medium" as const,
-          confidence: 0.5,
-          summary: `[DEV MODE] ${issue.title}`,
-          suggestedLabels: ["bug"],
-          reasoning: "Mock classification (no LLM API key configured)",
-        };
-        log.info({ issueNumber: issue.number, devMode: true }, "Mock classification applied");
-      } else {
-        result.classification = await classifyIssue(
-          issue,
-          sanitizedBody,
-          sanitizedTitle,
-          config,
-          llmClient,
-          log,
-          media,
-        );
-      }
+      result.classification = await classifyIssue(
+        issue,
+        sanitizedBody,
+        sanitizedTitle,
+        config,
+        llmClient,
+        log,
+        media,
+      );
 
       try {
-        const labels = resolveLabels(result.classification, config);
-        result.labelsApplied = await applyLabels(
-          actx.owner,
-          actx.repo,
-          actx.payload.issue.number,
-          labels,
-          actx.octokit,
-          actx.logger,
-        );
-        log.info({ labels: result.labelsApplied }, "Labels applied");
+        let eligible = result.classification.confidence >= config.labeling.minConfidence;
+
+        if (!eligible) result.labelingStatus = "skipped-confidence";
+
+        if (eligible && (config.labeling.skipAssigned || config.labeling.skipLabeled)) {
+          const current = await actx.octokit.rest.issues.get({
+            owner: actx.owner,
+            repo: actx.repo,
+            issue_number: issue.number,
+          });
+
+          const state = z
+            .object({ assignees: z.array(z.unknown()), labels: z.array(z.unknown()) })
+            .parse(current.data);
+
+          if (config.labeling.skipAssigned && state.assignees.length > 0) {
+            result.labelingStatus = "skipped-assigned";
+            eligible = false;
+          } else if (config.labeling.skipLabeled && state.labels.length > 0) {
+            result.labelingStatus = "skipped-labeled";
+            eligible = false;
+          }
+        }
+
+        if (eligible) {
+          const labels = resolveLabels(result.classification, config);
+          result.labelsApplied = await applyLabels(
+            actx.owner,
+            actx.repo,
+            actx.payload.issue.number,
+            labels,
+            actx.octokit,
+            actx.logger,
+          );
+
+          if (labels.length > 0 && result.labelsApplied.length === 0) {
+            result.labelingStatus = "failed";
+            result.errors.push({ step: "label", message: "Failed to apply labels" });
+          } else {
+            result.labelingStatus =
+              result.labelsApplied.length === labels.length ? "applied" : "partial";
+            log.info({ labels: result.labelsApplied }, "Labels applied");
+          }
+        } else {
+          log.info("Labeling skipped by eligibility policy");
+        }
       } catch (error) {
+        result.labelingStatus = "failed";
         result.errors.push({
           step: "label",
           message: "Failed to apply labels",
@@ -135,6 +170,8 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
 
   actx.signal?.throwIfAborted();
 
+  let relatedIssues: RelatedIssue[] = [];
+
   if (config.features.duplicateSearch && llmClient) {
     try {
       const candidates = await searchSimilarIssues(
@@ -150,18 +187,38 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
           { candidateCount: candidates.length },
           "Found similar issues, checking for duplicates",
         );
-        const duplicates = await detectDuplicates(issue, candidates, llmClient, config, log);
+        relatedIssues = await detectDuplicates(issue, candidates, llmClient, config, log);
 
         if (result.classification) {
-          result.classification.relatedIssues = duplicates;
+          result.classification.relatedIssues = relatedIssues;
         }
 
-        log.info({ duplicateCount: duplicates.length }, "Duplicate detection completed");
+        log.info({ duplicateCount: relatedIssues.length }, "Duplicate detection completed");
       }
     } catch (error) {
       result.errors.push({
         step: "duplicate",
         message: "Duplicate detection failed",
+        cause: error instanceof Error ? error : new Error(String(error)),
+      });
+    }
+  }
+
+  let relatedPullRequests: RelatedIssue[] = [];
+
+  if (config.features.duplicateSearch && config.features.reply) {
+    try {
+      relatedPullRequests = await searchRelatedPullRequests(
+        actx.owner,
+        actx.repo,
+        sanitizedTitle,
+        issue.number,
+        actx.octokit,
+      );
+    } catch (error) {
+      result.errors.push({
+        step: "duplicate",
+        message: "Related pull request search failed",
         cause: error instanceof Error ? error : new Error(String(error)),
       });
     }
@@ -179,35 +236,19 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
         return result;
       }
 
-      let replyBody: string;
-
-      if (devMode || !llmClient) {
-        const classification = result.classification ?? {
-          category: "question" as const,
-          priority: "medium" as const,
-        };
-
-        replyBody = [
-          `**[DEV MODE]** This is a mock reply (no LLM API key configured).\n`,
-          `Classification: **${classification.category}** (priority: ${classification.priority})`,
-          "",
-          "Once configured with an API key, this bot will generate contextual replies.",
-          "",
-          "-- Issue Triage Agent :robot:",
-        ].join("\n");
-      } else {
-        replyBody = await draftReply(
-          issue,
-          result.classification,
-          sanitizedBody,
-          sanitizedTitle,
-          config,
-          llmClient,
-          log,
-          media,
-          config.features.repositoryContext ? repositoryTools(actx) : undefined,
-        );
-      }
+      const replyBody = await draftReply(
+        issue,
+        result.classification,
+        sanitizedBody,
+        sanitizedTitle,
+        config,
+        llmClient,
+        log,
+        media,
+        config.features.repositoryContext ? repositoryTools(actx) : undefined,
+        relatedIssues,
+        relatedPullRequests,
+      );
 
       actx.signal?.throwIfAborted();
       await actx.octokit.rest.issues.createComment({

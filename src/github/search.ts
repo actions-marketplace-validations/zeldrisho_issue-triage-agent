@@ -28,10 +28,40 @@ export async function searchSimilarIssues(
       (item: { number: number; pull_request?: unknown }) =>
         item.number !== issueNumber && !item.pull_request,
     )
-    .map((item: { number: number; title: string; html_url: string }) => ({
+    .map((item: { number: number; title: string; html_url: string; body?: string | null }) => ({
       number: item.number,
       title: item.title,
       url: item.html_url,
+      body: (item.body ?? "").slice(0, 2000),
+    }));
+}
+
+export async function searchRelatedPullRequests(
+  owner: string,
+  repo: string,
+  title: string,
+  issueNumber: number,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  octokit: any,
+): Promise<RelatedIssue[]> {
+  const query = buildSearchQuery(title, owner, repo).replace("is:issue", "is:pr is:open");
+
+  if (!query.split("in:title ")[1]?.trim()) return [];
+
+  const response = await octokit.rest.search.issuesAndPullRequests({
+    q: query,
+    per_page: 5,
+    sort: "updated",
+    order: "desc",
+  });
+
+  return response.data.items
+    .filter((item: { number: number }) => item.number !== issueNumber)
+    .map((item: { number: number; title: string; html_url: string; body?: string | null }) => ({
+      number: item.number,
+      title: item.title,
+      url: item.html_url,
+      body: (item.body ?? "").slice(0, 2000),
     }));
 }
 
@@ -63,5 +93,5 @@ export function buildSearchQuery(title: string, owner: string, repo: string): st
     .slice(0, 5)
     .join(" ");
 
-  return `repo:${owner}/${repo} is:issue is:open in:title ${words}`;
+  return `repo:${owner}/${repo} is:issue in:title ${words}`;
 }

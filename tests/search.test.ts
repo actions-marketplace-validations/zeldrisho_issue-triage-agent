@@ -1,5 +1,39 @@
-import { describe, it, expect } from "vite-plus/test";
-import { buildSearchQuery } from "../src/github/search.js";
+import { describe, it, expect, vi } from "vite-plus/test";
+import { buildSearchQuery, searchRelatedPullRequests } from "../src/github/search.js";
+
+describe("searchRelatedPullRequests", () => {
+  it("searches open PRs in the same repository and bounds descriptions", async () => {
+    const search = vi.fn().mockResolvedValue({
+      data: {
+        items: [
+          {
+            number: 4,
+            title: "Fix crash",
+            html_url: "https://github.com/owner/repo/pull/4",
+            body: "x".repeat(3000),
+          },
+        ],
+      },
+    });
+
+    const result = await searchRelatedPullRequests("owner", "repo", "App crashes on save", 1, {
+      rest: { search: { issuesAndPullRequests: search } },
+    });
+
+    expect(search.mock.calls[0][0].q).toContain("repo:owner/repo is:pr is:open");
+    expect(result[0].body).toHaveLength(2000);
+  });
+
+  it("does not search without usable keywords", async () => {
+    const search = vi.fn();
+    expect(
+      await searchRelatedPullRequests("owner", "repo", "a", 1, {
+        rest: { search: { issuesAndPullRequests: search } },
+      }),
+    ).toEqual([]);
+    expect(search).not.toHaveBeenCalled();
+  });
+});
 
 describe("buildSearchQuery", () => {
   it("builds query with keyword extraction", () => {
@@ -7,7 +41,7 @@ describe("buildSearchQuery", () => {
 
     expect(query).toContain("repo:owner/repo");
     expect(query).toContain("is:issue");
-    expect(query).toContain("is:open");
+    expect(query).not.toContain("is:open");
     expect(query).toContain("in:title");
   });
 

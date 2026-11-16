@@ -60,7 +60,8 @@ describe("action entrypoint", () => {
       classification: null,
       labelsApplied: [],
       replyPosted: false,
-      errors: [],
+      labelingStatus: "skipped-confidence",
+      errors: [{ step: "duplicate", message: "Search failed" }],
     });
   });
   afterEach(() => vi.unstubAllEnvs());
@@ -72,6 +73,14 @@ describe("action entrypoint", () => {
     expect(process.env.LLM_MODEL).toBe("custom-model");
     expect(mocks.setSecret).toHaveBeenCalledWith("token");
     expect(mocks.setSecret).toHaveBeenCalledWith("secret");
+    expect(mocks.setOutput).toHaveBeenCalledWith(
+      "triage-report",
+      expect.stringContaining('"labelingStatus":"skipped-confidence"'),
+    );
+    expect(mocks.setOutput).toHaveBeenCalledWith(
+      "triage-report",
+      expect.stringContaining('"message":"Search failed"'),
+    );
     expect(mocks.runPipeline).toHaveBeenCalledWith(
       expect.objectContaining({
         payload: expect.objectContaining({ issue: expect.objectContaining({ user: null }) }),

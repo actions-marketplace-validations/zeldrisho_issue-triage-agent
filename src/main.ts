@@ -145,6 +145,18 @@ async function main(): Promise<void> {
       core.setOutput("priority", result.classification?.priority ?? "");
       core.setOutput("labels-applied", result.labelsApplied.join(","));
       core.setOutput("reply-posted", String(result.replyPosted));
+      core.setOutput(
+        "triage-report",
+        JSON.stringify({
+          category: result.classification?.category ?? null,
+          priority: result.classification?.priority ?? null,
+          confidence: result.classification?.confidence ?? null,
+          labelsApplied: result.labelsApplied,
+          labelingStatus: result.labelingStatus,
+          replyPosted: result.replyPosted,
+          errors: result.errors.map(({ step, message }) => ({ step, message })),
+        }),
+      );
 
       for (const error of result.errors) {
         core.error(`Pipeline error (${error.step}): ${error.message}`);

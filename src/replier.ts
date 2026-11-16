@@ -1,5 +1,5 @@
 import type { Logger } from "./types.js";
-import type { GitHubIssue, IssueClassification, RepoConfig } from "./types.js";
+import type { GitHubIssue, IssueClassification, RelatedIssue, RepoConfig } from "./types.js";
 import type { LLMProvider } from "./llm/provider.js";
 import type { MediaResult } from "./media.js";
 import type { RepositoryTools } from "./llm/repository-tools.js";
@@ -18,6 +18,8 @@ export async function draftReply(
   logger: Logger,
   media?: MediaResult,
   repositoryTools?: RepositoryTools,
+  relatedIssues?: RelatedIssue[],
+  relatedPullRequests?: RelatedIssue[],
 ): Promise<string> {
   const userMessage = buildReplyUserMessage(
     sanitizedTitle,
@@ -25,7 +27,8 @@ export async function draftReply(
     classification?.category ?? "unavailable",
     classification?.priority ?? "unavailable",
     issue.labels.map((l) => l.name),
-    classification?.relatedIssues,
+    relatedIssues ?? classification?.relatedIssues,
+    relatedPullRequests,
   );
 
   logger.info({ issueNumber: issue.number }, "Drafting reply");

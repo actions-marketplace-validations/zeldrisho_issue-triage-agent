@@ -18,6 +18,13 @@ const configSchema = z.object({
     })
     .optional(),
   label_mapping: z.record(z.string(), z.array(z.string())).optional(),
+  labeling: z
+    .object({
+      min_confidence: z.number().min(0).max(1).optional(),
+      skip_assigned: z.boolean().optional(),
+      skip_labeled: z.boolean().optional(),
+    })
+    .optional(),
   security: z.object({ max_issue_length: z.number().int().positive().optional() }).optional(),
   exclude: z
     .object({ labels: z.array(z.string()).optional(), users: z.array(z.string()).optional() })
@@ -90,6 +97,11 @@ export async function loadConfig(
         repoConfig.features?.repositoryContext ?? DEFAULT_CONFIG.features.repositoryContext,
     },
     labelMapping: repoConfig.label_mapping ?? DEFAULT_CONFIG.labelMapping,
+    labeling: {
+      minConfidence: repoConfig.labeling?.min_confidence ?? DEFAULT_CONFIG.labeling.minConfidence,
+      skipAssigned: repoConfig.labeling?.skip_assigned ?? DEFAULT_CONFIG.labeling.skipAssigned,
+      skipLabeled: repoConfig.labeling?.skip_labeled ?? DEFAULT_CONFIG.labeling.skipLabeled,
+    },
     security: {
       maxIssueLength:
         repoConfig.security?.max_issue_length ?? DEFAULT_CONFIG.security.maxIssueLength,
