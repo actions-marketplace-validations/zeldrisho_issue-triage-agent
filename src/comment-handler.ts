@@ -91,7 +91,7 @@ export async function handleComment(actx: ActionContext): Promise<void> {
           : ""),
       mediaMessage(userMessage, media),
       config.llm.maxTokens,
-      repositoryTools(actx),
+      config.features.repositoryContext ? repositoryTools(actx) : undefined,
     );
 
     let replyText = response.text.trim();

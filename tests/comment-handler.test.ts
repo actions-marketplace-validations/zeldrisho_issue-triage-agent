@@ -94,6 +94,31 @@ describe("handleComment", () => {
     delete process.env.OPENAI_API_KEY;
   });
 
+  it.each([true, false])(
+    "honors repository context setting for comment replies: %s",
+    async (enabled) => {
+      const { loadConfig } = await import("../src/config/loader.js");
+      const { createProvider } = await import("../src/llm/factory.js");
+      vi.mocked(loadConfig).mockResolvedValueOnce({
+        ...DEFAULT_CONFIG,
+        features: { ...DEFAULT_CONFIG.features, repositoryContext: enabled },
+      });
+
+      const complete = vi
+        .fn()
+        .mockResolvedValue({ text: "reply", usage: { inputTokens: 0, outputTokens: 0 } });
+
+      const completeWithRepository = vi
+        .fn()
+        .mockResolvedValue({ text: "reply", usage: { inputTokens: 0, outputTokens: 0 } });
+
+      vi.mocked(createProvider).mockReturnValueOnce({ complete, completeWithRepository });
+      await handleComment(createMockActionContext());
+      expect(completeWithRepository).toHaveBeenCalledTimes(enabled ? 1 : 0);
+      expect(complete).toHaveBeenCalledTimes(enabled ? 0 : 1);
+    },
+  );
+
   it("propagates configuration errors", async () => {
     const { loadConfig } = await import("../src/config/loader.js");
     vi.mocked(loadConfig).mockRejectedValueOnce(new Error("invalid config"));

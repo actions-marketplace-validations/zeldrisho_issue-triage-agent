@@ -43,6 +43,7 @@ export interface RepoConfig {
     duplicateSearch: boolean;
     commentReply: boolean;
     media: boolean;
+    repositoryContext: boolean;
   };
   labelMapping: Record<string, string[]>;
   security: {

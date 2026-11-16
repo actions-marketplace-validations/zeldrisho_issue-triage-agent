@@ -205,7 +205,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
           llmClient,
           log,
           media,
-          repositoryTools(actx),
+          config.features.repositoryContext ? repositoryTools(actx) : undefined,
         );
       }
 

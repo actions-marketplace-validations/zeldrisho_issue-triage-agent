@@ -154,6 +154,7 @@ features:
   duplicateSearch: true # Detect duplicate issues
   commentReply: true # Reply to follow-up comments
   media: true # Analyze supported GitHub-hosted images
+  repositoryContext: true # Allow replies to inspect repository files
 
 label_mapping:
   bug: ["bug"]
@@ -179,29 +180,30 @@ llm:
 
 ### Config Reference
 
-| Key                         | Default                  | Description                                                                                         |
-| --------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------- |
-| `enabled`                   | `true`                   | Master on/off switch                                                                                |
-| `features.classify`         | `true`                   | Enable issue classification + labeling                                                              |
-| `features.reply`            | `true`                   | Enable AI-drafted reply comments                                                                    |
-| `features.duplicateSearch`  | `true`                   | Search for duplicate issues and link them                                                           |
-| `features.commentReply`     | `true`                   | Reply to follow-up comments on issues                                                               |
-| `features.media`            | `true`                   | Download supported GitHub images and send them to the model                                         |
-| `label_mapping`             | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
-| `security.max_issue_length` | `10000`                  | Truncate issue body beyond this length                                                              |
-| `exclude.labels`            | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
-| `exclude.users`             | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
-| `llm.provider`              | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                           |
-| `llm.model`                 | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
-| `llm.max_tokens`            | `2048`                   | Max tokens per LLM response (1–8192)                                                                |
+| Key                          | Default                  | Description                                                                                         |
+| ---------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------- |
+| `enabled`                    | `true`                   | Master on/off switch                                                                                |
+| `features.classify`          | `true`                   | Enable issue classification + labeling                                                              |
+| `features.reply`             | `true`                   | Enable AI-drafted reply comments                                                                    |
+| `features.duplicateSearch`   | `true`                   | Search for duplicate issues and link them                                                           |
+| `features.commentReply`      | `true`                   | Reply to follow-up comments on issues                                                               |
+| `features.media`             | `true`                   | Download supported GitHub images and send them to the model                                         |
+| `features.repositoryContext` | `true`                   | Allow replies to inspect repository files                                                           |
+| `label_mapping`              | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
+| `security.max_issue_length`  | `10000`                  | Truncate issue body beyond this length                                                              |
+| `exclude.labels`             | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
+| `exclude.users`              | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
+| `llm.provider`               | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                           |
+| `llm.model`                  | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
+| `llm.max_tokens`             | `2048`                   | Max tokens per LLM response (1–8192)                                                                |
 
 ### Repository context
 
-Starting with v0.4.0, repository tools are enabled by default for initial and follow-up replies. The model can list repository paths, search the GitHub code index, and read text files from the default branch at a fixed commit using the GitHub API. It may read project guidance such as `AGENTS.md` when relevant; files are not loaded automatically. Search results may be stale or incomplete and must be verified against file contents. Files selected by the model are sent to the configured LLM provider, including files in private repositories. The Action can read any regular text file within the limits below, but cannot execute commands or browse the web. A limited review cannot establish conclusions about the entire repository. The token needs `contents: read`.
+Starting with v0.4.0, repository tools are enabled by default for initial and follow-up replies. Set `features.repositoryContext: false` to disable repository access. The model can list repository paths, search the GitHub code index, and read text files from the default branch at a fixed commit using the GitHub API. It may read project guidance such as `AGENTS.md` when relevant; files are not loaded automatically. Search results may be stale or incomplete and must be verified against file contents. Files selected by the model are sent to the configured LLM provider, including files in private repositories. The Action can read any regular text file within the limits below, but cannot execute commands or browse the web. A limited review cannot establish conclusions about the entire repository. The token needs `contents: read`.
 
 Repository files may be changed by contributors or contain embedded third-party material. Review who can modify the default branch and its instructions before enabling repository access; issue and comment content remains untrusted.
 
-Repository access is limited to 40 tool calls, 1,000,000 bytes per file, 12,000 characters per read, 240,000 total returned file bytes, and eight tool rounds per reply. Each Action invocation has a 180-second deadline. Provider requests also time out after 60 seconds and retry eligible failures once. Files with invalid UTF-8 or binary content are skipped. The GitHub tree API can return an incomplete recursive listing for large repositories; the model can list directories individually and read files by path using bounded subtree traversal. Model and gateway support for tool calling is required. The model may quote repository content in its reply, so do not enable this Action where issue or comment authors should not be able to request repository contents.
+Repository access is limited to 40 tool calls, 1,000,000 bytes per file, 12,000 characters per read, 240,000 total returned file bytes, and eight tool rounds per reply. Each Action invocation has a 180-second deadline. Provider requests also time out after 60 seconds and retry eligible failures once. Files with invalid UTF-8 or binary content are skipped. The GitHub tree API can return an incomplete recursive listing for large repositories; the model can list directories individually and read files by path using bounded subtree traversal. When a model or gateway explicitly rejects tool calling as unsupported, replies fall back to a request without repository tools. Other provider errors are not retried as tool incompatibility. The model may quote repository content in its reply, so do not enable this Action where issue or comment authors should not be able to request repository contents.
 
 ### Attachments
 

@@ -14,6 +14,7 @@ const configSchema = z.object({
       duplicateSearch: z.boolean().optional(),
       commentReply: z.boolean().optional(),
       media: z.boolean().optional(),
+      repositoryContext: z.boolean().optional(),
     })
     .optional(),
   label_mapping: z.record(z.string(), z.array(z.string())).optional(),
@@ -85,6 +86,8 @@ export async function loadConfig(
         repoConfig.features?.duplicateSearch ?? DEFAULT_CONFIG.features.duplicateSearch,
       commentReply: repoConfig.features?.commentReply ?? DEFAULT_CONFIG.features.commentReply,
       media: repoConfig.features?.media ?? DEFAULT_CONFIG.features.media,
+      repositoryContext:
+        repoConfig.features?.repositoryContext ?? DEFAULT_CONFIG.features.repositoryContext,
     },
     labelMapping: repoConfig.label_mapping ?? DEFAULT_CONFIG.labelMapping,
     security: {

@@ -111,6 +111,56 @@ it("falls back to text if each image is rejected", async () => {
   expect(complete.mock.calls[3][2][0].images).toBeUndefined();
 });
 
+it("falls back without tools for explicit tool incompatibility and preserves images", async () => {
+  const completeWithRepository = vi
+    .fn()
+    .mockRejectedValue(Object.assign(new Error("model does not support tools"), { status: 400 }));
+
+  const complete = vi
+    .fn()
+    .mockResolvedValue({ text: "ok", usage: { inputTokens: 0, outputTokens: 0 } });
+
+  const message = {
+    role: "user" as const,
+    content: "hi",
+    images: [{ mediaType: "image/png" as const, data: "YWJj" }],
+  };
+
+  await completeWithMediaFallback(
+    { complete, completeWithRepository },
+    "model",
+    "system",
+    message,
+    100,
+    { run: vi.fn() },
+  );
+  expect(complete).toHaveBeenCalledWith(
+    "model",
+    expect.stringContaining("Repository tools are unavailable"),
+    [message],
+    100,
+  );
+});
+
+it("does not retry unrelated tool errors", async () => {
+  const completeWithRepository = vi
+    .fn()
+    .mockRejectedValue(Object.assign(new Error("invalid tool schema"), { status: 400 }));
+
+  const complete = vi.fn();
+  await expect(
+    completeWithMediaFallback(
+      { complete, completeWithRepository },
+      "model",
+      "system",
+      { role: "user", content: "hi" },
+      100,
+      { run: vi.fn() },
+    ),
+  ).rejects.toThrow("invalid tool schema");
+  expect(complete).not.toHaveBeenCalled();
+});
+
 it("does not retry generic provider failures", async () => {
   const complete = vi.fn().mockRejectedValue(new Error("network failure"));
 

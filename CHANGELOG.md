@@ -11,7 +11,7 @@ follow [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Analyze supported GitHub-hosted issue and comment images with vision-capable models.
-- Allow issue and follow-up replies to inspect repository files using bounded, read-only GitHub API tools.
+- Allow issue and follow-up replies to inspect repository files using bounded, read-only GitHub API tools, with a configuration option to disable access.
 
 ### Fixed
 
@@ -21,6 +21,7 @@ follow [Semantic Versioning](https://semver.org/).
 - Bound Action runtime, token settings, and image-fallback retries; allow bounded subtree traversal for truncated Git trees.
 - Prioritize follow-up comment images, respect text limits during attachment discovery, and isolate provider-rejected images even when image probes reach the output limit.
 - Preserve indexed search results when repository trees are truncated, with file reads verified against the selected commit.
+- Fall back to replies without repository tools when a provider explicitly rejects tool calling.
 
 ## [0.3.0] - 2026-11-16
 

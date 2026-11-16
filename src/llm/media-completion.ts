@@ -24,10 +24,34 @@ export async function completeWithMediaFallback(
   maxTokens: number,
   tools?: RepositoryTools,
 ): Promise<LLMResponse> {
-  const complete = (input: LLMMessage) =>
-    tools && provider.completeWithRepository
-      ? provider.completeWithRepository(model, system, input, tools, maxTokens)
-      : provider.complete(model, system, [input], maxTokens);
+  const complete = async (input: LLMMessage) => {
+    if (tools && provider.completeWithRepository) {
+      try {
+        return await provider.completeWithRepository(model, system, input, tools, maxTokens);
+      } catch (error) {
+        const failure = z
+          .object({ status: z.union([z.literal(400), z.literal(422)]), message: z.string() })
+          .safeParse(error);
+
+        if (
+          !failure.success ||
+          !/\btools?\b|function.calling/i.test(failure.data.message) ||
+          !/unsupported|not support|does not support|not available|unknown parameter|unrecognized|not allowed/i.test(
+            failure.data.message,
+          )
+        )
+          throw error;
+      }
+    }
+
+    return provider.complete(
+      model,
+      system +
+        "\nRepository tools are unavailable; do not claim to have inspected repository files.",
+      [input],
+      maxTokens,
+    );
+  };
 
   const kind = (error: Error): "unsupported" | "invalid" | "other" => {
     const parsed = z.object({ status: z.literal(400), message: z.string() }).safeParse(error);
