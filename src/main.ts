@@ -54,6 +54,18 @@ const eventPayloadSchema = z.object({
 
 async function main(): Promise<void> {
   const token = core.getInput("github-token") || process.env.GITHUB_TOKEN;
+  const anthropicKey = core.getInput("anthropic-api-key");
+  const openaiKey = core.getInput("openai-api-key");
+
+  for (const secret of [
+    token,
+    anthropicKey,
+    openaiKey,
+    process.env.ANTHROPIC_API_KEY,
+    process.env.OPENAI_API_KEY,
+  ]) {
+    if (secret) core.setSecret(secret);
+  }
 
   if (!token) {
     core.setFailed("github-token input or GITHUB_TOKEN env var is required");
@@ -61,8 +73,6 @@ async function main(): Promise<void> {
     return;
   }
 
-  const anthropicKey = core.getInput("anthropic-api-key");
-  const openaiKey = core.getInput("openai-api-key");
   const llmProvider = core.getInput("llm-provider");
   const configPath = core.getInput("config-path");
 

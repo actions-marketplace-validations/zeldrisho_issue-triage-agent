@@ -30,13 +30,13 @@ inputs:
 
 outputs:
   category:
-    description: "Classified issue category"
+    description: "Classified issue category (issues events only)"
   priority:
-    description: "Classified issue priority"
+    description: "Classified issue priority (issues events only)"
   labels-applied:
-    description: "Comma-separated list of applied labels"
+    description: "Comma-separated list of applied labels (issues events only)"
   reply-posted:
-    description: "Whether a reply comment was posted"
+    description: "Whether a reply comment was posted (issues events only)"
 
 runs:
   using: "node24"

@@ -16501,6 +16501,38 @@ var ExitCode;
 	ExitCode[ExitCode["Failure"] = 1] = "Failure";
 })(ExitCode || (ExitCode = {}));
 /**
+* Registers a secret which will get masked from logs
+*
+* @param secret - Value of the secret to be masked
+* @remarks
+* This function instructs the Actions runner to mask the specified value in any
+* logs produced during the workflow run. Once registered, the secret value will
+* be replaced with asterisks (***) whenever it appears in console output, logs,
+* or error messages.
+*
+* This is useful for protecting sensitive information such as:
+* - API keys
+* - Access tokens
+* - Authentication credentials
+* - URL parameters containing signatures (SAS tokens)
+*
+* Note that masking only affects future logs; any previous appearances of the
+* secret in logs before calling this function will remain unmasked.
+*
+* @example
+* ```typescript
+* // Register an API token as a secret
+* const apiToken = "abc123xyz456";
+* setSecret(apiToken);
+*
+* // Now any logs containing this value will show *** instead
+* console.log(`Using token: ${apiToken}`); // Outputs: "Using token: ***"
+* ```
+*/
+function setSecret(secret) {
+	issueCommand("add-mask", {}, secret);
+}
+/**
 * Gets the value of an input.
 * Unless trimWhitespace is set to false in InputOptions, the value is also trimmed.
 * Returns an empty string if the value is not defined.
@@ -78705,12 +78737,19 @@ const eventPayloadSchema = object({
 });
 async function main() {
 	const token = getInput("github-token") || process.env.GITHUB_TOKEN;
+	const anthropicKey = getInput("anthropic-api-key");
+	const openaiKey = getInput("openai-api-key");
+	for (const secret of [
+		token,
+		anthropicKey,
+		openaiKey,
+		process.env.ANTHROPIC_API_KEY,
+		process.env.OPENAI_API_KEY
+	]) if (secret) setSecret(secret);
 	if (!token) {
 		setFailed("github-token input or GITHUB_TOKEN env var is required");
 		return;
 	}
-	const anthropicKey = getInput("anthropic-api-key");
-	const openaiKey = getInput("openai-api-key");
 	const llmProvider = getInput("llm-provider");
 	const configPath = getInput("config-path");
 	if (anthropicKey) process.env.ANTHROPIC_API_KEY = anthropicKey;

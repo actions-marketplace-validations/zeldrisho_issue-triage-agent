@@ -6,6 +6,14 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Document that Action outputs are available for issue events only.
+
+### Security
+
+- Register supplied GitHub and LLM credentials for masking in workflow logs.
+
 ## [0.2.0] - 2026-11-16
 
 ### Added

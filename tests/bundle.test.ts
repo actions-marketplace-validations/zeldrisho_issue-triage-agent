@@ -99,11 +99,11 @@ async function runBundle(provider: "anthropic" | "openai", eventName: "issues" |
     GITHUB_EVENT_PATH: eventPath,
     GITHUB_EVENT_NAME: eventName,
     GITHUB_REPOSITORY: "owner/repo",
-    GITHUB_TOKEN: "test",
+    GITHUB_TOKEN: "github-test-token",
     "INPUT_LLM-PROVIDER": provider,
     "INPUT_LLM-BASE-URL": url,
-    "INPUT_ANTHROPIC-API-KEY": "test",
-    "INPUT_OPENAI-API-KEY": "test",
+    "INPUT_ANTHROPIC-API-KEY": "anthropic-test-key",
+    "INPUT_OPENAI-API-KEY": "openai-test-key",
   };
 
   try {
@@ -134,6 +134,11 @@ async function runBundle(provider: "anthropic" | "openai", eventName: "issues" |
 
     expect(result.code, result.output).toBe(0);
     expect(result.output).not.toContain("::error::");
+
+    for (const secret of ["github-test-token", "anthropic-test-key", "openai-test-key"]) {
+      expect(result.output).toContain(`::add-mask::${secret}`);
+    }
+
     expect(requests).toContain("POST /repos/owner/repo/issues/1/comments");
 
     if (eventName === "issues") {

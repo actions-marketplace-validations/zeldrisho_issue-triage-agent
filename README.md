@@ -204,6 +204,8 @@ At least one API key is required. If neither is set, the bot runs in **dev mode*
 | `labels-applied` | Comma-separated list of applied labels |
 | `reply-posted`   | Whether a reply comment was posted     |
 
+Outputs are set for `issues` events only; `issue_comment` events do not set outputs.
+
 ## Contributing
 
 See the [development guide](docs/development.md), including the architecture overview.
