@@ -30,10 +30,9 @@ tagged commit; a successful TypeScript build alone is not enough.
    changes with the version and changelog changes in a pull request. Run the
    bundle again and confirm `git status --short -- dist/` is empty. Merge the
    pull request after CI passes, and verify CI on the merged commit.
-5. Update the README usage examples to pin the release commit's full SHA.
-   Avoid a circular dependency between the documentation commit and its own
-   hash: update the examples in a follow-up commit after the release, or pin
-   the previously released commit and update them in the next change.
+5. README usage pins are examples and do not need updating for every release.
+   If updating them, pin an existing release commit; a release commit cannot
+   contain its own SHA.
 
 ## Publish
 

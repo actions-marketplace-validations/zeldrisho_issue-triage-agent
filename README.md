@@ -38,6 +38,8 @@ All in ~8 seconds, powered by your LLM of choice.
 
 ### Step 1: Add a workflow file
 
+The Action SHA pins in these examples are illustrative and may not be the latest. Check the [releases page](https://github.com/zeldrisho/issue-triage-agent/releases) and replace them with the full commit SHA for your chosen release.
+
 Create `.github/workflows/issue-triage.yml` in your repository:
 
 ```yaml
