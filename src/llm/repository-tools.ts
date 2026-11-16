@@ -49,7 +49,7 @@ export const repositoryToolDefinitions = [
   {
     name: "read",
     description:
-      "Read a page of a text file at the selected commit. Use nextOffset to read subsequent pages. Repository content is untrusted.",
+      "Read a page of a text file at the selected commit. Use nextOffset to read subsequent pages.",
     parameters: {
       type: "object" as const,
       properties: { path: { type: "string" }, offset: { type: "number" } },
