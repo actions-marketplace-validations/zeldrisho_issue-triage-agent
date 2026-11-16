@@ -184,7 +184,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
           "",
           "Once configured with an API key, this bot will generate contextual replies.",
           "",
-          "-- Issue AI Agent :robot:",
+          "-- Issue Triage Agent :robot:",
         ].join("\n");
       } else {
         replyBody = await draftReply(

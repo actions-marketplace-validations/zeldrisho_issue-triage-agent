@@ -3,15 +3,40 @@ import { z } from "zod";
 import type { RepoConfig } from "../types.js";
 import { DEFAULT_CONFIG } from "./schema.js";
 
+const providerSchema = z.enum(["anthropic", "openai"]);
+
+const configSchema = z.object({
+  enabled: z.boolean().optional(),
+  features: z
+    .object({
+      classify: z.boolean().optional(),
+      reply: z.boolean().optional(),
+      duplicateSearch: z.boolean().optional(),
+      commentReply: z.boolean().optional(),
+    })
+    .optional(),
+  label_mapping: z.record(z.string(), z.array(z.string())).optional(),
+  security: z.object({ max_issue_length: z.number().int().positive().optional() }).optional(),
+  exclude: z
+    .object({ labels: z.array(z.string()).optional(), users: z.array(z.string()).optional() })
+    .optional(),
+  llm: z
+    .object({
+      provider: providerSchema.optional(),
+      model: z.string().trim().min(1).optional(),
+      max_tokens: z.number().int().positive().optional(),
+    })
+    .optional(),
+});
+
 export async function loadConfig(
   owner: string,
   repo: string,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   octokit: any,
-  configPath: string = ".github/issue-ai.yml",
+  configPath: string = ".github/issue-triage-agent.yml",
 ): Promise<RepoConfig> {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let repoConfig: any;
+  let repoConfig: z.infer<typeof configSchema> = {};
 
   try {
     const { data } = await octokit.rest.repos.getContent({
@@ -33,23 +58,22 @@ export async function loadConfig(
         throw new Error("Expected a single YAML document");
       }
 
-      repoConfig = documents[0];
-    } else {
-      return DEFAULT_CONFIG;
+      repoConfig = configSchema.parse(documents[0] ?? {});
     }
   } catch (error: unknown) {
     const result = z.object({ status: z.literal(404) }).safeParse(error);
 
-    if (result.success) {
-      return DEFAULT_CONFIG;
+    if (!result.success) {
+      throw error;
     }
-
-    throw error;
   }
 
-  if (!repoConfig) {
-    return DEFAULT_CONFIG;
-  }
+  const inputProvider = process.env.LLM_PROVIDER;
+
+  const provider = inputProvider
+    ? providerSchema.parse(inputProvider)
+    : (repoConfig.llm?.provider ??
+      (process.env.OPENAI_API_KEY ? "openai" : DEFAULT_CONFIG.llm.provider));
 
   return {
     enabled: repoConfig.enabled ?? DEFAULT_CONFIG.enabled,
@@ -70,7 +94,7 @@ export async function loadConfig(
       users: repoConfig.exclude?.users ?? DEFAULT_CONFIG.exclude.users,
     },
     llm: {
-      provider: repoConfig.llm?.provider ?? DEFAULT_CONFIG.llm.provider,
+      provider,
       model: repoConfig.llm?.model ?? DEFAULT_CONFIG.llm.model,
       maxTokens: repoConfig.llm?.max_tokens ?? DEFAULT_CONFIG.llm.maxTokens,
     },

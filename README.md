@@ -1,12 +1,12 @@
 <div align="center">
 
-# ⚡ Issue Triage Assistant
+# ⚡ Issue Triage Agent
 
 **AI-powered GitHub Issue triage — classify, label, and reply automatically**
 
-[![GitHub Action](https://img.shields.io/github/actions/workflow/status/zeldrisho/issue-ai-agent/ci.yml?branch=main&label=CI&logo=github-actions&logoColor=white)](https://github.com/zeldrisho/issue-ai-agent/actions)
+[![GitHub Action](https://img.shields.io/github/actions/workflow/status/zeldrisho/issue-triage-agent/ci.yml?branch=main&label=CI&logo=github-actions&logoColor=white)](https://github.com/zeldrisho/issue-triage-agent/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/zeldrisho/issue-ai-agent/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/zeldrisho/issue-triage-agent/pulls)
 
 Forked from [alexyan0431/issue-ai-agent](https://github.com/alexyan0431/issue-ai-agent).
 
@@ -14,7 +14,7 @@ Forked from [alexyan0431/issue-ai-agent](https://github.com/alexyan0431/issue-ai
 
 ## What It Does
 
-When someone opens an issue in your repository, Issue Triage Assistant:
+When someone opens an issue in your repository, Issue Triage Agent:
 
 1. **Classifies** the issue into a category (bug, feature, question, docs, duplicate, invalid, security)
 2. **Labels** it with matching labels and a priority level (critical, high, medium, low)
@@ -26,7 +26,7 @@ All in ~8 seconds, powered by your LLM of choice.
 
 ## Demo
 
-![Demo: Issue Triage Assistant classifying and replying to a new issue](.github/assets/demo.gif)
+![Demo: Issue Triage Agent classifying and replying to a new issue](.github/assets/demo.gif)
 
 1. **User opens an issue** — describes a login page crash
 2. **Bot classifies** — labels it `bug` / `priority: high` in ~8 seconds
@@ -38,10 +38,10 @@ All in ~8 seconds, powered by your LLM of choice.
 
 ### Step 1: Add a workflow file
 
-Create `.github/workflows/issue-ai.yml` in your repository:
+Create `.github/workflows/issue-triage-agent.yml` in your repository:
 
 ```yaml
-name: Issue Triage Assistant
+name: Issue Triage Agent
 
 on:
   issues:
@@ -56,7 +56,7 @@ jobs:
       issues: write
       contents: read
     steps:
-      - uses: zeldrisho/issue-ai-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+      - uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
         with:
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
@@ -79,7 +79,7 @@ The bot supports any Anthropic or OpenAI API. Use the three inputs — `<provide
 ### Anthropic
 
 ```yaml
-- uses: zeldrisho/issue-ai-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
   with:
     anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
     llm-provider: anthropic
@@ -88,7 +88,7 @@ The bot supports any Anthropic or OpenAI API. Use the three inputs — `<provide
 ### OpenAI
 
 ```yaml
-- uses: zeldrisho/issue-ai-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
   with:
     openai-api-key: ${{ secrets.OPENAI_API_KEY }}
     llm-provider: openai
@@ -100,7 +100,7 @@ If your provider exposes an Anthropic or OpenAI compatible API, point `llm-base-
 
 ```yaml
 # Anthropic-compatible endpoint
-- uses: zeldrisho/issue-ai-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
   with:
     anthropic-api-key: ${{ secrets.LLM_API_KEY }}
     llm-provider: anthropic
@@ -109,14 +109,18 @@ If your provider exposes an Anthropic or OpenAI compatible API, point `llm-base-
 
 ```yaml
 # OpenAI-compatible endpoint
-- uses: zeldrisho/issue-ai-agent@c77e454162f1535eb768c847d975ce79561a148a # main
+- uses: zeldrisho/issue-triage-agent@c77e454162f1535eb768c847d975ce79561a148a # main
   with:
     openai-api-key: ${{ secrets.LLM_API_KEY }}
     llm-provider: openai
     llm-base-url: https://your-provider.example.com/v1
 ```
 
-If you use a custom model, create `.github/issue-ai.yml` in your repo to specify it:
+For compatible gateways, select the API protocol supported by the endpoint and set `llm.model` to a model ID available through that gateway. Selecting `openai` specifies the protocol, not necessarily the model provider.
+
+Provider selection uses the Action input first, then `llm.provider` in repository configuration, then available credentials (OpenAI before Anthropic), defaulting to Anthropic. The custom base URL applies to the selected provider. If no key is available for that provider, issue triage uses mock responses and comment replies are skipped.
+
+If you use a custom model, create `.github/issue-triage-agent.yml` in your repo to specify it:
 
 ```yaml
 llm:
@@ -125,10 +129,10 @@ llm:
 
 ## Configuration
 
-Create `.github/issue-ai.yml` in your repository to customize behavior. The bot works out of the box with sensible defaults — no config file required.
+Create `.github/issue-triage-agent.yml` in your repository to customize behavior. The bot works out of the box with sensible defaults — no config file required.
 
 ```yaml
-# .github/issue-ai.yml
+# .github/issue-triage-agent.yml
 enabled: true
 
 features:
@@ -180,14 +184,14 @@ llm:
 
 ### Inputs
 
-| Input               | Required | Default                | Description                                                |
-| ------------------- | -------- | ---------------------- | ---------------------------------------------------------- |
-| `github-token`      | No       | `${{ github.token }}`  | GitHub token for API access                                |
-| `anthropic-api-key` | No       |                        | Anthropic API key                                          |
-| `openai-api-key`    | No       |                        | OpenAI API key                                             |
-| `llm-provider`      | No       | `anthropic`            | Which LLM provider to use                                  |
-| `llm-base-url`      | No       |                        | Custom base URL for LLM API (applies to selected provider) |
-| `config-path`       | No       | `.github/issue-ai.yml` | Path to config file in repo                                |
+| Input               | Required | Default                          | Description                                                |
+| ------------------- | -------- | -------------------------------- | ---------------------------------------------------------- |
+| `github-token`      | No       | `${{ github.token }}`            | GitHub token for API access                                |
+| `anthropic-api-key` | No       |                                  | Anthropic API key                                          |
+| `openai-api-key`    | No       |                                  | OpenAI API key                                             |
+| `llm-provider`      | No       | Auto-detected                    | LLM provider; overrides repository configuration           |
+| `llm-base-url`      | No       |                                  | Custom base URL for LLM API (applies to selected provider) |
+| `config-path`       | No       | `.github/issue-triage-agent.yml` | Path to config file in repo                                |
 
 At least one API key is required. If neither is set, the bot runs in **dev mode** with mock responses.
 

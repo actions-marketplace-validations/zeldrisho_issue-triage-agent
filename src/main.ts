@@ -70,19 +70,17 @@ async function main(): Promise<void> {
 
   if (openaiKey) process.env.OPENAI_API_KEY = openaiKey;
 
+  if (llmProvider && llmProvider !== "anthropic" && llmProvider !== "openai") {
+    core.setFailed("llm-provider must be anthropic or openai");
+
+    return;
+  }
+
   if (llmProvider) process.env.LLM_PROVIDER = llmProvider;
 
   const llmBaseURL = core.getInput("llm-base-url");
 
-  if (llmBaseURL) {
-    const provider = llmProvider || "anthropic";
-
-    if (provider === "openai") {
-      process.env.OPENAI_BASE_URL = llmBaseURL;
-    } else {
-      process.env.ANTHROPIC_BASE_URL = llmBaseURL;
-    }
-  }
+  if (llmBaseURL) process.env.LLM_BASE_URL = llmBaseURL;
 
   const octokit = github.getOctokit(token);
   const ctx = github.context;

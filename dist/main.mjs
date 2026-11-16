@@ -21082,7 +21082,9 @@ function datetime(args) {
 	return new RegExp(`^${dateSource}T(?:${timeRegex})$`);
 }
 const anyString = /^[\s\S]{0,}$/;
+const integer = /^-?\d+$/;
 const number$1 = /^-?\d+(?:\.\d+)?$/;
+const boolean$1 = /^(?:true|false)$/i;
 const lowercase = /^[^A-Z]*$/;
 const uppercase = /^[^a-z]*$/;
 // node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/checks.js
@@ -21882,6 +21884,24 @@ const $ZodNumberFormat = /*@__PURE__*/ $constructor("$ZodNumberFormat", (inst, d
 	$ZodCheckNumberFormat.init(inst, def);
 	$ZodNumber.init(inst, def);
 });
+const $ZodBoolean = /*@__PURE__*/ $constructor("$ZodBoolean", (inst, def) => {
+	$ZodType.init(inst, def);
+	inst._zod.pattern = boolean$1;
+	inst._zod.parse = (payload, _ctx) => {
+		if (def.coerce) try {
+			payload.value = Boolean(payload.value);
+		} catch (_) {}
+		const input = payload.value;
+		if (typeof input === "boolean") return payload;
+		payload.issues.push({
+			expected: "boolean",
+			code: "invalid_type",
+			input,
+			inst
+		});
+		return payload;
+	};
+});
 const $ZodUnknown = /*@__PURE__*/ $constructor("$ZodUnknown", (inst, def) => {
 	$ZodType.init(inst, def);
 	inst._zod.parse = (payload) => payload;
@@ -22397,6 +22417,138 @@ function handleIntersectionResults(result, left, right) {
 	result.value = merged.data;
 	return result;
 }
+const $ZodRecord = /*@__PURE__*/ $constructor("$ZodRecord", (inst, def) => {
+	$ZodType.init(inst, def);
+	const memo = globalConfig.memoizer;
+	memo?.attach(inst);
+	inst._zod.parse = (payload, ctx) => {
+		const input = payload.value;
+		if (!isPlainObject$1(input)) {
+			payload.issues.push({
+				expected: "record",
+				code: "invalid_type",
+				input,
+				inst
+			});
+			return payload;
+		}
+		const proms = [];
+		const values = def.keyType._zod.values;
+		if (values && !def.partial) {
+			payload.value = memo ? memo.alloc(inst, payload, {}, ctx) : {};
+			const recordKeys = /* @__PURE__ */ new Set();
+			for (const key of values) if (typeof key === "string" || typeof key === "number" || typeof key === "symbol") {
+				recordKeys.add(typeof key === "number" ? key.toString() : key);
+				if (key === "__proto__") continue;
+				const keyResult = def.keyType._zod.run({
+					value: key,
+					issues: []
+				}, ctx);
+				if (keyResult instanceof Promise) throw new Error("Async schemas not supported in object keys currently");
+				if (keyResult.issues.length) {
+					payload.issues.push({
+						code: "invalid_key",
+						origin: "record",
+						issues: keyResult.issues.map((iss) => finalizeIssue(iss, ctx, config())),
+						input: key,
+						path: [key],
+						inst
+					});
+					continue;
+				}
+				const outKey = keyResult.value;
+				if (outKey === "__proto__") continue;
+				const result = def.valueType._zod.run({
+					value: input[key],
+					issues: []
+				}, ctx);
+				if (result instanceof Promise) proms.push(result.then((result) => {
+					if (result.issues.length) payload.issues.push(...prefixIssues(key, result.issues));
+					payload.value[outKey] = result.value;
+				}));
+				else {
+					if (result.issues.length) payload.issues.push(...prefixIssues(key, result.issues));
+					payload.value[outKey] = result.value;
+				}
+			}
+			let unrecognized;
+			for (const key in input) if (!recordKeys.has(key)) {
+				if (def.mode === "loose") {
+					if (key === "__proto__") continue;
+					payload.value[key] = input[key];
+				} else {
+					unrecognized = unrecognized ?? [];
+					unrecognized.push(key);
+				}
+			}
+			if (unrecognized && unrecognized.length > 0) payload.issues.push({
+				code: "unrecognized_keys",
+				input,
+				inst,
+				keys: unrecognized,
+				continue: true
+			});
+		} else {
+			payload.value = memo ? memo.alloc(inst, payload, {}, ctx) : {};
+			let unrecognized;
+			for (const key of Reflect.ownKeys(input)) {
+				if (key === "__proto__") continue;
+				if (!Object.prototype.propertyIsEnumerable.call(input, key)) continue;
+				let keyResult = def.keyType._zod.run({
+					value: key,
+					issues: []
+				}, ctx);
+				if (keyResult instanceof Promise) throw new Error("Async schemas not supported in object keys currently");
+				if (typeof key === "string" && number$1.test(key) && keyResult.issues.length) {
+					const retryResult = def.keyType._zod.run({
+						value: Number(key),
+						issues: []
+					}, ctx);
+					if (retryResult instanceof Promise) throw new Error("Async schemas not supported in object keys currently");
+					if (retryResult.issues.length === 0) keyResult = retryResult;
+				}
+				if (keyResult.issues.length) {
+					if (def.mode === "loose") payload.value[key] = input[key];
+					else if (values) {
+						unrecognized = unrecognized ?? [];
+						unrecognized.push(key);
+					} else payload.issues.push({
+						code: "invalid_key",
+						origin: "record",
+						issues: keyResult.issues.map((iss) => finalizeIssue(iss, ctx, config())),
+						input: key,
+						path: [key],
+						inst
+					});
+					continue;
+				}
+				const outKey = keyResult.value;
+				if (outKey === "__proto__") continue;
+				const result = def.valueType._zod.run({
+					value: input[key],
+					issues: []
+				}, ctx);
+				if (result instanceof Promise) proms.push(result.then((result) => {
+					if (result.issues.length) payload.issues.push(...prefixIssues(key, result.issues));
+					payload.value[outKey] = result.value;
+				}));
+				else {
+					if (result.issues.length) payload.issues.push(...prefixIssues(key, result.issues));
+					payload.value[outKey] = result.value;
+				}
+			}
+			if (unrecognized && unrecognized.length > 0) payload.issues.push({
+				code: "unrecognized_keys",
+				input,
+				inst,
+				keys: unrecognized,
+				continue: true
+			});
+		}
+		if (proms.length) return Promise.all(proms).then(() => payload);
+		return payload;
+	};
+});
 const $ZodEnum = /*@__PURE__*/ $constructor("$ZodEnum", (inst, def) => {
 	$ZodType.init(inst, def);
 	const values = getEnumValues(def.entries);
@@ -23363,6 +23515,13 @@ function _int(Class, params) {
 	});
 }
 // @__NO_SIDE_EFFECTS__
+function _boolean(Class, params) {
+	return new Class({
+		type: "boolean",
+		...normalizeParams(params)
+	});
+}
+// @__NO_SIDE_EFFECTS__
 function _unknown(Class) {
 	return new Class({ type: "unknown" });
 }
@@ -24139,6 +24298,9 @@ const numberProcessor = (schema, ctx, _json, params) => {
 		if (rest.length) json.allOf = [...json.allOf ?? [], ...rest.map((m) => ({ multipleOf: m }))];
 	}
 };
+const booleanProcessor = (_schema, _ctx, json, _params) => {
+	json.type = "boolean";
+};
 const neverProcessor = (_schema, _ctx, json, _params) => {
 	json.not = {};
 };
@@ -24268,6 +24430,107 @@ const intersectionProcessor = (schema, ctx, json, params) => {
 	const allOf = [...isSimpleIntersection(a) ? a.allOf : [a], ...isSimpleIntersection(b) ? b.allOf : [b]];
 	json.allOf = allOf;
 	ctx.intersections.push(allOf);
+};
+/** JSON object keys are always strings, so a numeric record key schema is re-expressed over the
+* numeric-string form the record parser matches. Deferred to `finalize`, after the flatten: a key
+* behind a wrapper only carries its own `type` before then, and a union key only has its branches.
+*
+* A numeric bound cannot apply to a property name, so `minimum` and its siblings are dropped rather
+* than carried over: keeping them beside `type: "string"` reproduces the match-nothing schema this
+* exists to fix. A key that carries one therefore emits wider than the record parses — `z.record(z.number().min(5), V)`
+* accepts `"3"` — which is the deliberate trade, since throwing on it would reject an ordinary schema
+* outright. */
+function stringifyKeyNames(bySchema, json, visited) {
+	if (json.$ref) {
+		if (visited.has(json)) return json;
+		visited.add(json);
+		const def = bySchema.get(json)?.def;
+		if (!def) return json;
+		const inlined = stringifyKeyNames(bySchema, def, visited);
+		return inlined === def ? json : inlined;
+	}
+	for (const keyword of ["anyOf", "oneOf"]) {
+		const branches = json[keyword];
+		if (!Array.isArray(branches)) continue;
+		const mapped = branches.map((branch) => stringifyKeyNames(bySchema, branch, visited));
+		if (mapped.some((branch, i) => branch !== branches[i])) json = {
+			...json,
+			[keyword]: mapped
+		};
+	}
+	const types = Array.isArray(json.type) ? json.type : [json.type];
+	const numericType = !types.includes("string") && types.some((t) => t === "number" || t === "integer");
+	const values = json.enum ?? (json.const !== void 0 ? [json.const] : void 0);
+	if (!numericType && !values?.some((v) => typeof v === "number")) return json;
+	const { minimum, maximum, exclusiveMinimum, exclusiveMaximum, multipleOf, format, id, ...rest } = json;
+	if (rest.enum) rest.enum = rest.enum.map((v) => typeof v === "number" ? String(v) : v);
+	else if (typeof rest.const === "number") rest.const = String(rest.const);
+	if (!numericType) return rest;
+	rest.type = "string";
+	if (!values) rest.pattern = (types.includes("number") ? number$1 : integer).source;
+	return rest;
+}
+/** Every record of one conversion, so the carriers are found in a single pass rather than once per record. */
+const pendingRecords = /* @__PURE__ */ new WeakMap();
+function rewriteKeyNames(ctx) {
+	const bySchema = /* @__PURE__ */ new Map();
+	for (const entry of ctx.seen.values()) if (entry.def && !bySchema.has(entry.schema)) bySchema.set(entry.schema, entry);
+	const rewrites = /* @__PURE__ */ new Map();
+	for (const record of pendingRecords.get(ctx) ?? []) {
+		const seen = ctx.seen.get(record);
+		const names = (seen?.def ?? seen?.schema)?.propertyNames;
+		if (!names || names === true || rewrites.has(names)) continue;
+		const rewritten = stringifyKeyNames(bySchema, names, /* @__PURE__ */ new Set());
+		if (rewritten !== names) rewrites.set(names, rewritten);
+	}
+	if (!rewrites.size) return;
+	for (const entry of ctx.seen.values()) for (const carrier of [entry.schema, entry.def]) {
+		const rewritten = carrier && rewrites.get(carrier.propertyNames);
+		if (rewritten) carrier.propertyNames = rewritten;
+	}
+}
+const recordProcessor = (schema, ctx, _json, params) => {
+	const json = _json;
+	const def = schema._zod.def;
+	json.type = "object";
+	const keyType = def.keyType;
+	const patterns = aggregateChecks(keyType).patterns;
+	if (def.mode === "loose" && patterns && patterns.size > 0) {
+		const valueSchema = processSchema(def.valueType, ctx, {
+			...params,
+			path: [
+				...params.path,
+				"patternProperties",
+				"*"
+			]
+		});
+		json.patternProperties = {};
+		for (const pattern of patterns) assignProp(json.patternProperties, exactPattern(pattern).source, valueSchema);
+	} else {
+		if (ctx.target === "draft-07" || ctx.target === "draft-2020-12") {
+			json.propertyNames = processSchema(def.keyType, ctx, {
+				...params,
+				path: [...params.path, "propertyNames"]
+			});
+			let pending = pendingRecords.get(ctx);
+			if (!pending) {
+				pending = [];
+				pendingRecords.set(ctx, pending);
+				ctx.deferred.push(() => rewriteKeyNames(ctx));
+			}
+			pending.push(schema);
+		}
+		json.additionalProperties = processSchema(def.valueType, ctx, {
+			...params,
+			path: [...params.path, "additionalProperties"]
+		});
+	}
+	const keyValues = keyType._zod.values;
+	const omittableOnInput = ctx.io === "input" && inputOptin(def.valueType) !== void 0;
+	if (keyValues && !def.partial && !omittableOnInput) {
+		const validKeyValues = [...keyValues].filter((v) => typeof v === "string" || typeof v === "number");
+		if (validKeyValues.length > 0) json.required = validKeyValues.map(String);
+	}
 };
 const nullableProcessor = (schema, ctx, json, params) => {
 	const def = schema._zod.def;
@@ -24908,6 +25171,14 @@ const ZodNumberFormat = /*@__PURE__*/ $constructor("ZodNumberFormat", (inst, def
 function int(params) {
 	return /* @__PURE__ */ _int(ZodNumberFormat, params);
 }
+const ZodBoolean = /*@__PURE__*/ $constructor("ZodBoolean", (inst, def) => {
+	$ZodBoolean.init(inst, def);
+	ZodType.init(inst, def);
+	inst._zod.processJSONSchema = (ctx, json, params) => booleanProcessor(inst, ctx, json, params);
+});
+function boolean(params) {
+	return /* @__PURE__ */ _boolean(ZodBoolean, params);
+}
 const ZodUnknown = /*@__PURE__*/ $constructor("ZodUnknown", (inst, def) => {
 	$ZodUnknown.init(inst, def);
 	ZodType.init(inst, def);
@@ -25031,6 +25302,28 @@ function intersection(left, right) {
 		type: "intersection",
 		left,
 		right
+	});
+}
+const ZodRecord = /*@__PURE__*/ $constructor("ZodRecord", (inst, def) => {
+	_ensureDefaultMemoizer();
+	$ZodRecord.init(inst, def);
+	ZodType.init(inst, def);
+	inst._zod.processJSONSchema = (ctx, json, params) => recordProcessor(inst, ctx, json, params);
+	inst.keyType = def.keyType;
+	inst.valueType = def.valueType;
+});
+function record(keyType, valueType, params) {
+	if (!valueType || !valueType._zod) return new ZodRecord({
+		type: "record",
+		keyType: string(),
+		valueType: keyType,
+		...normalizeParams(valueType)
+	});
+	return new ZodRecord({
+		type: "record",
+		keyType,
+		valueType,
+		...normalizeParams(params)
 	});
 }
 const ZodEnum = /*@__PURE__*/ $constructor("ZodEnum", (inst, def) => {
@@ -75040,13 +75333,11 @@ function createProvider(provider, logger) {
 	if (provider === "openai") {
 		const apiKey = process.env.OPENAI_API_KEY;
 		if (!apiKey) return null;
-		const baseURL = process.env.OPENAI_BASE_URL;
-		return new OpenAIProvider(apiKey, logger, baseURL);
+		return new OpenAIProvider(apiKey, logger, process.env.LLM_BASE_URL || process.env.OPENAI_BASE_URL);
 	}
 	const apiKey = process.env.ANTHROPIC_API_KEY;
 	if (!apiKey) return null;
-	const baseURL = process.env.ANTHROPIC_BASE_URL;
-	return new AnthropicProvider(apiKey, logger, baseURL);
+	return new AnthropicProvider(apiKey, logger, process.env.LLM_BASE_URL || process.env.ANTHROPIC_BASE_URL);
 }
 function detectProvider() {
 	if (process.env.OPENAI_API_KEY) return "openai";
@@ -77712,8 +78003,29 @@ const DEFAULT_CONFIG = {
 	}
 };
 // src/config/loader.ts
-async function loadConfig(owner, repo, octokit, configPath = ".github/issue-ai.yml") {
-	let repoConfig;
+const providerSchema = _enum(["anthropic", "openai"]);
+const configSchema = object({
+	enabled: boolean().optional(),
+	features: object({
+		classify: boolean().optional(),
+		reply: boolean().optional(),
+		duplicateSearch: boolean().optional(),
+		commentReply: boolean().optional()
+	}).optional(),
+	label_mapping: record(string(), array(string())).optional(),
+	security: object({ max_issue_length: number().int().positive().optional() }).optional(),
+	exclude: object({
+		labels: array(string()).optional(),
+		users: array(string()).optional()
+	}).optional(),
+	llm: object({
+		provider: providerSchema.optional(),
+		model: string().trim().min(1).optional(),
+		max_tokens: number().int().positive().optional()
+	}).optional()
+});
+async function loadConfig(owner, repo, octokit, configPath = ".github/issue-triage-agent.yml") {
+	let repoConfig = {};
 	try {
 		const { data } = await octokit.rest.repos.getContent({
 			owner,
@@ -77724,13 +78036,13 @@ async function loadConfig(owner, repo, octokit, configPath = ".github/issue-ai.y
 		if (file.success) {
 			const documents = loadAll(Buffer.from(file.data.content, "base64").toString("utf-8"), { schema: CORE_SCHEMA.withTags(mergeTag, timestampTag, binaryTag, legacyMapTag) });
 			if (documents.length > 1) throw new Error("Expected a single YAML document");
-			repoConfig = documents[0];
-		} else return DEFAULT_CONFIG;
+			repoConfig = configSchema.parse(documents[0] ?? {});
+		}
 	} catch (error) {
-		if (object({ status: literal(404) }).safeParse(error).success) return DEFAULT_CONFIG;
-		throw error;
+		if (!object({ status: literal(404) }).safeParse(error).success) throw error;
 	}
-	if (!repoConfig) return DEFAULT_CONFIG;
+	const inputProvider = process.env.LLM_PROVIDER;
+	const provider = inputProvider ? providerSchema.parse(inputProvider) : repoConfig.llm?.provider ?? (process.env.OPENAI_API_KEY ? "openai" : DEFAULT_CONFIG.llm.provider);
 	return {
 		enabled: repoConfig.enabled ?? DEFAULT_CONFIG.enabled,
 		features: {
@@ -77746,7 +78058,7 @@ async function loadConfig(owner, repo, octokit, configPath = ".github/issue-ai.y
 			users: repoConfig.exclude?.users ?? DEFAULT_CONFIG.exclude.users
 		},
 		llm: {
-			provider: repoConfig.llm?.provider ?? DEFAULT_CONFIG.llm.provider,
+			provider,
 			model: repoConfig.llm?.model ?? DEFAULT_CONFIG.llm.model,
 			maxTokens: repoConfig.llm?.max_tokens ?? DEFAULT_CONFIG.llm.maxTokens
 		}
@@ -77901,7 +78213,7 @@ Guidelines for your reply:
    - SECURITY: Advise reporting through security channel, do not discuss vulnerability details publicly
 4. Do NOT include any code execution instructions, shell commands, or actionable technical steps that could be harmful
 5. Write in the same language as the issue (auto-detect)
-6. Sign off with: "-- Issue AI Agent :robot:"
+6. Sign off with: "-- Issue Triage Agent :robot:"
 
 Reply with ONLY the comment text (in GitHub-flavored Markdown). Do not wrap in code blocks.`;
 function buildReplyUserMessage(sanitizedTitle, sanitizedBody, category, priority, existingLabels, relatedIssues) {
@@ -78207,7 +78519,7 @@ async function runPipeline(actx) {
 				"",
 				"Once configured with an API key, this bot will generate contextual replies.",
 				"",
-				"-- Issue AI Agent :robot:"
+				"-- Issue Triage Agent :robot:"
 			].join("\n");
 		} else replyBody = await draftReply(issue, result.classification ?? {
 			category: "question",
@@ -78252,7 +78564,7 @@ Guidelines:
 5. If the user's comment doesn't need a response (e.g., "thanks", "bump"), just acknowledge briefly
 6. Write in the same language as the comment
 7. Do NOT include code execution instructions or harmful commands
-8. Sign off with: "-- Issue AI Agent :robot:"
+8. Sign off with: "-- Issue Triage Agent :robot:"
 
 Reply with ONLY the comment text (in GitHub-flavored Markdown). Do not wrap in code blocks.`;
 function buildCommentReplyMessage(data) {
@@ -78399,12 +78711,13 @@ async function main() {
 	const configPath = getInput("config-path");
 	if (anthropicKey) process.env.ANTHROPIC_API_KEY = anthropicKey;
 	if (openaiKey) process.env.OPENAI_API_KEY = openaiKey;
+	if (llmProvider && llmProvider !== "anthropic" && llmProvider !== "openai") {
+		setFailed("llm-provider must be anthropic or openai");
+		return;
+	}
 	if (llmProvider) process.env.LLM_PROVIDER = llmProvider;
 	const llmBaseURL = getInput("llm-base-url");
-	if (llmBaseURL) {
-		if ((llmProvider || "anthropic") === "openai") process.env.OPENAI_BASE_URL = llmBaseURL;
-		else process.env.ANTHROPIC_BASE_URL = llmBaseURL;
-	}
+	if (llmBaseURL) process.env.LLM_BASE_URL = llmBaseURL;
 	const octokit = getOctokit(token);
 	const ctx = context$1;
 	const { owner, repo } = ctx.repo;

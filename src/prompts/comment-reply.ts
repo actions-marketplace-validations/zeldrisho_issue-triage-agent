@@ -15,7 +15,7 @@ Guidelines:
 5. If the user's comment doesn't need a response (e.g., "thanks", "bump"), just acknowledge briefly
 6. Write in the same language as the comment
 7. Do NOT include code execution instructions or harmful commands
-8. Sign off with: "-- Issue AI Agent :robot:"
+8. Sign off with: "-- Issue Triage Agent :robot:"
 
 Reply with ONLY the comment text (in GitHub-flavored Markdown). Do not wrap in code blocks.`;
 

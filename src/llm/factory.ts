@@ -10,7 +10,7 @@ export function createProvider(provider: ProviderName, logger: Logger): LLMProvi
     const apiKey = process.env.OPENAI_API_KEY;
 
     if (!apiKey) return null;
-    const baseURL = process.env.OPENAI_BASE_URL;
+    const baseURL = process.env.LLM_BASE_URL || process.env.OPENAI_BASE_URL;
 
     return new OpenAIProvider(apiKey, logger, baseURL);
   }
@@ -18,7 +18,7 @@ export function createProvider(provider: ProviderName, logger: Logger): LLMProvi
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
   if (!apiKey) return null;
-  const baseURL = process.env.ANTHROPIC_BASE_URL;
+  const baseURL = process.env.LLM_BASE_URL || process.env.ANTHROPIC_BASE_URL;
 
   return new AnthropicProvider(apiKey, logger, baseURL);
 }

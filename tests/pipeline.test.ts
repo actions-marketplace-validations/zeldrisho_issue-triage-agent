@@ -36,7 +36,7 @@ vi.mock("../src/llm/factory.js", () => ({
 
       // Reply call
       return Promise.resolve({
-        text: "Thanks for reporting this crash! We'll look into it.\n\n-- Issue AI Agent :robot:",
+        text: "Thanks for reporting this crash! We'll look into it.\n\n-- Issue Triage Agent :robot:",
         usage: { inputTokens: 100, outputTokens: 30 },
       });
     }),
@@ -220,7 +220,7 @@ describe("runPipeline", () => {
           usage: { inputTokens: 80, outputTokens: 20 },
         })
         .mockResolvedValueOnce({
-          text: "This appears to be a duplicate of #42.\n\n-- Issue AI Agent :robot:",
+          text: "This appears to be a duplicate of #42.\n\n-- Issue Triage Agent :robot:",
           usage: { inputTokens: 100, outputTokens: 30 },
         }),
     };

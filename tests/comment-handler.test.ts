@@ -6,7 +6,7 @@ import { DEFAULT_CONFIG } from "../src/config/schema.js";
 vi.mock("../src/llm/factory.js", () => ({
   createProvider: vi.fn().mockImplementation(() => ({
     complete: vi.fn().mockResolvedValue({
-      text: "Thanks for the additional details! This helps us investigate.\n\n-- Issue AI Agent :robot:",
+      text: "Thanks for the additional details! This helps us investigate.\n\n-- Issue Triage Agent :robot:",
       usage: { inputTokens: 100, outputTokens: 30 },
     }),
   })),
@@ -152,14 +152,14 @@ describe("handleComment", () => {
 
     expect(actx.octokit.rest.issues.createComment).toHaveBeenCalledTimes(1);
     const call: { body: string } = actx.octokit.rest.issues.createComment.mock.calls[0][0];
-    expect(call.body).toContain("Issue AI Agent");
+    expect(call.body).toContain("Issue Triage Agent");
   });
 
   it("truncates long LLM responses", async () => {
     const { createProvider } = await import("../src/llm/factory.js");
     vi.mocked(createProvider).mockReturnValueOnce({
       complete: vi.fn().mockResolvedValue({
-        text: "x".repeat(5000) + "\n\n-- Issue AI Agent :robot:",
+        text: "x".repeat(5000) + "\n\n-- Issue Triage Agent :robot:",
         usage: { inputTokens: 100, outputTokens: 100 },
       }),
     });

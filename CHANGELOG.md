@@ -6,10 +6,14 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Honor the Action provider input and apply custom endpoints to the selected provider.
+- Validate repository configuration before using it.
+
 ### Changed
 
-- Rename the Action's display name to Issue Triage Assistant; its repository address remains unchanged.
-- Update the Action runtime and bundled dependencies, including the YAML parser and LLM SDKs.
-- Bundle the Action with Vite+ Pack instead of ncc.
+- Rename the Action and repository to Issue Triage Agent.
+- Rename the default repository configuration file to `.github/issue-triage-agent.yml`.
 
-[Unreleased]: https://github.com/alexyan0431/issue-ai-agent/compare/v1.0.0...zeldrisho:main
+[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/commits/main
