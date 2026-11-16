@@ -29,6 +29,7 @@
 - Keep Action input/output changes aligned across `action.yml`, `src/main.ts`, and `README.md`.
 - Use a GitHub-supported explicit Node runtime in `action.yml`; CI's LTS version does not control it.
 - Record only user-facing changes in `CHANGELOG.md` under Unreleased.
+- After publishing a release, update README usage pins to the released commit's full SHA in a follow-up commit; never amend the release commit to include its own hash (see `docs/releasing.md`).
 - Before implementing GitHub Actions changes, research current guidance using `site:docs.github.com/actions` and verify the relevant official documentation.
 - Keep configuration changes aligned across `src/config/schema.ts`, `src/config/loader.ts`, and `README.md`.
 
