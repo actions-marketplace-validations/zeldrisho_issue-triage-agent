@@ -26,7 +26,7 @@ tagged commit; a successful TypeScript build alone is not enough.
    a matching package version and a dated changelog entry with at least one item.
 3. Run `vp install`, `vp check`, `vp run build`, and `vp test --coverage`.
    Run `vp pm audit` and investigate applicable advisories.
-4. With Node.js LTS, run `vp run bundle`. Review and commit all generated `dist/`
+4. Run `vp run bundle`. Review and commit all generated `dist/`
    changes with the version and changelog changes in a pull request. Run the
    bundle again and confirm `git status --short -- dist/` is empty. Merge the
    pull request after CI passes, and verify CI on the merged commit.
