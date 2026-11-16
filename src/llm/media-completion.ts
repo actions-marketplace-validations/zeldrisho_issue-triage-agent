@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { LLMProvider } from "./provider.js";
+import { TruncatedResponseError, type LLMProvider } from "./provider.js";
 import type { LLMMessage, LLMResponse } from "./types.js";
 import type { MediaResult } from "../media.js";
 import type { RepositoryTools } from "./repository-tools.js";
@@ -78,6 +78,12 @@ export async function completeWithMediaFallback(
         accepted.push(image);
         positions.push(index + 1);
       } catch (probeError) {
+        if (probeError instanceof TruncatedResponseError) {
+          accepted.push(image);
+          positions.push(index + 1);
+          continue;
+        }
+
         const probe = z.instanceof(Error).safeParse(probeError);
 
         if (!probe.success || kind(probe.data) === "other") throw probeError;

@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vite-plus/test";
 import { AnthropicProvider } from "../src/llm/client.js";
 import { OpenAIProvider } from "../src/llm/openai.js";
+import { TruncatedResponseError } from "../src/llm/provider.js";
 import type { Logger } from "../src/types.js";
 
 const logger: Logger = {
@@ -41,7 +42,7 @@ describe("image messages", () => {
 
       await expect(
         client.complete("model", "system", [{ role: "user", content: "hi" }]),
-      ).rejects.toThrow();
+      ).rejects.toThrow(TruncatedResponseError);
     });
 
     it(`encodes images for ${provider}`, async () => {

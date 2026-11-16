@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { Logger } from "../types.js";
 import type { LLMMessage, LLMResponse } from "./types.js";
-import type { LLMProvider } from "./provider.js";
+import { TruncatedResponseError, type LLMProvider } from "./provider.js";
 import {
   repositoryArgsSchema,
   repositoryToolDefinitions,
@@ -143,6 +143,9 @@ export class AnthropicProvider implements LLMProvider {
         },
         { signal: this.signal },
       );
+
+      if (response.stop_reason === "max_tokens")
+        throw new TruncatedResponseError("Incomplete Claude response: max_tokens");
 
       if (
         response.stop_reason &&

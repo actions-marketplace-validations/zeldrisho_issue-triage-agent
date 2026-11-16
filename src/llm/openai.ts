@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import type { Logger } from "../types.js";
 import type { LLMMessage, LLMResponse } from "./types.js";
-import type { LLMProvider } from "./provider.js";
+import { TruncatedResponseError, type LLMProvider } from "./provider.js";
 import {
   repositoryArgsSchema,
   repositoryToolDefinitions,
@@ -141,6 +141,9 @@ export class OpenAIProvider implements LLMProvider {
       );
 
       const choice = response.choices[0];
+
+      if (choice?.finish_reason === "length" && !choice.message?.refusal)
+        throw new TruncatedResponseError("Incomplete OpenAI response: length");
 
       if (choice?.message?.refusal || (choice?.finish_reason && choice.finish_reason !== "stop")) {
         throw new Error("OpenAI response refused or incomplete");

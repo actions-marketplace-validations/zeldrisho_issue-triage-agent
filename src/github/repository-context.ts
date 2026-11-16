@@ -223,7 +223,9 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
 
           const paths = parsed.items
             .map((item) => item.path)
-            .filter((path) => snapshot.entries.some((entry) => entry.path === path));
+            .filter(
+              (path) => snapshot.truncated || snapshot.entries.some((entry) => entry.path === path),
+            );
 
           return JSON.stringify({
             paths,

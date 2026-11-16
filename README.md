@@ -22,7 +22,7 @@ When someone opens an issue in your repository, Issue Triage Agent:
 4. **Replies** with a contextual comment — bugs get asked for reproduction steps, features get acknowledged, etc.
 5. **Handles follow-up comments** — replies to user comments with relevant information
 
-The current development version can also inspect repository files to inform replies and analyze supported GitHub-hosted images with a vision-capable model. See [Repository context](#repository-context) and [Attachments](#attachments) for limits and privacy considerations.
+Starting with v0.4.0, the Action can also inspect repository files to inform replies and analyze supported GitHub-hosted images with a vision-capable model. See [Repository context](#repository-context) and [Attachments](#attachments) for limits and privacy considerations.
 
 Choose an Anthropic or OpenAI-compatible provider; processing time depends on the provider and enabled features.
 
@@ -40,7 +40,7 @@ Choose an Anthropic or OpenAI-compatible provider; processing time depends on th
 
 ### Step 1: Add a workflow file
 
-The Action SHA pins in these examples are illustrative and may not be the latest. Check the [releases page](https://github.com/zeldrisho/issue-triage-agent/releases) and replace them with the full commit SHA for your chosen release. Repository context and image analysis described below are unreleased and are not available in the pinned v0.2.0 example.
+The Action SHA pins in these examples are illustrative and may not be the latest. Check the [releases page](https://github.com/zeldrisho/issue-triage-agent/releases) and replace them with the full commit SHA for your chosen release. Repository context and image analysis require v0.4.0 or later and are not available in the pinned v0.2.0 example.
 
 Create `.github/workflows/issue-triage.yml` in your repository:
 
@@ -197,7 +197,7 @@ llm:
 
 ### Repository context
 
-In the current development version, repository tools are enabled by default for initial and follow-up replies. The model can list repository paths, search the GitHub code index, and read text files from the default branch at a fixed commit using the GitHub API. It may read project guidance such as `AGENTS.md` when relevant; files are not loaded automatically. Search results may be stale or incomplete and must be verified against file contents. Files selected by the model are sent to the configured LLM provider, including files in private repositories. The Action can read any regular text file within the limits below, but cannot execute commands or browse the web. A limited review cannot establish conclusions about the entire repository. The token needs `contents: read`.
+Starting with v0.4.0, repository tools are enabled by default for initial and follow-up replies. The model can list repository paths, search the GitHub code index, and read text files from the default branch at a fixed commit using the GitHub API. It may read project guidance such as `AGENTS.md` when relevant; files are not loaded automatically. Search results may be stale or incomplete and must be verified against file contents. Files selected by the model are sent to the configured LLM provider, including files in private repositories. The Action can read any regular text file within the limits below, but cannot execute commands or browse the web. A limited review cannot establish conclusions about the entire repository. The token needs `contents: read`.
 
 Repository files may be changed by contributors or contain embedded third-party material. Review who can modify the default branch and its instructions before enabling repository access; issue and comment content remains untrusted.
 
@@ -205,7 +205,7 @@ Repository access is limited to 40 tool calls, 1,000,000 bytes per file, 12,000 
 
 ### Attachments
 
-In the current development version, with `features.media` enabled, bounded issue descriptions and follow-up comments are scanned for URLs on approved GitHub attachment hosts, including HTML images. Follow-up replies prioritize images in the comment and then include images from the original issue. Images are sent to the configured LLM provider (or custom endpoint), so use a vision-capable model and consider the privacy implications. Image content is untrusted. Disable this feature to prevent attachment downloads and image transmission. Videos are not supported.
+Starting with v0.4.0, with `features.media` enabled, bounded issue descriptions and follow-up comments are scanned for URLs on approved GitHub attachment hosts, including HTML images. Follow-up replies prioritize images in the comment and then include images from the original issue. Images are sent to the configured LLM provider (or custom endpoint), so use a vision-capable model and consider the privacy implications. Image content is untrusted. Disable this feature to prevent attachment downloads and image transmission. Videos are not supported.
 
 Up to four attachments are checked, each limited to 4 MiB and 15 seconds per download. Only PNG, JPEG, GIF and WebP images are supported. Unsupported, inaccessible, oversized, or failed attachments are reported as unavailable to the model. For identifiable image-validation errors, the Action can make up to four additional per-image requests to isolate rejected images; unrelated provider errors are not retried as media failures. Only HTTPS URLs on approved hosts and redirects to approved hosts are fetched. Private or expired links may be inaccessible because downloads do not use GitHub credentials.
 

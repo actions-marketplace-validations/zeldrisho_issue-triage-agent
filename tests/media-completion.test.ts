@@ -1,5 +1,6 @@
 import { expect, it, vi } from "vite-plus/test";
 import { completeWithMediaFallback } from "../src/llm/media-completion.js";
+import { TruncatedResponseError } from "../src/llm/provider.js";
 
 it("retries without images and discloses their unavailability if vision fails", async () => {
   const complete = vi
@@ -54,6 +55,31 @@ it("isolates rejected images and sends the remaining images together", async () 
   expect(complete).toHaveBeenCalledTimes(4);
   expect(complete.mock.calls[3][2][0].images).toEqual([{ mediaType: "image/png", data: "good" }]);
   expect(complete.mock.calls[3][2][0].content).toContain("all other images are unavailable");
+});
+
+it("retains an image when its probe reaches the output limit", async () => {
+  const invalid = Object.assign(new Error("invalid image data"), { status: 400 });
+
+  const complete = vi
+    .fn()
+    .mockRejectedValueOnce(invalid)
+    .mockRejectedValueOnce(new TruncatedResponseError("output limit"))
+    .mockRejectedValueOnce(invalid)
+    .mockResolvedValueOnce({ text: "final", usage: { inputTokens: 0, outputTokens: 0 } });
+
+  const images = [
+    { mediaType: "image/png" as const, data: "good" },
+    { mediaType: "image/png" as const, data: "bad" },
+  ];
+
+  await completeWithMediaFallback(
+    { complete },
+    "model",
+    "system",
+    { role: "user", content: "hi", images },
+    100,
+  );
+  expect(complete.mock.calls[3][2][0].images).toEqual([images[0]]);
 });
 
 it("falls back to text if each image is rejected", async () => {

@@ -19,7 +19,8 @@ follow [Semantic Versioning](https://semver.org/).
 - Reject incomplete provider responses and invalid classifications instead of applying fallback labels.
 - Avoid duplicate replies on ordinary reruns using event markers and the posting account's login.
 - Bound Action runtime, token settings, and image-fallback retries; allow bounded subtree traversal for truncated Git trees.
-- Prioritize follow-up comment images, respect text limits during attachment discovery, and isolate provider-rejected images.
+- Prioritize follow-up comment images, respect text limits during attachment discovery, and isolate provider-rejected images even when image probes reach the output limit.
+- Preserve indexed search results when repository trees are truncated, with file reads verified against the selected commit.
 
 ## [0.3.0] - 2026-11-16
 

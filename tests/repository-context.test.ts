@@ -103,6 +103,24 @@ describe("repository tools", () => {
     expect(await tools.run("read", { path: "src/app.ts" })).toContain("Hello repo");
   });
 
+  it("retains indexed search hits for truncated trees and verifies reads at the snapshot", async () => {
+    const { actx, getTree } = context();
+    getTree
+      .mockResolvedValueOnce({ data: { tree: [], truncated: true } })
+      .mockResolvedValueOnce({
+        data: { tree: [{ path: "src", type: "tree", sha }], truncated: false },
+      })
+      .mockResolvedValueOnce({
+        data: {
+          tree: [{ path: "app.ts", sha, mode: "100644", type: "blob", size: 10 }],
+          truncated: false,
+        },
+      });
+    const tools = repositoryTools(actx);
+    expect(JSON.parse(await tools.run("search", { query: "hello" })).paths).toContain("src/app.ts");
+    expect(await tools.run("read", { path: "src/app.ts" })).toContain("Hello repo");
+  });
+
   it("reads files in pages", async () => {
     const tools = repositoryTools(context("x".repeat(12000) + "tail").actx);
     const first = JSON.parse(await tools.run("read", { path: "src/app.ts" }));

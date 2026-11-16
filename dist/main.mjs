@@ -52468,6 +52468,8 @@ var Anthropic = /* @__PURE__ */ (() => {
 	Anthropic.CMEKKeyUnreachableError = CMEKKeyUnreachableError;
 	return Anthropic;
 })();
+// src/llm/provider.ts
+var TruncatedResponseError = class extends Error {};
 // src/llm/repository-tools.ts
 const repositoryArgsSchema = object({
 	query: string().max(200).optional(),
@@ -52615,6 +52617,7 @@ var AnthropicProvider = class {
 					}))] : m.content
 				}))
 			}, { signal: this.signal });
+			if (response.stop_reason === "max_tokens") throw new TruncatedResponseError("Incomplete Claude response: max_tokens");
 			if (response.stop_reason && response.stop_reason !== "end_turn" && response.stop_reason !== "stop_sequence") throw new Error(`Incomplete Claude response: ${response.stop_reason}`);
 			const textBlock = response.content.find((block) => block.type === "text");
 			if (!textBlock) throw new Error("No text block in Claude response");
@@ -75609,6 +75612,7 @@ var OpenAIProvider = class {
 				})]
 			}, { signal: this.signal });
 			const choice = response.choices[0];
+			if (choice?.finish_reason === "length" && !choice.message?.refusal) throw new TruncatedResponseError("Incomplete OpenAI response: length");
 			if (choice?.message?.refusal || choice?.finish_reason && choice.finish_reason !== "stop") throw new Error("OpenAI response refused or incomplete");
 			const text = choice?.message?.content;
 			if (!text) throw new Error("No text content in OpenAI response");
@@ -78447,6 +78451,11 @@ async function completeWithMediaFallback(provider, model, system, message, maxTo
 			accepted.push(image);
 			positions.push(index + 1);
 		} catch (probeError) {
+			if (probeError instanceof TruncatedResponseError) {
+				accepted.push(image);
+				positions.push(index + 1);
+				continue;
+			}
 			const probe = _instanceof(Error).safeParse(probeError);
 			if (!probe.success || kind(probe.data) === "other") throw probeError;
 			if (kind(probe.data) === "unsupported") return textOnly();
@@ -79033,7 +79042,7 @@ function repositoryTools(actx) {
 					items: array(object({ path: string() })),
 					incomplete_results: boolean().optional()
 				}).parse(result.data);
-				const paths = parsed.items.map((item) => item.path).filter((path) => snapshot.entries.some((entry) => entry.path === path));
+				const paths = parsed.items.map((item) => item.path).filter((path) => snapshot.truncated || snapshot.entries.some((entry) => entry.path === path));
 				return JSON.stringify({
 					paths,
 					notice: "Search uses GitHub's index, which may be incomplete or stale. Read files to verify at the selected commit.",
