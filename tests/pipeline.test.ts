@@ -82,6 +82,7 @@ function createMockActionContext(overrides: Partial<ActionContext> = {}): Action
       issues: {
         addLabels: vi.fn().mockResolvedValue({}),
         createComment: vi.fn().mockResolvedValue({}),
+        listComments: vi.fn().mockResolvedValue({ data: [] }),
       },
       search: {
         issuesAndPullRequests: vi.fn().mockResolvedValue({
@@ -128,6 +129,35 @@ describe("runPipeline", () => {
     process.env.ANTHROPIC_API_KEY = "test-api-key";
     delete process.env.OPENAI_API_KEY;
   });
+
+  it.each([true, false])(
+    "honors repository context setting for issue replies: %s",
+    async (enabled) => {
+      const { loadConfig } = await import("../src/config/loader.js");
+      vi.mocked(loadConfig).mockResolvedValueOnce({
+        ...DEFAULT_CONFIG,
+        features: {
+          ...DEFAULT_CONFIG.features,
+          classify: false,
+          duplicateSearch: false,
+          repositoryContext: enabled,
+        },
+      });
+
+      const complete = vi
+        .fn()
+        .mockResolvedValue({ text: "reply", usage: { inputTokens: 0, outputTokens: 0 } });
+
+      const completeWithRepository = vi
+        .fn()
+        .mockResolvedValue({ text: "reply", usage: { inputTokens: 0, outputTokens: 0 } });
+
+      vi.mocked(createProvider).mockReturnValueOnce({ complete, completeWithRepository });
+      await runPipeline(createMockActionContext());
+      expect(completeWithRepository).toHaveBeenCalledTimes(enabled ? 1 : 0);
+      expect(complete).toHaveBeenCalledTimes(enabled ? 0 : 1);
+    },
+  );
 
   it("propagates configuration errors", async () => {
     const { loadConfig } = await import("../src/config/loader.js");
@@ -186,6 +216,65 @@ describe("runPipeline", () => {
     expect(result.classification?.category).toBe("bug");
     expect(result.classification?.summary).toContain("[DEV MODE]");
     expect(result.replyPosted).toBe(true);
+  });
+
+  it("does not post a duplicate reply for an issue rerun", async () => {
+    const actx = createMockActionContext();
+
+    actx.octokit.rest.issues.listComments.mockResolvedValue({
+      data: [
+        { user: { login: "github-actions[bot]" }, body: "<!-- issue-triage-agent:issue:1 -->" },
+      ],
+    });
+    const result = await runPipeline(actx);
+
+    expect(result.replyPosted).toBe(false);
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+  });
+
+  it("stops before side effects when its deadline is already expired", async () => {
+    const actx = createMockActionContext({ signal: AbortSignal.abort(new Error("deadline")) });
+
+    await expect(runPipeline(actx)).rejects.toThrow("deadline");
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+    expect(actx.octokit.rest.issues.addLabels).not.toHaveBeenCalled();
+  });
+
+  it("does not download images beyond the configured issue length", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce(DEFAULT_CONFIG);
+    const actx = createMockActionContext();
+    actx.payload.issue.body =
+      "x".repeat(10001) + " https://user-images.githubusercontent.com/9/hidden.png";
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    try {
+      await runPipeline(actx);
+      expect(fetchMock).not.toHaveBeenCalled();
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
+  it("does not apply labels for malformed classification and still replies", async () => {
+    const complete = vi
+      .fn()
+      .mockResolvedValueOnce({ text: "not json", usage: { inputTokens: 0, outputTokens: 0 } })
+      .mockResolvedValueOnce({
+        text: "Thanks for reporting this.",
+        usage: { inputTokens: 0, outputTokens: 0 },
+      });
+
+    vi.mocked(createProvider).mockReturnValueOnce({ complete });
+    const actx = createMockActionContext();
+    const result = await runPipeline(actx);
+
+    expect(result.classification).toBeNull();
+    expect(result.labelsApplied).toEqual([]);
+    expect(result.errors.map((error) => error.step)).toContain("classify");
+    expect(result.replyPosted).toBe(true);
+    expect(complete.mock.calls[1][2][0].content).toContain("Classification: unavailable");
   });
 
   it("loads config and runs full pipeline with defaults", async () => {

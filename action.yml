@@ -26,6 +26,10 @@ inputs:
   llm-base-url:
     description: "Custom base URL for LLM API (applies to the selected provider)"
     required: false
+  bot-login:
+    description: "GitHub login that posts Action replies, used to detect reruns"
+    required: false
+    default: "github-actions[bot]"
   config-path:
     description: "Path to the config YAML file in the repo"
     required: false

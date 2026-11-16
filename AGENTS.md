@@ -29,7 +29,7 @@
 - Keep Action input/output changes aligned across `action.yml`, `src/main.ts`, and `README.md`.
 - Use a GitHub-supported explicit Node runtime in `action.yml`; CI's LTS version does not control it.
 - Record only user-facing changes in `CHANGELOG.md` under Unreleased.
-- Before implementing GitHub Actions changes, research current guidance using `site:docs.github.com/actions` and verify the relevant official documentation.
+- Before implementing GitHub Actions or LLM integration changes, check current official guidance using `site:docs.github.com/actions`, `site:platform.claude.com/docs`, and `site:developers.openai.com` as relevant.
 - Keep configuration changes aligned across `src/config/schema.ts`, `src/config/loader.ts`, and `README.md`.
 
 ## References

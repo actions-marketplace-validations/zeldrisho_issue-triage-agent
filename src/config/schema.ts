@@ -12,6 +12,8 @@ export const DEFAULT_CONFIG: RepoConfig = {
     reply: true,
     duplicateSearch: true,
     commentReply: true,
+    media: true,
+    repositoryContext: true,
   },
   labelMapping: {
     bug: ["bug"],

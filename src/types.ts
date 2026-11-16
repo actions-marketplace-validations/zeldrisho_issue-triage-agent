@@ -42,6 +42,8 @@ export interface RepoConfig {
     reply: boolean;
     duplicateSearch: boolean;
     commentReply: boolean;
+    media: boolean;
+    repositoryContext: boolean;
   };
   labelMapping: Record<string, string[]>;
   security: {
@@ -111,6 +113,8 @@ export interface ActionContext {
   octokit: any;
   logger: Logger;
   configPath?: string;
+  botLogin?: string;
+  signal?: AbortSignal;
   eventName: string;
   payload: {
     action: string;

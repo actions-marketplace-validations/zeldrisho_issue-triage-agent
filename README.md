@@ -2,7 +2,7 @@
 
 # ⚡ Issue Triage Agent
 
-**AI-powered GitHub Issue triage — classify, label, and reply automatically**
+**AI-powered GitHub Action for issue triage, duplicate detection, and context-aware replies**
 
 [![GitHub Action](https://img.shields.io/github/actions/workflow/status/zeldrisho/issue-triage-agent/ci.yml?branch=main&label=CI&logo=github-actions&logoColor=white)](https://github.com/zeldrisho/issue-triage-agent/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -22,7 +22,9 @@ When someone opens an issue in your repository, Issue Triage Agent:
 4. **Replies** with a contextual comment — bugs get asked for reproduction steps, features get acknowledged, etc.
 5. **Handles follow-up comments** — replies to user comments with relevant information
 
-All in ~8 seconds, powered by your LLM of choice.
+Starting with v0.4.0, the Action can also inspect repository files to inform replies and analyze supported GitHub-hosted images with a vision-capable model. See [Repository context](#repository-context) and [Attachments](#attachments) for limits and privacy considerations.
+
+Choose an Anthropic or OpenAI-compatible provider; processing time depends on the provider and enabled features.
 
 ## Demo
 
@@ -38,7 +40,7 @@ All in ~8 seconds, powered by your LLM of choice.
 
 ### Step 1: Add a workflow file
 
-The Action SHA pins in these examples are illustrative and may not be the latest. Check the [releases page](https://github.com/zeldrisho/issue-triage-agent/releases) and replace them with the full commit SHA for your chosen release.
+The Action SHA pins in these examples are illustrative and may not be the latest. Check the [releases page](https://github.com/zeldrisho/issue-triage-agent/releases) and replace them with the full commit SHA for your chosen release. Repository context and image analysis require v0.4.0 or later and are not available in the pinned v0.2.0 example.
 
 Create `.github/workflows/issue-triage.yml` in your repository:
 
@@ -151,6 +153,8 @@ features:
   reply: true # Post AI-drafted replies
   duplicateSearch: true # Detect duplicate issues
   commentReply: true # Reply to follow-up comments
+  media: true # Analyze supported GitHub-hosted images
+  repositoryContext: true # Allow replies to inspect repository files
 
 label_mapping:
   bug: ["bug"]
@@ -176,20 +180,36 @@ llm:
 
 ### Config Reference
 
-| Key                         | Default                  | Description                                                                                         |
-| --------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------- |
-| `enabled`                   | `true`                   | Master on/off switch                                                                                |
-| `features.classify`         | `true`                   | Enable issue classification + labeling                                                              |
-| `features.reply`            | `true`                   | Enable AI-drafted reply comments                                                                    |
-| `features.duplicateSearch`  | `true`                   | Search for duplicate issues and link them                                                           |
-| `features.commentReply`     | `true`                   | Reply to follow-up comments on issues                                                               |
-| `label_mapping`             | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
-| `security.max_issue_length` | `10000`                  | Truncate issue body beyond this length                                                              |
-| `exclude.labels`            | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
-| `exclude.users`             | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
-| `llm.provider`              | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                           |
-| `llm.model`                 | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
-| `llm.max_tokens`            | `2048`                   | Max tokens for LLM responses                                                                        |
+| Key                          | Default                  | Description                                                                                         |
+| ---------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------- |
+| `enabled`                    | `true`                   | Master on/off switch                                                                                |
+| `features.classify`          | `true`                   | Enable issue classification + labeling                                                              |
+| `features.reply`             | `true`                   | Enable AI-drafted reply comments                                                                    |
+| `features.duplicateSearch`   | `true`                   | Search for duplicate issues and link them                                                           |
+| `features.commentReply`      | `true`                   | Reply to follow-up comments on issues                                                               |
+| `features.media`             | `true`                   | Download supported GitHub images and send them to the model                                         |
+| `features.repositoryContext` | `true`                   | Allow replies to inspect repository files                                                           |
+| `label_mapping`              | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
+| `security.max_issue_length`  | `10000`                  | Truncate issue body beyond this length                                                              |
+| `exclude.labels`             | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
+| `exclude.users`              | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
+| `llm.provider`               | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                           |
+| `llm.model`                  | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
+| `llm.max_tokens`             | `2048`                   | Max tokens per LLM response (1–8192)                                                                |
+
+### Repository context
+
+Starting with v0.4.0, repository tools are enabled by default for initial and follow-up replies. Set `features.repositoryContext: false` to disable repository access. The model can list repository paths, search the GitHub code index, and read text files from the default branch at a fixed commit using the GitHub API. It may read project guidance such as `AGENTS.md` when relevant; files are not loaded automatically. Search results may be stale or incomplete and must be verified against file contents. Files selected by the model are sent to the configured LLM provider, including files in private repositories. The Action can read any regular text file within the limits below, but cannot execute commands or browse the web. A limited review cannot establish conclusions about the entire repository. The token needs `contents: read`.
+
+Repository files may be changed by contributors or contain embedded third-party material. Review who can modify the default branch and its instructions before enabling repository access; issue and comment content remains untrusted.
+
+Repository access is limited to 40 tool calls, 1,000,000 bytes per file, 12,000 characters per read, 240,000 total returned file bytes, and eight tool rounds per reply. Each Action invocation has a 180-second deadline. Provider requests also time out after 60 seconds and retry eligible failures once. Files with invalid UTF-8 or binary content are skipped. The GitHub tree API can return an incomplete recursive listing for large repositories; the model can list directories individually and read files by path using bounded subtree traversal. When a model or gateway explicitly rejects tool calling as unsupported, replies fall back to a request without repository tools. Other provider errors are not retried as tool incompatibility. The model may quote repository content in its reply, so do not enable this Action where issue or comment authors should not be able to request repository contents.
+
+### Attachments
+
+Starting with v0.4.0, with `features.media` enabled, bounded issue descriptions and follow-up comments are scanned for URLs on approved GitHub attachment hosts, including HTML images. Follow-up replies prioritize images in the comment and then include images from the original issue. Images are sent to the configured LLM provider (or custom endpoint), so use a vision-capable model and consider the privacy implications. Image content is untrusted. Disable this feature to prevent attachment downloads and image transmission. Videos are not supported.
+
+Up to four attachments are checked, each limited to 4 MiB and 15 seconds per download. Only PNG, JPEG, GIF and WebP images are supported. Unsupported, inaccessible, oversized, or failed attachments are reported as unavailable to the model. For identifiable image-validation errors, the Action can make up to four additional per-image requests to isolate rejected images; unrelated provider errors are not retried as media failures. Only HTTPS URLs on approved hosts and redirects to approved hosts are fetched. Private or expired links may be inaccessible because downloads do not use GitHub credentials.
 
 ## Action Inputs & Outputs
 
@@ -203,6 +223,7 @@ llm:
 | `llm-provider`      | No       | Auto-detected                    | LLM provider; overrides repository configuration           |
 | `llm-model`         | No       | Provider-specific                | Model identifier; overrides repository configuration       |
 | `llm-base-url`      | No       |                                  | Custom base URL for LLM API (applies to selected provider) |
+| `bot-login`         | No       | `github-actions[bot]`            | Login used to identify existing Action replies             |
 | `config-path`       | No       | `.github/issue-triage-agent.yml` | Path to config file in repo                                |
 
 At least one API key is required. If neither is set, the bot runs in **dev mode** with mock responses.
@@ -217,6 +238,8 @@ At least one API key is required. If neither is set, the bot runs in **dev mode*
 | `reply-posted`   | Whether a reply comment was posted     |
 
 Outputs are set for `issues` events only; `issue_comment` events do not set outputs.
+
+Replies include a hidden event marker to avoid posting again on ordinary workflow reruns. Set `bot-login` to the account that posts comments when using a custom token. The check is best-effort: concurrent runs can both post before either sees the other's reply. If the comment history cannot be checked or reaches 2,000 comments, the reply is skipped.
 
 ## Contributing
 

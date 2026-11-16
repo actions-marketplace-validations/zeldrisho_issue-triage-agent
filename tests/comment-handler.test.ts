@@ -71,6 +71,7 @@ function createMockActionContext(overrides: Partial<ActionContext> = {}): Action
     rest: {
       issues: {
         createComment: vi.fn().mockResolvedValue({}),
+        listComments: vi.fn().mockResolvedValue({ data: [] }),
       },
     },
   };
@@ -92,6 +93,31 @@ describe("handleComment", () => {
     process.env.ANTHROPIC_API_KEY = "test-api-key";
     delete process.env.OPENAI_API_KEY;
   });
+
+  it.each([true, false])(
+    "honors repository context setting for comment replies: %s",
+    async (enabled) => {
+      const { loadConfig } = await import("../src/config/loader.js");
+      const { createProvider } = await import("../src/llm/factory.js");
+      vi.mocked(loadConfig).mockResolvedValueOnce({
+        ...DEFAULT_CONFIG,
+        features: { ...DEFAULT_CONFIG.features, repositoryContext: enabled },
+      });
+
+      const complete = vi
+        .fn()
+        .mockResolvedValue({ text: "reply", usage: { inputTokens: 0, outputTokens: 0 } });
+
+      const completeWithRepository = vi
+        .fn()
+        .mockResolvedValue({ text: "reply", usage: { inputTokens: 0, outputTokens: 0 } });
+
+      vi.mocked(createProvider).mockReturnValueOnce({ complete, completeWithRepository });
+      await handleComment(createMockActionContext());
+      expect(completeWithRepository).toHaveBeenCalledTimes(enabled ? 1 : 0);
+      expect(complete).toHaveBeenCalledTimes(enabled ? 0 : 1);
+    },
+  );
 
   it("propagates configuration errors", async () => {
     const { loadConfig } = await import("../src/config/loader.js");
@@ -150,6 +176,70 @@ describe("handleComment", () => {
     expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
   });
 
+  it("skips comments on issues with excluded labels", async () => {
+    const actx = createMockActionContext({
+      payload: {
+        ...basePayload,
+        issue: { ...basePayload.issue, labels: [{ name: "skip-ai", id: 2 }] },
+      },
+    });
+
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+  });
+
+  it("does not post a duplicate reply for a comment rerun", async () => {
+    const actx = createMockActionContext();
+
+    actx.octokit.rest.issues.listComments.mockResolvedValue({
+      data: [
+        { user: { login: "github-actions[bot]" }, body: "<!-- issue-triage-agent:comment:100 -->" },
+      ],
+    });
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+  });
+
+  it("prioritizes bounded follow-up images over original issue images", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce(DEFAULT_CONFIG);
+
+    const urls = Array.from(
+      { length: 4 },
+      (_, index) => `https://user-images.githubusercontent.com/${index}/old.png`,
+    );
+
+    const current = "https://user-images.githubusercontent.com/9/current.png";
+    const ignored = "https://user-images.githubusercontent.com/10/ignored.png";
+
+    const fetchMock = vi.fn().mockImplementation(() =>
+      Promise.resolve(
+        new Response(Buffer.from("89504e470d0a1a0a", "hex"), {
+          headers: { "content-type": "image/png" },
+        }),
+      ),
+    );
+
+    vi.stubGlobal("fetch", fetchMock);
+
+    try {
+      const actx = createMockActionContext({
+        payload: {
+          ...basePayload,
+          issue: { ...basePayload.issue, body: urls.join(" ") },
+          comment: { ...basePayload.comment, body: `${current} ${"x".repeat(5000)} ${ignored}` },
+        },
+      });
+
+      await handleComment(actx);
+      expect(fetchMock.mock.calls[0][0]).toBe(current);
+      expect(fetchMock).toHaveBeenCalledTimes(4);
+      expect(fetchMock.mock.calls.map((call) => call[0])).not.toContain(ignored);
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
   it("posts a reply for a valid comment", async () => {
     const actx = createMockActionContext();
 
@@ -173,7 +263,7 @@ describe("handleComment", () => {
     await handleComment(actx);
 
     const call: { body: string } = actx.octokit.rest.issues.createComment.mock.calls[0][0];
-    expect(call.body.length).toBeLessThanOrEqual(4050);
+    expect(call.body.length).toBeLessThanOrEqual(4100);
     expect(call.body).toContain("truncated");
   });
 });

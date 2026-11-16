@@ -3,6 +3,7 @@ import type { Logger } from "./types.js";
 import type { GitHubIssue, RelatedIssue, RepoConfig } from "./types.js";
 import type { LLMProvider } from "./llm/provider.js";
 import { DUPLICATE_SYSTEM_PROMPT, buildDuplicateUserMessage } from "./prompts/duplicate.js";
+import { sanitizeIssueBody, sanitizeIssueTitle } from "./sanitizer.js";
 
 export interface DuplicateResponse {
   duplicates: number[];
@@ -56,7 +57,7 @@ export async function detectDuplicates(
   }
 
   const userMessage = buildDuplicateUserMessage(
-    { title: issue.title, body: issue.body },
+    { title: sanitizeIssueTitle(issue.title), body: sanitizeIssueBody(issue.body, config) },
     candidates,
   );
 

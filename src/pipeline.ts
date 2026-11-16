@@ -7,6 +7,9 @@ import { draftReply } from "./replier.js";
 import { resolveLabels, applyLabels } from "./github/labels.js";
 import { searchSimilarIssues } from "./github/search.js";
 import { detectDuplicates } from "./duplicate.js";
+import { processMedia } from "./media.js";
+import { repositoryTools } from "./github/repository-context.js";
+import { markReply, replyAlreadyPosted, replyMarker } from "./github/reply-dedup.js";
 
 function shouldExclude(payload: ActionContext["payload"], config: RepoConfig): boolean {
   const issue = payload.issue;
@@ -65,12 +68,19 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
   const sanitizedTitle = sanitizeIssueTitle(issue.title);
   const sanitizedBody = sanitizeIssueBody(issue.body, config);
 
-  const llmClient = createProvider(config.llm.provider, log);
+  const llmClient = createProvider(config.llm.provider, log, actx.signal);
   const devMode = !llmClient;
 
   if (devMode) {
     log.warn("No LLM API key configured — running in dev mode with mock responses");
   }
+
+  const media =
+    llmClient && (config.features.classify || config.features.reply)
+      ? await processMedia([sanitizedBody], config.features.media, actx.signal)
+      : undefined;
+
+  actx.signal?.throwIfAborted();
 
   if (config.features.classify) {
     try {
@@ -92,6 +102,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
           config,
           llmClient,
           log,
+          media,
         );
       }
 
@@ -121,6 +132,8 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
       });
     }
   }
+
+  actx.signal?.throwIfAborted();
 
   if (config.features.duplicateSearch && llmClient) {
     try {
@@ -154,8 +167,18 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
     }
   }
 
+  actx.signal?.throwIfAborted();
+
   if (config.features.reply) {
     try {
+      const marker = replyMarker(actx);
+
+      if (await replyAlreadyPosted(actx, marker)) {
+        log.info("Reply already posted for this event, skipping");
+
+        return result;
+      }
+
       let replyBody: string;
 
       if (devMode || !llmClient) {
@@ -175,27 +198,23 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
       } else {
         replyBody = await draftReply(
           issue,
-          result.classification ?? {
-            category: "question" as const,
-            priority: "medium" as const,
-            confidence: 0,
-            summary: "",
-            suggestedLabels: [],
-            reasoning: "Fallback: classification unavailable",
-          },
+          result.classification,
           sanitizedBody,
           sanitizedTitle,
           config,
           llmClient,
           log,
+          media,
+          config.features.repositoryContext ? repositoryTools(actx) : undefined,
         );
       }
 
+      actx.signal?.throwIfAborted();
       await actx.octokit.rest.issues.createComment({
         owner: actx.owner,
         repo: actx.repo,
         issue_number: actx.payload.issue.number,
-        body: replyBody,
+        body: markReply(replyBody, marker),
       });
       result.replyPosted = true;
       log.info("Reply comment posted");

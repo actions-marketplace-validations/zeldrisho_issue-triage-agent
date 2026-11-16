@@ -77,6 +77,17 @@ describe("loadConfig", () => {
     }
   });
 
+  it("allows repository context to be disabled", async () => {
+    const config = await loadConfig(
+      "owner",
+      "repo",
+      octokitFor("features:\n  repositoryContext: false\n"),
+    );
+
+    expect(config.features.repositoryContext).toBe(false);
+    expect(DEFAULT_CONFIG.features.repositoryContext).toBe(true);
+  });
+
   it("supports YAML merge keys", async () => {
     const yaml =
       "defaults: &defaults\n  classify: false\nfeatures:\n  <<: *defaults\n  reply: false\n";
@@ -108,7 +119,9 @@ describe("loadConfig", () => {
     "llm:\n  provider: invalid\n",
     "llm:\n  model: ''\n",
     "llm:\n  max_tokens: -1\n",
+    "llm:\n  max_tokens: 8193\n",
     "features:\n  reply: nope\n",
+    "features:\n  repositoryContext: nope\n",
     "security:\n  max_issue_length: 0\n",
     "exclude:\n  users: false\n",
     "label_mapping:\n  bug: broken\n",

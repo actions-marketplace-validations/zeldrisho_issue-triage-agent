@@ -6,6 +6,23 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-16
+
+### Added
+
+- Analyze supported GitHub-hosted issue and comment images with vision-capable models.
+- Allow issue and follow-up replies to inspect repository files using bounded, read-only GitHub API tools, with a configuration option to disable access.
+
+### Fixed
+
+- Ignore unsupported issue and comment event actions and honor issue exclusions for follow-up comments.
+- Reject incomplete provider responses and invalid classifications instead of applying fallback labels.
+- Avoid duplicate replies on ordinary reruns using event markers and the posting account's login.
+- Bound Action runtime, token settings, and image-fallback retries; allow bounded subtree traversal for truncated Git trees.
+- Prioritize follow-up comment images, respect text limits during attachment discovery, and isolate provider-rejected images even when image probes reach the output limit.
+- Preserve indexed search results when repository trees are truncated, with file reads verified against the selected commit.
+- Fall back to replies without repository tools when a provider explicitly rejects tool calling.
+
 ## [0.3.0] - 2026-11-16
 
 ### Added
@@ -38,6 +55,7 @@ follow [Semantic Versioning](https://semver.org/).
 
 - Register supplied GitHub and LLM credentials for masking in workflow logs.
 
-[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/zeldrisho/issue-triage-agent/releases/tag/v0.2.0

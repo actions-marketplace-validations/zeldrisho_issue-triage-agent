@@ -96,7 +96,8 @@ async function main(): Promise<void> {
 
   if (llmBaseURL) process.env.LLM_BASE_URL = llmBaseURL;
 
-  const octokit = github.getOctokit(token);
+  const signal = AbortSignal.timeout(180_000);
+  const octokit = github.getOctokit(token, { request: { signal } });
   const ctx = github.context;
   const { owner, repo } = ctx.repo;
 
@@ -114,12 +115,23 @@ async function main(): Promise<void> {
     return;
   }
 
+  if (
+    (ctx.eventName === "issues" && payload.data.action !== "opened") ||
+    (ctx.eventName === "issue_comment" && payload.data.action !== "created")
+  ) {
+    core.info(`Ignoring unsupported ${ctx.eventName} action: ${payload.data.action}`);
+
+    return;
+  }
+
   const actx: ActionContext = {
     owner,
     repo,
     octokit,
     logger: createActionLogger(),
     configPath,
+    botLogin: core.getInput("bot-login") || "github-actions[bot]",
+    signal,
     eventName: ctx.eventName,
     payload: payload.data,
   };
@@ -127,6 +139,7 @@ async function main(): Promise<void> {
   try {
     if (actx.eventName === "issues") {
       const result = await runPipeline(actx);
+      signal.throwIfAborted();
 
       core.setOutput("category", result.classification?.category ?? "");
       core.setOutput("priority", result.classification?.priority ?? "");
@@ -138,6 +151,7 @@ async function main(): Promise<void> {
       }
     } else if (actx.eventName === "issue_comment") {
       await handleComment(actx);
+      signal.throwIfAborted();
     } else {
       core.warning(`Unsupported event: ${actx.eventName}`);
     }
