@@ -1,3 +1,4 @@
+import { z } from "zod";
 import type { ActionContext } from "./types.js";
 import { loadConfig } from "./config/loader.js";
 import { sanitizeIssueBody, sanitizeIssueTitle } from "./sanitizer.js";
@@ -63,14 +64,6 @@ export async function handleComment(actx: ActionContext): Promise<void> {
   const issueBody = sanitizeIssueBody(issue.body, config);
   const issueLabels = (issue.labels ?? []).map((l: { name: string }) => l.name);
 
-  const userMessage = buildCommentReplyMessage({
-    issueTitle,
-    issueBody,
-    issueLabels,
-    commentAuthor: comment.user?.login ?? "unknown",
-    commentBody,
-  });
-
   try {
     const marker = replyMarker(actx);
 
@@ -79,6 +72,53 @@ export async function handleComment(actx: ActionContext): Promise<void> {
 
       return;
     }
+
+    const history: Array<{ author: string; body: string }> = [];
+
+    for (let page = 1; page <= 20; page++) {
+      const response = await actx.octokit.rest.issues.listComments({
+        owner: actx.owner,
+        repo: actx.repo,
+        issue_number: issueNumber,
+        per_page: 100,
+        page,
+      });
+
+      const entries = z
+        .array(
+          z.object({
+            id: z.number(),
+            body: z.string().nullish(),
+            user: z.object({ login: z.string() }).nullish(),
+          }),
+        )
+        .parse(response.data);
+
+      for (const entry of entries) {
+        if (entry.id >= comment.id) continue;
+        history.push({
+          author: String(entry.user?.login ?? "unknown").slice(0, 100),
+          body: String(entry.body ?? "")
+            .replace(/<!--\s*issue-triage-agent:[\s\S]*?-->/g, "")
+            .slice(0, 2000),
+        });
+
+        if (history.length > 10) history.shift();
+      }
+
+      if (entries.length < 100 || entries.some((entry) => entry.id === comment.id)) break;
+
+      if (page === 20) throw new Error("Too many comments to safely collect conversation history");
+    }
+
+    const userMessage = buildCommentReplyMessage({
+      issueTitle,
+      issueBody,
+      issueLabels,
+      commentAuthor: comment.user?.login ?? "unknown",
+      commentBody,
+      history,
+    });
 
     const media = await processMedia([commentBody, issueBody], config.features.media, actx.signal);
 
@@ -100,6 +140,12 @@ export async function handleComment(actx: ActionContext): Promise<void> {
 
     if (codeBlockMatch) {
       replyText = codeBlockMatch[1].trim();
+    }
+
+    if (!replyText || /^(?:NO_REPLY\.?|`NO_REPLY`\.?)$/i.test(replyText)) {
+      actx.logger.info("No follow-up reply needed");
+
+      return;
     }
 
     if (replyText.length > MAX_COMMENT_REPLY_LENGTH) {

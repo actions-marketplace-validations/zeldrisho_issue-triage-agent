@@ -15,9 +15,16 @@ A duplicate means the issues describe the SAME underlying problem or request. Si
 
 export function buildDuplicateUserMessage(
   newIssue: { title: string; body: string | null },
-  candidates: Array<{ number: number; title: string; url: string }>,
+  candidates: Array<{ number: number; title: string; url: string; body?: string }>,
 ): string {
-  const candidateList = candidates.map((c) => `- #${c.number}: ${c.title} (${c.url})`).join("\n");
+  const candidateList = JSON.stringify(
+    candidates.map((c) => ({
+      number: c.number,
+      title: c.title.slice(0, 500),
+      url: c.url,
+      body: (c.body ?? "").slice(0, 2000),
+    })),
+  );
 
   return `=== UNTRUSTED ISSUE DATA BEGIN ===
 New issue:

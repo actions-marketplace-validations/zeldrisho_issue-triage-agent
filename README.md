@@ -122,7 +122,7 @@ If your provider exposes an Anthropic or OpenAI compatible API, point `llm-base-
 
 For compatible gateways, select the API protocol supported by the endpoint and set `llm.model` to a model ID available through that gateway. Selecting `openai` specifies the protocol, not necessarily the model provider.
 
-Provider selection uses the Action input first, then `llm.provider` in repository configuration, then available credentials (OpenAI before Anthropic), defaulting to Anthropic. The custom base URL applies to the selected provider. If no key is available for that provider, issue triage uses mock responses and comment replies are skipped.
+Provider selection uses the Action input first, then `llm.provider` in repository configuration, then available credentials (OpenAI before Anthropic), defaulting to Anthropic. The custom base URL applies to the selected provider. If no key is available for that provider, issue triage and comment replies are skipped without changing the issue.
 
 To select a model in GitHub settings, first update your workflow to a v0.3.0 or later release SHA; the v0.2.0 example above does not support `llm-model`. Then go to **Settings > Secrets and variables > Actions > Variables**, create a repository variable named `LLM_MODEL`, and pass it to the Action:
 
@@ -165,6 +165,11 @@ label_mapping:
   invalid: ["invalid"]
   security: ["security"]
 
+labeling:
+  min_confidence: 0 # Minimum model confidence from 0 to 1
+  skip_assigned: false # Do not add labels when the issue has an assignee
+  skip_labeled: false # Do not add labels when the issue already has labels
+
 security:
   max_issue_length: 10000 # Max chars of issue body to process
 
@@ -190,6 +195,9 @@ llm:
 | `features.media`             | `true`                   | Download supported GitHub images and send them to the model                                         |
 | `features.repositoryContext` | `true`                   | Allow replies to inspect repository files                                                           |
 | `label_mapping`              | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
+| `labeling.min_confidence`    | `0`                      | Minimum classification confidence for applying labels (0–1)                                         |
+| `labeling.skip_assigned`     | `false`                  | Skip labeling if the current issue has an assignee                                                  |
+| `labeling.skip_labeled`      | `false`                  | Skip labeling if the current issue already has labels                                               |
 | `security.max_issue_length`  | `10000`                  | Truncate issue body beyond this length                                                              |
 | `exclude.labels`             | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
 | `exclude.users`              | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
@@ -226,18 +234,21 @@ Up to four attachments are checked, each limited to 4 MiB and 15 seconds per dow
 | `bot-login`         | No       | `github-actions[bot]`            | Login used to identify existing Action replies             |
 | `config-path`       | No       | `.github/issue-triage-agent.yml` | Path to config file in repo                                |
 
-At least one API key is required. If neither is set, the bot runs in **dev mode** with mock responses.
+At least one API key for the selected provider is required. Without one, the Action skips triage and does not modify the issue.
 
 ### Outputs
 
-| Output           | Description                            |
-| ---------------- | -------------------------------------- |
-| `category`       | Classified issue category              |
-| `priority`       | Classified issue priority              |
-| `labels-applied` | Comma-separated list of applied labels |
-| `reply-posted`   | Whether a reply comment was posted     |
+| Output           | Description                                                        |
+| ---------------- | ------------------------------------------------------------------ |
+| `category`       | Classified issue category                                          |
+| `priority`       | Classified issue priority                                          |
+| `labels-applied` | Comma-separated list of applied labels                             |
+| `reply-posted`   | Whether a reply comment was posted                                 |
+| `triage-report`  | JSON classification, applied labels, reply status, and step errors |
 
 Outputs are set for `issues` events only; `issue_comment` events do not set outputs.
+
+Follow-up replies can use up to ten earlier comments (up to 2,000 characters each), and may skip acknowledgements that do not need a response. Conversation content is sent to the configured LLM provider and treated as untrusted. If conversation history cannot be collected safely, the reply is skipped. Duplicate search considers open and closed issues and sends bounded candidate descriptions to the model; it also searches for potentially related open pull requests for initial replies. Labeling eligibility is checked against the current issue before adding labels when either skip option is enabled; a concurrent change can still race with that check. These options affect labeling only, not replies or duplicate search.
 
 Replies include a hidden event marker to avoid posting again on ordinary workflow reruns. Set `bot-login` to the account that posts comments when using a custom token. The check is best-effort: concurrent runs can both post before either sees the other's reply. If the comment history cannot be checked or reaches 2,000 comments, the reply is skipped.
 

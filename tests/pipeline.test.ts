@@ -46,6 +46,7 @@ vi.mock("../src/llm/factory.js", () => ({
 // Mock GitHub search API
 vi.mock("../src/github/search.js", () => ({
   searchSimilarIssues: vi.fn().mockResolvedValue([]),
+  searchRelatedPullRequests: vi.fn().mockResolvedValue([]),
 }));
 
 // Mock config loader — inline default config to avoid hoisting issues
@@ -62,6 +63,7 @@ vi.mock("../src/config/loader.js", () => ({
       invalid: ["invalid"],
       security: ["security"],
     },
+    labeling: { minConfidence: 0, skipAssigned: false, skipLabeled: false },
     security: { maxIssueLength: 10000 },
     exclude: { labels: ["wontfix", "skip-ai"], users: ["dependabot[bot]"] },
     llm: { provider: "anthropic", model: "claude-haiku-4-5-20251001", maxTokens: 2048 },
@@ -206,16 +208,16 @@ describe("runPipeline", () => {
     expect(result.classification).toBeNull();
   });
 
-  it("runs in dev mode when no LLM API key is set", async () => {
+  it("does not mutate issues when no LLM API key is set", async () => {
     delete process.env.ANTHROPIC_API_KEY;
     vi.mocked(createProvider).mockReturnValueOnce(null);
     const actx = createMockActionContext();
 
     const result = await runPipeline(actx);
-    expect(result.classification).not.toBeNull();
-    expect(result.classification?.category).toBe("bug");
-    expect(result.classification?.summary).toContain("[DEV MODE]");
-    expect(result.replyPosted).toBe(true);
+    expect(result.classification).toBeNull();
+    expect(result.replyPosted).toBe(false);
+    expect(actx.octokit.rest.issues.addLabels).not.toHaveBeenCalled();
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
   });
 
   it("does not post a duplicate reply for an issue rerun", async () => {
@@ -277,6 +279,55 @@ describe("runPipeline", () => {
     expect(complete.mock.calls[1][2][0].content).toContain("Classification: unavailable");
   });
 
+  it("skips labels below the configured confidence without blocking replies", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce({
+      ...DEFAULT_CONFIG,
+      features: { ...DEFAULT_CONFIG.features, repositoryContext: false, media: false },
+      labeling: { ...DEFAULT_CONFIG.labeling, minConfidence: 1 },
+    });
+    const actx = createMockActionContext();
+    const result = await runPipeline(actx);
+    expect(result.replyPosted).toBe(true);
+    expect(result.labelingStatus).toBe("skipped-confidence");
+    expect(actx.octokit.rest.issues.addLabels).not.toHaveBeenCalled();
+  });
+
+  it.each(["assigned", "labeled"])("skips labeling when the current issue is %s", async (state) => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce({
+      ...DEFAULT_CONFIG,
+      features: { ...DEFAULT_CONFIG.features, repositoryContext: false, media: false },
+      labeling: { minConfidence: 0, skipAssigned: true, skipLabeled: true },
+    });
+    const actx = createMockActionContext();
+    actx.octokit.rest.issues.get = vi.fn().mockResolvedValue({
+      data: {
+        assignees: state === "assigned" ? [{}] : [],
+        labels: state === "labeled" ? [{}] : [],
+      },
+    });
+    const result = await runPipeline(actx);
+    expect(result.replyPosted).toBe(true);
+    expect(result.labelingStatus).toBe(`skipped-${state}`);
+    expect(actx.octokit.rest.issues.addLabels).not.toHaveBeenCalled();
+  });
+
+  it("isolates a related pull request search failure from the reply", async () => {
+    const { searchRelatedPullRequests } = await import("../src/github/search.js");
+    vi.mocked(searchRelatedPullRequests).mockRejectedValueOnce(new Error("unavailable"));
+    const result = await runPipeline(createMockActionContext());
+    expect(result.replyPosted).toBe(true);
+    expect(result.errors).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          step: "duplicate",
+          message: "Related pull request search failed",
+        }),
+      ]),
+    );
+  });
+
   it("loads config and runs full pipeline with defaults", async () => {
     const actx = createMockActionContext();
 
@@ -285,6 +336,30 @@ describe("runPipeline", () => {
     expect(result.classification?.category).toBe("bug");
     expect(result.labelsApplied.length).toBeGreaterThan(0);
     expect(result.replyPosted).toBe(true);
+  });
+
+  it("passes duplicates to the reply even without classification", async () => {
+    const { searchSimilarIssues } = await import("../src/github/search.js");
+    vi.mocked(searchSimilarIssues).mockResolvedValueOnce([
+      {
+        number: 42,
+        title: "Same crash",
+        url: "https://github.com/owner/repo/issues/42",
+        body: "specific evidence",
+      },
+    ]);
+
+    const complete = vi
+      .fn()
+      .mockResolvedValueOnce({ text: "invalid", usage: {} })
+      .mockResolvedValueOnce({ text: '{"duplicates":[42]}', usage: {} })
+      .mockResolvedValueOnce({ text: "See #42", usage: {} });
+
+    vi.mocked(createProvider).mockReturnValueOnce({ complete });
+    const result = await runPipeline(createMockActionContext());
+    expect(result.classification).toBeNull();
+    expect(complete.mock.calls[1][2][0].content).toContain("specific evidence");
+    expect(complete.mock.calls[2][2][0].content).toContain("#42");
   });
 
   it("sets relatedIssues when duplicates are found", async () => {

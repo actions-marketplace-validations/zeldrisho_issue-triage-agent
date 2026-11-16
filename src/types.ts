@@ -23,6 +23,7 @@ export interface RelatedIssue {
   number: number;
   title: string;
   url: string;
+  body?: string;
 }
 
 export interface IssueClassification {
@@ -46,6 +47,11 @@ export interface RepoConfig {
     repositoryContext: boolean;
   };
   labelMapping: Record<string, string[]>;
+  labeling: {
+    minConfidence: number;
+    skipAssigned: boolean;
+    skipLabeled: boolean;
+  };
   security: {
     maxIssueLength: number;
   };
@@ -64,6 +70,14 @@ export interface PipelineResult {
   classification: IssueClassification | null;
   labelsApplied: string[];
   replyPosted: boolean;
+  labelingStatus:
+    | "not-run"
+    | "applied"
+    | "partial"
+    | "skipped-confidence"
+    | "skipped-assigned"
+    | "skipped-labeled"
+    | "failed";
   errors: PipelineError[];
 }
 

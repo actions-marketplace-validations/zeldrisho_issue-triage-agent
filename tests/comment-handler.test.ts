@@ -250,6 +250,40 @@ describe("handleComment", () => {
     expect(call.body).toContain("Issue Triage Agent");
   });
 
+  it("skips a no-reply response", async () => {
+    const { createProvider } = await import("../src/llm/factory.js");
+    vi.mocked(createProvider).mockReturnValueOnce({
+      complete: vi
+        .fn()
+        .mockResolvedValue({ text: "NO_REPLY", usage: { inputTokens: 0, outputTokens: 0 } }),
+    });
+    const actx = createMockActionContext();
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+  });
+
+  it("provides earlier comments but not later comments to the model", async () => {
+    const { createProvider } = await import("../src/llm/factory.js");
+
+    const complete = vi
+      .fn()
+      .mockResolvedValue({ text: "reply", usage: { inputTokens: 0, outputTokens: 0 } });
+
+    vi.mocked(createProvider).mockReturnValueOnce({ complete });
+    const actx = createMockActionContext();
+    actx.octokit.rest.issues.listComments.mockResolvedValue({
+      data: [
+        { id: 99, user: { login: "alice" }, body: "earlier context" },
+        { id: 100, user: { login: "commenter" }, body: "current" },
+        { id: 101, user: { login: "bob" }, body: "later context" },
+      ],
+    });
+    await handleComment(actx);
+    const prompt = JSON.stringify(complete.mock.calls[0][2]);
+    expect(prompt).toContain("earlier context");
+    expect(prompt).not.toContain("later context");
+  });
+
   it("truncates long LLM responses", async () => {
     const { createProvider } = await import("../src/llm/factory.js");
     vi.mocked(createProvider).mockReturnValueOnce({

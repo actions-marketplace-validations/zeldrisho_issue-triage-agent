@@ -6,6 +6,17 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Optional minimum-confidence, assigned-issue, and existing-label checks before applying labels.
+- Search open pull requests for potentially related context and expose a JSON triage report output.
+
+### Changed
+
+- Skip issue mutations when the selected LLM provider has no credentials instead of posting mock results.
+- Use bounded conversation history for follow-up replies and skip responses that are not needed.
+- Consider closed issues and bounded candidate descriptions during duplicate detection, including when classification fails or is disabled.
+
 ## [0.4.0] - 2026-11-16
 
 ### Added

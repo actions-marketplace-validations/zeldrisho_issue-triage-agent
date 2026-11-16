@@ -24,6 +24,11 @@ export const DEFAULT_CONFIG: RepoConfig = {
     invalid: ["invalid"],
     security: ["security"],
   },
+  labeling: {
+    minConfidence: 0,
+    skipAssigned: false,
+    skipLabeled: false,
+  },
   security: {
     maxIssueLength: 10000,
   },
