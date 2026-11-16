@@ -35,6 +35,7 @@ export async function draftReply(
   let replyText = response.text.trim();
 
   const codeBlockMatch = replyText.match(/```(?:markdown|md)?\s*\n?([\s\S]*?)\n?```/);
+
   if (codeBlockMatch) {
     replyText = codeBlockMatch[1].trim();
   }

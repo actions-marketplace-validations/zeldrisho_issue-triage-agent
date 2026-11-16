@@ -8,7 +8,11 @@ export class AnthropicProvider implements LLMProvider {
   private logger: Logger;
 
   constructor(apiKey: string, logger: Logger, baseURL?: string) {
-    this.client = new Anthropic({ apiKey, ...(baseURL ? { baseURL } : {}) });
+    const options: ConstructorParameters<typeof Anthropic>[0] = { apiKey };
+
+    if (baseURL) options.baseURL = baseURL;
+
+    this.client = new Anthropic(options);
     this.logger = logger.child({ module: "llm" });
   }
 
@@ -37,7 +41,11 @@ export class AnthropicProvider implements LLMProvider {
       }
 
       this.logger.info(
-        { model, inputTokens: response.usage.input_tokens, outputTokens: response.usage.output_tokens },
+        {
+          model,
+          inputTokens: response.usage.input_tokens,
+          outputTokens: response.usage.output_tokens,
+        },
         "Claude response received",
       );
 

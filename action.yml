@@ -1,6 +1,6 @@
-name: "Issue AI Agent"
+name: "Issue Triage Agent"
 description: "AI-powered GitHub Issue triage: classify, label, detect duplicates, and reply"
-author: "alexyan0431"
+author: "zeldrisho"
 
 branding:
   icon: "zap"
@@ -18,27 +18,26 @@ inputs:
     description: "OpenAI API key"
     required: false
   llm-provider:
-    description: "LLM provider to use (anthropic or openai)"
+    description: "LLM provider to use (anthropic or openai); overrides repository configuration"
     required: false
-    default: "anthropic"
   llm-base-url:
     description: "Custom base URL for LLM API (applies to the selected provider)"
     required: false
   config-path:
     description: "Path to the config YAML file in the repo"
     required: false
-    default: ".github/issue-ai.yml"
+    default: ".github/issue-triage-agent.yml"
 
 outputs:
   category:
-    description: "Classified issue category"
+    description: "Classified issue category (issues events only)"
   priority:
-    description: "Classified issue priority"
+    description: "Classified issue priority (issues events only)"
   labels-applied:
-    description: "Comma-separated list of applied labels"
+    description: "Comma-separated list of applied labels (issues events only)"
   reply-posted:
-    description: "Whether a reply comment was posted"
+    description: "Whether a reply comment was posted (issues events only)"
 
 runs:
-  using: "node20"
-  main: "dist/index.js"
+  using: "node24"
+  main: "dist/main.mjs"
