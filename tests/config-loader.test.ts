@@ -24,6 +24,7 @@ describe("loadConfig", () => {
   it("supports YAML merge keys", async () => {
     const yaml =
       "defaults: &defaults\n  classify: false\nfeatures:\n  <<: *defaults\n  reply: false\n";
+
     const config = await loadConfig("owner", "repo", octokitFor(yaml));
     expect(config.features.classify).toBe(false);
     expect(config.features.reply).toBe(false);

@@ -9,6 +9,7 @@ vi.mock("../src/llm/factory.js", () => ({
   createProvider: vi.fn().mockImplementation(() => ({
     complete: vi.fn().mockImplementation((_model, _sysPrompt, messages) => {
       const userMsg = messages[0]?.content ?? "";
+
       if (userMsg.includes("=== ISSUE DATA BEGIN")) {
         return Promise.resolve({
           text: JSON.stringify({
@@ -22,6 +23,7 @@ vi.mock("../src/llm/factory.js", () => ({
           usage: { inputTokens: 100, outputTokens: 50 },
         });
       }
+
       if (userMsg.includes("Candidate issues")) {
         return Promise.resolve({
           text: JSON.stringify({
@@ -31,6 +33,7 @@ vi.mock("../src/llm/factory.js", () => ({
           usage: { inputTokens: 80, outputTokens: 20 },
         });
       }
+
       // Reply call
       return Promise.resolve({
         text: "Thanks for reporting this crash! We'll look into it.\n\n-- Issue AI Agent :robot:",
@@ -65,7 +68,7 @@ vi.mock("../src/config/loader.js", () => ({
   }),
 }));
 
-function createMockActionContext(overrides: Record<string, unknown> = {}): ActionContext {
+function createMockActionContext(overrides: Partial<ActionContext> = {}): ActionContext {
   const mockLog = {
     info: vi.fn(),
     error: vi.fn(),
@@ -116,7 +119,7 @@ function createMockActionContext(overrides: Record<string, unknown> = {}): Actio
       },
     },
     ...overrides,
-  } as unknown as ActionContext;
+  };
 }
 
 describe("runPipeline", () => {
@@ -169,7 +172,7 @@ describe("runPipeline", () => {
 
   it("runs in dev mode when no LLM API key is set", async () => {
     delete process.env.ANTHROPIC_API_KEY;
-    vi.mocked(createProvider).mockReturnValueOnce(null as any);
+    vi.mocked(createProvider).mockReturnValueOnce(null);
     const actx = createMockActionContext();
 
     const result = await runPipeline(actx);
@@ -221,7 +224,8 @@ describe("runPipeline", () => {
           usage: { inputTokens: 100, outputTokens: 30 },
         }),
     };
-    vi.mocked(createProvider).mockReturnValueOnce(mockProvider as any);
+
+    vi.mocked(createProvider).mockReturnValueOnce(mockProvider);
 
     const actx = createMockActionContext();
 

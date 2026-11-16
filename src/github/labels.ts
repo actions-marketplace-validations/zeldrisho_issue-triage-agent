@@ -4,6 +4,7 @@ export function resolveLabels(classification: IssueClassification, config: RepoC
   const mappedLabels: string[] = [];
 
   const categoryLabels = config.labelMapping[classification.category];
+
   if (categoryLabels && categoryLabels.length > 0) {
     mappedLabels.push(...categoryLabels);
   }
@@ -31,11 +32,13 @@ export async function applyLabels(
       issue_number: issueNumber,
       labels,
     });
+
     return labels;
   } catch (error) {
     logger.warn({ err: error, labels }, "Bulk label add failed, trying one by one");
 
     const applied: string[] = [];
+
     for (const label of labels) {
       try {
         await octokit.rest.issues.addLabels({
@@ -49,6 +52,7 @@ export async function applyLabels(
         logger.warn({ label }, "Failed to add label");
       }
     }
+
     return applied;
   }
 }

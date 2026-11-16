@@ -8,7 +8,11 @@ export class OpenAIProvider implements LLMProvider {
   private logger: Logger;
 
   constructor(apiKey: string, logger: Logger, baseURL?: string) {
-    this.client = new OpenAI({ apiKey, ...(baseURL ? { baseURL } : {}) });
+    const options: ConstructorParameters<typeof OpenAI>[0] = { apiKey };
+
+    if (baseURL) options.baseURL = baseURL;
+
+    this.client = new OpenAI(options);
     this.logger = logger.child({ module: "llm" });
   }
 
@@ -26,11 +30,12 @@ export class OpenAIProvider implements LLMProvider {
         max_tokens: maxTokens,
         messages: [
           { role: "system", content: systemPrompt },
-          ...messages.map((m) => ({ role: m.role as "user" | "assistant", content: m.content })),
+          ...messages.map((m) => ({ role: m.role, content: m.content })),
         ],
       });
 
       const text = response.choices[0]?.message?.content;
+
       if (!text) {
         throw new Error("No text content in OpenAI response");
       }

@@ -1,6 +1,5 @@
 import type { ActionContext, GitHubIssue, Logger, PipelineResult, RepoConfig } from "./types.js";
 import { createProvider, detectProvider } from "./llm/factory.js";
-import type { ProviderName } from "./llm/factory.js";
 import { loadConfig } from "./config/loader.js";
 import { sanitizeIssueBody, sanitizeIssueTitle } from "./sanitizer.js";
 import { classifyIssue } from "./classifier.js";
@@ -37,6 +36,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
   const log: Logger = actx.logger;
 
   let config: RepoConfig;
+
   try {
     config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
   } catch (error) {
@@ -46,16 +46,19 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
       message: "Config loading failed",
       cause: error instanceof Error ? error : new Error(String(error)),
     });
+
     return result;
   }
 
   if (!config.enabled) {
     log.info("Bot disabled for this repo, skipping");
+
     return result;
   }
 
   if (shouldExclude(actx.payload, config)) {
     log.info("Issue excluded by config, skipping");
+
     return result;
   }
 
@@ -75,7 +78,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
   const sanitizedTitle = sanitizeIssueTitle(issue.title);
   const sanitizedBody = sanitizeIssueBody(issue.body, config);
 
-  const providerName = (config.llm.provider ?? detectProvider()) as ProviderName;
+  const providerName = config.llm.provider ?? detectProvider();
   const llmClient = createProvider(providerName, log);
   const devMode = !llmClient;
 
@@ -142,15 +145,18 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
         issue.number,
         actx.octokit,
       );
+
       if (candidates.length > 0) {
         log.info(
           { candidateCount: candidates.length },
           "Found similar issues, checking for duplicates",
         );
         const duplicates = await detectDuplicates(issue, candidates, llmClient, config, log);
+
         if (result.classification) {
           result.classification.relatedIssues = duplicates;
         }
+
         log.info({ duplicateCount: duplicates.length }, "Duplicate detection completed");
       }
     } catch (error) {
@@ -165,11 +171,13 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
   if (config.features.reply) {
     try {
       let replyBody: string;
+
       if (devMode || !llmClient) {
         const classification = result.classification ?? {
           category: "question" as const,
           priority: "medium" as const,
         };
+
         replyBody = [
           `**[DEV MODE]** This is a mock reply (no LLM API key configured).\n`,
           `Classification: **${classification.category}** (priority: ${classification.priority})`,

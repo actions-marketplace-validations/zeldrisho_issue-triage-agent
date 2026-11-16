@@ -11,6 +11,7 @@ export async function searchSimilarIssues(
   const query = buildSearchQuery(title, owner, repo);
 
   const keywords = query.split("in:title ")[1]?.trim();
+
   if (!keywords) {
     return [];
   }

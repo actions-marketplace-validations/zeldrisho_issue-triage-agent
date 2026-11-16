@@ -30171,7 +30171,7 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util");
 
 /***/ }),
 
-/***/ 7951:
+/***/ 448:
 /***/ ((module, exports, __nccwpck_require__) => {
 
 /* module decorator */ module = __nccwpck_require__.nmd(module);
@@ -30373,7 +30373,7 @@ function timingSafeEqual(a, b) {
 
 /***/ }),
 
-/***/ 4854:
+/***/ 113:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -30401,7 +30401,7 @@ function timingSafeEqual(a, b) {
 /* harmony export */   xL: () => (/* binding */ RequestHeaderFieldsTooLargeError),
 /* harmony export */   xX: () => (/* binding */ APIConnectionError)
 /* harmony export */ });
-/* harmony import */ var _internal_errors_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(5451);
+/* harmony import */ var _internal_errors_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(830);
 
 var AnthropicError = /* @__PURE__ */ (() => {
     class AnthropicError extends Error {
@@ -30669,7 +30669,7 @@ const STATUS_ERROR_CLASSES = /* @__PURE__ */ new Map([
 
 /***/ }),
 
-/***/ 5451:
+/***/ 830:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -30716,7 +30716,7 @@ const castToError = (err) => {
 
 /***/ }),
 
-/***/ 5290:
+/***/ 7421:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -30744,7 +30744,7 @@ function __classPrivateFieldGet(receiver, state, kind, f) {
 
 /***/ }),
 
-/***/ 5480:
+/***/ 9807:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -30755,7 +30755,7 @@ function __classPrivateFieldGet(receiver, state, kind, f) {
 /* harmony export */   zM: () => (/* binding */ isStatus)
 /* harmony export */ });
 /* unused harmony export is4xx */
-/* harmony import */ var _core_error_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4854);
+/* harmony import */ var _core_error_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(113);
 
 /** True when `e` is an {@link APIError} whose HTTP status equals `code`. */
 function isStatus(e, code) {
@@ -30795,7 +30795,7 @@ function applyJitter(ms) {
 
 /***/ }),
 
-/***/ 7961:
+/***/ 630:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -30832,7 +30832,7 @@ function decodeUTF8(bytes) {
 
 /***/ }),
 
-/***/ 7165:
+/***/ 1614:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -30858,7 +30858,7 @@ const readEnv = (env) => {
 
 /***/ }),
 
-/***/ 674:
+/***/ 553:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -30869,8 +30869,8 @@ const readEnv = (env) => {
 /* harmony export */   dF: () => (/* binding */ debugLogRequestDetails)
 /* harmony export */ });
 /* unused harmony export formatRequestDetails */
-/* harmony import */ var _values_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(18);
-/* harmony import */ var _env_mjs__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(7165);
+/* harmony import */ var _values_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(7427);
+/* harmony import */ var _env_mjs__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(1614);
 
 
 const defaultLogLevel = 'warn';
@@ -30992,7 +30992,7 @@ const formatRequestDetails = (details) => {
 
 /***/ }),
 
-/***/ 4723:
+/***/ 2692:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -31016,7 +31016,7 @@ function promiseWithResolvers() {
 
 /***/ }),
 
-/***/ 18:
+/***/ 7427:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -31033,7 +31033,7 @@ function promiseWithResolvers() {
 /* harmony export */   ze: () => (/* binding */ isEmptyObj)
 /* harmony export */ });
 /* unused harmony exports ensurePresent, rejectUnsupportedCredentials, coerceInteger, coerceFloat, coerceBoolean, maybeCoerceInteger, maybeCoerceFloat, maybeCoerceBoolean, pop */
-/* harmony import */ var _core_error_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4854);
+/* harmony import */ var _core_error_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(113);
 
 // https://url.spec.whatwg.org/#url-scheme-string
 const startsWithSchemeRegexp = /^[a-z][a-z0-9+.-]*:/i;
@@ -31156,7 +31156,7 @@ function checkNever(_value) { }
 
 /***/ }),
 
-/***/ 3092:
+/***/ 1697:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -31229,7 +31229,7 @@ var ToolError = /* @__PURE__ */ (() => {
 
 /***/ }),
 
-/***/ 4642:
+/***/ 1003:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -31237,7 +31237,7 @@ var ToolError = /* @__PURE__ */ (() => {
 /* harmony export */   hL: () => (/* binding */ DEFAULT_MEMORY_SYNC_INTERVAL_MS),
 /* harmony export */   iT: () => (/* binding */ checkMemorySyncInterval)
 /* harmony export */ });
-/* harmony import */ var _core_error_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4854);
+/* harmony import */ var _core_error_mjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(113);
 /**
  * The memory sync cadence, split out of `memories.ts` so runtime-agnostic
  * callers (the environment worker) can validate an interval up front without
@@ -31463,7 +31463,7 @@ function checkMemorySyncInterval(ms, option) {
 /************************************************************************/
 var __webpack_exports__ = {};
 
-// NAMESPACE OBJECT: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-transport-state-browser.mjs
+// NAMESPACE OBJECT: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-transport-state-browser.mjs
 var x509_transport_state_browser_namespaceObject = {};
 __nccwpck_require__.r(x509_transport_state_browser_namespaceObject);
 __nccwpck_require__.d(x509_transport_state_browser_namespaceObject, {
@@ -34955,7 +34955,7 @@ function expand(template, context) {
 }
 
 // pkg/dist-src/parse.js
-function parse(options) {
+function dist_bundle_parse(options) {
   let method = options.method.toUpperCase();
   let url = (options.url || "/").replace(/:([a-z]\w+)/g, "{$1}");
   let headers = Object.assign({}, options.headers);
@@ -35021,7 +35021,7 @@ function parse(options) {
 
 // pkg/dist-src/endpoint-with-defaults.js
 function endpointWithDefaults(defaults, route, options) {
-  return parse(merge(defaults, route, options));
+  return dist_bundle_parse(merge(defaults, route, options));
 }
 
 // pkg/dist-src/with-defaults.js
@@ -35032,7 +35032,7 @@ function withDefaults(oldDefaults, newDefaults) {
     DEFAULTS: DEFAULTS2,
     defaults: withDefaults.bind(null, DEFAULTS2),
     merge: merge.bind(null, DEFAULTS2),
-    parse
+    parse: dist_bundle_parse
   });
 }
 
@@ -39424,11 +39424,9546 @@ function getOctokit(token, options, ...additionalPlugins) {
     return new GitHubWithPlugins(getOctokitOptions(token, options));
 }
 //# sourceMappingURL=github.js.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/tslib.mjs
-var tslib = __nccwpck_require__(5290);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/values.mjs
-var utils_values = __nccwpck_require__(18);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/sleep.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/util.js
+
+// functions
+function assertEqual(val) {
+    return val;
+}
+function assertNotEqual(val) {
+    return val;
+}
+function toZod() {
+    return (schema) => schema;
+}
+function assertIs(_arg) { }
+function assertNever(_x) {
+    throw new Error("Unexpected value in exhaustive check");
+}
+function assert(_) { }
+function getEnumValues(entries) {
+    const numericValues = Object.values(entries).filter((v) => typeof v === "number");
+    const values = Object.entries(entries)
+        .filter(([k, _]) => numericValues.indexOf(+k) === -1)
+        .map(([_, v]) => v);
+    return values;
+}
+function joinValues(array, separator = "|") {
+    return array.map((val) => stringifyPrimitive(val)).join(separator);
+}
+function jsonStringifyReplacer(_, value) {
+    if (typeof value === "bigint")
+        return value.toString();
+    return value;
+}
+// the accessor lives on a shared prototype: an own accessor makes every box a dictionary-mode object (~360 B and a slow load per read against ~100 B and an inlined getter here)
+class Cached {
+    constructor(getter) {
+        this._getter = getter;
+        this._value = undefined;
+    }
+    get value() {
+        const getter = this._getter;
+        if (getter !== undefined) {
+            this._value = getter();
+            this._getter = undefined;
+        }
+        return this._value;
+    }
+}
+function cached(getter) {
+    return new Cached(getter);
+}
+function nullish(input) {
+    return input === null || input === undefined;
+}
+function cleanRegex(source) {
+    const start = source.startsWith("^") ? 1 : 0;
+    const end = source.endsWith("$") ? source.length - 1 : source.length;
+    return source.slice(start, end);
+}
+function floatSafeRemainder(val, step) {
+    const ratio = val / step;
+    const roundedRatio = Math.round(ratio);
+    // `val` and `step` each round to a double before the division rounds again, so a true decimal multiple's quotient can sit up to 1.5 of these scaled epsilons from the integer. A 1x tolerance therefore rejected 2.03 as a multiple of 0.07; 4x covers the worst case with margin.
+    const tolerance = 4 * Number.EPSILON * Math.max(Math.abs(ratio), 1);
+    if (Math.abs(ratio - roundedRatio) < tolerance)
+        return 0;
+    return ratio - roundedRatio;
+}
+const EVALUATING = /* @__PURE__*/ (/* unused pure expression or super */ null && (Symbol("evaluating")));
+function defineLazy(object, key, getter) {
+    let value = undefined;
+    Object.defineProperty(object, key, {
+        get() {
+            if (value === EVALUATING) {
+                // Circular reference detected, return undefined to break the cycle
+                return undefined;
+            }
+            if (value === undefined) {
+                value = EVALUATING;
+                value = getter();
+            }
+            return value;
+        },
+        set(v) {
+            Object.defineProperty(object, key, {
+                value: v,
+                // configurable: true,
+            });
+            // object[key] = v;
+        },
+        configurable: true,
+    });
+}
+function objectClone(obj) {
+    return Object.create(Object.getPrototypeOf(obj), Object.getOwnPropertyDescriptors(obj));
+}
+function util_assignProp(target, prop, value) {
+    Object.defineProperty(target, prop, {
+        value,
+        writable: true,
+        enumerable: true,
+        configurable: true,
+    });
+}
+/**
+ * Whichever object a def's `shape` currently answers from: the one the caller passed until the first read, the frozen copy after it.
+ *
+ * Its keys and descriptors read without invoking anything, which is what lets a discriminated union check its discriminator, and the cycle walk read a shape, without resolving a getter that references the schema being constructed. A def that answers `shape` from an accessor of its own has none.
+ */
+function rawShape(def) {
+    const desc = Object.getOwnPropertyDescriptor(def, "shape");
+    return desc?.get ? desc.get.raw : desc?.value;
+}
+// where a builder reads its source's keys and descriptors, resolving only a shape a def answers for itself. A shape resolves by object spread, so only its enumerable keys are ever part of it.
+function sourceShape(schema) {
+    return rawShape(schema._zod.def) ?? schema._zod.def.shape;
+}
+// a key whose value is not settled yet, self-caching so every read after the first gets the same one
+function deferProp(target, key, getter) {
+    Object.defineProperty(target, key, {
+        get() {
+            const value = getter();
+            util_assignProp(this, key, value);
+            return value;
+        },
+        enumerable: true,
+        configurable: true,
+    });
+}
+// Writes a settled key. A plain assignment is much cheaper than `defineProperty` and produces the same descriptor, but it runs whatever setter already answers to the key — an accessor this shape deferred, or an inherited one, which `__proto__` has on every object and prototype pollution can add for any name.
+function putProp(target, key, value) {
+    if (key in target)
+        util_assignProp(target, key, value);
+    else
+        target[key] = value;
+}
+/**
+ * Copies `keys` of `source`'s shape onto `target`, each value passed through `wrap`.
+ *
+ * A key the source has resolved is copied through now, so the derived shape states it outright and nothing has to resolve it to learn what it holds. A key the source still defers stays deferred, and reads back through the source's own `shape`, so it resolves once and both shapes get that one schema.
+ */
+function mirrorShape(target, source, keys, wrap) {
+    const raw = sourceShape(source);
+    for (const key of keys) {
+        const desc = Object.getOwnPropertyDescriptor(raw, key);
+        if (!desc.enumerable)
+            continue;
+        if (desc.get) {
+            deferProp(target, key, () => {
+                const value = source._zod.def.shape[key];
+                return wrap ? wrap(value, key) : value;
+            });
+        }
+        else
+            putProp(target, key, wrap ? wrap(desc.value, key) : desc.value);
+    }
+}
+// same, for a plain shape a caller passed rather than a schema's
+function mirrorProps(target, source) {
+    for (const key of Reflect.ownKeys(source)) {
+        const desc = Object.getOwnPropertyDescriptor(source, key);
+        if (!desc.enumerable)
+            continue;
+        if (desc.get)
+            deferProp(target, key, () => source[key]);
+        else
+            putProp(target, key, desc.value);
+    }
+}
+function mergeDefs(...defs) {
+    const mergedDescriptors = {};
+    for (const def of defs) {
+        const descriptors = Object.getOwnPropertyDescriptors(def);
+        Object.assign(mergedDescriptors, descriptors);
+    }
+    return Object.defineProperties({}, mergedDescriptors);
+}
+function cloneDef(schema) {
+    return mergeDefs(schema._zod.def);
+}
+function getElementAtPath(obj, path) {
+    if (!path)
+        return obj;
+    return path.reduce((acc, key) => acc?.[key], obj);
+}
+function promiseAllObject(promisesObj) {
+    const keys = Object.keys(promisesObj);
+    const promises = keys.map((key) => promisesObj[key]);
+    return Promise.all(promises).then((results) => {
+        const resolvedObj = {};
+        for (let i = 0; i < keys.length; i++) {
+            resolvedObj[keys[i]] = results[i];
+        }
+        return resolvedObj;
+    });
+}
+function randomString(length = 10) {
+    const chars = "abcdefghijklmnopqrstuvwxyz";
+    let str = "";
+    for (let i = 0; i < length; i++) {
+        str += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return str;
+}
+function esc(str) {
+    return JSON.stringify(str);
+}
+function slugify(input) {
+    return input
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/[\s_-]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+const captureStackTrace = ("captureStackTrace" in Error ? Error.captureStackTrace : (..._args) => { });
+function util_isObject(data) {
+    return typeof data === "object" && data !== null && !Array.isArray(data);
+}
+const util_allowsEval = /* @__PURE__*/ cached(() => {
+    // Skip the probe under `jitless`: strict CSPs report the caught `new Function` as a `securitypolicyviolation` even though the throw is swallowed.
+    if (globalConfig.jitless) {
+        return false;
+    }
+    // @ts-ignore
+    if (typeof navigator !== "undefined" && navigator?.userAgent?.includes("Cloudflare")) {
+        return false;
+    }
+    try {
+        const F = Function;
+        new F("");
+        return true;
+    }
+    catch (_) {
+        return false;
+    }
+});
+function util_isPlainObject(o) {
+    if (util_isObject(o) === false)
+        return false;
+    // modified constructor
+    const ctor = o.constructor;
+    if (ctor === undefined)
+        return true;
+    if (typeof ctor !== "function")
+        return true;
+    // modified prototype
+    const prot = ctor.prototype;
+    if (util_isObject(prot) === false)
+        return false;
+    // ctor doesn't have static `isPrototypeOf`
+    if (Object.prototype.hasOwnProperty.call(prot, "isPrototypeOf") === false) {
+        return false;
+    }
+    return true;
+}
+function shallowClone(o) {
+    if (util_isPlainObject(o))
+        return { ...o };
+    if (Array.isArray(o))
+        return [...o];
+    if (o instanceof Map)
+        return new Map(o);
+    if (o instanceof Set)
+        return new Set(o);
+    return o;
+}
+function numKeys(data) {
+    let keyCount = 0;
+    for (const key in data) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+            keyCount++;
+        }
+    }
+    return keyCount;
+}
+const getParsedType = (data) => {
+    const t = typeof data;
+    switch (t) {
+        case "undefined":
+            return "undefined";
+        case "string":
+            return "string";
+        case "number":
+            return Number.isNaN(data) ? "nan" : "number";
+        case "boolean":
+            return "boolean";
+        case "function":
+            return "function";
+        case "bigint":
+            return "bigint";
+        case "symbol":
+            return "symbol";
+        case "object":
+            if (Array.isArray(data)) {
+                return "array";
+            }
+            if (data === null) {
+                return "null";
+            }
+            if (data.then && typeof data.then === "function" && data.catch && typeof data.catch === "function") {
+                return "promise";
+            }
+            if (typeof Map !== "undefined" && data instanceof Map) {
+                return "map";
+            }
+            if (typeof Set !== "undefined" && data instanceof Set) {
+                return "set";
+            }
+            if (typeof Date !== "undefined" && data instanceof Date) {
+                return "date";
+            }
+            // @ts-ignore
+            if (typeof File !== "undefined" && data instanceof File) {
+                return "file";
+            }
+            return "object";
+        default:
+            throw new Error(`Unknown data type: ${t}`);
+    }
+};
+const propertyKeyTypes = /* @__PURE__*/ new Set(["string", "number", "symbol"]);
+const primitiveTypes = /* @__PURE__*/ new Set([
+    "string",
+    "number",
+    "bigint",
+    "boolean",
+    "symbol",
+    "undefined",
+]);
+function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+// zod-specific utils
+function clone(inst, def, params) {
+    const cl = new inst._zod.constr(def ?? inst._zod.def);
+    if (!def || params?.parent)
+        cl._zod.parent = inst;
+    return cl;
+}
+function normalizeParams(_params) {
+    const params = _params;
+    if (!params)
+        return {};
+    if (typeof params === "string")
+        return { error: () => params };
+    if (params?.message !== undefined) {
+        if (params?.error !== undefined)
+            throw new Error("Cannot specify both `message` and `error` params");
+        params.error = params.message;
+    }
+    delete params.message;
+    if (typeof params.error === "string")
+        return { ...params, error: () => params.error };
+    return params;
+}
+function createTransparentProxy(getter) {
+    let target;
+    return new Proxy({}, {
+        get(_, prop, receiver) {
+            target ?? (target = getter());
+            return Reflect.get(target, prop, receiver);
+        },
+        set(_, prop, value, receiver) {
+            target ?? (target = getter());
+            return Reflect.set(target, prop, value, receiver);
+        },
+        has(_, prop) {
+            target ?? (target = getter());
+            return Reflect.has(target, prop);
+        },
+        deleteProperty(_, prop) {
+            target ?? (target = getter());
+            return Reflect.deleteProperty(target, prop);
+        },
+        ownKeys(_) {
+            target ?? (target = getter());
+            return Reflect.ownKeys(target);
+        },
+        getOwnPropertyDescriptor(_, prop) {
+            target ?? (target = getter());
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        },
+        defineProperty(_, prop, descriptor) {
+            target ?? (target = getter());
+            return Reflect.defineProperty(target, prop, descriptor);
+        },
+    });
+}
+function stringifyPrimitive(value) {
+    if (typeof value === "bigint")
+        return value.toString() + "n";
+    if (typeof value === "string")
+        return `"${value}"`;
+    return `${value}`;
+}
+function optionalKeys(shape) {
+    return Object.keys(shape).filter((k) => {
+        return shape[k]._zod.optin !== undefined && shape[k]._zod.optout === "optional";
+    });
+}
+// Wrapped in a `@__PURE__` IIFE: esbuild never tree-shakes a top-level initializer that contains a member access on `Number`, so the bare object literal survived into every bundle.
+const NUMBER_FORMAT_RANGES = /*@__PURE__*/ (() => ({
+    safeint: [Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER],
+    int32: [-2147483648, 2147483647],
+    uint32: [0, 4294967295],
+    float32: [-3.4028234663852886e38, 3.4028234663852886e38],
+    float64: [-Number.MAX_VALUE, Number.MAX_VALUE],
+}))();
+const BIGINT_FORMAT_RANGES = {
+    int64: [/* @__PURE__*/ BigInt("-9223372036854775808"), /* @__PURE__*/ BigInt("9223372036854775807")],
+    uint64: [/* @__PURE__*/ BigInt(0), /* @__PURE__*/ BigInt("18446744073709551615")],
+};
+function pick(schema, mask) {
+    const currDef = schema._zod.def;
+    const checks = currDef.checks;
+    const hasChecks = checks && checks.length > 0;
+    if (hasChecks) {
+        throw new Error(".pick() cannot be used on object schemas containing refinements");
+    }
+    const newShape = {};
+    mirrorShape(newShape, schema, maskedKeys(schema, mask));
+    return clone(schema, mergeDefs(currDef, { shape: newShape, checks: [] }));
+}
+// the mask keys that select something, checked against the source's shape without resolving it
+function maskedKeys(schema, mask) {
+    const raw = sourceShape(schema);
+    const keys = [];
+    // `for...in` skips symbols, so a symbol in the mask would select nothing
+    for (const key of Reflect.ownKeys(mask)) {
+        if (!Object.getOwnPropertyDescriptor(raw, key)?.enumerable) {
+            throw new Error(`Unrecognized key: "${String(key)}"`);
+        }
+        if (mask[key])
+            keys.push(key);
+    }
+    return keys;
+}
+function util_omit(schema, mask) {
+    const currDef = schema._zod.def;
+    const checks = currDef.checks;
+    const hasChecks = checks && checks.length > 0;
+    if (hasChecks) {
+        throw new Error(".omit() cannot be used on object schemas containing refinements");
+    }
+    const omitted = new Set(maskedKeys(schema, mask));
+    const newShape = {};
+    mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)).filter((key) => !omitted.has(key)));
+    return clone(schema, mergeDefs(currDef, { shape: newShape, checks: [] }));
+}
+function extend(schema, shape) {
+    if (!util_isPlainObject(shape)) {
+        throw new Error("Invalid input to extend: expected a plain object");
+    }
+    const checks = schema._zod.def.checks;
+    const hasChecks = checks && checks.length > 0;
+    if (hasChecks) {
+        // Only throw if new shape overlaps with existing shape. Use getOwnPropertyDescriptor to check key existence without accessing values
+        const existingShape = sourceShape(schema);
+        for (const key of Reflect.ownKeys(shape)) {
+            if (Object.getOwnPropertyDescriptor(existingShape, key) !== undefined) {
+                throw new Error("Cannot overwrite keys on object schemas containing refinements. Use `.safeExtend()` instead.");
+            }
+        }
+    }
+    return clone(schema, mergeDefs(schema._zod.def, { shape: extended(schema, shape) }));
+}
+// the source's keys, then the caller's overlaid on top
+function extended(schema, shape) {
+    const newShape = {};
+    mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)));
+    mirrorProps(newShape, shape);
+    return newShape;
+}
+function safeExtend(schema, shape) {
+    if (!util_isPlainObject(shape)) {
+        throw new Error("Invalid input to safeExtend: expected a plain object");
+    }
+    return clone(schema, mergeDefs(schema._zod.def, { shape: extended(schema, shape) }));
+}
+function util_merge(a, b) {
+    if (!b?._zod?.def) {
+        throw new Error("Invalid input to merge: expected an object schema. To merge a plain shape, use `.extend()`.");
+    }
+    if (a._zod.def.checks?.length) {
+        throw new Error(".merge() cannot be used on object schemas containing refinements. Use .safeExtend() instead.");
+    }
+    const newShape = {};
+    mirrorShape(newShape, a, Reflect.ownKeys(sourceShape(a)));
+    mirrorShape(newShape, b, Reflect.ownKeys(sourceShape(b)));
+    const def = mergeDefs(a._zod.def, {
+        shape: newShape,
+        get catchall() {
+            return b._zod.def.catchall;
+        },
+        checks: b._zod.def.checks ?? [],
+    });
+    return clone(a, def);
+}
+function partial(Class, schema, mask, name = "partial") {
+    const currDef = schema._zod.def;
+    const checks = currDef.checks;
+    const hasChecks = checks && checks.length > 0;
+    if (hasChecks) {
+        throw new Error(`.${name}() cannot be used on object schemas containing refinements`);
+    }
+    const selected = mask ? new Set(maskedKeys(schema, mask)) : undefined;
+    const newShape = {};
+    mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)), Class &&
+        ((value, key) => (selected && !selected.has(key) ? value : new Class({ type: "optional", innerType: value }))));
+    return clone(schema, mergeDefs(schema._zod.def, { shape: newShape, checks: [] }));
+}
+function required(Class, schema, mask) {
+    const selected = mask ? new Set(maskedKeys(schema, mask)) : undefined;
+    const newShape = {};
+    mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)), (value, key) => 
+    // overwrite with non-optional
+    selected && !selected.has(key) ? value : new Class({ type: "nonoptional", innerType: value }));
+    return clone(schema, mergeDefs(schema._zod.def, { shape: newShape }));
+}
+// invalid_type | too_big | too_small | invalid_format | not_multiple_of | unrecognized_keys | invalid_union | invalid_key | invalid_element | invalid_value | custom
+function aborted(x, startIndex = 0) {
+    if (x.aborted === true)
+        return true;
+    for (let i = startIndex; i < x.issues.length; i++) {
+        if (x.issues[i]?.continue !== true) {
+            return true;
+        }
+    }
+    return false;
+}
+// Checks for explicit abort (continue === false), as opposed to implicit abort (continue === undefined). Used to respect `abort: true` in .refine() even for checks that have a `when` function.
+function explicitlyAborted(x, startIndex = 0) {
+    if (x.aborted === true)
+        return true;
+    for (let i = startIndex; i < x.issues.length; i++) {
+        if (x.issues[i]?.continue === false) {
+            return true;
+        }
+    }
+    return false;
+}
+function prefixIssues(path, issues) {
+    return issues.map((iss) => {
+        var _a;
+        (_a = iss).path ?? (_a.path = []);
+        iss.path.unshift(path);
+        return iss;
+    });
+}
+function unwrapMessage(message) {
+    return typeof message === "string" ? message : message?.message;
+}
+/* A check holds no link back to the schema it is attached to — the same check instance is shared by every clone of that schema — so the owner is stamped onto the issues a check just raised, at the only point where both are in scope. Runs on the failure path only; `start` is the issue count from before the check ran. */
+/** The leading size checks of `defChecks` that set an upper bound, each paired with it. */
+function sizeCaps(defChecks) {
+    const caps = [];
+    for (const ch of defChecks ?? []) {
+        const d = ch._zod.def;
+        // a later check may rewrite the value
+        if (!/_(length|size)$|_equals$/.test(d.check))
+            break;
+        const max = d.maximum ?? d.length ?? d.size;
+        if (max >= 0)
+            caps.push([max, ch]);
+    }
+    return caps;
+}
+function attachSchema(issues, start, inst) {
+    var _a;
+    for (let i = start; i < issues.length; i++) {
+        (_a = issues[i]).schema ?? (_a.schema = inst);
+    }
+}
+function finalizeIssue(iss, ctx, config) {
+    var _a;
+    // A schema that raised an issue itself owns it outright, and outranks any stamp an enclosing check left in `attachSchema`. String formats and z.custom() are schema and check at once, so when they act as a check they defer to that stamp instead.
+    const traits = iss.inst?._zod?.traits;
+    if (traits?.has("$ZodType")) {
+        if (traits.has("$ZodCheck"))
+            (_a = iss).schema ?? (_a.schema = iss.inst);
+        else
+            iss.schema = iss.inst;
+    }
+    // Decreasing specificity, first map to return a message wins. `inst` is whatever raised the issue, so a check's own map outranks the owning schema's.
+    const schemaError = iss.schema !== iss.inst ? iss.schema?._zod.def?.error : undefined;
+    const message = iss.message
+        ? iss.message
+        : (unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ??
+            unwrapMessage(schemaError?.(iss)) ??
+            unwrapMessage(ctx?.error?.(iss)) ??
+            unwrapMessage(config.customError?.(iss)) ??
+            unwrapMessage(config.localeError?.(iss)) ??
+            "Invalid input");
+    // an explicit own-key copy beats object rest with excluded keys, which v8 routes through a generic runtime call; Object.keys rather than for-in so an issue pushed with a prototype does not leak inherited keys, and an own __proto__ key is dropped rather than assigned through the setter
+    const full = {};
+    for (const k of Object.keys(iss)) {
+        if (k === "inst" || k === "schema" || k === "continue" || k === "input" || k === "__proto__")
+            continue;
+        full[k] = iss[k];
+    }
+    full.path ?? (full.path = []);
+    full.message = message;
+    if (ctx?.reportInput) {
+        full.input = iss.input;
+    }
+    return full;
+}
+function getSizableOrigin(input) {
+    if (input instanceof Set)
+        return "set";
+    if (input instanceof Map)
+        return "map";
+    // @ts-ignore
+    if (input instanceof File)
+        return "file";
+    return "unknown";
+}
+const highSurrogate = /[\uD800-\uDBFF]/;
+// Code points in `str`: a surrogate pair counts once, a lone surrogate as itself. Hand-rolled because the string iterator allocates and runs ~250x slower on this path; the regex probe exits ~50x quicker for a string with no astral characters.
+function codePointLength(str) {
+    const units = str.length;
+    if (!highSurrogate.test(str))
+        return units;
+    let count = units;
+    for (let i = 0; i < units - 1; i++) {
+        if ((str.charCodeAt(i) & 0xfc00) === 0xd800 && (str.charCodeAt(i + 1) & 0xfc00) === 0xdc00) {
+            count--;
+            i++;
+        }
+    }
+    return count;
+}
+function getLengthableOrigin(input) {
+    if (Array.isArray(input))
+        return "array";
+    if (typeof input === "string")
+        return "string";
+    return "unknown";
+}
+function parsedType(data) {
+    const t = typeof data;
+    switch (t) {
+        case "number": {
+            return Number.isNaN(data) ? "nan" : "number";
+        }
+        case "object": {
+            if (data === null) {
+                return "null";
+            }
+            if (Array.isArray(data)) {
+                return "array";
+            }
+            const obj = data;
+            if (obj && Object.getPrototypeOf(obj) !== Object.prototype && "constructor" in obj && obj.constructor) {
+                return obj.constructor.name;
+            }
+        }
+    }
+    return t;
+}
+function util_issue(...args) {
+    const [iss, input, inst] = args;
+    if (typeof iss === "string") {
+        return {
+            message: iss,
+            code: "custom",
+            input,
+            inst,
+        };
+    }
+    return { ...iss };
+}
+function cleanEnum(obj) {
+    return Object.entries(obj)
+        .filter(([k, _]) => {
+        // return true if NaN, meaning it's not a number, thus a string key
+        return Number.isNaN(Number.parseInt(k, 10));
+    })
+        .map((el) => el[1]);
+}
+// Codec utility functions
+function base64ToUint8Array(base64) {
+    const binaryString = atob(base64);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+    }
+    return bytes;
+}
+function uint8ArrayToBase64(bytes) {
+    let binaryString = "";
+    for (let i = 0; i < bytes.length; i++) {
+        binaryString += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binaryString);
+}
+function base64urlToUint8Array(base64url) {
+    const base64 = base64url.replace(/-/g, "+").replace(/_/g, "/");
+    const padding = "=".repeat((4 - (base64.length % 4)) % 4);
+    return base64ToUint8Array(base64 + padding);
+}
+function uint8ArrayToBase64url(bytes) {
+    return uint8ArrayToBase64(bytes).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
+}
+function hexToUint8Array(hex) {
+    const cleanHex = hex.replace(/^0x/, "");
+    if (cleanHex.length % 2 !== 0) {
+        throw new Error("Invalid hex string length");
+    }
+    const bytes = new Uint8Array(cleanHex.length / 2);
+    for (let i = 0; i < cleanHex.length; i += 2) {
+        bytes[i / 2] = Number.parseInt(cleanHex.slice(i, i + 2), 16);
+    }
+    return bytes;
+}
+function uint8ArrayToHex(bytes) {
+    return Array.from(bytes)
+        .map((b) => b.toString(16).padStart(2, "0"))
+        .join("");
+}
+// instanceof
+class Class {
+    constructor(..._args) { }
+}
+//////////    PROTOTYPE INSTALLERS     //////////
+//
+// Members live on the prototype and materialize per instance on first read, which keeps own-property count under the step where V8 stops using inline slots. Changing anything here means re-measuring runtime, memory and bundle size together — see "The three axes" in AGENTS.md.
+/**
+ * Installs a trait's members on its prototype. Each value builds that member for the instance on first read; the built value shadows the accessor as an own property, so a detached `const { parse } = schema` keeps working.
+ *
+ * Call this from a `proto` initializer, which runs once per prototype — never per instance.
+ */
+function members(proto, table) {
+    for (const key in table) {
+        const desc = Object.getOwnPropertyDescriptor(table, key);
+        // a getter installs as written, so it stays live: `description` reads through to the registry on every access. not enumerable: an object literal's is, and a prototype member never was
+        if (desc.get)
+            Object.defineProperty(proto, key, { ...desc, enumerable: false });
+        // a method materializes bound on first read, which is what keeps a detached member working: `const opt = schema.optional; opt()`
+        else
+            defineBound(proto, key, desc.value);
+    }
+}
+/** Shadows a prototype member with an own value, so a getter that builds from the instance runs once. */
+function own(inst, key, value, enumerable = true) {
+    Object.defineProperty(inst, key, { configurable: true, writable: true, enumerable, value });
+    return value;
+}
+/** Like {@link own}, for a member that was never an own data property and has to stay out of `Object.keys`. */
+function hide(inst, key, value) {
+    return own(inst, key, value, false);
+}
+/** Adds members a table derives from the instance: each builds on first read and shadows as own data, and assignment shadows the same way, as when these were own properties. */
+function derived(computes, table) {
+    for (const key in computes) {
+        const compute = computes[key];
+        // an object literal's accessor is configurable and enumerable, and `members` copies the descriptor as written
+        Object.defineProperty(table, key, {
+            configurable: true,
+            enumerable: true,
+            get() {
+                return own(this, key, compute(this));
+            },
+            set(value) {
+                own(this, key, value);
+            },
+        });
+    }
+    return table;
+}
+function defineBound(proto, key, fn) {
+    Object.defineProperty(proto, key, {
+        configurable: true,
+        get() {
+            // vitest's spyOn calls a prototype getter bare to find the function it wraps, so a nullish receiver answers the raw method
+            return this == null ? fn : own(this, key, fn.bind(this));
+        },
+        set(value) {
+            own(this, key, value);
+        },
+    });
+}
+/** Returns the prototype to install on, or `undefined` if this group is already installed on it. */
+function claim(inst, sentinel) {
+    const proto = Object.getPrototypeOf(inst);
+    // Runs on every construction, so `in` rather than the costlier `hasOwnProperty.call`. Sentinels are keys the group itself defines.
+    return sentinel in proto ? undefined : proto;
+}
+// The internals whose init chain is installing. A second call for the same one is a derived constructor overriding its base, so it must not construct another schema in between or the override is dropped.
+let installing;
+// Set while a getter is running, so a value that resolved through a recursion break is not memoized. One shared descriptor shadows the key for the duration, which costs no per-key allocation.
+let broke = false;
+const breaker = {
+    configurable: true,
+    get() {
+        broke = true;
+        return undefined;
+    },
+};
+/**
+ * Installs a lazily-derived internal on the `_zod` prototype of `inst`'s
+ * constructor, computed from the internals object itself and cached there on
+ * first read. One accessor per constructor rather than one per instance.
+ */
+function defineLazyInternal(inst, key, compute) {
+    const proto = Object.getPrototypeOf(inst._zod);
+    if (key in proto && installing !== inst._zod) {
+        // A repeat construction: everything is installed already. Cleared here so the reference is not held past the first construction of every type.
+        installing = undefined;
+        return;
+    }
+    installing = inst._zod;
+    Object.defineProperty(proto, key, {
+        configurable: true,
+        get() {
+            // Shadowed before computing so a re-entrant read from a recursive schema resolves to undefined instead of running the getter again.
+            Object.defineProperty(this, key, breaker);
+            const outer = broke;
+            broke = false;
+            try {
+                const value = compute(this);
+                // A result that resolved through a recursion break is recomputed once the graph is complete; everything else memoizes, undefined included.
+                if (broke)
+                    delete this[key];
+                else
+                    Object.defineProperty(this, key, { configurable: true, writable: true, value });
+                broke = broke || outer;
+                return value;
+            }
+            catch (err) {
+                // A compute that threw memoizes nothing, so a later read runs it again and fails the same way. The shadow goes with it, since leaving it installed would answer undefined for every later read.
+                delete this[key];
+                broke = broke || outer;
+                throw err;
+            }
+        },
+        set(value) {
+            Object.defineProperty(this, key, { configurable: true, writable: true, value });
+        },
+    });
+}
+/**
+ * Installs `key` on `inst`'s prototype, computed by `make` on first read and cached there as an own
+ * data property. One accessor per constructor rather than one per instance, because an own accessor
+ * puts every instance after the first into v8 dictionary mode. The key doubles as the sentinel.
+ */
+function installLazyProp(inst, key, make, enumerable) {
+    const proto = claim(inst, key);
+    if (!proto)
+        return;
+    Object.defineProperty(proto, key, {
+        configurable: true,
+        get() {
+            // Shadowed before computing, so a re-entrant read from a self-referential shape resolves to undefined instead of running the getter again. A data property rather than an accessor: an own accessor is the dictionary-mode transition this exists to avoid.
+            const desc = { configurable: true, writable: true, enumerable, value: undefined };
+            Object.defineProperty(this, key, desc);
+            // a compute that throws leaves the shadow behind, so later reads answer undefined instead of re-throwing; `defineLazy` did the same, and `defineLazyInternal`'s delete-on-catch would cost bytes in every bundle for a case only a throwing user getter reaches
+            desc.value = make(this);
+            Object.defineProperty(this, key, desc);
+            return desc.value;
+        },
+        set(value) {
+            Object.defineProperty(this, key, { configurable: true, writable: true, enumerable, value });
+        },
+    });
+}
+/** Marks the thunk `_catch` synthesises for a constant catch value. `Function.length` cannot tell that thunk from a user callback — rest and defaulted parameters both report arity 0 — and a user callback reads `ctx.error`, whose issues only finalize correctly against the caller's per-parse error map. Provenance can say what arity cannot. A plain string key rather than `Symbol.for`, whose call at module scope no bundler can prove pure — the same shape that anchored `urlCanParse` into every build. */
+const CONSTANT_CATCH = "~constantCatch";
+/** Wraps a constant catch value in a thunk tagged with {@link CONSTANT_CATCH}. */
+function constantCatch(value) {
+    const fn = () => value;
+    fn[CONSTANT_CATCH] = true;
+    return fn;
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/core.js
+var _a;
+
+/** A special constant with type `never` */
+const NEVER = /*@__PURE__*/ Object.freeze({
+    status: "aborted",
+});
+/* Shared descriptor for installing `_zod`; defineProperty reads it
+ * synchronously, so reusing one object avoids a per-instance allocation. */
+const _zodDesc = { value: undefined, enumerable: false };
+// null where suppressing the capture would be unrecoverable: `parse()` puts the frames back with `captureStackTrace`, so without it the throw would lose its stack. also latched to null once `stackTraceLimit` proves unassignable, which a realm can do at any point by hardening Error
+let _E = "captureStackTrace" in Error ? Error : null;
+// v8 captures a stack trace inside the Error constructor, which dominates a failed parse; costs only the frames, and parse() restores those. the constructor must RUN: Object.create is cheaper and passes instanceof, but Error.isError and util.types.isNativeError check an internal slot
+function newError(Definition) {
+    const E = _E;
+    if (E) {
+        const saved = E.stackTraceLimit;
+        if (typeof saved === "number") {
+            try {
+                E.stackTraceLimit = 0;
+            }
+            catch {
+                _E = null;
+                return new Definition();
+            }
+            try {
+                return new Definition();
+            }
+            finally {
+                E.stackTraceLimit = saved;
+            }
+        }
+    }
+    return new Definition();
+}
+function $constructor(name, initializer, 
+/** This trait's members, installed once on every prototype that composes it. They cannot be declared in the initializer above: that runs per instance, and the prototype is shared. */
+proto, params) {
+    // Prototype for this constructor's `_zod` internals. Lazily-derived fields (`values`, `pattern`, `optin`, …) install here once rather than as an accessor on every instance.
+    const zodProto = {};
+    // Assigning the fields in the constructor body is what gives instances in-object slots; building the object literally and reparenting it costs a second allocation and a generic property copy.
+    function Internals(def) {
+        this.def = def;
+        this.constr = _;
+        this.traits = new Set();
+    }
+    Internals.prototype = zodProto;
+    const protoMembers = proto;
+    // One trait's members land on every prototype whose chain composes it, so the answer is per prototype rather than per trait.
+    const initialized = protoMembers && new WeakSet();
+    function init(inst, def) {
+        if (!inst._zod) {
+            _zodDesc.value = new Internals(def);
+            try {
+                Object.defineProperty(inst, "_zod", _zodDesc);
+            }
+            finally {
+                // Cleared even on throw, so the shared descriptor never leaks one instance's internals into the next.
+                _zodDesc.value = undefined;
+            }
+        }
+        else if (inst._zod.traits.has(name)) {
+            return;
+        }
+        inst._zod.traits.add(name);
+        initializer(inst, def);
+        if (initialized) {
+            // `super(def)` from a user subclass gives `this` a prototype the subclass owns, and installing there would overwrite whatever the subclass declared. `constr` built the instance, so its prototype is the one below the subclass's that should carry the members. A receiver whose chain never reaches that prototype installs on its own, which for a plain object handed straight to `init` means `Object.prototype` — unchanged from before.
+            const own = Object.getPrototypeOf(inst);
+            const ctorProto = inst._zod.constr.prototype;
+            let up = own;
+            while (up && up !== ctorProto)
+                up = Object.getPrototypeOf(up);
+            const target = up ?? own;
+            if (!initialized.has(target)) {
+                initialized.add(target);
+                members(target, protoMembers);
+            }
+        }
+        // support prototype modifications; for-in avoids the array allocation of Object.keys on the (usually empty) prototype
+        const proto = _.prototype;
+        for (const k in proto) {
+            if (!Object.prototype.hasOwnProperty.call(proto, k))
+                continue;
+            if (!(k in inst)) {
+                inst[k] = proto[k].bind(inst);
+            }
+        }
+    }
+    // doesn't work if Parent has a constructor with arguments
+    const Parent = params?.Parent ?? Object;
+    class Definition extends Parent {
+    }
+    Object.defineProperty(Definition, "name", { value: name });
+    function _(def) {
+        const inst = params?.Parent ? newError(Definition) : this;
+        init(inst, def);
+        const deferred = inst._zod.deferred;
+        if (deferred) {
+            for (const fn of deferred) {
+                fn();
+            }
+            // Released: initializers run once, and the list would otherwise be retained for the schema's lifetime.
+            inst._zod.deferred = undefined;
+        }
+        // Global post-processor hook. Internal: installed by `import "zod/compile"` to enable AOT compilation for every constructed schema. Runs last, once the instance is fully built, because it hands the instance to compile(). The post-processor is expected to be reentrancy-guarded by its own implementation.
+        const pp = globalThis.__zod_globalConfig?.postProcessor;
+        if (pp)
+            pp(inst);
+        return inst;
+    }
+    Object.defineProperty(_, "init", { value: init });
+    Object.defineProperty(_, Symbol.hasInstance, {
+        value: (inst) => {
+            if (params?.Parent && inst instanceof params.Parent)
+                return true;
+            return inst?._zod?.traits?.has(name);
+        },
+    });
+    Object.defineProperty(_, "name", { value: name });
+    return _;
+}
+//////////////////////////////   UTILITIES   ///////////////////////////////////////
+const $brand = /*@__PURE__*/ (/* unused pure expression or super */ null && (Symbol("zod_brand")));
+class $ZodAsyncError extends Error {
+    constructor() {
+        super(`Encountered Promise during synchronous parse. Use .parseAsync() instead.`);
+    }
+}
+class $ZodEncodeError extends Error {
+    constructor(name) {
+        super(`Encountered unidirectional transform during encode: ${name}`);
+        this.name = "ZodEncodeError";
+    }
+}
+(_a = globalThis).__zod_globalConfig ?? (_a.__zod_globalConfig = {});
+const globalConfig = globalThis.__zod_globalConfig;
+function config(newConfig) {
+    if (newConfig)
+        Object.assign(globalConfig, newConfig);
+    return globalConfig;
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/memoizer.js
+
+class $ZodCyclicError extends Error {
+    constructor() {
+        super(`Cannot parse a reference cycle that closes through a transform`);
+        this.name = "ZodCyclicError";
+    }
+}
+/** Keyed off the context object every schema in one parse call already shares. */
+const STATE = "~memo";
+const NO_ISSUES = [];
+// a value a cycle can close through
+function isRef(value) {
+    return value !== null && typeof value === "object";
+}
+// Receivers prefix paths in place, so the cache and every hand-out need their own copies.
+function cloneIssues(issues) {
+    return issues.map((iss) => (iss.path ? { ...iss, path: iss.path.slice() } : { ...iss }));
+}
+const recursive = /*@__PURE__*/ new WeakMap();
+/** What the walk established, in order of certainty: ordered so the strongest answer among children wins. */
+const NONE = 0;
+const ASSUMED = 1;
+const PROVEN = 2;
+/** Whether this schema's subtree contains a cycle, so one parse can re-enter it. */
+function isRecursive(inst, stack, resolve) {
+    const cached = recursive.get(inst);
+    if (cached !== undefined)
+        return cached ? PROVEN : NONE;
+    // Relative to the walk in progress, so not cached.
+    if (stack.has(inst))
+        return PROVEN;
+    stack.add(inst);
+    let result = NONE;
+    const check = (child) => {
+        if (result !== PROVEN && child?._zod) {
+            const answer = isRecursive(child, stack, resolve);
+            if (answer > result)
+                result = answer;
+        }
+    };
+    // `Reflect.ownKeys` rather than `Object.keys`, so a cycle through a declared symbol key is still seen
+    const shape = (sh, spread) => {
+        let answer = NONE;
+        for (const key of Reflect.ownKeys(sh)) {
+            const desc = Object.getOwnPropertyDescriptor(sh, key);
+            // an object resolves its shape by spread, so a key it does not enumerate is never parsed; `z.properties` reads every own key and so keeps them all
+            if (spread && !desc.enumerable)
+                continue;
+            // resolving runs user code, and a factory mints a fresh subtree per read, so an edge the walk can't follow counts as a cycle
+            const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack, resolve) : NONE;
+            if (child > answer)
+                answer = child;
+        }
+        return answer;
+    };
+    const merge = (answer) => {
+        if (answer > result)
+            result = answer;
+    };
+    const def = inst._zod.def;
+    const kind = def.type;
+    switch (kind) {
+        case "object": {
+            const raw = rawShape(def);
+            // a def with no raw shape answers `shape` from an accessor of its own, and running that can mint a whole fresh subtree
+            merge(raw ? shape(raw, true) : ASSUMED);
+            check(def.catchall);
+            break;
+        }
+        case "array":
+            check(def.element);
+            break;
+        case "tuple":
+            for (const el of def.items)
+                check(el);
+            check(def.rest);
+            break;
+        case "record":
+        case "map":
+            check(def.keyType);
+            check(def.valueType);
+            break;
+        case "set":
+            check(def.valueType);
+            break;
+        case "union":
+            for (const el of def.options)
+                check(el);
+            break;
+        case "intersection":
+            check(def.left);
+            check(def.right);
+            break;
+        case "optional":
+        case "nullable":
+        case "default":
+        case "prefault":
+        case "catch":
+        case "readonly":
+        case "nonoptional":
+        case "promise":
+        case "success":
+            check(def.innerType);
+            break;
+        case "pipe":
+            check(def.in);
+            check(def.out);
+            break;
+        case "function":
+            check(def.input);
+            check(def.output);
+            break;
+        // `$ZodLazy` caches its inner on the def, so a resolved edge is followed exactly
+        case "lazy": {
+            const inner = def._cachedInner ?? (resolve ? inst._zod.innerType : undefined);
+            // walked with resolution off: one hop sees past the deferral, and a lazy that yields only another unresolved lazy is generative, so it stops there
+            merge(inner ? isRecursive(inner, stack, false) : ASSUMED);
+            break;
+        }
+        // a leaf by choice: `parts` are regex fragments, not data positions
+        case "template_literal":
+        // leaves
+        case "string":
+        case "number":
+        case "int":
+        case "boolean":
+        case "bigint":
+        case "symbol":
+        case "undefined":
+        case "null":
+        case "void":
+        case "never":
+        case "any":
+        case "unknown":
+        case "date":
+        case "nan":
+        case "enum":
+        case "literal":
+        case "file":
+        case "transform":
+        case "custom":
+            break;
+        default: {
+            // a new built-in kind becomes a compile error here
+            kind;
+            // a user-defined kind can still hold children, and only its author knows where, so fall back to scanning the def — skipping accessors, since reading one can run user code
+            for (const key in def) {
+                const desc = Object.getOwnPropertyDescriptor(def, key);
+                if (!desc || desc.get)
+                    continue;
+                const value = desc.value;
+                if (!value || typeof value !== "object")
+                    continue;
+                if (value._zod)
+                    check(value);
+                else if (Array.isArray(value))
+                    for (const el of value)
+                        check(el);
+            }
+        }
+    }
+    stack.delete(inst);
+    return settle(inst, result);
+}
+/** An assumed answer must not outlive the resolution that settles it, so only a certain one is cached. */
+function settle(inst, answer) {
+    if (answer !== ASSUMED)
+        recursive.set(inst, answer === PROVEN);
+    return answer;
+}
+/**
+ * Whether one parse can re-enter this schema, i.e. its subtree contains a cycle.
+ * Exported for `z.compile`, which refuses to compile such a schema: cycle
+ * breaking is driven from here off state keyed on the parse context, and a
+ * generated fast path has no context to key on.
+ */
+function isRecursiveSchema(inst) {
+    // z.compile never parses, so nothing would ever resolve a lazy for it; it runs once and already treats a throw here as recursive
+    return isRecursive(inst, new Set(), true) !== NONE;
+}
+function bucketFor(state, inst) {
+    let bucket = state.buckets.get(inst);
+    if (!bucket) {
+        bucket = new WeakMap();
+        state.buckets.set(inst, bucket);
+    }
+    return bucket;
+}
+// Set immediately before delegating to core and cleared immediately after, so `alloc` registers only for a visit this module is driving.
+let handoff;
+// Allocated but unfinished entries. `alloc` and the matching pop both happen in the synchronous part of a parse, so they nest even when children are async, and one stack serves every schema.
+const memoizer_open = [];
+const memo = {
+    alloc(_inst, payload, empty) {
+        const bucket = handoff;
+        if (!bucket)
+            return empty;
+        handoff = undefined;
+        const entry = { value: empty, issues: null };
+        bucket.set(payload.value, entry);
+        memoizer_open.push(entry);
+        return empty;
+    },
+    guard(inst) {
+        var _a;
+        (_a = inst._zod).deferred ?? (_a.deferred = []);
+        inst._zod.deferred.push(() => {
+            const base = inst._zod.parse;
+            const wrapped = (payload, ctx) => {
+                // The value is a placeholder a back-edge is still waiting on, so the cycle closes through this transform. Its output can't exist in time to bind.
+                if (ctx.direction !== "backward" && isBackEdge(ctx, payload.value))
+                    throw new $ZodCyclicError();
+                return base(payload, ctx);
+            };
+            inst._zod.parse = wrapped;
+            if (inst._zod.run === base)
+                inst._zod.run = wrapped;
+        });
+    },
+    attach(inst) {
+        var _a;
+        let isRecursiveInst;
+        let rechecked = false;
+        // a recursive schema is re-entered many times per parse and its bucket never changes
+        let lastCtx;
+        let lastBucket;
+        // Wraps `parse` in a deferred so it sees the container's final parse. Core's own deferred copies `parse` into `run` when there are no checks, and it ran first, so `run` is patched to match; with checks, `run` reads `parse` dynamically.
+        (_a = inst._zod).deferred ?? (_a.deferred = []);
+        inst._zod.deferred.push(() => {
+            const base = inst._zod.parse;
+            const wrapped = (payload, ctx) => {
+                if (isRecursiveInst === undefined) {
+                    const walked = isRecursive(inst, new Set(), false);
+                    if (walked === NONE) {
+                        // Nothing here can ever fire, so take it back out.
+                        inst._zod.parse = base;
+                        if (inst._zod.run === wrapped)
+                            inst._zod.run = base;
+                        return base(payload, ctx);
+                    }
+                    // this parse resolves the deferred edges on its own path, so ask once more before latching
+                    if (walked === PROVEN || rechecked)
+                        isRecursiveInst = true;
+                    else
+                        rechecked = true;
+                }
+                const input = payload.value;
+                if (!isRef(input))
+                    return base(payload, ctx);
+                let state = ctx[STATE];
+                if (!state) {
+                    state = { buckets: new WeakMap(), backEdges: undefined };
+                    ctx[STATE] = state;
+                }
+                let bucket;
+                if (lastCtx === ctx) {
+                    bucket = lastBucket;
+                }
+                else {
+                    bucket = bucketFor(state, inst);
+                    lastCtx = ctx;
+                    lastBucket = bucket;
+                }
+                const hit = bucket.get(input);
+                if (hit) {
+                    payload.value = hit.value;
+                    if (hit.issues) {
+                        if (hit.issues.length)
+                            payload.issues.push(...cloneIssues(hit.issues));
+                    }
+                    else {
+                        // Still being parsed: its own checks cover it, so skip them here.
+                        payload.memo = true;
+                        state.backEdges ?? (state.backEdges = new WeakSet());
+                        state.backEdges.add(hit.value);
+                    }
+                    return payload;
+                }
+                handoff = bucket;
+                const depth = memoizer_open.length;
+                const result = base(payload, ctx);
+                handoff = undefined;
+                // A container that rejected its input outright allocated nothing.
+                const entry = memoizer_open.length > depth ? memoizer_open.pop() : undefined;
+                // Both paths written out so the sync one allocates no closure. It runs once per node, and capturing here cost more than everything else combined.
+                if (result instanceof Promise) {
+                    return result.then((r) => {
+                        if (entry)
+                            entry.issues = r.issues.length ? cloneIssues(r.issues) : NO_ISSUES;
+                        return r;
+                    });
+                }
+                if (entry)
+                    entry.issues = result.issues.length ? cloneIssues(result.issues) : NO_ISSUES;
+                return result;
+            };
+            inst._zod.parse = wrapped;
+            if (inst._zod.run === base)
+                inst._zod.run = wrapped;
+        });
+    },
+};
+/** The memoizer that gives containers cycle support. `zod` installs it by default; `zod/mini` opts in with `config({ memoizer: memoizer() })`. */
+function memoizer() {
+    return memo;
+}
+/** Whether this value is a node a back-edge resolved to before it finished. */
+function isBackEdge(ctx, value) {
+    const backEdges = ctx[STATE]?.backEdges;
+    return backEdges !== undefined && isRef(value) && backEdges.has(value);
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/regexes.js
+
+/**
+ * @deprecated CUID v1 is deprecated by its authors due to information leakage
+ * (timestamps embedded in the id). Use {@link cuid2} instead.
+ * See https://github.com/paralleldrive/cuid.
+ */
+const cuid = /^[cC][0-9a-z]{6,}$/;
+const cuid2 = /^[0-9a-z]+$/;
+const ulid = /^[0-7][0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{25}$/;
+const xid = /^[0-9a-vA-V]{20}$/;
+const ksuid = /^[A-Za-z0-9]{27}$/;
+const nanoid = /^[a-zA-Z0-9_-]{21}$/;
+function nanoidOfLength(length) {
+    return new RegExp(`^[a-zA-Z0-9_-]{${length}}$`);
+}
+/** ISO 8601-1 duration regex. Does not support the 8601-2 extensions like negative durations or fractional/negative components. */
+const duration = /^P(?:(\d+W)|(?!.*W)(?=\d|T\d)(\d+Y)?(\d+M)?(\d+D)?(T(?=\d)(\d+H)?(\d+M)?(\d+([.,]\d+)?S)?)?)$/;
+/** Implements ISO 8601-2 extensions like explicit +- prefixes, mixing weeks with other units, and fractional/negative components. */
+const extendedDuration = /^[-+]?P(?!$)(?:(?:[-+]?\d+Y)|(?:[-+]?\d+[.,]\d+Y$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:(?:[-+]?\d+W)|(?:[-+]?\d+[.,]\d+W$))?(?:(?:[-+]?\d+D)|(?:[-+]?\d+[.,]\d+D$))?(?:T(?=[\d+-])(?:(?:[-+]?\d+H)|(?:[-+]?\d+[.,]\d+H$))?(?:(?:[-+]?\d+M)|(?:[-+]?\d+[.,]\d+M$))?(?:[-+]?\d+(?:[.,]\d+)?S)?)??$/;
+/** A regex for any UUID-like identifier: 8-4-4-4-12 hex pattern */
+const guid = /^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$/;
+/** Returns a regex for validating an RFC 9562/4122 UUID.
+ *
+ * @param version Optionally specify a version 1-8. If no version is specified, all versions are supported. */
+const uuid = (version) => {
+    if (!version)
+        return /^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/;
+    return new RegExp(`^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-${version}[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$`);
+};
+const regexes_uuid4 = /*@__PURE__*/ (/* unused pure expression or super */ null && (uuid(4)));
+const uuid6 = /*@__PURE__*/ (/* unused pure expression or super */ null && (uuid(6)));
+const uuid7 = /*@__PURE__*/ (/* unused pure expression or super */ null && (uuid(7)));
+/** Practical email validation */
+const email = /^(?:[A-Za-z0-9_'+\-]+\.)*[A-Za-z0-9_'+\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\-]*\.)+[A-Za-z]{2,}$/;
+/** Equivalent to the HTML5 input[type=email] validation implemented by browsers. Source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email */
+const html5Email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+/** The classic emailregex.com regex for RFC 5322-compliant emails */
+const rfc5322Email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+/** A loose regex that allows Unicode characters, enforces length limits, and that's about it. */
+const unicodeEmail = /^[^\s@"]{1,64}@[^\s@]{1,255}$/u;
+const idnEmail = (/* unused pure expression or super */ null && (unicodeEmail));
+const browserEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+// from https://thekevinscott.com/emojis-in-javascript/#writing-a-regular-expression
+// Single character class, not an alternation: the two properties overlap (U+1F9B0-U+1F9B3), so `(A|B)+` backtracks exponentially on a failed match. The leading lookahead then demands one anchor — a pictograph, a regional indicator, or the enclosing keycap — because `\p{Emoji_Component}` on its own covers ASCII digits, `#`, `*`, ZWJ, variation selectors and skin tone modifiers, none of which is an emoji without a base.
+const _emoji = `^(?=[\\s\\S]*[\\p{Extended_Pictographic}\\p{Regional_Indicator}\\u20E3])[\\p{Extended_Pictographic}\\p{Emoji_Component}]+$`;
+function emoji() {
+    return new RegExp(_emoji, "u");
+}
+const ipv4 = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/;
+const ipv6 = /^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:))$/;
+const mac = (delimiter) => {
+    const escapedDelim = util.escapeRegex(delimiter ?? ":");
+    return new RegExp(`^(?:[0-9A-F]{2}${escapedDelim}){5}[0-9A-F]{2}$|^(?:[0-9a-f]{2}${escapedDelim}){5}[0-9a-f]{2}$`);
+};
+const cidrv4 = /^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\/([0-9]|[1-2][0-9]|3[0-2])$/;
+const cidrv6 = /^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:))\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])$/;
+// https://stackoverflow.com/questions/7860392/determine-if-string-is-in-base64-using-javascript
+const base64 = /^$|^(?:[0-9a-zA-Z+/]{4})*(?:(?:[0-9a-zA-Z+/]{2}==)|(?:[0-9a-zA-Z+/]{3}=))?$/;
+const base64url = /^(?:[A-Za-z0-9_-]{4})*(?:[A-Za-z0-9_-]{2,3})?$/;
+// based on https://stackoverflow.com/questions/106179/regular-expression-to-match-dns-hostname-or-ip-address
+// export const hostname: RegExp = /^([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+$/;
+const hostname = /^(?=.{1,253}\.?$)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[-0-9a-zA-Z]{0,61}[0-9a-zA-Z])?)*\.?$/;
+const domain = /^(?=.{1,253}$)([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}$/;
+const httpProtocol = /^https?$/;
+// https://blog.stevenlevithan.com/archives/validate-phone-number#r4-3 (regex sans spaces) E.164: leading digit must be 1-9; total digits (excluding '+') between 7-15
+const e164 = /^\+[1-9]\d{6,14}$/;
+// Credit card shape: 12–19 digits, optionally separated by single spaces or single hyphens. ISO/IEC 7812 caps the PAN at 19 digits; 12 is the shortest issued length (Maestro).
+const creditCard = /^\d(?:[ -]?\d){11,18}$/;
+// ISO 4217 alpha codes from the SIX list, regenerated by scripts/update-iso-4217.ts
+const currencyCode = /^(?:AED|AFN|ALL|AMD|AOA|ARS|AUD|AWG|AZN|BAM|BBD|BDT|BHD|BIF|BMD|BND|BOB|BOV|BRL|BSD|BTN|BWP|BYN|BZD|CAD|CDF|CHE|CHF|CHW|CLF|CLP|CNY|COP|COU|CRC|CUP|CVE|CZK|DJF|DKK|DOP|DZD|EGP|ERN|ETB|EUR|FJD|FKP|GBP|GEL|GHS|GIP|GMD|GNF|GTQ|GYD|HKD|HNL|HTG|HUF|IDR|ILS|INR|IQD|IRR|ISK|JMD|JOD|JPY|KES|KGS|KHR|KMF|KPW|KRW|KWD|KYD|KZT|LAK|LBP|LKR|LRD|LSL|LYD|MAD|MDL|MGA|MKD|MMK|MNT|MOP|MRU|MUR|MVR|MWK|MXN|MXV|MYR|MZN|NAD|NGN|NIO|NOK|NPR|NZD|OMR|PAB|PEN|PGK|PHP|PKR|PLN|PYG|QAR|RON|RSD|RUB|RWF|SAR|SBD|SCR|SDG|SEK|SGD|SHP|SLE|SOS|SRD|SSP|STN|SVC|SYP|SZL|THB|TJS|TMT|TND|TOP|TRY|TTD|TWD|TZS|UAH|UGX|USD|USN|UYI|UYU|UYW|UZS|VED|VES|VND|VUV|WST|XAD|XAF|XAG|XAU|XBA|XBB|XBC|XBD|XCD|XCG|XDR|XOF|XPD|XPF|XPT|XSU|XTS|XUA|XXX|YER|ZAR|ZMW|ZWG)$/;
+// iban electronic format: 2-letter country, check digits 02-98 (the only values `98 - remainder` can produce), 11-30 bban characters
+const iban = /^[A-Z]{2}(?!00|01|99)\d{2}[A-Z0-9]{11,30}$/;
+const dateSource = `(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))`;
+/** Anchors a pattern source. The interpolation lives here rather than at the call site because
+ * esbuild will not drop a `@__PURE__` call whose own argument interpolates a variable, but it
+ * will drop `anchor(dateSource)`. Keeping it inline pinned `date` into every bundle. */
+function regexes_anchor(source) {
+    return new RegExp(`^${source}$`);
+}
+const date = /*@__PURE__*/ regexes_anchor(dateSource);
+function timeSource(args) {
+    const hhmm = `(?:[01]\\d|2[0-3]):[0-5]\\d`;
+    const regex = typeof args.precision === "number"
+        ? args.precision === -1
+            ? `${hhmm}`
+            : args.precision === 0
+                ? `${hhmm}:[0-5]\\d`
+                : `${hhmm}:[0-5]\\d\\.\\d{${args.precision}}`
+        : args.seconds
+            ? `${hhmm}:[0-5]\\d(?:\\.\\d+)?`
+            : `${hhmm}(?::[0-5]\\d(?:\\.\\d+)?)?`;
+    return regex;
+}
+function time(args) {
+    return new RegExp(`^${timeSource(args)}$`);
+}
+// Adapted from https://stackoverflow.com/a/3143231
+function datetime(args) {
+    const opts = ["Z"];
+    // if (args.offset) opts.push(`([+-]\\d{2}:\\d{2})`);
+    if (args.offset)
+        opts.push(`([+-](?:[01]\\d|2[0-3]):[0-5]\\d)`);
+    // RFC 3339 mandates seconds wherever the time carries a `Z` or an offset, so only the unqualified form `local` adds may omit them
+    const qualified = `${timeSource({ precision: args.precision, seconds: true })}(?:${opts.join("|")})`;
+    const timeRegex = args.local ? `${qualified}|${timeSource({ precision: args.precision })}` : qualified;
+    return new RegExp(`^${dateSource}T(?:${timeRegex})$`);
+}
+// the unbounded form of `string()` as a literal, so every plain string shares one instance instead of building its own
+const anyString = /^[\s\S]{0,}$/;
+const string = (params) => {
+    const regex = params ? `[\\s\\S]{${params?.minimum ?? 0},${params?.maximum ?? ""}}` : `[\\s\\S]*`;
+    return new RegExp(`^${regex}$`);
+};
+const bigint = /^-?\d+n?$/;
+const integer = /^-?\d+$/;
+const number = /^-?\d+(?:\.\d+)?$/;
+const regexes_boolean = /^(?:true|false)$/i;
+const _null = /^null$/i;
+
+const _undefined = /^undefined$/i;
+
+// regex for string with no uppercase letters
+const lowercase = /^[^A-Z]*$/;
+// regex for string with no lowercase letters
+const uppercase = /^[^a-z]*$/;
+// regex for hexadecimal strings (any length)
+const hex = /^[0-9a-fA-F]*$/;
+// Hash regexes for different algorithms and encodings
+// Helper function to create base64 regex with exact length and padding
+function fixedBase64(bodyLength, padding) {
+    return new RegExp(`^[A-Za-z0-9+/]{${bodyLength}}${padding}$`);
+}
+// Helper function to create base64url regex with exact length (no padding)
+function fixedBase64url(length) {
+    return new RegExp(`^[A-Za-z0-9_-]{${length}}$`);
+}
+// MD5 (16 bytes): base64 = 24 chars total (22 + "==")
+const md5_hex = /^[0-9a-fA-F]{32}$/;
+const md5_base64 = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64(22, "==")));
+const md5_base64url = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64url(22)));
+// SHA1 (20 bytes): base64 = 28 chars total (27 + "=")
+const sha1_hex = /^[0-9a-fA-F]{40}$/;
+const sha1_base64 = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64(27, "=")));
+const sha1_base64url = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64url(27)));
+// SHA256 (32 bytes): base64 = 44 chars total (43 + "=")
+const sha256_hex = /^[0-9a-fA-F]{64}$/;
+const sha256_base64 = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64(43, "=")));
+const sha256_base64url = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64url(43)));
+// SHA384 (48 bytes): base64 = 64 chars total (no padding)
+const sha384_hex = /^[0-9a-fA-F]{96}$/;
+const sha384_base64 = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64(64, "")));
+const sha384_base64url = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64url(64)));
+// SHA512 (64 bytes): base64 = 88 chars total (86 + "==")
+const sha512_hex = /^[0-9a-fA-F]{128}$/;
+const sha512_base64 = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64(86, "==")));
+const sha512_base64url = /*@__PURE__*/ (/* unused pure expression or super */ null && (fixedBase64url(86)));
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/checks.js
+// import { $ZodType } from "./schemas.js";
+
+
+
+const $ZodCheck = /*@__PURE__*/ $constructor("$ZodCheck", (inst, def) => {
+    var _a;
+    inst._zod ?? (inst._zod = {});
+    inst._zod.def = def;
+    (_a = inst._zod).onattach ?? (_a.onattach = []);
+});
+/** Default `when` for size-based checks: run only on non-nullish values with a `size`. */
+const _whenHasSize = (payload) => {
+    const val = payload.value;
+    return !util.nullish(val) && val.size !== undefined;
+};
+/** Default `when` for length-based checks: run only on non-nullish values with a `length`. */
+const _whenHasLength = (payload) => {
+    const val = payload.value;
+    return !nullish(val) && val.length !== undefined;
+};
+const numericOriginMap = {
+    number: "number",
+    bigint: "bigint",
+    object: "date",
+};
+const $ZodCheckLessThan = /*@__PURE__*/ $constructor("$ZodCheckLessThan", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    const origin = numericOriginMap[typeof def.value];
+    inst._zod.check = (payload) => {
+        if (def.inclusive ? payload.value <= def.value : payload.value < def.value) {
+            return;
+        }
+        payload.issues.push({
+            origin: numericOriginMap[typeof payload.value] ?? origin,
+            code: "too_big",
+            maximum: typeof def.value === "object" ? def.value.getTime() : def.value,
+            input: payload.value,
+            inclusive: def.inclusive,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckGreaterThan = /*@__PURE__*/ $constructor("$ZodCheckGreaterThan", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    const origin = numericOriginMap[typeof def.value];
+    inst._zod.check = (payload) => {
+        if (def.inclusive ? payload.value >= def.value : payload.value > def.value) {
+            return;
+        }
+        payload.issues.push({
+            origin: numericOriginMap[typeof payload.value] ?? origin,
+            code: "too_small",
+            minimum: typeof def.value === "object" ? def.value.getTime() : def.value,
+            input: payload.value,
+            inclusive: def.inclusive,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckMultipleOf = 
+/*@__PURE__*/ $constructor("$ZodCheckMultipleOf", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (typeof payload.value !== typeof def.value)
+            throw new Error("Cannot mix number and bigint in multiple_of check.");
+        const isMultiple = typeof payload.value === "bigint"
+            ? // `value % 0n` throws, and nothing is a multiple of zero — the number branch already fails this way via NaN
+                def.value !== BigInt(0) && payload.value % def.value === BigInt(0)
+            : floatSafeRemainder(payload.value, def.value) === 0;
+        if (isMultiple)
+            return;
+        payload.issues.push({
+            origin: typeof payload.value,
+            code: "not_multiple_of",
+            divisor: def.value,
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckNumberFormat = /*@__PURE__*/ $constructor("$ZodCheckNumberFormat", (inst, def) => {
+    $ZodCheck.init(inst, def); // no format checks
+    def.format = def.format || "float64";
+    const isInt = def.format?.includes("int");
+    const origin = isInt ? "int" : "number";
+    const [minimum, maximum] = NUMBER_FORMAT_RANGES[def.format];
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        if (isInt) {
+            if (!Number.isInteger(input)) {
+                // invalid_format issue
+                // payload.issues.push({
+                //   expected: def.format,
+                //   format: def.format,
+                //   code: "invalid_format",
+                //   input,
+                //   inst,
+                // });
+                // invalid_type issue
+                payload.issues.push({
+                    expected: origin,
+                    format: def.format,
+                    code: "invalid_type",
+                    continue: false,
+                    input,
+                    inst,
+                });
+                return;
+                // not_multiple_of issue
+                // payload.issues.push({
+                //   code: "not_multiple_of",
+                //   origin: "number",
+                //   input,
+                //   inst,
+                //   divisor: 1,
+                // });
+            }
+            if (!Number.isSafeInteger(input)) {
+                if (input > 0) {
+                    // too_big
+                    payload.issues.push({
+                        input,
+                        code: "too_big",
+                        maximum: Number.MAX_SAFE_INTEGER,
+                        note: "Integers must be within the safe integer range.",
+                        inst,
+                        origin,
+                        inclusive: true,
+                        continue: !def.abort,
+                    });
+                }
+                else {
+                    // too_small
+                    payload.issues.push({
+                        input,
+                        code: "too_small",
+                        minimum: Number.MIN_SAFE_INTEGER,
+                        note: "Integers must be within the safe integer range.",
+                        inst,
+                        origin,
+                        inclusive: true,
+                        continue: !def.abort,
+                    });
+                }
+                return;
+            }
+        }
+        if (input < minimum) {
+            payload.issues.push({
+                origin: "number",
+                input,
+                code: "too_small",
+                minimum,
+                inclusive: true,
+                inst,
+                continue: !def.abort,
+            });
+        }
+        if (input > maximum) {
+            payload.issues.push({
+                origin: "number",
+                input,
+                code: "too_big",
+                maximum,
+                inclusive: true,
+                inst,
+                continue: !def.abort,
+            });
+        }
+    };
+});
+const $ZodCheckBigIntFormat = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCheckBigIntFormat", (inst, def) => {
+    $ZodCheck.init(inst, def); // no format checks
+    const [minimum, maximum] = util.BIGINT_FORMAT_RANGES[def.format];
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        if (input < minimum) {
+            payload.issues.push({
+                origin: "bigint",
+                input,
+                code: "too_small",
+                minimum: minimum,
+                inclusive: true,
+                inst,
+                continue: !def.abort,
+            });
+        }
+        if (input > maximum) {
+            payload.issues.push({
+                origin: "bigint",
+                input,
+                code: "too_big",
+                maximum,
+                inclusive: true,
+                inst,
+                continue: !def.abort,
+            });
+        }
+    };
+})));
+const $ZodCheckMaxSize = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCheckMaxSize", (inst, def) => {
+    var _a;
+    $ZodCheck.init(inst, def);
+    (_a = inst._zod.def).when ?? (_a.when = _whenHasSize);
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        const size = input.size;
+        if (size <= def.maximum)
+            return;
+        payload.issues.push({
+            origin: util.getSizableOrigin(input),
+            code: "too_big",
+            maximum: def.maximum,
+            inclusive: true,
+            input,
+            inst,
+            continue: !def.abort,
+        });
+    };
+})));
+const $ZodCheckMinSize = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCheckMinSize", (inst, def) => {
+    var _a;
+    $ZodCheck.init(inst, def);
+    (_a = inst._zod.def).when ?? (_a.when = _whenHasSize);
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        const size = input.size;
+        if (size >= def.minimum)
+            return;
+        payload.issues.push({
+            origin: util.getSizableOrigin(input),
+            code: "too_small",
+            minimum: def.minimum,
+            inclusive: true,
+            input,
+            inst,
+            continue: !def.abort,
+        });
+    };
+})));
+const $ZodCheckSizeEquals = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCheckSizeEquals", (inst, def) => {
+    var _a;
+    $ZodCheck.init(inst, def);
+    (_a = inst._zod.def).when ?? (_a.when = _whenHasSize);
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        const size = input.size;
+        if (size === def.size)
+            return;
+        const tooBig = size > def.size;
+        payload.issues.push({
+            origin: util.getSizableOrigin(input),
+            ...(tooBig ? { code: "too_big", maximum: def.size } : { code: "too_small", minimum: def.size }),
+            inclusive: true,
+            exact: true,
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+})));
+const $ZodCheckMaxLength = /*@__PURE__*/ $constructor("$ZodCheckMaxLength", (inst, def) => {
+    var _a;
+    $ZodCheck.init(inst, def);
+    (_a = inst._zod.def).when ?? (_a.when = _whenHasLength);
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        const units = input.length;
+        // Strings are measured in Unicode code points, not UTF-16 units. A code point is at most two units, so a string that already fits in units fits in code points; only an overflow has to be counted.
+        const length = typeof input === "string" && units > def.maximum ? codePointLength(input) : units;
+        if (length <= def.maximum)
+            return;
+        const origin = getLengthableOrigin(input);
+        payload.issues.push({
+            origin,
+            code: "too_big",
+            maximum: def.maximum,
+            inclusive: true,
+            input,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckMinLength = /*@__PURE__*/ $constructor("$ZodCheckMinLength", (inst, def) => {
+    var _a;
+    $ZodCheck.init(inst, def);
+    (_a = inst._zod.def).when ?? (_a.when = _whenHasLength);
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        const units = input.length;
+        // A code point is one or two UTF-16 units, so fewer units than the floor can never reach it and twice the floor always clears it. Only in between is the exact count in doubt.
+        const length = typeof input === "string" && units >= def.minimum && units < def.minimum * 2
+            ? codePointLength(input)
+            : units;
+        if (length >= def.minimum)
+            return;
+        const origin = getLengthableOrigin(input);
+        payload.issues.push({
+            origin,
+            code: "too_small",
+            minimum: def.minimum,
+            inclusive: true,
+            input,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckLengthEquals = /*@__PURE__*/ $constructor("$ZodCheckLengthEquals", (inst, def) => {
+    var _a;
+    $ZodCheck.init(inst, def);
+    (_a = inst._zod.def).when ?? (_a.when = _whenHasLength);
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        const units = input.length;
+        // A code point is one or two UTF-16 units, so outside `[length, length * 2]` units the target is missed either way — and missed in the same direction in both measures.
+        const length = typeof input === "string" && units >= def.length && units <= def.length * 2
+            ? codePointLength(input)
+            : units;
+        if (length === def.length)
+            return;
+        const origin = getLengthableOrigin(input);
+        const tooBig = length > def.length;
+        payload.issues.push({
+            origin,
+            ...(tooBig ? { code: "too_big", maximum: def.length } : { code: "too_small", minimum: def.length }),
+            inclusive: true,
+            exact: true,
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckStringFormat = /*@__PURE__*/ $constructor("$ZodCheckStringFormat", (inst, def) => {
+    var _a, _b;
+    $ZodCheck.init(inst, def);
+    if (def.pattern)
+        (_a = inst._zod).check ?? (_a.check = (payload) => {
+            def.pattern.lastIndex = 0;
+            if (def.pattern.test(payload.value))
+                return;
+            payload.issues.push({
+                origin: "string",
+                code: "invalid_format",
+                format: def.format,
+                input: payload.value,
+                ...(def.pattern ? { pattern: def.pattern.toString() } : {}),
+                inst,
+                continue: !def.abort,
+            });
+        });
+    else
+        (_b = inst._zod).check ?? (_b.check = () => { });
+});
+const $ZodCheckRegex = /*@__PURE__*/ $constructor("$ZodCheckRegex", (inst, def) => {
+    $ZodCheckStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        def.pattern.lastIndex = 0;
+        if (def.pattern.test(payload.value))
+            return;
+        payload.issues.push({
+            origin: "string",
+            code: "invalid_format",
+            format: "regex",
+            input: payload.value,
+            pattern: def.pattern.toString(),
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckLowerCase = /*@__PURE__*/ $constructor("$ZodCheckLowerCase", (inst, def) => {
+    def.pattern ?? (def.pattern = lowercase);
+    $ZodCheckStringFormat.init(inst, def);
+});
+const $ZodCheckUpperCase = /*@__PURE__*/ $constructor("$ZodCheckUpperCase", (inst, def) => {
+    def.pattern ?? (def.pattern = uppercase);
+    $ZodCheckStringFormat.init(inst, def);
+});
+const $ZodCheckIncludes = /*@__PURE__*/ $constructor("$ZodCheckIncludes", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    const escapedRegex = escapeRegex(def.includes);
+    // `String.prototype.includes(sub, position)` matches `sub` at `position`
+    // OR LATER, so the pattern must allow at least `position` leading chars
+    // (`{N,}`), not exactly `position` chars (`{N}`).
+    const pattern = new RegExp(typeof def.position === "number" ? `^.{${def.position},}${escapedRegex}` : escapedRegex);
+    def.pattern = pattern;
+    inst._zod.check = (payload) => {
+        if (payload.value.includes(def.includes, def.position))
+            return;
+        payload.issues.push({
+            origin: "string",
+            code: "invalid_format",
+            format: "includes",
+            includes: def.includes,
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckStartsWith = /*@__PURE__*/ $constructor("$ZodCheckStartsWith", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    const pattern = new RegExp(`^${escapeRegex(def.prefix)}.*`);
+    def.pattern ?? (def.pattern = pattern);
+    inst._zod.check = (payload) => {
+        if (payload.value.startsWith(def.prefix))
+            return;
+        payload.issues.push({
+            origin: "string",
+            code: "invalid_format",
+            format: "starts_with",
+            prefix: def.prefix,
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCheckEndsWith = /*@__PURE__*/ $constructor("$ZodCheckEndsWith", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    const pattern = new RegExp(`.*${escapeRegex(def.suffix)}$`);
+    def.pattern ?? (def.pattern = pattern);
+    inst._zod.check = (payload) => {
+        if (payload.value.endsWith(def.suffix))
+            return;
+        payload.issues.push({
+            origin: "string",
+            code: "invalid_format",
+            format: "ends_with",
+            suffix: def.suffix,
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+///////////////////////////////////
+/////    $ZodCheckProperty    /////
+///////////////////////////////////
+function handleCheckPropertyResult(result, payload, property) {
+    if (result.issues.length) {
+        payload.issues.push(...prefixIssues(property, result.issues));
+    }
+}
+const $ZodCheckProperty = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCheckProperty", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    inst._zod.check = (payload) => {
+        const result = def.schema._zod.run({
+            value: payload.value[def.property],
+            issues: [],
+        }, {});
+        if (result instanceof Promise) {
+            return result.then((result) => handleCheckPropertyResult(result, payload, def.property));
+        }
+        handleCheckPropertyResult(result, payload, def.property);
+        return;
+    };
+})));
+const $ZodCheckProperties = /*@__PURE__*/ $constructor("$ZodCheckProperties", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    hide(inst, Symbol.iterator, function* () {
+        yield inst;
+    });
+    // key and schema snapshotted together: reading one live and the other cached lets a later mutation of the caller's shape object pair a stale key with a missing schema
+    let entries;
+    inst._zod.check = (payload) => {
+        // the base schema already typed the value, so only a nullish one is rejected here: the properties read on a primitive too, matching z.property() on a string's length
+        if (payload.value == null) {
+            payload.issues.push({ expected: "object", code: "invalid_type", input: payload.value, inst });
+            return undefined;
+        }
+        entries ?? (entries = Reflect.ownKeys(def.shape).map((key) => [key, def.shape[key]]));
+        const input = payload.value;
+        let proms;
+        for (const [key, schema] of entries) {
+            const result = schema._zod.run({ value: input[key], issues: [] }, {});
+            if (result instanceof Promise) {
+                proms ?? (proms = []);
+                proms.push(result.then((result) => handleCheckPropertyResult(result, payload, key)));
+            }
+            else {
+                handleCheckPropertyResult(result, payload, key);
+            }
+        }
+        if (proms)
+            return Promise.all(proms).then(() => undefined);
+        return undefined;
+    };
+});
+const $ZodCheckMimeType = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCheckMimeType", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    const mimeSet = new Set(def.mime);
+    inst._zod.check = (payload) => {
+        if (mimeSet.has(payload.value.type))
+            return;
+        payload.issues.push({
+            code: "invalid_value",
+            values: def.mime,
+            input: payload.value.type,
+            inst,
+            continue: !def.abort,
+        });
+    };
+})));
+const $ZodCheckOverwrite = /*@__PURE__*/ $constructor("$ZodCheckOverwrite", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    inst._zod.check = (payload) => {
+        payload.value = def.tx(payload.value);
+    };
+});
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/doc.js
+class Doc {
+    constructor(args = [], closed = {}) {
+        this.content = [];
+        this.indent = 0;
+        this.args = args;
+        this.closed = closed;
+    }
+    // the compiler catches a child's throw and keeps writing into this doc, so the indent has to unwind with it
+    indented(fn) {
+        this.indent += 1;
+        try {
+            fn(this);
+        }
+        finally {
+            this.indent -= 1;
+        }
+    }
+    write(arg) {
+        if (typeof arg === "function") {
+            arg(this, { execution: "sync" });
+            arg(this, { execution: "async" });
+            return;
+        }
+        const content = arg;
+        const lines = content.split("\n").filter((x) => x);
+        const minIndent = Math.min(...lines.map((x) => x.length - x.trimStart().length));
+        const dedented = lines.map((x) => x.slice(minIndent)).map((x) => " ".repeat(this.indent * 2) + x);
+        for (const line of dedented) {
+            this.content.push(line);
+        }
+    }
+    compile() {
+        const F = Function;
+        const content = this?.content ?? [``];
+        const factory = new F(...Object.keys(this.closed), `return function (${this.args.join(", ")}) {\n${content.join("\n")}\n};`);
+        return factory(...Object.values(this.closed));
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/versions.js
+const version = {
+    major: 4,
+    minor: 6,
+    patch: 7,
+};
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/schemas.js
+
+
+
+
+
+
+
+const $ZodType = /*@__PURE__*/ $constructor("$ZodType", (inst, def) => {
+    var _a;
+    inst ?? (inst = {});
+    inst._zod.def = def; // set _def property
+    inst._zod.bag = inst._zod.bag || {}; // initialize _bag object
+    inst._zod.version = version;
+    const defChecks = inst._zod.def.checks;
+    // if inst is itself a checks.$ZodCheck, run it as a check
+    const checks = inst._zod.traits.has("$ZodCheck")
+        ? [inst, ...(defChecks ?? [])]
+        : defChecks?.length
+            ? [...defChecks]
+            : [];
+    for (const ch of checks) {
+        for (const fn of ch._zod.onattach) {
+            fn(inst);
+        }
+    }
+    if (checks.length === 0) {
+        // deferred initializer inst._zod.parse is not yet defined
+        (_a = inst._zod).deferred ?? (_a.deferred = []);
+        inst._zod.deferred?.push(() => {
+            inst._zod.run = inst._zod.parse;
+        });
+    }
+    else {
+        const runChecks = (payload, checks, ctx) => {
+            if (payload.memo)
+                return payload;
+            let isAborted = aborted(payload);
+            let asyncResult;
+            for (const ch of checks) {
+                if (ch._zod.def.when) {
+                    if (explicitlyAborted(payload))
+                        continue;
+                    const shouldRun = ch._zod.def.when(payload);
+                    if (!shouldRun)
+                        continue;
+                }
+                else if (isAborted) {
+                    continue;
+                }
+                const currLen = payload.issues.length;
+                const _ = ch._zod.check(payload);
+                if (_ instanceof Promise && ctx?.async === false) {
+                    throw new $ZodAsyncError();
+                }
+                if (asyncResult || _ instanceof Promise) {
+                    asyncResult = (asyncResult ?? Promise.resolve()).then(async () => {
+                        await _;
+                        const nextLen = payload.issues.length;
+                        if (nextLen === currLen)
+                            return;
+                        attachSchema(payload.issues, currLen, inst);
+                        if (!isAborted)
+                            isAborted = aborted(payload, currLen);
+                    });
+                }
+                else {
+                    const nextLen = payload.issues.length;
+                    if (nextLen === currLen)
+                        continue;
+                    attachSchema(payload.issues, currLen, inst);
+                    if (!isAborted)
+                        isAborted = aborted(payload, currLen);
+                }
+            }
+            if (asyncResult) {
+                return asyncResult.then(() => {
+                    return payload;
+                });
+            }
+            return payload;
+        };
+        const handleCanaryResult = (canary, payload, ctx) => {
+            // abort if the canary is aborted
+            if (aborted(canary)) {
+                canary.aborted = true;
+                return canary;
+            }
+            // run checks first, then
+            const checkResult = runChecks(payload, checks, ctx);
+            if (checkResult instanceof Promise) {
+                if (ctx.async === false)
+                    throw new $ZodAsyncError();
+                return checkResult.then((checkResult) => inst._zod.parse(checkResult, ctx));
+            }
+            return inst._zod.parse(checkResult, ctx);
+        };
+        inst._zod.run = (payload, ctx) => {
+            if (ctx.skipChecks) {
+                return inst._zod.parse(payload, ctx);
+            }
+            if (ctx.direction === "backward") {
+                // run canary initial pass (no checks)
+                const canary = inst._zod.parse({ value: payload.value, issues: [] }, { ...ctx, skipChecks: true });
+                if (canary instanceof Promise) {
+                    return canary.then((canary) => {
+                        return handleCanaryResult(canary, payload, ctx);
+                    });
+                }
+                return handleCanaryResult(canary, payload, ctx);
+            }
+            // forward
+            const result = inst._zod.parse(payload, ctx);
+            if (result instanceof Promise) {
+                if (ctx.async === false)
+                    throw new $ZodAsyncError();
+                return result.then((result) => runChecks(result, checks, ctx));
+            }
+            return runChecks(result, checks, ctx);
+        };
+    }
+}, {
+    // Wrappers extend this by installing a richer factory over it; reading it eagerly would defeat the laziness.
+    get "~standard"() {
+        return hide(this, "~standard", standardProps(this));
+    },
+    set "~standard"(value) {
+        own(this, "~standard", value);
+    },
+});
+/** The Standard Schema surface for `inst`. Shared so wrappers can extend it without forcing it. */
+// a Standard Schema result only reports issues, so a failure finalizes them straight off the raw payload: no ZodError, and no lazy result to read through
+const toStandardResult = (r, ctx) => r.issues.length ? { issues: r.issues.map((iss) => finalizeIssue(iss, ctx, config())) } : { value: r.value };
+async function validateAsync(inst, value) {
+    const ctx = { async: true };
+    return toStandardResult((await inst._zod.run({ value, issues: [] }, ctx)), ctx);
+}
+function standardProps(inst) {
+    return {
+        validate: (value) => {
+            const ctx = { async: false };
+            try {
+                const r = inst._zod.run({ value, issues: [] }, ctx);
+                if (!(r instanceof Promise))
+                    return toStandardResult(r, ctx);
+            }
+            catch (_) { }
+            // async function so a synchronously throwing check rejects instead of escaping validate
+            return validateAsync(inst, value);
+        },
+        vendor: "zod",
+        version: 1,
+    };
+}
+
+const $ZodString = /*@__PURE__*/ $constructor("$ZodString", (inst, def) => {
+    $ZodType.init(inst, def);
+    // a format's own pattern, else unbounded; a template literal derives the check-aware form itself
+    inst._zod.pattern = def.pattern ?? anyString;
+    inst._zod.parse = (payload, _) => {
+        if (def.coerce)
+            try {
+                payload.value = String(payload.value);
+            }
+            catch (_) { }
+        if (typeof payload.value === "string")
+            return payload;
+        payload.issues.push({
+            expected: "string",
+            code: "invalid_type",
+            input: payload.value,
+            inst,
+        });
+        return payload;
+    };
+});
+const $ZodStringFormat = /*@__PURE__*/ $constructor("$ZodStringFormat", (inst, def) => {
+    // check initialization must come first
+    $ZodCheckStringFormat.init(inst, def);
+    $ZodString.init(inst, def);
+});
+const $ZodGUID = /*@__PURE__*/ $constructor("$ZodGUID", (inst, def) => {
+    def.pattern ?? (def.pattern = guid);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodUUID = /*@__PURE__*/ $constructor("$ZodUUID", (inst, def) => {
+    if (def.version) {
+        const versionMap = {
+            v1: 1,
+            v2: 2,
+            v3: 3,
+            v4: 4,
+            v5: 5,
+            v6: 6,
+            v7: 7,
+            v8: 8,
+        };
+        const v = versionMap[def.version];
+        if (v === undefined)
+            throw new Error(`Invalid UUID version: "${def.version}"`);
+        def.pattern ?? (def.pattern = uuid(v));
+    }
+    else
+        def.pattern ?? (def.pattern = uuid());
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodEmail = /*@__PURE__*/ $constructor("$ZodEmail", (inst, def) => {
+    def.pattern ?? (def.pattern = email);
+    $ZodStringFormat.init(inst, def);
+});
+/** The `://` guard rejected the input before the URL constructor saw it. */
+const URL_BAD_FORMAT = 1;
+/** The URL parser rejected the input. */
+const URL_UNPARSEABLE = 2;
+function canParseURL(input) {
+    try {
+        if (typeof URL !== "undefined" && typeof URL.canParse === "function")
+            return URL.canParse(input);
+        new URL(input);
+        return true;
+    }
+    catch {
+        return false;
+    }
+}
+function validateURL(trimmed, def) {
+    if (!("normalize" in def) && !("hostname" in def) && !("protocol" in def)) {
+        return canParseURL(trimmed) || URL_UNPARSEABLE;
+    }
+    return parseURLObject(trimmed, def);
+}
+/** Parses a URL while preserving the non-normalizing HTTP guard. */
+function parseURLObject(trimmed, def) {
+    // When normalize is off, require :// for http/https URLs. This prevents strings like "http:example.com" or "https:/path" from being silently accepted
+    if (!def.normalize && def.protocol?.source === httpProtocol.source && !/^https?:\/\//i.test(trimmed)) {
+        return URL_BAD_FORMAT;
+    }
+    try {
+        if (typeof URL !== "undefined") {
+            const URLStatic = URL;
+            if (typeof URLStatic.parse === "function")
+                return URLStatic.parse(trimmed) ?? URL_UNPARSEABLE;
+        }
+        // @ts-ignore
+        return new URL(trimmed);
+    }
+    catch {
+        return URL_UNPARSEABLE;
+    }
+}
+const asciiTabOrNewline = /[\t\n\r]/g;
+/** The URL parser deletes every ASCII tab, LF and CR from its input before it parses, so `new URL("https://exa\nmple.com")` reports on `example.com`. Applying the same deletion to the returned value closes the half of that divergence which can move the host; the parser's other rewrite, stripping C0 controls at the edges, cannot. */
+function stripTabAndNewline(value) {
+    return value.replace(asciiTabOrNewline, "");
+}
+function urlHostnameOk(url, hostname) {
+    hostname.lastIndex = 0;
+    return hostname.test(url.hostname);
+}
+function urlProtocolOk(url, protocol) {
+    protocol.lastIndex = 0;
+    return protocol.test(url.protocol.endsWith(":") ? url.protocol.slice(0, -1) : url.protocol);
+}
+const $ZodURL = /*@__PURE__*/ $constructor("$ZodURL", (inst, def) => {
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        try {
+            // Trim whitespace from input
+            const trimmed = payload.value.trim();
+            const url = validateURL(trimmed, def);
+            if (url === URL_BAD_FORMAT) {
+                payload.issues.push({
+                    code: "invalid_format",
+                    format: "url",
+                    note: "Invalid URL format",
+                    input: payload.value,
+                    inst,
+                    continue: !def.abort,
+                });
+                return;
+            }
+            if (url === URL_UNPARSEABLE) {
+                payload.issues.push({
+                    code: "invalid_format",
+                    format: "url",
+                    input: payload.value,
+                    inst,
+                    continue: !def.abort,
+                });
+                return;
+            }
+            if (url === true) {
+                payload.value = stripTabAndNewline(trimmed);
+                return;
+            }
+            if (def.hostname && !urlHostnameOk(url, def.hostname)) {
+                payload.issues.push({
+                    code: "invalid_format",
+                    format: "url",
+                    note: "Invalid hostname",
+                    pattern: def.hostname.source,
+                    input: payload.value,
+                    inst,
+                    continue: !def.abort,
+                });
+            }
+            if (def.protocol && !urlProtocolOk(url, def.protocol)) {
+                payload.issues.push({
+                    code: "invalid_format",
+                    format: "url",
+                    note: "Invalid protocol",
+                    pattern: def.protocol.source,
+                    input: payload.value,
+                    inst,
+                    continue: !def.abort,
+                });
+            }
+            // Set the output value based on normalize flag
+            payload.value = def.normalize ? url.href : stripTabAndNewline(trimmed);
+            return;
+        }
+        catch (_) {
+            payload.issues.push({
+                code: "invalid_format",
+                format: "url",
+                input: payload.value,
+                inst,
+                continue: !def.abort,
+            });
+        }
+    };
+});
+const $ZodEmoji = /*@__PURE__*/ $constructor("$ZodEmoji", (inst, def) => {
+    def.pattern ?? (def.pattern = emoji());
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodNanoID = /*@__PURE__*/ $constructor("$ZodNanoID", (inst, def) => {
+    if (def.length !== undefined && (!Number.isInteger(def.length) || def.length < 1))
+        throw new Error(`Invalid nanoid length: ${def.length}`);
+    def.pattern ?? (def.pattern = def.length === undefined ? nanoid : nanoidOfLength(def.length));
+    $ZodStringFormat.init(inst, def);
+});
+/**
+ * @deprecated CUID v1 is deprecated by its authors due to information leakage
+ * (timestamps embedded in the id). Use {@link $ZodCUID2} instead.
+ * See https://github.com/paralleldrive/cuid.
+ */
+const $ZodCUID = /*@__PURE__*/ $constructor("$ZodCUID", (inst, def) => {
+    def.pattern ?? (def.pattern = cuid);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodCUID2 = /*@__PURE__*/ $constructor("$ZodCUID2", (inst, def) => {
+    def.pattern ?? (def.pattern = cuid2);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodULID = /*@__PURE__*/ $constructor("$ZodULID", (inst, def) => {
+    def.pattern ?? (def.pattern = ulid);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodXID = /*@__PURE__*/ $constructor("$ZodXID", (inst, def) => {
+    def.pattern ?? (def.pattern = xid);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodKSUID = /*@__PURE__*/ $constructor("$ZodKSUID", (inst, def) => {
+    def.pattern ?? (def.pattern = ksuid);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodISODateTime = /*@__PURE__*/ $constructor("$ZodISODateTime", (inst, def) => {
+    def.pattern ?? (def.pattern = datetime(def));
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodISODate = /*@__PURE__*/ $constructor("$ZodISODate", (inst, def) => {
+    def.pattern ?? (def.pattern = date);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodISOTime = /*@__PURE__*/ $constructor("$ZodISOTime", (inst, def) => {
+    def.pattern ?? (def.pattern = time(def));
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodISODuration = /*@__PURE__*/ $constructor("$ZodISODuration", (inst, def) => {
+    def.pattern ?? (def.pattern = duration);
+    $ZodStringFormat.init(inst, def);
+});
+const $ZodIPv4 = /*@__PURE__*/ $constructor("$ZodIPv4", (inst, def) => {
+    def.pattern ?? (def.pattern = ipv4);
+    $ZodStringFormat.init(inst, def);
+});
+/** An IPv6 address is written with hex digits, colons and dots, and nothing else. The guard is what makes the check below an IPv6 check: `new URL("http://[...]")` parses an authority, not an address, so `@` and `\` re-delimit it and `"::@1\\"` validates against the host `0.0.0.1`. The URL parser also deletes ASCII tab, LF and CR rather than failing, which is how `"::1\n"` validated as `::1`. */
+const ipv6Alphabet = /^[0-9a-fA-F:.]+$/;
+function isValidIPv6(value) {
+    if (!ipv6Alphabet.test(value))
+        return false;
+    return canParseURL(`http://[${value}]`);
+}
+const $ZodIPv6 = /*@__PURE__*/ $constructor("$ZodIPv6", (inst, def) => {
+    def.pattern ?? (def.pattern = ipv6);
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (!isValidIPv6(payload.value)) {
+            payload.issues.push({
+                code: "invalid_format",
+                format: "ipv6",
+                input: payload.value,
+                inst,
+                continue: !def.abort,
+            });
+        }
+    };
+});
+const $ZodMAC = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodMAC", (inst, def) => {
+    def.pattern ?? (def.pattern = regexes.mac(def.delimiter));
+    $ZodStringFormat.init(inst, def);
+})));
+const $ZodCIDRv4 = /*@__PURE__*/ $constructor("$ZodCIDRv4", (inst, def) => {
+    def.pattern ?? (def.pattern = cidrv4);
+    $ZodStringFormat.init(inst, def);
+});
+function isValidCIDRv6(value) {
+    const parts = value.split("/");
+    if (parts.length !== 2)
+        return false;
+    const [address, prefix] = parts;
+    if (!prefix)
+        return false;
+    const prefixNum = Number(prefix);
+    if (`${prefixNum}` !== prefix)
+        return false;
+    if (prefixNum < 0 || prefixNum > 128)
+        return false;
+    return isValidIPv6(address);
+}
+const $ZodCIDRv6 = /*@__PURE__*/ $constructor("$ZodCIDRv6", (inst, def) => {
+    def.pattern ?? (def.pattern = cidrv6); // not used for validation
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (!isValidCIDRv6(payload.value)) {
+            payload.issues.push({
+                code: "invalid_format",
+                format: "cidrv6",
+                input: payload.value,
+                inst,
+                continue: !def.abort,
+            });
+        }
+    };
+});
+//////////////////////////////   ZodBase64   //////////////////////////////
+function isValidBase64(data) {
+    if (data === "")
+        return true;
+    // atob ignores whitespace, so reject it up front.
+    if (/\s/.test(data))
+        return false;
+    if (data.length % 4 !== 0)
+        return false;
+    try {
+        // @ts-ignore
+        atob(data);
+        return true;
+    }
+    catch {
+        return false;
+    }
+}
+// lax on purpose: the quantified regexes.base64 overflows the regex stack on multi-MB input and its leading ^$| alternation leaks through template-literal composition; isValidBase64 enforces length and padding
+const base64Charset = /^[0-9a-zA-Z+/]*={0,2}$/;
+const $ZodBase64 = /*@__PURE__*/ $constructor("$ZodBase64", (inst, def) => {
+    def.pattern ?? (def.pattern = base64Charset);
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (isValidBase64(payload.value))
+            return;
+        payload.issues.push({
+            code: "invalid_format",
+            format: "base64",
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+//////////////////////////////   ZodBase64URL   //////////////////////////////
+// lax on purpose: the quantified regexes.base64url overflows the regex stack on multi-MB input; isValidBase64 enforces length on the padded string
+const base64urlCharset = /^[A-Za-z0-9_-]*$/;
+function isValidBase64URL(data) {
+    if (!base64urlCharset.test(data))
+        return false;
+    const base64 = data.replace(/[-_]/g, (c) => (c === "-" ? "+" : "/"));
+    const padded = base64.padEnd(Math.ceil(base64.length / 4) * 4, "=");
+    return isValidBase64(padded);
+}
+const $ZodBase64URL = /*@__PURE__*/ $constructor("$ZodBase64URL", (inst, def) => {
+    def.pattern ?? (def.pattern = base64urlCharset);
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (isValidBase64URL(payload.value))
+            return;
+        payload.issues.push({
+            code: "invalid_format",
+            format: "base64url",
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodE164 = /*@__PURE__*/ $constructor("$ZodE164", (inst, def) => {
+    def.pattern ?? (def.pattern = e164);
+    $ZodStringFormat.init(inst, def);
+});
+//////////////////////////////   ZodCreditCard   //////////////////////////////
+const CC_SANITIZE = /[- ]/g;
+/** Luhn checksum on a digit-only string. Adapted from valibot (MIT). */
+function isLuhnAlgo(digits) {
+    let length = digits.length;
+    let bit = 1;
+    let sum = 0;
+    while (length) {
+        const value = digits.charCodeAt(--length) - 48;
+        bit ^= 1;
+        sum += bit ? [0, 2, 4, 6, 8, 1, 3, 5, 7, 9][value] : value;
+    }
+    return sum % 10 === 0;
+}
+function isValidCreditCard(input) {
+    if (!regexes.creditCard.test(input))
+        return false;
+    return isLuhnAlgo(input.replace(CC_SANITIZE, ""));
+}
+const $ZodCreditCard = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCreditCard", (inst, def) => {
+    // Shape only — the Luhn check below is not expressible as a pattern, so consumers of `pattern` (JSON Schema, template literals) get the length and separator rules alone.
+    def.pattern ?? (def.pattern = regexes.creditCard);
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (isValidCreditCard(payload.value))
+            return;
+        payload.issues.push({
+            code: "invalid_format",
+            format: "credit_card",
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+})));
+//////////////////////////////   ZodIBAN   //////////////////////////////
+// iso 7064 mod 97-10 checksum without BigInt
+function isIso7064Mod97(iban) {
+    let remainder = 0;
+    const len = iban.length;
+    for (let i = 4; i < len; i++) {
+        const code = iban.charCodeAt(i);
+        remainder = (code >= 65 ? remainder * 100 + (code - 55) : remainder * 10 + (code - 48)) % 97;
+    }
+    for (let i = 0; i < 4; i++) {
+        const code = iban.charCodeAt(i);
+        remainder = (code >= 65 ? remainder * 100 + (code - 55) : remainder * 10 + (code - 48)) % 97;
+    }
+    return remainder === 1;
+}
+function isValidIBAN(input) {
+    if (!regexes.iban.test(input))
+        return false;
+    return isIso7064Mod97(input);
+}
+const $ZodIBAN = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodIBAN", (inst, def) => {
+    // shape only — checksum is not expressible as a pattern
+    def.pattern ?? (def.pattern = regexes.iban);
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (isValidIBAN(payload.value))
+            return;
+        payload.issues.push({
+            code: "invalid_format",
+            format: "iban",
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+})));
+//////////////////////////////   ZodJWT   //////////////////////////////
+function isValidJWT(token, algorithm = null) {
+    try {
+        const tokensParts = token.split(".");
+        if (tokensParts.length !== 3)
+            return false;
+        const [header] = tokensParts;
+        if (!header)
+            return false;
+        // @ts-ignore
+        const parsedHeader = JSON.parse(atob(header));
+        if ("typ" in parsedHeader && parsedHeader?.typ !== "JWT")
+            return false;
+        if (!parsedHeader.alg)
+            return false;
+        if (algorithm && (!("alg" in parsedHeader) || parsedHeader.alg !== algorithm))
+            return false;
+        return true;
+    }
+    catch {
+        return false;
+    }
+}
+const $ZodJWT = /*@__PURE__*/ $constructor("$ZodJWT", (inst, def) => {
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (isValidJWT(payload.value, def.alg))
+            return;
+        payload.issues.push({
+            code: "invalid_format",
+            format: "jwt",
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+});
+const $ZodCustomStringFormat = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCustomStringFormat", (inst, def) => {
+    $ZodStringFormat.init(inst, def);
+    inst._zod.check = (payload) => {
+        if (def.fn(payload.value))
+            return;
+        payload.issues.push({
+            code: "invalid_format",
+            format: def.format,
+            input: payload.value,
+            inst,
+            continue: !def.abort,
+        });
+    };
+})));
+const $ZodNumber = /*@__PURE__*/ $constructor("$ZodNumber", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.pattern = number;
+    inst._zod.parse = (payload, _ctx) => {
+        if (def.coerce)
+            try {
+                payload.value = Number(payload.value);
+            }
+            catch (_) { }
+        const input = payload.value;
+        if (typeof input === "number" && !Number.isNaN(input) && Number.isFinite(input)) {
+            return payload;
+        }
+        const received = typeof input === "number"
+            ? Number.isNaN(input)
+                ? "NaN"
+                : !Number.isFinite(input)
+                    ? String(input)
+                    : undefined
+            : undefined;
+        payload.issues.push({
+            expected: "number",
+            code: "invalid_type",
+            input,
+            inst,
+            ...(received ? { received } : {}),
+        });
+        return payload;
+    };
+});
+const $ZodNumberFormat = /*@__PURE__*/ $constructor("$ZodNumberFormat", (inst, def) => {
+    $ZodCheckNumberFormat.init(inst, def);
+    $ZodNumber.init(inst, def); // no format checks
+});
+const $ZodBoolean = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodBoolean", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.pattern = regexes.boolean;
+    inst._zod.parse = (payload, _ctx) => {
+        if (def.coerce)
+            try {
+                payload.value = Boolean(payload.value);
+            }
+            catch (_) { }
+        const input = payload.value;
+        if (typeof input === "boolean")
+            return payload;
+        payload.issues.push({
+            expected: "boolean",
+            code: "invalid_type",
+            input,
+            inst,
+        });
+        return payload;
+    };
+})));
+const $ZodBigInt = /*@__PURE__*/ $constructor("$ZodBigInt", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.pattern = bigint;
+    inst._zod.parse = (payload, _ctx) => {
+        if (def.coerce)
+            try {
+                payload.value = BigInt(payload.value);
+            }
+            catch (_) { }
+        if (typeof payload.value === "bigint")
+            return payload;
+        payload.issues.push({
+            expected: "bigint",
+            code: "invalid_type",
+            input: payload.value,
+            inst,
+        });
+        return payload;
+    };
+});
+const $ZodBigIntFormat = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodBigIntFormat", (inst, def) => {
+    checks.$ZodCheckBigIntFormat.init(inst, def);
+    $ZodBigInt.init(inst, def); // no format checks
+})));
+const $ZodSymbol = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodSymbol", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, _ctx) => {
+        const input = payload.value;
+        if (typeof input === "symbol")
+            return payload;
+        payload.issues.push({
+            expected: "symbol",
+            code: "invalid_type",
+            input,
+            inst,
+        });
+        return payload;
+    };
+})));
+const $ZodUndefined = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodUndefined", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.pattern = regexes.undefined;
+    inst._zod.values = new Set([undefined]);
+    inst._zod.parse = (payload, _ctx) => {
+        const input = payload.value;
+        if (typeof input === "undefined")
+            return payload;
+        payload.issues.push({
+            expected: "undefined",
+            code: "invalid_type",
+            input,
+            inst,
+        });
+        return payload;
+    };
+})));
+const $ZodNull = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodNull", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.pattern = regexes.null;
+    inst._zod.values = new Set([null]);
+    inst._zod.parse = (payload, _ctx) => {
+        const input = payload.value;
+        if (input === null)
+            return payload;
+        payload.issues.push({
+            expected: "null",
+            code: "invalid_type",
+            input,
+            inst,
+        });
+        return payload;
+    };
+})));
+const $ZodAny = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodAny", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload) => payload;
+})));
+const $ZodUnknown = /*@__PURE__*/ $constructor("$ZodUnknown", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload) => payload;
+});
+const $ZodNever = /*@__PURE__*/ $constructor("$ZodNever", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, _ctx) => {
+        payload.issues.push({
+            expected: "never",
+            code: "invalid_type",
+            input: payload.value,
+            inst,
+        });
+        return payload;
+    };
+});
+const $ZodVoid = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodVoid", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, _ctx) => {
+        const input = payload.value;
+        if (typeof input === "undefined")
+            return payload;
+        payload.issues.push({
+            expected: "void",
+            code: "invalid_type",
+            input,
+            inst,
+        });
+        return payload;
+    };
+})));
+const $ZodDate = /*@__PURE__*/ $constructor("$ZodDate", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, _ctx) => {
+        if (def.coerce) {
+            try {
+                payload.value = new Date(payload.value);
+            }
+            catch (_err) { }
+        }
+        const input = payload.value;
+        const isDate = input instanceof Date;
+        const isValidDate = isDate && !Number.isNaN(input.getTime());
+        if (isValidDate)
+            return payload;
+        payload.issues.push({
+            expected: "date",
+            code: "invalid_type",
+            input,
+            ...(isDate ? { received: "Invalid Date" } : {}),
+            inst,
+        });
+        return payload;
+    };
+});
+// an oversized container fails its leading size checks before any element is parsed
+function capSize(inst, size) {
+    const caps = sizeCaps(inst._zod.def.checks);
+    if (!caps.length)
+        return;
+    const cap = Math.min(...caps.map((c) => c[0]));
+    const parse = inst._zod.parse;
+    inst._zod.parse = (payload, ctx) => {
+        const n = size(payload.value);
+        if (n > cap && !ctx?.skipChecks && ctx?.direction !== "backward") {
+            for (const [max, ch] of sizeCaps(inst._zod.def.checks)) {
+                if (n > max && ch._zod.def.when(payload)) {
+                    const start = payload.issues.length;
+                    ch._zod.check(payload);
+                    // the value is still the raw input, so no later check may read it
+                    payload.issues[start].continue = false;
+                    attachSchema(payload.issues, start, inst);
+                    return payload;
+                }
+            }
+        }
+        return parse(payload, ctx);
+    };
+}
+const arraySize = (input) => (Array.isArray(input) ? input.length : -1);
+const mapSize = (input) => (input instanceof Map ? input.size : -1);
+const setSize = (input) => (input instanceof Set ? input.size : -1);
+function handleArrayResult(result, final, index) {
+    if (result.issues.length) {
+        final.issues.push(...prefixIssues(index, result.issues));
+    }
+    final.value[index] = result.value;
+}
+const $ZodArray = /*@__PURE__*/ $constructor("$ZodArray", (inst, def) => {
+    $ZodType.init(inst, def);
+    const memo = globalConfig.memoizer;
+    memo?.attach(inst);
+    inst._zod.parse = (payload, ctx) => {
+        const input = payload.value;
+        if (!Array.isArray(input)) {
+            payload.issues.push({
+                expected: "array",
+                code: "invalid_type",
+                input,
+                inst,
+            });
+            return payload;
+        }
+        payload.value = memo ? memo.alloc(inst, payload, Array(input.length), ctx) : Array(input.length);
+        const proms = [];
+        const abortEarly = ctx?.abortEarly;
+        for (let i = 0; i < input.length; i++) {
+            const item = input[i];
+            const result = def.element._zod.run({
+                value: item,
+                issues: [],
+            }, ctx);
+            if (result instanceof Promise) {
+                proms.push(result.then((result) => handleArrayResult(result, payload, i)));
+            }
+            else {
+                handleArrayResult(result, payload, i);
+                // the element's payload is authoritative here, since handleArrayResult forwards every issue; an object's is not, because it drops a failed absent optional
+                if (abortEarly && result.issues.length !== 0 && aborted(result))
+                    break;
+            }
+        }
+        if (proms.length) {
+            return Promise.all(proms).then(() => payload);
+        }
+        return payload; //handleArrayResultsAsync(parseResults, final);
+    };
+    capSize(inst, arraySize);
+});
+function handlePropertyResult(result, final, key, input, optin, optout) {
+    const isPresent = key in input;
+    const isOptionalOut = optout === "optional";
+    // The middle rung means "absence permitted, nothing supplied in its place", so an absent key contributes nothing — whatever the schema made of `undefined` is invented, not substituted. Only `optional` reaches this with a value: `defaulted` substitutes, and a schema that isn't optional-out has to keep the key.
+    if (!isPresent && isOptionalOut && optin === "optional") {
+        return;
+    }
+    if (result.issues.length) {
+        // For optional-in/out schemas, ignore errors on absent keys.
+        if (optin !== undefined && isOptionalOut && !isPresent) {
+            return;
+        }
+        final.issues.push(...prefixIssues(key, result.issues));
+    }
+    if (!isPresent && optin === undefined) {
+        if (!result.issues.length) {
+            final.issues.push({
+                code: "invalid_type",
+                expected: "nonoptional",
+                input: undefined,
+                path: [key],
+            });
+        }
+        return;
+    }
+    if (result.value === undefined) {
+        if (isPresent || (optin === "defaulted" && !isOptionalOut)) {
+            final.value[key] = undefined;
+        }
+    }
+    else {
+        final.value[key] = result.value;
+    }
+}
+// one shared instance; a fresh [] per schema cost 56 bytes retained
+const NO_SYMBOL_KEYS = [];
+function normalizeDef(def) {
+    const keys = Object.keys(def.shape);
+    const ownSymbols = Object.getOwnPropertySymbols(def.shape);
+    const symbolKeys = ownSymbols.length ? ownSymbols : NO_SYMBOL_KEYS;
+    // aliases `keys` when there are no symbols, so a string-only shape keeps one array
+    const allKeys = symbolKeys.length ? [...keys, ...symbolKeys] : keys;
+    for (const k of allKeys) {
+        if (!def.shape?.[k]?._zod?.traits?.has("$ZodType")) {
+            throw new Error(`Invalid element at key "${String(k)}": expected a Zod schema`);
+        }
+    }
+    const okeys = optionalKeys(def.shape);
+    return {
+        ...def,
+        allKeys,
+        symbolKeys,
+        // string-only: handleCatchall matches it against `for...in`, which never yields a symbol
+        keySet: new Set(keys),
+        numKeys: keys.length,
+        optionalKeys: new Set(okeys),
+    };
+}
+function handleCatchall(proms, input, payload, ctx, def, inst, abortEarly) {
+    const unrecognized = [];
+    const keySet = def.keySet;
+    const _catchall = def.catchall._zod;
+    const t = _catchall.def.type;
+    const optin = _catchall.optin;
+    const optout = _catchall.optout;
+    // starts at 0, not the current length: the shape phase already ran and may have aborted
+    let seen = 0;
+    for (const key in input) {
+        if (abortEarly && payload.issues.length !== seen) {
+            if (aborted(payload, seen))
+                break;
+            seen = payload.issues.length;
+        }
+        // Must precede the __proto__ branch: a declared key is not unrecognized, even though the shape loop deliberately strips __proto__ from the parsed output.
+        if (keySet.has(key))
+            continue;
+        // Don't copy an undeclared __proto__ into the result; assignment to a plain {} would replace the result prototype. But in strict mode it is still an unknown key, so report it before skipping.
+        if (key === "__proto__") {
+            if (t === "never")
+                unrecognized.push(key);
+            continue;
+        }
+        if (t === "never") {
+            unrecognized.push(key);
+            continue;
+        }
+        const r = _catchall.run({ value: input[key], issues: [] }, ctx);
+        if (r instanceof Promise) {
+            proms.push(r.then((r) => handlePropertyResult(r, payload, key, input, optin, optout)));
+        }
+        else {
+            handlePropertyResult(r, payload, key, input, optin, optout);
+        }
+    }
+    if (unrecognized.length) {
+        payload.issues.push({
+            code: "unrecognized_keys",
+            keys: unrecognized,
+            input,
+            inst,
+            // Describes the shape of the input, not the validity of the parsed value, so it never aborts. The parse still fails; the schema's own checks just get to run first, and an enclosing intersection can reconcile the key against a sibling operand.
+            continue: true,
+        });
+    }
+    if (!proms.length)
+        return payload;
+    return Promise.all(proms).then(() => {
+        return payload;
+    });
+}
+const $ZodObject = /*@__PURE__*/ $constructor("$ZodObject", (inst, def) => {
+    // requires cast because technically $ZodObject doesn't extend
+    $ZodType.init(inst, def);
+    const desc = Object.getOwnPropertyDescriptor(def, "shape");
+    // a cloned def carries its source's accessor, which knows the shape it answers from; adopting that keeps the clone's keys readable without running it
+    const sh = desc?.get ? desc.get.raw : (def.shape ?? {});
+    if (sh) {
+        // Freezes the shape on first read, so its getters resolve once and every later read sees the same schemas.
+        const get = () => {
+            const newSh = { ...sh };
+            Object.defineProperty(def, "shape", { value: newSh });
+            get.raw = newSh;
+            return newSh;
+        };
+        get.raw = sh;
+        Object.defineProperty(def, "shape", { get });
+    }
+    const _normalized = cached(() => normalizeDef(def));
+    defineLazyInternal(inst, "propValues", (zod) => {
+        const shape = zod.def.shape;
+        const propValues = {};
+        for (const key in shape) {
+            const field = shape[key]._zod;
+            if (field.values) {
+                if (!Object.prototype.hasOwnProperty.call(propValues, key)) {
+                    util_assignProp(propValues, key, new Set());
+                }
+                for (const v of field.values)
+                    propValues[key].add(v);
+                // An omittable slot reads back as undefined at a discriminator lookup, so it has to claim undefined: two options that can both omit the key are not discriminable on it.
+                if (field.optin !== undefined)
+                    propValues[key].add(undefined);
+            }
+        }
+        return propValues;
+    });
+    const isObject = util_isObject;
+    const catchall = def.catchall;
+    let value;
+    const memo = globalConfig.memoizer;
+    memo?.attach(inst);
+    inst._zod.parse = (payload, ctx) => {
+        value ?? (value = _normalized.value);
+        const input = payload.value;
+        if (!isObject(input)) {
+            payload.issues.push({
+                expected: "object",
+                code: "invalid_type",
+                input,
+                inst,
+            });
+            return payload;
+        }
+        payload.value = memo ? memo.alloc(inst, payload, {}, ctx) : {};
+        const proms = [];
+        const shape = value.shape;
+        const abortEarly = ctx?.abortEarly;
+        let seen = payload.issues.length;
+        for (const key of value.allKeys) {
+            if (abortEarly && payload.issues.length !== seen) {
+                if (aborted(payload, seen))
+                    break;
+                seen = payload.issues.length;
+            }
+            if (key === "__proto__")
+                continue;
+            const el = shape[key];
+            const optin = el._zod.optin;
+            const optout = el._zod.optout;
+            const r = el._zod.run({ value: input[key], issues: [] }, ctx);
+            if (r instanceof Promise) {
+                proms.push(r.then((r) => handlePropertyResult(r, payload, key, input, optin, optout)));
+            }
+            else {
+                handlePropertyResult(r, payload, key, input, optin, optout);
+            }
+        }
+        if (!catchall) {
+            return proms.length ? Promise.all(proms).then(() => payload) : payload;
+        }
+        return handleCatchall(proms, input, payload, ctx, _normalized.value, inst, abortEarly === true);
+    };
+});
+const $ZodObjectJIT = /*@__PURE__*/ $constructor("$ZodObjectJIT", (inst, def) => {
+    // requires cast because technically $ZodObject doesn't extend
+    $ZodObject.init(inst, def);
+    const superParse = inst._zod.parse;
+    const _normalized = cached(() => normalizeDef(def));
+    const memo = globalConfig.memoizer;
+    const generateFastpass = (shape) => {
+        const normalized = _normalized.value;
+        const syms = normalized.symbolKeys;
+        // a symbol has no source literal, so it is read as `syms[i]` off the closed-over scope
+        const doc = new Doc(["payload", "ctx"], { shape, inst, memo, syms });
+        const parseStr = (k) => `shape[${k}]._zod.run({ value: input[${k}], issues: [] }, ctx)`;
+        // prefixes in place, like util.prefixIssues. newResult must land before the early return: a catchall runs after this and would otherwise write onto the caller's input
+        const prefixStr = (id, k) => `
+          let ${id}_ab = false;
+          for (let i = 0; i < ${id}.issues.length; i++) {
+            const iss = ${id}.issues[i];
+            iss.path = iss.path ? [${k}, ...iss.path] : [${k}];
+            payload.issues.push(iss);
+            if (iss.continue !== true) ${id}_ab = true;
+          }
+          if (${id}_ab && ctx && ctx.abortEarly) {
+            payload.value = newResult;
+            return payload;
+          }`;
+        doc.write(`const input = payload.value;`);
+        const ids = Object.create(null);
+        let counter = 0;
+        for (const key of normalized.allKeys) {
+            ids[key] = `key_${counter++}`;
+        }
+        // A: preserve key order {
+        doc.write(memo ? `const newResult = memo.alloc(inst, payload, {}, ctx);` : `const newResult = {};`);
+        for (const key of normalized.allKeys) {
+            if (key === "__proto__")
+                continue;
+            const id = ids[key];
+            const k = typeof key === "symbol" ? `syms[${syms.indexOf(key)}]` : esc(key);
+            const isPresent = `${k} in input`;
+            const schema = shape[key];
+            const optin = schema?._zod?.optin;
+            const isOptionalIn = optin !== undefined;
+            const isOptionalOut = schema?._zod?.optout === "optional";
+            doc.write(`const ${id} = ${parseStr(k)};`);
+            if (isOptionalIn && isOptionalOut) {
+                // For optional-in/out schemas, ignore errors on absent keys — and, like the interpreted path, drop the value produced alongside them. The middle rung goes further: it permits absence without supplying anything in its place, so an absent key contributes nothing at all.
+                const assign = optin === "optional" ? `${id}_present` : `${id}.value !== undefined || ${id}_present`;
+                doc.write(`
+        const ${id}_present = ${isPresent};
+        if (!${id}.issues.length || ${id}_present) {
+          if (${id}.issues.length) {${prefixStr(id, k)}
+          }
+
+          if (${assign}) {
+            newResult[${k}] = ${id}.value;
+          }
+        }
+
+      `);
+            }
+            else if (!isOptionalIn) {
+                doc.write(`
+        const ${id}_present = ${isPresent};
+        if (${id}.issues.length) {${prefixStr(id, k)}
+        }
+        if (!${id}_present && !${id}.issues.length) {
+          payload.issues.push({
+            code: "invalid_type",
+            expected: "nonoptional",
+            input: undefined,
+            path: [${k}]
+          });
+          if (ctx && ctx.abortEarly) {
+            payload.value = newResult;
+            return payload;
+          }
+        }
+
+        if (${id}_present) {
+          newResult[${k}] = ${id}.value;
+        }
+
+      `);
+            }
+            else {
+                doc.write(`
+        if (${id}.issues.length) {${prefixStr(id, k)}
+        }
+      `);
+                if (optin === "defaulted") {
+                    doc.write(`newResult[${k}] = ${id}.value;`);
+                }
+                else {
+                    doc.write(`
+        if (${id}.value !== undefined || ${isPresent}) {
+          newResult[${k}] = ${id}.value;
+        }
+      `);
+                }
+            }
+        }
+        doc.write(`payload.value = newResult;`);
+        doc.write(`return payload;`);
+        // closing `shape` in is what pays: turbofan specializes the parser against that one shape object, so every `shape[k]._zod.run` folds to a known callee. as a parameter it stays a generic load and measures 13% slower even with the forwarding frame gone
+        return doc.compile();
+    };
+    let fastpass;
+    const isObject = util_isObject;
+    const jit = !globalConfig.jitless;
+    const allowsEval = util_allowsEval;
+    const fastEnabled = jit && allowsEval.value; // && !def.catchall;
+    const catchall = def.catchall;
+    let value;
+    inst._zod.parse = (payload, ctx) => {
+        value ?? (value = _normalized.value);
+        const input = payload.value;
+        if (!isObject(input)) {
+            payload.issues.push({
+                expected: "object",
+                code: "invalid_type",
+                input,
+                inst,
+            });
+            return payload;
+        }
+        if (jit && fastEnabled && ctx?.async === false && ctx.jitless !== true) {
+            // always synchronous
+            if (!fastpass)
+                fastpass = generateFastpass(def.shape);
+            payload = fastpass(payload, ctx);
+            if (!catchall)
+                return payload;
+            return handleCatchall([], input, payload, ctx, value, inst, ctx?.abortEarly === true);
+        }
+        return superParse(payload, ctx);
+    };
+});
+function handleUnionResults(results, final, inst, ctx) {
+    for (const result of results) {
+        if (result.issues.length === 0) {
+            final.value = result.value;
+            return final;
+        }
+    }
+    const nonaborted = results.filter((r) => !aborted(r));
+    if (nonaborted.length === 1) {
+        final.value = nonaborted[0].value;
+        return nonaborted[0];
+    }
+    final.issues.push({
+        code: "invalid_union",
+        input: final.value,
+        inst,
+        errors: results.map((result) => result.issues.map((iss) => finalizeIssue(iss, ctx, config()))),
+    });
+    return final;
+}
+const $ZodUnion = /*@__PURE__*/ $constructor("$ZodUnion", (inst, def) => {
+    $ZodType.init(inst, def);
+    defineLazyInternal(inst, "optin", (zod) => zod.def.options.some((o) => o._zod.optin === "defaulted")
+        ? "defaulted"
+        : zod.def.options.some((o) => o._zod.optin !== undefined)
+            ? "optional"
+            : undefined);
+    defineLazyInternal(inst, "optout", (zod) => zod.def.options.some((o) => o._zod.optout === "optional") ? "optional" : undefined);
+    defineLazyInternal(inst, "values", (zod) => {
+        if (zod.def.options.every((o) => o._zod.values)) {
+            return new Set(zod.def.options.flatMap((option) => Array.from(option._zod.values)));
+        }
+        return undefined;
+    });
+    defineLazyInternal(inst, "pattern", (zod) => {
+        if (zod.def.options.every((o) => o._zod.pattern)) {
+            const patterns = zod.def.options.map((o) => o._zod.pattern);
+            return new RegExp(`^(${patterns.map((p) => cleanRegex(p.source)).join("|")})$`);
+        }
+        return undefined;
+    });
+    const first = def.options.length === 1 ? def.options[0]._zod.run : null;
+    inst._zod.parse = (payload, ctx) => {
+        if (first) {
+            return first(payload, ctx);
+        }
+        let async = false;
+        const results = [];
+        for (const option of def.options) {
+            const result = option._zod.run({
+                value: payload.value,
+                issues: [],
+            }, ctx);
+            if (result instanceof Promise) {
+                results.push(result);
+                async = true;
+            }
+            else {
+                if (result.issues.length === 0)
+                    return result;
+                results.push(result);
+            }
+        }
+        if (!async)
+            return handleUnionResults(results, payload, inst, ctx);
+        return Promise.all(results).then((results) => {
+            return handleUnionResults(results, payload, inst, ctx);
+        });
+    };
+});
+function handleExclusiveUnionResults(results, final, inst, ctx) {
+    const matches = [];
+    for (let i = 0; i < results.length; i++) {
+        if (results[i].issues.length === 0)
+            matches.push(i);
+    }
+    if (matches.length === 1) {
+        final.value = results[matches[0]].value;
+        return final;
+    }
+    if (matches.length === 0) {
+        // No matches - same as regular union
+        final.issues.push({
+            code: "invalid_union",
+            input: final.value,
+            inst,
+            errors: results.map((result) => result.issues.map((iss) => util.finalizeIssue(iss, ctx, core.config()))),
+        });
+    }
+    else {
+        // Multiple matches - exclusive union failure
+        final.issues.push({
+            code: "invalid_union",
+            input: final.value,
+            inst,
+            errors: [],
+            inclusive: false,
+            matches,
+        });
+    }
+    return final;
+}
+const $ZodXor = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodXor", (inst, def) => {
+    $ZodUnion.init(inst, def);
+    def.inclusive = false;
+    const first = def.options.length === 1 ? def.options[0]._zod.run : null;
+    inst._zod.parse = (payload, ctx) => {
+        if (first) {
+            return first(payload, ctx);
+        }
+        let async = false;
+        const results = [];
+        for (const option of def.options) {
+            const result = option._zod.run({
+                value: payload.value,
+                issues: [],
+            }, ctx);
+            if (result instanceof Promise) {
+                results.push(result);
+                async = true;
+            }
+            else {
+                results.push(result);
+            }
+        }
+        if (!async)
+            return handleExclusiveUnionResults(results, payload, inst, ctx);
+        return Promise.all(results).then((results) => {
+            return handleExclusiveUnionResults(results, payload, inst, ctx);
+        });
+    };
+})));
+/** Returns the option whose discriminator claims `value`, or throws if ambiguous. */
+function getDiscriminatedOption(union, value) {
+    const internals = union._zod;
+    let map = internals.bag.optionsMap;
+    if (!map) {
+        map = discriminatorMap(internals.def);
+        internals.bag.optionsMap = map;
+    }
+    const option = map.get(value);
+    if (option === null)
+        throw new Error(`Ambiguous discriminator value "${String(value)}"`);
+    return option;
+}
+function discriminatorMap(def) {
+    const map = new Map();
+    for (const option of def.options) {
+        const values = option._zod.propValues?.[def.discriminator];
+        if (!values || values.size === 0)
+            throw new Error(`Invalid discriminated union option at index "${def.options.indexOf(option)}"`);
+        for (const value of values) {
+            if (map.has(value)) {
+                if (value !== undefined)
+                    throw new Error(`Duplicate discriminator value "${String(value)}"`);
+                // keep the collision marked so a later member cannot reclaim it
+                map.set(value, null);
+            }
+            else {
+                map.set(value, option);
+            }
+        }
+    }
+    return map;
+}
+const $ZodDiscriminatedUnion = 
+/*@__PURE__*/
+(/* unused pure expression or super */ null && (core.$constructor("$ZodDiscriminatedUnion", (inst, def) => {
+    def.inclusive = false;
+    $ZodUnion.init(inst, def);
+    const _super = inst._zod.parse;
+    util.defineLazyInternal(inst, "propValues", (zod) => {
+        const propValues = {};
+        let undefinedCount = 0;
+        for (const option of zod.def.options) {
+            const pv = option._zod.propValues;
+            if (!pv || Object.keys(pv).length === 0)
+                throw new Error(`Invalid discriminated union option at index "${zod.def.options.indexOf(option)}"`);
+            if (pv[zod.def.discriminator]?.has(undefined))
+                undefinedCount++;
+            for (const [k, v] of Object.entries(pv)) {
+                if (!Object.prototype.hasOwnProperty.call(propValues, k)) {
+                    util.assignProp(propValues, k, new Set());
+                }
+                for (const val of v) {
+                    propValues[k].add(val);
+                }
+            }
+        }
+        if (!zod.def.unionFallback && undefinedCount > 1)
+            propValues[zod.def.discriminator]?.delete(undefined);
+        return propValues;
+    });
+    // Checked now rather than in the lookup map below, so an option that lacks the discriminator fails at the `discriminatedUnion` call instead of on the first object parsed. Options whose shape cannot be enumerated without resolving it — pipes and lazies — are left to the map.
+    def.options.forEach((option, i) => {
+        const propShape = util.rawShape(option._zod.def);
+        if (propShape && !Object.prototype.hasOwnProperty.call(propShape, def.discriminator)) {
+            throw new Error(`Invalid discriminated union option at index "${i}"`);
+        }
+    });
+    const disc = util.cached(() => discriminatorMap(def));
+    inst._zod.parse = (payload, ctx) => {
+        const input = payload.value;
+        if (!util.isObject(input)) {
+            payload.issues.push({
+                code: "invalid_type",
+                expected: "object",
+                input,
+                inst,
+            });
+            return payload;
+        }
+        const value = input?.[def.discriminator];
+        const opt = disc.value.get(value);
+        // forward metadata cannot choose an encoder for an absent tag
+        if (opt && (value !== undefined || ctx.direction !== "backward")) {
+            return opt._zod.run(payload, ctx);
+        }
+        // Fall back to union matching when the fast discriminator path fails:
+        // - explicitly enabled via unionFallback, or
+        // - during backward direction (encode), since codec-based discriminators have different values in forward vs backward directions
+        if (def.unionFallback || ctx.direction === "backward") {
+            return _super(payload, ctx);
+        }
+        // no matching discriminator
+        payload.issues.push({
+            code: "invalid_union",
+            errors: [],
+            note: "No matching discriminator",
+            discriminator: def.discriminator,
+            options: Array.from(disc.value.keys()).filter((value) => disc.value.get(value) !== null),
+            input,
+            path: [def.discriminator],
+            inst,
+        });
+        return payload;
+    };
+})));
+const $ZodIntersection = /*@__PURE__*/ $constructor("$ZodIntersection", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, ctx) => {
+        const input = payload.value;
+        const left = def.left._zod.run({ value: input, issues: [] }, ctx);
+        const right = def.right._zod.run({ value: input, issues: [] }, ctx);
+        const async = left instanceof Promise || right instanceof Promise;
+        if (async) {
+            return Promise.all([left, right]).then(([left, right]) => {
+                return handleIntersectionResults(payload, left, right);
+            });
+        }
+        return handleIntersectionResults(payload, left, right);
+    };
+});
+function mergeValues(a, b) {
+    // const aType = parse.t(a);
+    // const bType = parse.t(b);
+    if (a === b) {
+        return { valid: true, data: a };
+    }
+    if (a instanceof Date && b instanceof Date && +a === +b) {
+        return { valid: true, data: a };
+    }
+    if (util_isPlainObject(a) && util_isPlainObject(b)) {
+        const bKeys = Object.keys(b);
+        const sharedKeys = Object.keys(a).filter((key) => bKeys.indexOf(key) !== -1);
+        const newObj = { ...a, ...b };
+        if (Object.prototype.hasOwnProperty.call(newObj, "__proto__"))
+            delete newObj.__proto__;
+        for (const key of sharedKeys) {
+            if (key === "__proto__")
+                continue;
+            const sharedValue = mergeValues(a[key], b[key]);
+            if (!sharedValue.valid) {
+                return {
+                    valid: false,
+                    mergeErrorPath: [key, ...sharedValue.mergeErrorPath],
+                };
+            }
+            newObj[key] = sharedValue.data;
+        }
+        return { valid: true, data: newObj };
+    }
+    if (Array.isArray(a) && Array.isArray(b)) {
+        if (a.length !== b.length) {
+            return { valid: false, mergeErrorPath: [] };
+        }
+        const newArray = [];
+        for (let index = 0; index < a.length; index++) {
+            const itemA = a[index];
+            const itemB = b[index];
+            const sharedValue = mergeValues(itemA, itemB);
+            if (!sharedValue.valid) {
+                return {
+                    valid: false,
+                    mergeErrorPath: [index, ...sharedValue.mergeErrorPath],
+                };
+            }
+            newArray.push(sharedValue.data);
+        }
+        return { valid: true, data: newArray };
+    }
+    return { valid: false, mergeErrorPath: [] };
+}
+function handleIntersectionResults(result, left, right) {
+    // Track which side(s) reject each key. A key rejection is reported only when BOTH sides reject it, so a key owned by one branch survives the other's key schema. strictObject reports these as unrecognized_keys; a record with an open key schema reports one invalid_key per key.
+    const unrecKeys = new Map();
+    let unrecIssue;
+    const keyIssues = new Map();
+    const collect = (iss, side) => {
+        let keys;
+        if (iss.code === "unrecognized_keys" && !iss.path?.length) {
+            unrecIssue ?? (unrecIssue = iss);
+            keys = iss.keys;
+        }
+        else if (iss.code === "invalid_key" && iss.origin === "record" && iss.path?.length === 1) {
+            const k = String(iss.path[0]);
+            if (!keyIssues.has(k))
+                keyIssues.set(k, iss);
+            keys = [k];
+        }
+        else {
+            return false;
+        }
+        for (const k of keys) {
+            if (!unrecKeys.has(k))
+                unrecKeys.set(k, {});
+            unrecKeys.get(k)[side] = true;
+        }
+        return true;
+    };
+    for (const iss of left.issues) {
+        if (!collect(iss, "l"))
+            result.issues.push(iss);
+    }
+    for (const iss of right.issues) {
+        if (!collect(iss, "r"))
+            result.issues.push(iss);
+    }
+    // Report only keys rejected by BOTH sides
+    const bothKeys = [...unrecKeys].filter(([, f]) => f.l && f.r).map(([k]) => k);
+    if (bothKeys.length) {
+        const aggregated = unrecIssue ? bothKeys.filter((k) => unrecIssue.keys.includes(k)) : [];
+        if (aggregated.length)
+            result.issues.push({ ...unrecIssue, keys: aggregated });
+        for (const k of bothKeys) {
+            if (!aggregated.includes(k) && keyIssues.has(k))
+                result.issues.push(keyIssues.get(k));
+        }
+    }
+    const merged = mergeValues(left.value, right.value);
+    if (!merged.valid) {
+        if (aborted(result))
+            return result;
+        throw new Error(`Unmergable intersection. Error path: ` + `${JSON.stringify(merged.mergeErrorPath)}`);
+    }
+    result.value = merged.data;
+    return result;
+}
+const $ZodTuple = /*@__PURE__*/ $constructor("$ZodTuple", (inst, def) => {
+    $ZodType.init(inst, def);
+    const items = def.items;
+    const memo = globalConfig.memoizer;
+    memo?.attach(inst);
+    inst._zod.parse = (payload, ctx) => {
+        const input = payload.value;
+        if (!Array.isArray(input)) {
+            payload.issues.push({
+                input,
+                inst,
+                expected: "tuple",
+                code: "invalid_type",
+            });
+            return payload;
+        }
+        payload.value = memo ? memo.alloc(inst, payload, [], ctx) : [];
+        const proms = [];
+        const optinStart = getTupleOptStart(items, "optin");
+        const optoutStart = getTupleOptStart(items, "optout");
+        if (!def.rest) {
+            if (input.length < optinStart) {
+                payload.issues.push({
+                    code: "too_small",
+                    minimum: optinStart,
+                    inclusive: true,
+                    input,
+                    inst,
+                    origin: "array",
+                });
+                return payload;
+            }
+            if (input.length > items.length) {
+                payload.issues.push({
+                    code: "too_big",
+                    maximum: items.length,
+                    inclusive: true,
+                    input,
+                    inst,
+                    origin: "array",
+                });
+            }
+        }
+        // Run every item in parallel, collecting results into an indexed array. The post-processing in `handleTupleResults` walks them in order so it can decide whether an absent optional-output error can truncate the tail or must be reported to preserve required output.
+        const itemResults = new Array(items.length);
+        // only tracked when there is a rest loop to skip
+        const abortEarly = def.rest ? ctx?.abortEarly : undefined;
+        let itemAborted = false;
+        for (let i = 0; i < items.length; i++) {
+            const r = items[i]._zod.run({ value: input[i], issues: [] }, ctx);
+            if (r instanceof Promise) {
+                proms.push(r.then((rr) => {
+                    itemResults[i] = rr;
+                }));
+            }
+            else {
+                itemResults[i] = r;
+                if (abortEarly && !itemAborted && r.issues.length)
+                    itemAborted = aborted(r);
+            }
+        }
+        // sound because rest is non-empty exactly when every fixed index is present, the one case handleTupleResults cannot discard an item's issues
+        if (def.rest && !itemAborted) {
+            let i = items.length - 1;
+            const rest = input.slice(items.length);
+            let seen = payload.issues.length;
+            for (const el of rest) {
+                if (abortEarly && payload.issues.length !== seen) {
+                    if (aborted(payload, seen))
+                        break;
+                    seen = payload.issues.length;
+                }
+                i++;
+                const result = def.rest._zod.run({ value: el, issues: [] }, ctx);
+                if (result instanceof Promise) {
+                    proms.push(result.then((r) => handleTupleResult(r, payload, i)));
+                }
+                else {
+                    handleTupleResult(result, payload, i);
+                }
+            }
+        }
+        if (proms.length) {
+            return Promise.all(proms).then(() => handleTupleResults(itemResults, payload, items, input, optoutStart));
+        }
+        return handleTupleResults(itemResults, payload, items, input, optoutStart);
+    };
+});
+function getTupleOptStart(items, key) {
+    for (let i = items.length - 1; i >= 0; i--) {
+        // optin is a three-rung ladder so any rung above `undefined` permits an absent slot; optout stays two-valued.
+        const omittable = key === "optin" ? items[i]._zod.optin !== undefined : items[i]._zod.optout === "optional";
+        if (!omittable)
+            return i + 1;
+    }
+    return 0;
+}
+function handleTupleResult(result, final, index) {
+    if (result.issues.length) {
+        final.issues.push(...prefixIssues(index, result.issues));
+    }
+    final.value[index] = result.value;
+}
+function handleTupleResults(itemResults, final, items, input, optoutStart) {
+    // Walk results in order. Mirror $ZodObject's swallow-on-absent-optional rule, but only after `optoutStart`: the first index where the output tuple tail can be absent.
+    for (let i = 0; i < items.length; i++) {
+        const r = itemResults[i];
+        const isPresent = i < input.length;
+        // The array analog of `handlePropertyResult`'s absent-key early return: the middle rung permits absence without supplying anything in its place, so the tail truncates here instead of materializing whatever the item made of `undefined`.
+        if (!isPresent && i >= optoutStart && items[i]._zod.optin === "optional") {
+            final.value.length = i;
+            break;
+        }
+        if (r.issues.length) {
+            if (!isPresent && i >= optoutStart) {
+                final.value.length = i;
+                break;
+            }
+            final.issues.push(...prefixIssues(i, r.issues));
+        }
+        final.value[i] = r.value;
+    }
+    // Drop trailing slots that produced `undefined` for absent input
+    // (the array analog of an absent optional key on an object). The
+    // `i >= input.length` floor is critical: an explicit `undefined`
+    // *inside* the input must be preserved even when the schema is
+    // optional-out (e.g. `z.string().or(z.undefined())` accepting an
+    // explicit undefined value).
+    for (let i = final.value.length - 1; i >= input.length; i--) {
+        if (items[i]._zod.optout === "optional" && final.value[i] === undefined) {
+            final.value.length = i;
+        }
+        else {
+            break;
+        }
+    }
+    return final;
+}
+const $ZodRecord = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodRecord", (inst, def) => {
+    $ZodType.init(inst, def);
+    const memo = core.globalConfig.memoizer;
+    memo?.attach(inst);
+    inst._zod.parse = (payload, ctx) => {
+        const input = payload.value;
+        if (!util.isPlainObject(input)) {
+            payload.issues.push({
+                expected: "record",
+                code: "invalid_type",
+                input,
+                inst,
+            });
+            return payload;
+        }
+        // no guard in either loop below: a record's invalid_key aborts but an enclosing intersection can reconcile it, so a stopped loop hides keys the sibling does not own and the intersection then rejects nothing
+        const proms = [];
+        const values = def.keyType._zod.values;
+        if (values && !def.partial) {
+            payload.value = memo ? memo.alloc(inst, payload, {}, ctx) : {};
+            const recordKeys = new Set();
+            for (const key of values) {
+                if (typeof key === "string" || typeof key === "number" || typeof key === "symbol") {
+                    recordKeys.add(typeof key === "number" ? key.toString() : key);
+                    // A declared __proto__ is stripped but is not an unrecognized key.
+                    if (key === "__proto__")
+                        continue;
+                    const keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+                    if (keyResult instanceof Promise) {
+                        throw new Error("Async schemas not supported in object keys currently");
+                    }
+                    if (keyResult.issues.length) {
+                        payload.issues.push({
+                            code: "invalid_key",
+                            origin: "record",
+                            issues: keyResult.issues.map((iss) => util.finalizeIssue(iss, ctx, core.config())),
+                            input: key,
+                            path: [key],
+                            inst,
+                        });
+                        continue;
+                    }
+                    const outKey = keyResult.value;
+                    if (outKey === "__proto__")
+                        continue;
+                    const result = def.valueType._zod.run({ value: input[key], issues: [] }, ctx);
+                    if (result instanceof Promise) {
+                        proms.push(result.then((result) => {
+                            if (result.issues.length) {
+                                payload.issues.push(...util.prefixIssues(key, result.issues));
+                            }
+                            payload.value[outKey] = result.value;
+                        }));
+                    }
+                    else {
+                        if (result.issues.length) {
+                            payload.issues.push(...util.prefixIssues(key, result.issues));
+                        }
+                        payload.value[outKey] = result.value;
+                    }
+                }
+            }
+            let unrecognized;
+            for (const key in input) {
+                if (!recordKeys.has(key)) {
+                    if (def.mode === "loose") {
+                        // skip __proto__ so it can't replace the result prototype via the assignment setter on the plain {} we build into
+                        if (key === "__proto__")
+                            continue;
+                        payload.value[key] = input[key];
+                    }
+                    else {
+                        unrecognized = unrecognized ?? [];
+                        unrecognized.push(key);
+                    }
+                }
+            }
+            if (unrecognized && unrecognized.length > 0) {
+                payload.issues.push({
+                    code: "unrecognized_keys",
+                    input,
+                    inst,
+                    keys: unrecognized,
+                    continue: true,
+                });
+            }
+        }
+        else {
+            payload.value = memo ? memo.alloc(inst, payload, {}, ctx) : {};
+            // An enumerable key schema declares which keys the record owns, so a key outside the set is unrecognized. A non-enumerable one (regex, refine) is a constraint every key must satisfy, so a failing key is invalid. Only the former is reconcilable against the other side of an intersection.
+            let unrecognized;
+            // Reflect.ownKeys for Symbol-key support; filter non-enumerable to match z.object()
+            for (const key of Reflect.ownKeys(input)) {
+                if (key === "__proto__")
+                    continue;
+                if (!Object.prototype.propertyIsEnumerable.call(input, key))
+                    continue;
+                let keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+                if (keyResult instanceof Promise) {
+                    throw new Error("Async schemas not supported in object keys currently");
+                }
+                // Numeric string fallback: if key is a numeric string and failed, retry with Number(key). This handles z.number(), z.literal([1, 2, 3]), and unions containing numeric literals
+                const checkNumericKey = typeof key === "string" && regexes.number.test(key) && keyResult.issues.length;
+                if (checkNumericKey) {
+                    const retryResult = def.keyType._zod.run({ value: Number(key), issues: [] }, ctx);
+                    if (retryResult instanceof Promise) {
+                        throw new Error("Async schemas not supported in object keys currently");
+                    }
+                    if (retryResult.issues.length === 0) {
+                        keyResult = retryResult;
+                    }
+                }
+                if (keyResult.issues.length) {
+                    if (def.mode === "loose") {
+                        // Pass through unchanged
+                        payload.value[key] = input[key];
+                    }
+                    else if (values) {
+                        unrecognized = unrecognized ?? [];
+                        unrecognized.push(key);
+                    }
+                    else {
+                        // Default "strict" behavior: error on invalid key
+                        payload.issues.push({
+                            code: "invalid_key",
+                            origin: "record",
+                            issues: keyResult.issues.map((iss) => util.finalizeIssue(iss, ctx, core.config())),
+                            input: key,
+                            path: [key],
+                            inst,
+                        });
+                    }
+                    continue;
+                }
+                // the guard above tests the raw input key, but the key schema can normalize an ordinary key into __proto__; re-check the key we actually write under
+                const outKey = keyResult.value;
+                if (outKey === "__proto__")
+                    continue;
+                const result = def.valueType._zod.run({ value: input[key], issues: [] }, ctx);
+                if (result instanceof Promise) {
+                    proms.push(result.then((result) => {
+                        if (result.issues.length) {
+                            payload.issues.push(...util.prefixIssues(key, result.issues));
+                        }
+                        payload.value[outKey] = result.value;
+                    }));
+                }
+                else {
+                    if (result.issues.length) {
+                        payload.issues.push(...util.prefixIssues(key, result.issues));
+                    }
+                    payload.value[outKey] = result.value;
+                }
+            }
+            if (unrecognized && unrecognized.length > 0) {
+                payload.issues.push({
+                    code: "unrecognized_keys",
+                    input,
+                    inst,
+                    keys: unrecognized,
+                    continue: true,
+                });
+            }
+        }
+        if (proms.length) {
+            return Promise.all(proms).then(() => payload);
+        }
+        return payload;
+    };
+})));
+const $ZodMap = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodMap", (inst, def) => {
+    $ZodType.init(inst, def);
+    const memo = core.globalConfig.memoizer;
+    memo?.attach(inst);
+    inst._zod.parse = (payload, ctx) => {
+        const input = payload.value;
+        if (!(input instanceof Map)) {
+            payload.issues.push({
+                expected: "map",
+                code: "invalid_type",
+                input,
+                inst,
+            });
+            return payload;
+        }
+        const proms = [];
+        payload.value = memo ? memo.alloc(inst, payload, new Map(), ctx) : new Map();
+        const abortEarly = ctx?.abortEarly;
+        let seen = payload.issues.length;
+        for (const [key, value] of input) {
+            if (abortEarly && payload.issues.length !== seen) {
+                if (util.aborted(payload, seen))
+                    break;
+                seen = payload.issues.length;
+            }
+            const keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+            const valueResult = def.valueType._zod.run({ value: value, issues: [] }, ctx);
+            if (keyResult instanceof Promise || valueResult instanceof Promise) {
+                proms.push(Promise.all([keyResult, valueResult]).then(([keyResult, valueResult]) => {
+                    handleMapResult(keyResult, valueResult, payload, key, input, inst, ctx);
+                }));
+            }
+            else {
+                handleMapResult(keyResult, valueResult, payload, key, input, inst, ctx);
+            }
+        }
+        if (proms.length)
+            return Promise.all(proms).then(() => payload);
+        return payload;
+    };
+    capSize(inst, mapSize);
+})));
+function handleMapResult(keyResult, valueResult, final, key, input, inst, ctx) {
+    if (keyResult.issues.length) {
+        if (util.propertyKeyTypes.has(typeof key)) {
+            final.issues.push(...util.prefixIssues(key, keyResult.issues));
+        }
+        else {
+            final.issues.push({
+                code: "invalid_key",
+                origin: "map",
+                input,
+                inst,
+                issues: keyResult.issues.map((iss) => util.finalizeIssue(iss, ctx, core.config())),
+            });
+        }
+    }
+    if (valueResult.issues.length) {
+        if (util.propertyKeyTypes.has(typeof key)) {
+            final.issues.push(...util.prefixIssues(key, valueResult.issues));
+        }
+        else {
+            final.issues.push({
+                origin: "map",
+                code: "invalid_element",
+                input,
+                inst,
+                key: key,
+                issues: valueResult.issues.map((iss) => util.finalizeIssue(iss, ctx, core.config())),
+            });
+        }
+    }
+    final.value.set(keyResult.value, valueResult.value);
+}
+const $ZodSet = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodSet", (inst, def) => {
+    $ZodType.init(inst, def);
+    const memo = core.globalConfig.memoizer;
+    memo?.attach(inst);
+    inst._zod.parse = (payload, ctx) => {
+        const input = payload.value;
+        if (!(input instanceof Set)) {
+            payload.issues.push({
+                input,
+                inst,
+                expected: "set",
+                code: "invalid_type",
+            });
+            return payload;
+        }
+        const proms = [];
+        payload.value = memo ? memo.alloc(inst, payload, new Set(), ctx) : new Set();
+        const abortEarly = ctx?.abortEarly;
+        let seen = payload.issues.length;
+        for (const item of input) {
+            if (abortEarly && payload.issues.length !== seen) {
+                if (util.aborted(payload, seen))
+                    break;
+                seen = payload.issues.length;
+            }
+            const result = def.valueType._zod.run({ value: item, issues: [] }, ctx);
+            if (result instanceof Promise) {
+                proms.push(result.then((result) => handleSetResult(result, payload)));
+            }
+            else
+                handleSetResult(result, payload);
+        }
+        if (proms.length)
+            return Promise.all(proms).then(() => payload);
+        return payload;
+    };
+    capSize(inst, setSize);
+})));
+function handleSetResult(result, final) {
+    if (result.issues.length) {
+        final.issues.push(...result.issues);
+    }
+    final.value.add(result.value);
+}
+const $ZodEnum = /*@__PURE__*/ $constructor("$ZodEnum", (inst, def) => {
+    $ZodType.init(inst, def);
+    const values = getEnumValues(def.entries);
+    const valuesSet = new Set(values);
+    inst._zod.values = valuesSet;
+    defineLazyInternal(inst, "pattern", (zod) => {
+        const patternValues = getEnumValues(zod.def.entries).filter((k) => propertyKeyTypes.has(typeof k));
+        // unmatchable fallback, RE2-safe: an empty alternation would compile to /^()$/, which matches ""
+        return new RegExp(patternValues.length ? `^(${patternValues.map((o) => escapeRegex(o.toString())).join("|")})$` : "^[^\\s\\S]$");
+    });
+    inst._zod.parse = (payload, _ctx) => {
+        const input = payload.value;
+        if (valuesSet.has(input)) {
+            return payload;
+        }
+        payload.issues.push({
+            code: "invalid_value",
+            values,
+            input,
+            inst,
+        });
+        return payload;
+    };
+});
+const $ZodLiteral = /*@__PURE__*/ $constructor("$ZodLiteral", (inst, def) => {
+    $ZodType.init(inst, def);
+    const values = new Set(def.values);
+    inst._zod.values = values;
+    defineLazyInternal(inst, "pattern", (zod) => {
+        const vals = zod.def.values;
+        // unmatchable fallback, RE2-safe: an empty alternation would compile to /^()$/, which matches ""
+        return new RegExp(vals.length
+            ? `^(${vals
+                .map((o) => typeof o === "string" ? escapeRegex(o) : o ? escapeRegex(o.toString()) : String(o))
+                .join("|")})$`
+            : "^[^\\s\\S]$");
+    });
+    inst._zod.parse = (payload, _ctx) => {
+        const input = payload.value;
+        if (values.has(input)) {
+            return payload;
+        }
+        payload.issues.push({
+            code: "invalid_value",
+            values: def.values,
+            input,
+            inst,
+        });
+        return payload;
+    };
+});
+const $ZodFile = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodFile", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, _ctx) => {
+        const input = payload.value;
+        // @ts-ignore
+        if (input instanceof File)
+            return payload;
+        payload.issues.push({
+            expected: "file",
+            code: "invalid_type",
+            input,
+            inst,
+        });
+        return payload;
+    };
+})));
+const $ZodTransform = /*@__PURE__*/ $constructor("$ZodTransform", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.optin = "optional";
+    globalConfig.memoizer?.guard(inst);
+    inst._zod.parse = (payload, ctx) => {
+        if (ctx.direction === "backward") {
+            throw new $ZodEncodeError(inst.constructor.name);
+        }
+        const _out = def.transform(payload.value, payload);
+        if (ctx.async) {
+            const output = _out instanceof Promise ? _out : Promise.resolve(_out);
+            return output.then((output) => {
+                payload.value = output;
+                return payload;
+            });
+        }
+        if (_out instanceof Promise) {
+            throw new $ZodAsyncError();
+        }
+        payload.value = _out;
+        return payload;
+    };
+});
+function handleOptionalResult(payload, result) {
+    // A substituting schema that still failed has no usable answer; yield undefined. Its issues are simply dropped: it ran on a payload of its own, so there is no shared array to truncate and nothing of the caller's to lose with it.
+    payload.value = result.issues.length ? undefined : result.value;
+    return payload;
+}
+const $ZodOptional = /*@__PURE__*/ $constructor("$ZodOptional", (inst, def) => {
+    $ZodType.init(inst, def);
+    // .optional() propagates absence rather than substituting for it, so a defaulted inner keeps its rung.
+    defineLazyInternal(inst, "optin", (zod) => zod.def.innerType._zod.optin === "defaulted" ? "defaulted" : "optional");
+    inst._zod.optout = "optional";
+    defineLazyInternal(inst, "values", (zod) => {
+        const values = zod.def.innerType._zod.values;
+        return values ? new Set([...values, undefined]) : undefined;
+    });
+    defineLazyInternal(inst, "pattern", (zod) => {
+        const pattern = zod.def.innerType._zod.pattern;
+        return pattern ? new RegExp(`^(${cleanRegex(pattern.source)})?$`) : undefined;
+    });
+    inst._zod.parse = (payload, ctx) => {
+        if (payload.value === undefined) {
+            // Only the top rung substitutes a value for absence; everything else leaves it intact, which is what .optional() means.
+            if (def.innerType._zod.optin !== "defaulted")
+                return payload;
+            // Its own payload, for the same reason $ZodCatch gets one: a pipe forwards an unrecognized key through the caller's issues array, and this must not read that as the substituting schema failing and drop it.
+            const result = def.innerType._zod.run({ value: payload.value, issues: [] }, ctx);
+            if (result instanceof Promise)
+                return result.then((result) => handleOptionalResult(payload, result));
+            return handleOptionalResult(payload, result);
+        }
+        return def.innerType._zod.run(payload, ctx);
+    };
+});
+const $ZodExactOptional = /*@__PURE__*/ $constructor("$ZodExactOptional", (inst, def) => {
+    // Call parent init - inherits optin/optout = "optional"
+    $ZodOptional.init(inst, def);
+    // Override values/pattern to NOT add undefined
+    defineLazyInternal(inst, "values", (zod) => zod.def.innerType._zod.values);
+    defineLazyInternal(inst, "pattern", (zod) => zod.def.innerType._zod.pattern);
+    // Override parse to just delegate (no undefined handling)
+    inst._zod.parse = (payload, ctx) => {
+        return def.innerType._zod.run(payload, ctx);
+    };
+});
+const $ZodNullable = /*@__PURE__*/ $constructor("$ZodNullable", (inst, def) => {
+    $ZodType.init(inst, def);
+    defineLazyInternal(inst, "optin", (zod) => zod.def.innerType._zod.optin);
+    defineLazyInternal(inst, "optout", (zod) => zod.def.innerType._zod.optout);
+    defineLazyInternal(inst, "pattern", (zod) => {
+        const pattern = zod.def.innerType._zod.pattern;
+        return pattern ? new RegExp(`^(${cleanRegex(pattern.source)}|null)$`) : undefined;
+    });
+    defineLazyInternal(inst, "values", (zod) => {
+        return zod.def.innerType._zod.values ? new Set([...zod.def.innerType._zod.values, null]) : undefined;
+    });
+    inst._zod.parse = (payload, ctx) => {
+        // Forward direction (decode): allow null to pass through
+        if (payload.value === null)
+            return payload;
+        return def.innerType._zod.run(payload, ctx);
+    };
+});
+const $ZodDefault = /*@__PURE__*/ $constructor("$ZodDefault", (inst, def) => {
+    $ZodType.init(inst, def);
+    // inst._zod.qin = "true";
+    inst._zod.optin = "defaulted";
+    defineLazyInternal(inst, "values", (zod) => zod.def.innerType._zod.values);
+    inst._zod.parse = (payload, ctx) => {
+        if (ctx.direction === "backward") {
+            return def.innerType._zod.run(payload, ctx);
+        }
+        // Forward direction (decode): apply defaults for undefined input
+        if (payload.value === undefined) {
+            payload.value = def.defaultValue;
+            /**
+             * $ZodDefault returns the default value immediately in forward direction.
+             * It doesn't pass the default value into the validator ("prefault"). There's no reason to pass the default value through validation. The validity of the default is enforced by TypeScript statically. Otherwise, it's the responsibility of the user to ensure the default is valid. In the case of pipes with divergent in/out types, you can specify the default on the `in` schema of your ZodPipe to set a "prefault" for the pipe.   */
+            return payload;
+        }
+        // Forward direction: continue with default handling
+        const result = def.innerType._zod.run(payload, ctx);
+        if (result instanceof Promise) {
+            return result.then((result) => handleDefaultResult(result, def));
+        }
+        return handleDefaultResult(result, def);
+    };
+});
+function handleDefaultResult(payload, def) {
+    if (payload.value === undefined) {
+        payload.value = def.defaultValue;
+    }
+    return payload;
+}
+const $ZodPrefault = /*@__PURE__*/ $constructor("$ZodPrefault", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.optin = "defaulted";
+    defineLazyInternal(inst, "values", (zod) => zod.def.innerType._zod.values);
+    inst._zod.parse = (payload, ctx) => {
+        if (ctx.direction === "backward") {
+            return def.innerType._zod.run(payload, ctx);
+        }
+        // Forward direction (decode): apply prefault for undefined input
+        if (payload.value === undefined) {
+            payload.value = def.defaultValue;
+        }
+        return def.innerType._zod.run(payload, ctx);
+    };
+});
+const $ZodNonOptional = /*@__PURE__*/ $constructor("$ZodNonOptional", (inst, def) => {
+    $ZodType.init(inst, def);
+    defineLazyInternal(inst, "values", (zod) => {
+        const v = zod.def.innerType._zod.values;
+        return v ? new Set([...v].filter((x) => x !== undefined)) : undefined;
+    });
+    inst._zod.parse = (payload, ctx) => {
+        const result = def.innerType._zod.run(payload, ctx);
+        if (result instanceof Promise) {
+            return result.then((result) => handleNonOptionalResult(result, inst));
+        }
+        return handleNonOptionalResult(result, inst);
+    };
+});
+function handleNonOptionalResult(payload, inst) {
+    if (!payload.issues.length && payload.value === undefined) {
+        payload.issues.push({
+            code: "invalid_type",
+            expected: "nonoptional",
+            input: payload.value,
+            inst,
+        });
+    }
+    return payload;
+}
+const $ZodSuccess = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodSuccess", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, ctx) => {
+        if (ctx.direction === "backward") {
+            throw new core.$ZodEncodeError("ZodSuccess");
+        }
+        const result = def.innerType._zod.run(payload, ctx);
+        if (result instanceof Promise) {
+            return result.then((result) => {
+                payload.value = result.issues.length === 0;
+                return payload;
+            });
+        }
+        payload.value = result.issues.length === 0;
+        return payload;
+    };
+})));
+function handleCatchResult(payload, result, def, ctx) {
+    if (!result.issues.length) {
+        payload.value = result.value;
+        // The value carries up, so the flag describing it has to carry with it: a back-edge into a node still being parsed must not be frozen by an enclosing readonly, and its checks belong to the node itself. Guarded so the ordinary case adds no own property.
+        if (result.memo)
+            payload.memo = true;
+        return payload;
+    }
+    // Spread the inner's own payload, not ours: `value` has to stay the input the catch was handed, and the inner ran on a payload of its own so its issues are already private to this call.
+    payload.value = def.catchValue({
+        ...result,
+        value: payload.value,
+        error: {
+            issues: result.issues.map((iss) => finalizeIssue(iss, ctx, config())),
+        },
+        input: payload.value,
+    });
+    return payload;
+}
+const $ZodCatch = /*@__PURE__*/ $constructor("$ZodCatch", (inst, def) => {
+    $ZodType.init(inst, def);
+    defineLazyInternal(inst, "optin", (zod) => zod.def.innerType._zod.optin === "defaulted" ? "defaulted" : "optional");
+    defineLazyInternal(inst, "optout", (zod) => zod.def.innerType._zod.optout);
+    defineLazyInternal(inst, "values", (zod) => zod.def.innerType._zod.values);
+    inst._zod.parse = (payload, ctx) => {
+        if (ctx.direction === "backward") {
+            return def.innerType._zod.run(payload, ctx);
+        }
+        // Forward direction (decode): apply catch logic
+        const result = def.innerType._zod.run({ value: payload.value, issues: [] }, ctx);
+        if (result instanceof Promise) {
+            return result.then((result) => handleCatchResult(payload, result, def, ctx));
+        }
+        return handleCatchResult(payload, result, def, ctx);
+    };
+});
+const $ZodNaN = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodNaN", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, _ctx) => {
+        if (typeof payload.value !== "number" || !Number.isNaN(payload.value)) {
+            payload.issues.push({
+                input: payload.value,
+                inst,
+                expected: "nan",
+                code: "invalid_type",
+            });
+            return payload;
+        }
+        return payload;
+    };
+})));
+const $ZodPipe = /*@__PURE__*/ $constructor("$ZodPipe", (inst, def) => {
+    $ZodType.init(inst, def);
+    defineLazyInternal(inst, "values", (zod) => zod.def.in._zod.values);
+    defineLazyInternal(inst, "optin", (zod) => zod.def.in._zod.optin);
+    defineLazyInternal(inst, "optout", (zod) => zod.def.out._zod.optout);
+    defineLazyInternal(inst, "propValues", (zod) => zod.def.in._zod.propValues);
+    inst._zod.parse = (payload, ctx) => {
+        if (ctx.direction === "backward") {
+            const right = def.out._zod.run(payload, ctx);
+            if (right instanceof Promise) {
+                return right.then((right) => handlePipeResult(right, def.in, ctx));
+            }
+            return handlePipeResult(right, def.in, ctx);
+        }
+        const left = def.in._zod.run(payload, ctx);
+        if (left instanceof Promise) {
+            return left.then((left) => handlePipeResult(left, def.out, ctx));
+        }
+        return handlePipeResult(left, def.out, ctx);
+    };
+});
+function handlePipeResult(left, next, ctx) {
+    // Any issue stops the pipe, so a failing refinement never feeds its transform. An unrecognized key is the exception: it describes the input's extra properties, not the value being piped, and an enclosing intersection may yet reconcile it.
+    if (left.issues.some((iss) => iss.code !== "unrecognized_keys")) {
+        // prevent further checks
+        left.aborted = true;
+        return left;
+    }
+    return next._zod.run({ value: left.value, issues: left.issues }, ctx);
+}
+const $ZodCodec = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodCodec", (inst, def) => {
+    $ZodType.init(inst, def);
+    util.defineLazyInternal(inst, "values", (zod) => zod.def.in._zod.values);
+    util.defineLazyInternal(inst, "optin", (zod) => zod.def.in._zod.optin);
+    util.defineLazyInternal(inst, "optout", (zod) => zod.def.out._zod.optout);
+    util.defineLazyInternal(inst, "propValues", (zod) => zod.def.in._zod.propValues);
+    inst._zod.parse = (payload, ctx) => {
+        const direction = ctx.direction || "forward";
+        if (direction === "forward") {
+            const left = def.in._zod.run(payload, ctx);
+            if (left instanceof Promise) {
+                return left.then((left) => handleCodecAResult(left, def, ctx));
+            }
+            return handleCodecAResult(left, def, ctx);
+        }
+        else {
+            const right = def.out._zod.run(payload, ctx);
+            if (right instanceof Promise) {
+                return right.then((right) => handleCodecAResult(right, def, ctx));
+            }
+            return handleCodecAResult(right, def, ctx);
+        }
+    };
+})));
+function handleCodecAResult(result, def, ctx) {
+    if (result.issues.length) {
+        // prevent further checks
+        result.aborted = true;
+        return result;
+    }
+    const direction = ctx.direction || "forward";
+    if (direction === "forward") {
+        const transformed = def.transform(result.value, result);
+        if (transformed instanceof Promise) {
+            return transformed.then((value) => handleCodecTxResult(result, value, def.out, ctx));
+        }
+        return handleCodecTxResult(result, transformed, def.out, ctx);
+    }
+    else {
+        const transformed = def.reverseTransform(result.value, result);
+        if (transformed instanceof Promise) {
+            return transformed.then((value) => handleCodecTxResult(result, value, def.in, ctx));
+        }
+        return handleCodecTxResult(result, transformed, def.in, ctx);
+    }
+}
+function handleCodecTxResult(left, value, nextSchema, ctx) {
+    // Check if transform added any issues
+    if (left.issues.length) {
+        left.aborted = true;
+        return left;
+    }
+    return nextSchema._zod.run({ value, issues: left.issues }, ctx);
+}
+const $ZodPreprocess = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodPreprocess", (inst, def) => {
+    $ZodPipe.init(inst, def);
+})));
+const $ZodReadonly = /*@__PURE__*/ $constructor("$ZodReadonly", (inst, def) => {
+    $ZodType.init(inst, def);
+    defineLazyInternal(inst, "propValues", (zod) => zod.def.innerType._zod.propValues);
+    defineLazyInternal(inst, "values", (zod) => zod.def.innerType._zod.values);
+    defineLazyInternal(inst, "optin", (zod) => zod.def.innerType?._zod?.optin);
+    defineLazyInternal(inst, "optout", (zod) => zod.def.innerType?._zod?.optout);
+    inst._zod.parse = (payload, ctx) => {
+        if (ctx.direction === "backward") {
+            return def.innerType._zod.run(payload, ctx);
+        }
+        const result = def.innerType._zod.run(payload, ctx);
+        if (result instanceof Promise) {
+            return result.then(handleReadonlyResult);
+        }
+        return handleReadonlyResult(result);
+    };
+});
+function handleReadonlyResult(payload) {
+    // A repeat visit hands back a node that is still being built; freezing it here would make the rest of its keys fail to assign.
+    if (!payload.memo)
+        payload.value = Object.freeze(payload.value);
+    return payload;
+}
+// a leaf's pattern source with its own checks folded in: the last pattern-carrying check wins, else length bounds narrow the catch-all, else an integer format narrows the number form. the fold lives here instead of on `_zod.pattern` so a bundle without template literals never pays for it
+function leafPattern(schema) {
+    const def = schema._zod.def;
+    let pattern = def.pattern;
+    let isInt = !!def.format?.includes("int");
+    let minimum;
+    let maximum;
+    for (const ch of def.checks ?? []) {
+        const d = ch._zod.def;
+        if (d.pattern)
+            pattern = d.pattern;
+        isInt || (isInt = !!d.format?.includes("int"));
+        const lo = d.minimum ?? d.length;
+        const hi = d.maximum ?? d.length;
+        if (lo !== undefined && (minimum === undefined || lo > minimum))
+            minimum = lo;
+        if (hi !== undefined && (maximum === undefined || hi < maximum))
+            maximum = hi;
+    }
+    if (pattern)
+        return pattern.source;
+    // an empty range matches nothing at runtime, and `{8,5}` is not a legal quantifier
+    if (minimum !== undefined && maximum !== undefined && minimum > maximum)
+        return "(?!)";
+    if (minimum !== undefined || maximum !== undefined)
+        return regexes.string({ minimum, maximum }).source;
+    const own = schema._zod.pattern;
+    return (isInt && own === regexes.number ? regexes.integer : own)?.source;
+}
+// a part's pattern source. a wrapper's pattern embeds its inner pattern's source verbatim, so the folded form is substituted in place without knowing the wrapper's own composition; a union's options are joined the way the union builds its own pattern
+function partPattern(schema) {
+    const def = schema._zod.def;
+    const own = schema._zod.pattern?.source;
+    // lazy resolves its inner on the internals, not the def
+    const inner = def.innerType ?? schema._zod.innerType;
+    if (inner) {
+        const before = inner._zod.pattern?.source;
+        const after = partPattern(inner);
+        if (own && before && after && after !== before) {
+            return own.replace(util.cleanRegex(before), () => util.cleanRegex(after));
+        }
+        return own;
+    }
+    if (def.options) {
+        const sources = def.options.map(partPattern);
+        if (sources.every(Boolean))
+            return `^(${sources.map((s) => util.cleanRegex(s)).join("|")})$`;
+    }
+    return leafPattern(schema);
+}
+const $ZodTemplateLiteral = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodTemplateLiteral", (inst, def) => {
+    $ZodType.init(inst, def);
+    const regexParts = [];
+    for (const part of def.parts) {
+        if (typeof part === "object" && part !== null) {
+            // is Zod schema
+            const source = partPattern(part);
+            if (!source) {
+                throw new Error(`Invalid template literal part, no pattern found: ${[...part._zod.traits].shift()}`);
+            }
+            regexParts.push(util.cleanRegex(source));
+        }
+        else if (part === null || util.primitiveTypes.has(typeof part)) {
+            regexParts.push(util.escapeRegex(`${part}`));
+        }
+        else {
+            throw new Error(`Invalid template literal part: ${part}`);
+        }
+    }
+    inst._zod.pattern = new RegExp(`^${regexParts.join("")}$`);
+    inst._zod.parse = (payload, _ctx) => {
+        if (typeof payload.value !== "string") {
+            payload.issues.push({
+                input: payload.value,
+                inst,
+                expected: "string",
+                code: "invalid_type",
+            });
+            return payload;
+        }
+        inst._zod.pattern.lastIndex = 0;
+        if (!inst._zod.pattern.test(payload.value)) {
+            payload.issues.push({
+                input: payload.value,
+                inst,
+                code: "invalid_format",
+                format: def.format ?? "template_literal",
+                pattern: inst._zod.pattern.source,
+            });
+            return payload;
+        }
+        return payload;
+    };
+})));
+const $ZodFunction = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodFunction", (inst, def) => {
+    $ZodType.init(inst, def);
+    // Defined, not assigned: the classic prototype exposes `_def` as a getter with no setter.
+    Object.defineProperty(inst, "_def", { value: def });
+    inst._zod.def = def;
+    inst.implement = (func) => {
+        if (typeof func !== "function") {
+            throw new Error("implement() must be called with a function");
+        }
+        // Defined inline so the closure stays anonymous: binding it to a `const` first names it, which costs 256 bytes per implemented function.
+        return Object.defineProperty(function (...args) {
+            const parsedArgs = inst._def.input ? parse(inst._def.input, args) : args;
+            const result = Reflect.apply(func, this, parsedArgs);
+            if (inst._def.output) {
+                return parse(inst._def.output, result);
+            }
+            return result;
+        }, "_zod", { value: inst._zod, enumerable: false });
+    };
+    inst.implementAsync = (func) => {
+        if (typeof func !== "function") {
+            throw new Error("implementAsync() must be called with a function");
+        }
+        return Object.defineProperty(async function (...args) {
+            const parsedArgs = inst._def.input ? await parseAsync(inst._def.input, args) : args;
+            const result = await Reflect.apply(func, this, parsedArgs);
+            if (inst._def.output) {
+                return await parseAsync(inst._def.output, result);
+            }
+            return result;
+        }, "_zod", { value: inst._zod, enumerable: false });
+    };
+    inst._zod.parse = (payload, _ctx) => {
+        if (typeof payload.value !== "function") {
+            payload.issues.push({
+                code: "invalid_type",
+                expected: "function",
+                input: payload.value,
+                inst,
+            });
+            return payload;
+        }
+        // Check if output is a promise type to determine if we should use async implementation
+        const hasPromiseOutput = inst._def.output && inst._def.output._zod.def.type === "promise";
+        if (hasPromiseOutput) {
+            payload.value = inst.implementAsync(payload.value);
+        }
+        else {
+            payload.value = inst.implement(payload.value);
+        }
+        return payload;
+    };
+    inst.input = (...args) => {
+        const F = inst.constructor;
+        if (Array.isArray(args[0])) {
+            return new F({
+                type: "function",
+                input: new $ZodTuple({
+                    type: "tuple",
+                    items: args[0],
+                    rest: args[1],
+                }),
+                output: inst._def.output,
+            });
+        }
+        return new F({
+            type: "function",
+            input: args[0],
+            output: inst._def.output,
+        });
+    };
+    inst.output = (output) => {
+        const F = inst.constructor;
+        return new F({
+            type: "function",
+            input: inst._def.input,
+            output,
+        });
+    };
+    return inst;
+})));
+const $ZodPromise = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodPromise", (inst, def) => {
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, ctx) => {
+        return Promise.resolve(payload.value).then((inner) => def.innerType._zod.run({ value: inner, issues: [] }, ctx));
+    };
+})));
+const $ZodLazy = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("$ZodLazy", (inst, def) => {
+    $ZodType.init(inst, def);
+    // Cache the resolved inner type on the shared `def` so all clones of this lazy (e.g. via `.describe()`/`.meta()`) share the same inner instance, preserving identity for cycle detection on recursive schemas.
+    util.defineLazy(inst._zod, "innerType", () => {
+        const d = def;
+        if (!d._cachedInner)
+            d._cachedInner = def.getter();
+        return d._cachedInner;
+    });
+    util.defineLazyInternal(inst, "pattern", (zod) => zod.innerType?._zod?.pattern);
+    util.defineLazyInternal(inst, "propValues", (zod) => zod.innerType?._zod?.propValues);
+    util.defineLazyInternal(inst, "optin", (zod) => zod.innerType?._zod?.optin ?? undefined);
+    util.defineLazyInternal(inst, "optout", (zod) => zod.innerType?._zod?.optout ?? undefined);
+    inst._zod.parse = (payload, ctx) => {
+        const inner = inst._zod.innerType;
+        return inner._zod.run(payload, ctx);
+    };
+})));
+const $ZodCustom = /*@__PURE__*/ $constructor("$ZodCustom", (inst, def) => {
+    $ZodCheck.init(inst, def);
+    $ZodType.init(inst, def);
+    inst._zod.parse = (payload, _) => {
+        return payload;
+    };
+    inst._zod.check = (payload) => {
+        const input = payload.value;
+        const r = def.fn(input);
+        if (r instanceof Promise) {
+            return r.then((r) => handleRefineResult(r, payload, input, inst));
+        }
+        handleRefineResult(r, payload, input, inst);
+        return;
+    };
+});
+function handleRefineResult(result, payload, input, inst) {
+    if (!result) {
+        const _iss = {
+            code: "custom",
+            input,
+            inst, // incorporates params.error into issue reporting
+            path: [...(inst._zod.def.path ?? [])], // incorporates params.error into issue reporting
+            continue: !inst._zod.def.abort,
+            // params: inst._zod.def.params,
+        };
+        if (inst._zod.def.params)
+            _iss.params = inst._zod.def.params;
+        payload.issues.push(util_issue(_iss));
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/registries.js
+var registries_a;
+const $output = /*@__PURE__*/ (/* unused pure expression or super */ null && (Symbol("ZodOutput")));
+const $input = /*@__PURE__*/ (/* unused pure expression or super */ null && (Symbol("ZodInput")));
+class $ZodRegistry {
+    constructor() {
+        this._map = new WeakMap();
+        this._idmap = new Map();
+    }
+    add(schema, ..._meta) {
+        const meta = _meta[0];
+        this._map.set(schema, meta);
+        if (meta && typeof meta === "object" && "id" in meta) {
+            this._idmap.set(meta.id, schema);
+        }
+        return this;
+    }
+    clear() {
+        this._map = new WeakMap();
+        this._idmap = new Map();
+        return this;
+    }
+    remove(schema) {
+        const meta = this._map.get(schema);
+        if (meta && typeof meta === "object" && "id" in meta) {
+            this._idmap.delete(meta.id);
+        }
+        this._map.delete(schema);
+        return this;
+    }
+    get(schema) {
+        // return this._map.get(schema) as any;
+        // inherit metadata
+        const p = schema._zod.parent;
+        if (p) {
+            const pm = { ...(this.get(p) ?? {}) };
+            delete pm.id; // do not inherit id
+            const f = { ...pm, ...this._map.get(schema) };
+            return Object.keys(f).length ? f : undefined;
+        }
+        return this._map.get(schema);
+    }
+    has(schema) {
+        return this._map.has(schema);
+    }
+}
+// registries
+function registry() {
+    return new $ZodRegistry();
+}
+(registries_a = globalThis).__zod_globalRegistry ?? (registries_a.__zod_globalRegistry = registry());
+const globalRegistry = globalThis.__zod_globalRegistry;
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/api.js
+
+
+
+
+function snapshotChecks(def) {
+    if (def.checks)
+        def.checks = [...def.checks];
+    return def;
+}
+// @__NO_SIDE_EFFECTS__
+function _string(Class, params) {
+    return new Class(snapshotChecks({ type: "string", ...normalizeParams(params) }));
+}
+// @__NO_SIDE_EFFECTS__
+function _coercedString(Class, params) {
+    return new Class(snapshotChecks({ type: "string", coerce: true, ...util.normalizeParams(params) }));
+}
+// @__NO_SIDE_EFFECTS__
+function _email(Class, params) {
+    return new Class({
+        type: "string",
+        format: "email",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _guid(Class, params) {
+    return new Class({
+        type: "string",
+        format: "guid",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _uuid(Class, params) {
+    return new Class({
+        type: "string",
+        format: "uuid",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _uuidv4(Class, params) {
+    return new Class({
+        type: "string",
+        format: "uuid",
+        check: "string_format",
+        abort: false,
+        version: "v4",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _uuidv6(Class, params) {
+    return new Class({
+        type: "string",
+        format: "uuid",
+        check: "string_format",
+        abort: false,
+        version: "v6",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _uuidv7(Class, params) {
+    return new Class({
+        type: "string",
+        format: "uuid",
+        check: "string_format",
+        abort: false,
+        version: "v7",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _url(Class, params) {
+    return new Class({
+        type: "string",
+        format: "url",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function api_emoji(Class, params) {
+    return new Class({
+        type: "string",
+        format: "emoji",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _nanoid(Class, params) {
+    return new Class({
+        type: "string",
+        format: "nanoid",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+/**
+ * @deprecated CUID v1 is deprecated by its authors due to information leakage
+ * (timestamps embedded in the id). Use {@link _cuid2} instead.
+ * See https://github.com/paralleldrive/cuid.
+ */
+// @__NO_SIDE_EFFECTS__
+function _cuid(Class, params) {
+    return new Class({
+        type: "string",
+        format: "cuid",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _cuid2(Class, params) {
+    return new Class({
+        type: "string",
+        format: "cuid2",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _ulid(Class, params) {
+    return new Class({
+        type: "string",
+        format: "ulid",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _xid(Class, params) {
+    return new Class({
+        type: "string",
+        format: "xid",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _ksuid(Class, params) {
+    return new Class({
+        type: "string",
+        format: "ksuid",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _ipv4(Class, params) {
+    return new Class({
+        type: "string",
+        format: "ipv4",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _ipv6(Class, params) {
+    return new Class({
+        type: "string",
+        format: "ipv6",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _mac(Class, params) {
+    return new Class({
+        type: "string",
+        format: "mac",
+        check: "string_format",
+        abort: false,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _cidrv4(Class, params) {
+    return new Class({
+        type: "string",
+        format: "cidrv4",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _cidrv6(Class, params) {
+    return new Class({
+        type: "string",
+        format: "cidrv6",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _base64(Class, params) {
+    return new Class({
+        type: "string",
+        format: "base64",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _base64url(Class, params) {
+    return new Class({
+        type: "string",
+        format: "base64url",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _e164(Class, params) {
+    return new Class({
+        type: "string",
+        format: "e164",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _creditCard(Class, params) {
+    return new Class({
+        type: "string",
+        format: "credit_card",
+        check: "string_format",
+        abort: false,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _iban(Class, params) {
+    return new Class({
+        type: "string",
+        format: "iban",
+        check: "string_format",
+        abort: false,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _jwt(Class, params) {
+    return new Class({
+        type: "string",
+        format: "jwt",
+        check: "string_format",
+        abort: false,
+        ...normalizeParams(params),
+    });
+}
+const TimePrecision = {
+    Any: null,
+    Minute: -1,
+    Second: 0,
+    Millisecond: 3,
+    Microsecond: 6,
+};
+// @__NO_SIDE_EFFECTS__
+function _isoDateTime(Class, params) {
+    return new Class({
+        type: "string",
+        format: "datetime",
+        check: "string_format",
+        offset: false,
+        local: false,
+        precision: null,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _isoDate(Class, params) {
+    return new Class({
+        type: "string",
+        format: "date",
+        check: "string_format",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _isoTime(Class, params) {
+    return new Class({
+        type: "string",
+        format: "time",
+        check: "string_format",
+        precision: null,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _isoDuration(Class, params) {
+    return new Class({
+        type: "string",
+        format: "duration",
+        check: "string_format",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _number(Class, params) {
+    return new Class(snapshotChecks({ type: "number", checks: [], ...normalizeParams(params) }));
+}
+// @__NO_SIDE_EFFECTS__
+function _coercedNumber(Class, params) {
+    return new Class(snapshotChecks({ type: "number", coerce: true, checks: [], ...util.normalizeParams(params) }));
+}
+// @__NO_SIDE_EFFECTS__
+function _int(Class, params) {
+    return new Class({
+        type: "number",
+        check: "number_format",
+        abort: false,
+        format: "safeint",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _float32(Class, params) {
+    return new Class({
+        type: "number",
+        check: "number_format",
+        abort: false,
+        format: "float32",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _float64(Class, params) {
+    return new Class({
+        type: "number",
+        check: "number_format",
+        abort: false,
+        format: "float64",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _int32(Class, params) {
+    return new Class({
+        type: "number",
+        check: "number_format",
+        abort: false,
+        format: "int32",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _uint32(Class, params) {
+    return new Class({
+        type: "number",
+        check: "number_format",
+        abort: false,
+        format: "uint32",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _boolean(Class, params) {
+    return new Class({
+        type: "boolean",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _coercedBoolean(Class, params) {
+    return new Class({
+        type: "boolean",
+        coerce: true,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _bigint(Class, params) {
+    return new Class({
+        type: "bigint",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _coercedBigint(Class, params) {
+    return new Class({
+        type: "bigint",
+        coerce: true,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _int64(Class, params) {
+    return new Class({
+        type: "bigint",
+        check: "bigint_format",
+        abort: false,
+        format: "int64",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _uint64(Class, params) {
+    return new Class({
+        type: "bigint",
+        check: "bigint_format",
+        abort: false,
+        format: "uint64",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _symbol(Class, params) {
+    return new Class({
+        type: "symbol",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function api_undefined(Class, params) {
+    return new Class({
+        type: "undefined",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function api_null(Class, params) {
+    return new Class({
+        type: "null",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _any(Class) {
+    return new Class({
+        type: "any",
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _unknown(Class) {
+    return new Class({
+        type: "unknown",
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _never(Class, params) {
+    return new Class({
+        type: "never",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _void(Class, params) {
+    return new Class({
+        type: "void",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _date(Class, params) {
+    return new Class({
+        type: "date",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _coercedDate(Class, params) {
+    return new Class({
+        type: "date",
+        coerce: true,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _nan(Class, params) {
+    return new Class({
+        type: "nan",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _lt(value, params) {
+    return new $ZodCheckLessThan({
+        check: "less_than",
+        ...normalizeParams(params),
+        value,
+        inclusive: false,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _lte(value, params) {
+    return new $ZodCheckLessThan({
+        check: "less_than",
+        ...normalizeParams(params),
+        value,
+        inclusive: true,
+    });
+}
+
+// @__NO_SIDE_EFFECTS__
+function _gt(value, params) {
+    return new $ZodCheckGreaterThan({
+        check: "greater_than",
+        ...normalizeParams(params),
+        value,
+        inclusive: false,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _gte(value, params) {
+    return new $ZodCheckGreaterThan({
+        check: "greater_than",
+        ...normalizeParams(params),
+        value,
+        inclusive: true,
+    });
+}
+
+// @__NO_SIDE_EFFECTS__
+function _positive(params) {
+    return _gt(0, params);
+}
+// negative
+// @__NO_SIDE_EFFECTS__
+function _negative(params) {
+    return _lt(0, params);
+}
+// nonpositive
+// @__NO_SIDE_EFFECTS__
+function _nonpositive(params) {
+    return _lte(0, params);
+}
+// nonnegative
+// @__NO_SIDE_EFFECTS__
+function _nonnegative(params) {
+    return _gte(0, params);
+}
+// @__NO_SIDE_EFFECTS__
+function _multipleOf(value, params) {
+    return new $ZodCheckMultipleOf({
+        check: "multiple_of",
+        ...normalizeParams(params),
+        value,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _maxSize(maximum, params) {
+    return new checks.$ZodCheckMaxSize({
+        check: "max_size",
+        ...util.normalizeParams(params),
+        maximum,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _minSize(minimum, params) {
+    return new checks.$ZodCheckMinSize({
+        check: "min_size",
+        ...util.normalizeParams(params),
+        minimum,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _size(size, params) {
+    return new checks.$ZodCheckSizeEquals({
+        check: "size_equals",
+        ...util.normalizeParams(params),
+        size,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _maxLength(maximum, params) {
+    const ch = new $ZodCheckMaxLength({
+        check: "max_length",
+        ...normalizeParams(params),
+        maximum,
+    });
+    return ch;
+}
+// @__NO_SIDE_EFFECTS__
+function _minLength(minimum, params) {
+    return new $ZodCheckMinLength({
+        check: "min_length",
+        ...normalizeParams(params),
+        minimum,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _length(length, params) {
+    return new $ZodCheckLengthEquals({
+        check: "length_equals",
+        ...normalizeParams(params),
+        length,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _regex(pattern, params) {
+    return new $ZodCheckRegex({
+        check: "string_format",
+        format: "regex",
+        ...normalizeParams(params),
+        pattern,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _lowercase(params) {
+    return new $ZodCheckLowerCase({
+        check: "string_format",
+        format: "lowercase",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _uppercase(params) {
+    return new $ZodCheckUpperCase({
+        check: "string_format",
+        format: "uppercase",
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _includes(includes, params) {
+    return new $ZodCheckIncludes({
+        check: "string_format",
+        format: "includes",
+        ...normalizeParams(params),
+        includes,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _startsWith(prefix, params) {
+    return new $ZodCheckStartsWith({
+        check: "string_format",
+        format: "starts_with",
+        ...normalizeParams(params),
+        prefix,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _endsWith(suffix, params) {
+    return new $ZodCheckEndsWith({
+        check: "string_format",
+        format: "ends_with",
+        ...normalizeParams(params),
+        suffix,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _property(property, schema, params) {
+    return new checks.$ZodCheckProperty({
+        check: "property",
+        property,
+        schema,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _properties(shape, params) {
+    return new $ZodCheckProperties({
+        check: "properties",
+        shape,
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _mime(types, params) {
+    return new checks.$ZodCheckMimeType({
+        check: "mime_type",
+        mime: types,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _overwrite(tx) {
+    return new $ZodCheckOverwrite({
+        check: "overwrite",
+        tx,
+    });
+}
+// normalize
+// @__NO_SIDE_EFFECTS__
+function _normalize(form) {
+    return _overwrite((input) => input.normalize(form));
+}
+// trim
+// @__NO_SIDE_EFFECTS__
+function _trim() {
+    return _overwrite((input) => input.trim());
+}
+// toLowerCase
+// @__NO_SIDE_EFFECTS__
+function _toLowerCase() {
+    return _overwrite((input) => input.toLowerCase());
+}
+// toUpperCase
+// @__NO_SIDE_EFFECTS__
+function _toUpperCase() {
+    return _overwrite((input) => input.toUpperCase());
+}
+// slugify
+// @__NO_SIDE_EFFECTS__
+function _slugify() {
+    return _overwrite((input) => slugify(input));
+}
+// @__NO_SIDE_EFFECTS__
+function _array(Class, element, params) {
+    return new Class({
+        type: "array",
+        element,
+        // get element() {
+        //   return element;
+        // },
+        ...normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _union(Class, options, params) {
+    return new Class({
+        type: "union",
+        options,
+        ...util.normalizeParams(params),
+    });
+}
+function _xor(Class, options, params) {
+    return new Class({
+        type: "union",
+        options,
+        inclusive: false,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _discriminatedUnion(Class, discriminator, options, params) {
+    return new Class({
+        type: "union",
+        options: options,
+        discriminator,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _intersection(Class, left, right) {
+    return new Class({
+        type: "intersection",
+        left,
+        right,
+    });
+}
+// export function _tuple(
+//   Class: util.SchemaClass<schemas.$ZodTuple>,
+//   items: [],
+//   params?: string | $ZodTupleParams
+// ): schemas.$ZodTuple<[], null>;
+// @__NO_SIDE_EFFECTS__
+function _tuple(Class, items, _paramsOrRest, _params) {
+    const hasRest = _paramsOrRest instanceof schemas.$ZodType;
+    const params = hasRest ? _params : _paramsOrRest;
+    const rest = hasRest ? _paramsOrRest : null;
+    return new Class({
+        type: "tuple",
+        items,
+        rest,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _record(Class, keyType, valueType, params) {
+    return new Class({
+        type: "record",
+        keyType,
+        valueType,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _map(Class, keyType, valueType, params) {
+    return new Class({
+        type: "map",
+        keyType,
+        valueType,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _set(Class, valueType, params) {
+    return new Class({
+        type: "set",
+        valueType,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _enum(Class, values, params) {
+    const entries = Array.isArray(values) ? Object.fromEntries(values.map((v) => [v, v])) : values;
+    // if (Array.isArray(values)) {
+    //   for (const value of values) {
+    //     entries[value] = value;
+    //   }
+    // } else {
+    //   Object.assign(entries, values);
+    // }
+    // const entries: util.EnumLike = {};
+    // for (const val of values) {
+    //   entries[val] = val;
+    // }
+    return new Class({
+        type: "enum",
+        entries,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+/** @deprecated This API has been merged into `z.enum()`. Use `z.enum()` instead.
+ *
+ * ```ts
+ * enum Colors { red, green, blue }
+ * z.enum(Colors);
+ * ```
+ */
+function _nativeEnum(Class, entries, params) {
+    return new Class({
+        type: "enum",
+        entries,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _literal(Class, value, params) {
+    return new Class({
+        type: "literal",
+        values: Array.isArray(value) ? value : [value],
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _file(Class, params) {
+    return new Class({
+        type: "file",
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _transform(Class, fn) {
+    return new Class({
+        type: "transform",
+        transform: fn,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _optional(Class, innerType) {
+    return new Class({
+        type: "optional",
+        innerType,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _nullable(Class, innerType) {
+    return new Class({
+        type: "nullable",
+        innerType,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _default(Class, innerType, defaultValue) {
+    return new Class({
+        type: "default",
+        innerType,
+        get defaultValue() {
+            return typeof defaultValue === "function" ? defaultValue() : util.shallowClone(defaultValue);
+        },
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _nonoptional(Class, innerType, params) {
+    return new Class({
+        type: "nonoptional",
+        innerType,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _success(Class, innerType) {
+    return new Class({
+        type: "success",
+        innerType,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _catch(Class, innerType, catchValue) {
+    return new Class({
+        type: "catch",
+        innerType,
+        catchValue: (typeof catchValue === "function" ? catchValue : util.constantCatch(catchValue)),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _pipe(Class, in_, out) {
+    return new Class({
+        type: "pipe",
+        in: in_,
+        out,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _readonly(Class, innerType) {
+    return new Class({
+        type: "readonly",
+        innerType,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _templateLiteral(Class, parts, params) {
+    return new Class({
+        type: "template_literal",
+        parts,
+        ...util.normalizeParams(params),
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _lazy(Class, getter) {
+    return new Class({
+        type: "lazy",
+        getter,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _promise(Class, innerType) {
+    return new Class({
+        type: "promise",
+        innerType,
+    });
+}
+// @__NO_SIDE_EFFECTS__
+function _custom(Class, fn, _params) {
+    const norm = util.normalizeParams(_params);
+    norm.abort ?? (norm.abort = true); // default to abort:false
+    const schema = new Class({
+        type: "custom",
+        check: "custom",
+        fn: fn,
+        ...norm,
+    });
+    return schema;
+}
+// same as _custom but defaults to abort:false
+// @__NO_SIDE_EFFECTS__
+function _refine(Class, fn, _params) {
+    const schema = new Class({
+        type: "custom",
+        check: "custom",
+        fn: fn,
+        ...normalizeParams(_params),
+    });
+    return schema;
+}
+// @__NO_SIDE_EFFECTS__
+function _superRefine(fn, params) {
+    const ch = _check((payload) => {
+        payload.addIssue = (issue) => {
+            if (typeof issue === "string") {
+                payload.issues.push(util_issue(issue, payload.value, ch._zod.def));
+            }
+            else {
+                // for Zod 3 backwards compatibility
+                const _issue = issue;
+                if (_issue.fatal)
+                    _issue.continue = false;
+                _issue.code ?? (_issue.code = "custom");
+                if (!("input" in _issue))
+                    _issue.input = payload.value;
+                _issue.inst ?? (_issue.inst = ch);
+                _issue.continue ?? (_issue.continue = !ch._zod.def.abort); // abort is always undefined, so this is always true...
+                payload.issues.push(util_issue(_issue));
+            }
+        };
+        return fn(payload.value, payload);
+    }, params);
+    return ch;
+}
+// @__NO_SIDE_EFFECTS__
+function _check(fn, params) {
+    const ch = new $ZodCheck({
+        check: "custom",
+        ...normalizeParams(params),
+    });
+    ch._zod.check = fn;
+    return ch;
+}
+// @__NO_SIDE_EFFECTS__
+function describe(description) {
+    const ch = new $ZodCheck({ check: "describe" });
+    ch._zod.onattach = [
+        (inst) => {
+            const existing = globalRegistry.get(inst) ?? {};
+            globalRegistry.add(inst, { ...existing, description });
+        },
+    ];
+    ch._zod.check = () => { }; // no-op check
+    return ch;
+}
+// @__NO_SIDE_EFFECTS__
+function meta(metadata) {
+    const ch = new $ZodCheck({ check: "meta" });
+    ch._zod.onattach = [
+        (inst) => {
+            const existing = globalRegistry.get(inst) ?? {};
+            globalRegistry.add(inst, { ...existing, ...metadata });
+        },
+    ];
+    ch._zod.check = () => { }; // no-op check
+    return ch;
+}
+// @__NO_SIDE_EFFECTS__
+function _stringbool(Classes, _params) {
+    const params = util.normalizeParams(_params);
+    let truthyArray = params.truthy ?? ["true", "1", "yes", "on", "y", "enabled"];
+    let falsyArray = params.falsy ?? ["false", "0", "no", "off", "n", "disabled"];
+    if (params.case !== "sensitive") {
+        truthyArray = truthyArray.map((v) => (typeof v === "string" ? v.toLowerCase() : v));
+        falsyArray = falsyArray.map((v) => (typeof v === "string" ? v.toLowerCase() : v));
+    }
+    const truthySet = new Set(truthyArray);
+    const falsySet = new Set(falsyArray);
+    const _Codec = Classes.Codec ?? schemas.$ZodCodec;
+    const _Boolean = Classes.Boolean ?? schemas.$ZodBoolean;
+    const _String = Classes.String ?? schemas.$ZodString;
+    const stringSchema = new _String({ type: "string", error: params.error });
+    const booleanSchema = new _Boolean({ type: "boolean", error: params.error });
+    const codec = new _Codec({
+        type: "pipe",
+        in: stringSchema,
+        out: booleanSchema,
+        transform: ((input, payload) => {
+            let data = input;
+            if (params.case !== "sensitive")
+                data = data.toLowerCase();
+            if (truthySet.has(data)) {
+                return true;
+            }
+            else if (falsySet.has(data)) {
+                return false;
+            }
+            else {
+                payload.issues.push({
+                    code: "invalid_value",
+                    expected: "stringbool",
+                    values: [...truthySet, ...falsySet],
+                    input: payload.value,
+                    inst: codec,
+                    continue: false,
+                });
+                return {};
+            }
+        }),
+        reverseTransform: ((input, _payload) => {
+            if (input === true) {
+                return truthyArray[0] || "true";
+            }
+            else {
+                return falsyArray[0] || "false";
+            }
+        }),
+        error: params.error,
+    });
+    codec._zod.bag.truthy = truthyArray;
+    codec._zod.bag.falsy = falsyArray;
+    codec._zod.bag.case = params.case ?? "insensitive";
+    return codec;
+}
+// @__NO_SIDE_EFFECTS__
+function _stringFormat(Class, format, fnOrRegex, _params = {}) {
+    const params = util.normalizeParams(_params);
+    const def = {
+        check: "string_format",
+        type: "string",
+        format,
+        fn: typeof fnOrRegex === "function" ? fnOrRegex : (val) => fnOrRegex.test(val),
+        ...params,
+    };
+    if (fnOrRegex instanceof RegExp) {
+        def.pattern = fnOrRegex;
+    }
+    const inst = new Class(def);
+    return inst;
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/to-json-schema.js
+
+
+function assignProps(target, ...sources) {
+    for (const source of sources) {
+        for (const key of Reflect.ownKeys(source)) {
+            if (Object.prototype.propertyIsEnumerable.call(source, key)) {
+                util_assignProp(target, key, source[key]);
+            }
+        }
+    }
+    return target;
+}
+// function initializeContext<T extends schemas.$ZodType>(inputs: JSONSchemaGeneratorParams<T>): ToJSONSchemaContext<T> {
+//   return {
+//     processor: inputs.processor,
+//     metadataRegistry: inputs.metadata ?? globalRegistry,
+//     target: inputs.target ?? "draft-2020-12",
+//     unrepresentable: inputs.unrepresentable ?? "throw",
+//   };
+// }
+function to_json_schema_initializeContext(params) {
+    // Normalize target: convert old non-hyphenated versions to hyphenated versions
+    let target = params?.target ?? "draft-2020-12";
+    if (target === "draft-4")
+        target = "draft-04";
+    if (target === "draft-7")
+        target = "draft-07";
+    return {
+        processors: params.processors ?? {},
+        metadataRegistry: params?.metadata ?? globalRegistry,
+        target,
+        unrepresentable: params?.unrepresentable ?? "throw",
+        override: params?.override ?? (() => { }),
+        io: params?.io ?? "output",
+        counter: 0,
+        seen: new Map(),
+        sharedDefsExtractedFor: undefined,
+        sharedEmitDoneFor: undefined,
+        cycles: params?.cycles ?? "ref",
+        reused: params?.reused ?? "inline",
+        intersections: [],
+        deferred: [],
+        external: params?.external ?? undefined,
+    };
+}
+/**
+ * Applies the `unrepresentable` setting at a site that has no JSON Schema equivalent. Throws
+ * `message` unless the setting (or the handler's return value) says otherwise. Returns `true` if a
+ * custom JSON Schema was written into `json`, in which case the caller must not write its own.
+ */
+function handleUnrepresentable(schema, ctx, json, params, message) {
+    const result = typeof ctx.unrepresentable === "function"
+        ? ctx.unrepresentable({ zodSchema: schema, path: params.path, message })
+        : ctx.unrepresentable;
+    if (result === "any")
+        return false;
+    if (result === undefined || result === "throw")
+        throw new Error(message);
+    Object.assign(json, result);
+    return true;
+}
+// never rename this back to `process`: bundler polyfills inject a top-level `const process` that a lexical declaration of the same name collides with (#6397)
+function to_json_schema_processSchema(schema, ctx, _params = { path: [], schemaPath: [] }) {
+    var _a;
+    const def = schema._zod.def;
+    // check for schema in seens
+    const seen = ctx.seen.get(schema);
+    if (seen) {
+        seen.count++;
+        // check if cycle
+        const isCycle = _params.schemaPath.includes(schema);
+        if (isCycle) {
+            seen.cycle = _params.path;
+        }
+        return seen.schema;
+    }
+    // initialize
+    const result = { schema: {}, count: 1, cycle: undefined, path: _params.path };
+    ctx.seen.set(schema, result);
+    ctx.sharedDefsExtractedFor = undefined;
+    ctx.sharedEmitDoneFor = undefined;
+    // custom method overrides default behavior
+    const overrideSchema = schema._zod.toJSONSchema?.();
+    if (overrideSchema) {
+        result.schema = overrideSchema;
+    }
+    else {
+        const params = {
+            ..._params,
+            schemaPath: [..._params.schemaPath, schema],
+            path: _params.path,
+        };
+        if (schema._zod.processJSONSchema) {
+            schema._zod.processJSONSchema(ctx, result.schema, params);
+        }
+        else {
+            const _json = result.schema;
+            const processor = ctx.processors[def.type];
+            if (!processor) {
+                throw new Error(`[toJSONSchema]: Non-representable type encountered: ${def.type}`);
+            }
+            processor(schema, ctx, _json, params);
+        }
+        const parent = schema._zod.parent;
+        if (parent) {
+            // Also set ref if processor didn't (for inheritance)
+            if (!result.ref)
+                result.ref = parent;
+            to_json_schema_processSchema(parent, ctx, params);
+            ctx.seen.get(parent).isParent = true;
+        }
+    }
+    // metadata
+    const meta = ctx.metadataRegistry.get(schema);
+    if (meta)
+        assignProps(result.schema, meta);
+    if (ctx.io === "input" && isTransforming(schema)) {
+        // examples/defaults only apply to output type of pipe
+        delete result.schema.examples;
+        delete result.schema.default;
+    }
+    // set prefault as default
+    if (ctx.io === "input" && "_prefault" in result.schema)
+        (_a = result.schema).default ?? (_a.default = result.schema._prefault);
+    delete result.schema._prefault;
+    // pulling fresh from ctx.seen in case it was overwritten
+    const _result = ctx.seen.get(schema);
+    return _result.schema;
+}
+/** @deprecated Renamed to `processSchema`. An export alias declares no binding, so it is safe to keep. */
+
+// Escape a reference token for use in a JSON Pointer fragment (RFC 6901): `~` becomes `~0` and `/` becomes `~1`. The `~` replacement must run first.
+function encodeJSONPointerSegment(segment) {
+    return segment.replace(/~/g, "~0").replace(/\//g, "~1");
+}
+function to_json_schema_extractDefs(ctx, schema
+// params: EmitParams
+) {
+    // iterate over seen map;
+    const root = ctx.seen.get(schema);
+    if (!root)
+        throw new Error("Unprocessed schema. This is a bug in Zod.");
+    // With `external` set, every registered schema resolves through the external branch of `makeURI`, so the root branch below produces the same ref the external branch would — this pass is identical whichever schema it is called with, and only needs to run once.
+    if (ctx.external && ctx.sharedDefsExtractedFor === ctx.external)
+        return;
+    // Track ids to detect duplicates across different schemas
+    const idToSchema = new Map();
+    for (const entry of ctx.seen.entries()) {
+        const id = ctx.metadataRegistry.get(entry[0])?.id;
+        if (id) {
+            const existing = idToSchema.get(id);
+            if (existing && existing !== entry[0]) {
+                throw new Error(`Duplicate schema id "${id}" detected during JSON Schema conversion. Two different schemas cannot share the same id when converted together.`);
+            }
+            idToSchema.set(id, entry[0]);
+        }
+    }
+    // returns a ref to the schema defId will be empty if the ref points to an external schema (or #)
+    const makeURI = (entry) => {
+        // comparing the seen objects because sometimes multiple schemas map to the same seen object. e.g. lazy
+        // external is configured
+        const defsSegment = ctx.target === "draft-2020-12" ? "$defs" : "definitions";
+        if (ctx.external) {
+            const externalId = ctx.external.registry.get(entry[0])?.id; // ?? "__shared";// `__schema${ctx.counter++}`;
+            // check if schema is in the external registry
+            const uriGenerator = ctx.external.uri ?? ((id) => id);
+            if (externalId) {
+                return { ref: uriGenerator(externalId) };
+            }
+            // otherwise, add to __shared
+            const id = entry[1].defId ?? entry[1].schema.id ?? `schema${ctx.counter++}`;
+            entry[1].defId = id; // set defId so it will be reused if needed
+            return { defId: id, ref: `${uriGenerator("__shared")}#/${defsSegment}/${encodeJSONPointerSegment(id)}` };
+        }
+        const uriPrefix = `#`;
+        const defUriPrefix = `${uriPrefix}/${defsSegment}/`;
+        // an id-less root has nowhere to be extracted to, so it stays inline and self-references as `#`
+        if (entry[1] === root && !entry[1].schema.id) {
+            return { ref: uriPrefix };
+        }
+        // self-contained schema
+        const defId = entry[1].schema.id ?? `__schema${ctx.counter++}`;
+        return { defId, ref: defUriPrefix + encodeJSONPointerSegment(defId) };
+    };
+    // stored cached version in `def` property remove all properties, set $ref
+    const extractToDef = (entry) => {
+        // if the schema is already a reference, do not extract it
+        if (entry[1].schema.$ref) {
+            return;
+        }
+        const seen = entry[1];
+        const { ref, defId } = makeURI(entry);
+        seen.def = { ...seen.schema };
+        // defId won't be set if the schema is a reference to an external schema or if the schema is the root schema
+        if (defId)
+            seen.defId = defId;
+        // wipe away all properties except $ref
+        const schema = seen.schema;
+        for (const key in schema) {
+            delete schema[key];
+        }
+        schema.$ref = ref;
+    };
+    // throw on cycles
+    // break cycles
+    if (ctx.cycles === "throw") {
+        for (const entry of ctx.seen.entries()) {
+            const seen = entry[1];
+            if (seen.cycle) {
+                throw new Error("Cycle detected: " +
+                    `#/${seen.cycle?.join("/")}/<root>` +
+                    '\n\nSet the `cycles` parameter to `"ref"` to resolve cyclical schemas with defs.');
+            }
+        }
+    }
+    // extract schemas into $defs
+    for (const entry of ctx.seen.entries()) {
+        const seen = entry[1];
+        // convert root schema to # $ref
+        if (schema === entry[0]) {
+            extractToDef(entry); // this has special handling for the root schema
+            continue;
+        }
+        // extract schemas that are in the external registry
+        if (ctx.external) {
+            const ext = ctx.external.registry.get(entry[0])?.id;
+            if (schema !== entry[0] && ext) {
+                extractToDef(entry);
+                continue;
+            }
+        }
+        // extract schemas with `id` meta
+        const id = ctx.metadataRegistry.get(entry[0])?.id;
+        if (id) {
+            extractToDef(entry);
+            continue;
+        }
+        // break cycles
+        if (seen.cycle) {
+            // any
+            extractToDef(entry);
+            continue;
+        }
+        // extract reused schemas
+        if (seen.count > 1) {
+            if (ctx.reused === "ref") {
+                extractToDef(entry);
+            }
+        }
+    }
+    if (ctx.external)
+        ctx.sharedDefsExtractedFor = ctx.external;
+}
+/** Rewrites `anyOf: [{type: "a"}, {type: "b"}]` to `type: ["a", "b"]`, which every JSON Schema draft treats as equivalent and most consumers render far better for the nullable case. Only branches that are a bare type assertion qualify — anything carrying a constraint, `$ref`, `const` or metadata is left alone. Runs after `flattenRef`, so a branch an override decorated or `$defs` extraction turned into a `$ref` is no longer bare and correctly stays in `anyOf`. `oneOf` is excluded: `integer` and `number` overlap, so "exactly one" and "at least one" are not the same there. OpenAPI 3.0 is excluded: its `type` must be a single string. */
+function compactTypeUnion(schema) {
+    const options = schema.anyOf;
+    if (!Array.isArray(options) || options.length === 0 || schema.type !== undefined)
+        return;
+    const types = [];
+    for (const option of options) {
+        if (!option || typeof option !== "object")
+            return;
+        // A branch that is itself a compactible union folds into this one — nested `anyOf` and a flat `type` array say the same thing. Compacting it first also makes the result independent of the order this pass walks the seen map in.
+        compactTypeUnion(option);
+        const keys = Object.keys(option);
+        if (keys.length !== 1 || keys[0] !== "type")
+            return;
+        const type = option.type;
+        for (const member of Array.isArray(type) ? type : [type]) {
+            if (typeof member !== "string")
+                return;
+            if (!types.includes(member))
+                types.push(member);
+        }
+    }
+    delete schema.anyOf;
+    // A `type` array must be non-empty and unique (metaschema); a single member is spelled as a bare string.
+    schema.type = types.length === 1 ? types[0] : types;
+}
+/** Keywords `foldIntersection` knows how to combine. Anything else — `$ref`, `patternProperties`,
+ * an annotation like `description` — makes a member unfoldable, so a constraint this does not
+ * understand leaves the `allOf` alone instead of being silently dropped or misattributed. */
+const FOLDABLE_KEYS = new Set(["type", "properties", "required", "additionalProperties"]);
+const UNION_KEYS = ["oneOf", "anyOf"];
+/** A member's constraint on a key it does not declare itself. A `catchall` states one; `false`, an absent `additionalProperties`, and the empty schema a loose object emits state nothing. */
+function undeclaredConstraint(member) {
+    const extra = member.additionalProperties;
+    if (extra === undefined || extra === false || typeof extra !== "object" || extra === null)
+        return null;
+    return Object.keys(extra).length ? extra : null;
+}
+/** Combines object members into the single object they describe together, or returns `null` if any of them carries a keyword outside {@link FOLDABLE_KEYS}. */
+function foldObjects(members) {
+    const objects = [];
+    for (const member of members) {
+        // A boolean subschema is legal JSON Schema and carries no keywords to fold.
+        if (typeof member !== "object" || member.type !== "object")
+            return null;
+        for (const key in member) {
+            if (!FOLDABLE_KEYS.has(key))
+                return null;
+        }
+        objects.push(member);
+    }
+    const properties = {};
+    const required = new Set();
+    for (const object of objects) {
+        for (const key in object.properties) {
+            // `in` would report a `__proto__` key as already present via the prototype chain and skip it.
+            if (Object.prototype.hasOwnProperty.call(properties, key))
+                continue;
+            // Every member constrains this key: the ones that declare it say how, and a `catchall` member constrains it too even though it does not name it. The key has to satisfy all of them, which is the same intersection one level down.
+            const parts = [];
+            for (const other of objects) {
+                const part = other.properties?.[key] ?? undeclaredConstraint(other);
+                if (part === null || part === undefined)
+                    continue;
+                if (!parts.some((seen) => JSON.stringify(seen) === JSON.stringify(part)))
+                    parts.push(part);
+            }
+            const merged = parts.length === 1
+                ? parts[0]
+                : (foldObjects(parts) ?? { allOf: parts });
+            util_assignProp(properties, key, merged);
+        }
+        for (const key of object.required ?? [])
+            required.add(key);
+    }
+    const folded = { type: "object", properties };
+    if (required.size)
+        folded.required = [...required];
+    // A key no member declares is rejected only when every member rejects it, so the fold is closed only when every member is. Otherwise it carries whatever the `catchall` members demand of such a key.
+    if (objects.every((object) => object.additionalProperties === false)) {
+        folded.additionalProperties = false;
+    }
+    else {
+        const constraints = [];
+        for (const object of objects) {
+            const constraint = undeclaredConstraint(object);
+            if (constraint && !constraints.some((seen) => JSON.stringify(seen) === JSON.stringify(constraint)))
+                constraints.push(constraint);
+        }
+        if (constraints.length === 1)
+            folded.additionalProperties = constraints[0];
+        else if (constraints.length > 1)
+            folded.additionalProperties = { allOf: constraints };
+    }
+    return folded;
+}
+/** `additionalProperties` in an `allOf` member sees only that member's own `properties`, so two
+ * closed object members reject each other's keys and the schema validates nothing. Zod's parser
+ * pools the key sets instead — `handleIntersectionResults` reports a key as unrecognized only when
+ * *every* side rejects it — so the emitted schema has to pool them too, and folding the members
+ * into one object is the encoding that says so on every target.
+ *
+ * This runs from `finalize`, after `extractDefs`, which is what keeps it clear of the `$ref`
+ * machinery: a member extracted into `$defs` is already a `$ref` by now and declines to fold, so it
+ * keeps its reference and its own closedness rather than being inlined as a stale copy. */
+function foldIntersection(json) {
+    const allOf = json.allOf;
+    if (!Array.isArray(allOf) || allOf.length < 2)
+        return;
+    // An `override` runs before this pass and may have written object keywords onto the intersection itself. Those are deliberate, so decline rather than overwrite them.
+    for (const key of FOLDABLE_KEYS)
+        if (key in json)
+            return;
+    // An intersection distributes over a union: `A & (X | Y)` is `(A & X) | (A & Y)`. Only the first union is distributed over; a second one stays among the members every branch folds against, where it fails the object check and declines the whole intersection rather than multiplying out.
+    const unions = allOf.filter((m) => UNION_KEYS.some((k) => Array.isArray(m[k])));
+    let folded = null;
+    if (!unions.length) {
+        folded = foldObjects(allOf);
+    }
+    else {
+        const union = unions[0];
+        const keyword = UNION_KEYS.find((k) => Array.isArray(union[k]));
+        if (Object.keys(union).length !== 1)
+            return;
+        const rest = allOf.filter((m) => m !== union);
+        const branches = union[keyword].map((branch) => foldObjects([...rest, branch]));
+        if (branches.some((b) => !b))
+            return;
+        folded = { [keyword]: branches };
+    }
+    if (!folded)
+        return;
+    delete json.allOf;
+    assignProps(json, folded);
+}
+function to_json_schema_finalize(ctx, schema) {
+    const root = ctx.seen.get(schema);
+    if (!root)
+        throw new Error("Unprocessed schema. This is a bug in Zod.");
+    // flatten refs - inherit properties from parent schemas
+    const flattenRef = (zodSchema) => {
+        const seen = ctx.seen.get(zodSchema);
+        // already processed
+        if (seen.ref === null)
+            return;
+        const schema = seen.def ?? seen.schema;
+        const _cached = { ...schema };
+        const ref = seen.ref;
+        seen.ref = null; // prevent infinite recursion
+        if (ref) {
+            flattenRef(ref);
+            const refSeen = ctx.seen.get(ref);
+            const refSchema = refSeen.schema;
+            // merge referenced schema into current
+            if (refSchema.$ref && (ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0")) {
+                // older drafts can't combine $ref with other properties
+                schema.allOf = schema.allOf ?? [];
+                schema.allOf.push(refSchema);
+            }
+            else {
+                assignProps(schema, refSchema);
+            }
+            // restore child's own properties (child wins)
+            assignProps(schema, _cached);
+            const isParentRef = zodSchema._zod.parent === ref;
+            // For parent chain, child is a refinement - remove parent-only properties
+            if (isParentRef) {
+                for (const key in schema) {
+                    if (key === "$ref" || key === "allOf")
+                        continue;
+                    if (!(key in _cached)) {
+                        delete schema[key];
+                    }
+                }
+            }
+            // When ref was extracted to $defs, remove properties that match the definition
+            if (refSchema.$ref && refSeen.def) {
+                for (const key in schema) {
+                    if (key === "$ref" || key === "allOf")
+                        continue;
+                    if (key in refSeen.def && JSON.stringify(schema[key]) === JSON.stringify(refSeen.def[key])) {
+                        delete schema[key];
+                    }
+                }
+            }
+        }
+        // If parent was extracted (has $ref), propagate $ref to this schema. This handles cases like: readonly().meta({id}).describe() where processor sets ref to innerType but parent should be referenced
+        const parent = zodSchema._zod.parent;
+        if (parent && parent !== ref) {
+            // Ensure parent is processed first so its def has inherited properties
+            flattenRef(parent);
+            const parentSeen = ctx.seen.get(parent);
+            if (parentSeen?.schema.$ref) {
+                schema.$ref = parentSeen.schema.$ref;
+                // De-duplicate with parent's definition
+                if (parentSeen.def) {
+                    for (const key in schema) {
+                        if (key === "$ref" || key === "allOf")
+                            continue;
+                        if (key in parentSeen.def && JSON.stringify(schema[key]) === JSON.stringify(parentSeen.def[key])) {
+                            delete schema[key];
+                        }
+                    }
+                }
+            }
+        }
+        // execute overrides
+        ctx.override({
+            zodSchema: zodSchema,
+            jsonSchema: schema,
+            path: seen.path ?? [],
+        });
+    };
+    // Flattening walks the whole map and clears each `ref` as it goes, so a second call over the same map is a no-op scan. Skip it outright once it has run for a registry conversion.
+    if (!ctx.external || ctx.sharedEmitDoneFor !== ctx.external) {
+        for (const entry of [...ctx.seen.entries()].reverse()) {
+            flattenRef(entry[0]);
+        }
+        if (ctx.target !== "openapi-3.0") {
+            for (const entry of ctx.seen.entries()) {
+                compactTypeUnion(entry[1].def ?? entry[1].schema);
+            }
+        }
+        for (const rewrite of ctx.deferred)
+            rewrite();
+        // After flattening, every member that was extracted is a `$ref`, so the fold sees the final shape. A schema that inherits an intersection — through `z.lazy`, or any `ref` chain — holds the same `allOf` array, so fold by array identity to catch every copy.
+        if (ctx.intersections.length) {
+            const carriers = new Map();
+            for (const seen of ctx.seen.values()) {
+                for (const json of [seen.schema, seen.def]) {
+                    const allOf = json?.allOf;
+                    if (!Array.isArray(allOf))
+                        continue;
+                    const existing = carriers.get(allOf);
+                    if (existing)
+                        existing.push(json);
+                    else
+                        carriers.set(allOf, [json]);
+                }
+            }
+            for (const allOf of ctx.intersections) {
+                for (const json of carriers.get(allOf) ?? [])
+                    foldIntersection(json);
+            }
+        }
+    }
+    const result = {};
+    if (ctx.target === "draft-2020-12") {
+        result.$schema = "https://json-schema.org/draft/2020-12/schema";
+    }
+    else if (ctx.target === "draft-07") {
+        result.$schema = "http://json-schema.org/draft-07/schema#";
+    }
+    else if (ctx.target === "draft-04") {
+        result.$schema = "http://json-schema.org/draft-04/schema#";
+    }
+    else if (ctx.target === "openapi-3.0") {
+        // OpenAPI 3.0 schema objects should not include a $schema property
+    }
+    else {
+        // Arbitrary string values are allowed but won't have a $schema property set
+    }
+    if (ctx.external?.uri) {
+        const id = ctx.external.registry.get(schema)?.id;
+        if (!id)
+            throw new Error("Schema is missing an `id` property");
+        result.$id = ctx.external.uri(id);
+    }
+    // when the root was extracted into $defs, `root.schema` is the `$ref` wrapper and `root.def` is the body that now lives under $defs
+    assignProps(result, root.defId ? root.schema : (root.def ?? root.schema));
+    // The `id` in `.meta()` is a Zod-specific registration tag used to extract schemas into $defs — it is not user-facing JSON Schema metadata. Strip it from the output body where it would otherwise leak. The id is preserved implicitly via the $defs key (and via $ref paths).
+    const rootMetaId = ctx.metadataRegistry.get(schema)?.id;
+    if (rootMetaId !== undefined && result.id === rootMetaId)
+        delete result.id;
+    // build defs object. With `external`, `defs` is the shared object every schema writes into, so the same entries are reassigned on every call. Without it, `defs` is fresh per call and must be rebuilt.
+    const defs = ctx.external?.defs ?? {};
+    if (!ctx.external || ctx.sharedEmitDoneFor !== ctx.external) {
+        for (const entry of ctx.seen.entries()) {
+            const seen = entry[1];
+            if (seen.def && seen.defId) {
+                if (seen.def.id === seen.defId)
+                    delete seen.def.id;
+                util_assignProp(defs, seen.defId, seen.def);
+            }
+        }
+    }
+    if (ctx.external)
+        ctx.sharedEmitDoneFor = ctx.external;
+    // set definitions in result
+    if (ctx.external) {
+    }
+    else {
+        if (Object.keys(defs).length > 0) {
+            if (ctx.target === "draft-2020-12") {
+                result.$defs = defs;
+            }
+            else {
+                result.definitions = defs;
+            }
+        }
+    }
+    try {
+        // this "finalizes" this schema and ensures all cycles are removed each call to finalize() is functionally independent though the seen map is shared
+        const finalized = JSON.parse(JSON.stringify(result));
+        Object.defineProperty(finalized, "~standard", {
+            value: {
+                ...schema["~standard"],
+                jsonSchema: {
+                    input: createStandardJSONSchemaMethod(schema, "input", ctx.processors),
+                    output: createStandardJSONSchemaMethod(schema, "output", ctx.processors),
+                },
+            },
+            enumerable: false,
+            writable: false,
+        });
+        return finalized;
+    }
+    catch (_err) {
+        throw new Error("Error converting schema to JSON.");
+    }
+}
+function isTransforming(_schema, _ctx) {
+    const ctx = _ctx ?? { seen: new Set() };
+    if (ctx.seen.has(_schema))
+        return false;
+    ctx.seen.add(_schema);
+    const def = _schema._zod.def;
+    if (def.type === "transform")
+        return true;
+    if (def.type === "array")
+        return isTransforming(def.element, ctx);
+    if (def.type === "set")
+        return isTransforming(def.valueType, ctx);
+    if (def.type === "lazy")
+        return isTransforming(def.getter(), ctx);
+    if (def.type === "promise" ||
+        def.type === "optional" ||
+        def.type === "nonoptional" ||
+        def.type === "nullable" ||
+        def.type === "readonly" ||
+        def.type === "default" ||
+        def.type === "prefault" ||
+        def.type === "catch") {
+        return isTransforming(def.innerType, ctx);
+    }
+    if (def.type === "intersection") {
+        return isTransforming(def.left, ctx) || isTransforming(def.right, ctx);
+    }
+    if (def.type === "record" || def.type === "map") {
+        return isTransforming(def.keyType, ctx) || isTransforming(def.valueType, ctx);
+    }
+    if (def.type === "pipe") {
+        if (_schema._zod.traits.has("$ZodCodec"))
+            return true;
+        return isTransforming(def.in, ctx) || isTransforming(def.out, ctx);
+    }
+    if (def.type === "object") {
+        for (const key in def.shape) {
+            if (isTransforming(def.shape[key], ctx))
+                return true;
+        }
+        return false;
+    }
+    if (def.type === "union") {
+        for (const option of def.options) {
+            if (isTransforming(option, ctx))
+                return true;
+        }
+        return false;
+    }
+    if (def.type === "tuple") {
+        for (const item of def.items) {
+            if (isTransforming(item, ctx))
+                return true;
+        }
+        if (def.rest && isTransforming(def.rest, ctx))
+            return true;
+        return false;
+    }
+    return false;
+}
+/**
+ * Creates a toJSONSchema method for a schema instance.
+ * This encapsulates the logic of initializing context, processing, extracting defs, and finalizing.
+ */
+const createToJSONSchemaMethod = (schema, processors = {}) => (params) => {
+    const ctx = to_json_schema_initializeContext({ ...params, processors });
+    to_json_schema_processSchema(schema, ctx);
+    to_json_schema_extractDefs(ctx, schema);
+    return to_json_schema_finalize(ctx, schema);
+};
+const createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) => {
+    const { libraryOptions, target } = params ?? {};
+    const ctx = to_json_schema_initializeContext({ ...(libraryOptions ?? {}), target, io, processors });
+    to_json_schema_processSchema(schema, ctx);
+    to_json_schema_extractDefs(ctx, schema);
+    return to_json_schema_finalize(ctx, schema);
+};
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/json-schema-processors.js
+
+
+
+
+const narrowMin = (agg, key, value) => {
+    if (agg[key] === undefined || value > agg[key])
+        agg[key] = value;
+};
+const narrowMax = (agg, key, value) => {
+    if (agg[key] === undefined || value < agg[key])
+        agg[key] = value;
+};
+const narrowBoth = (agg, value) => {
+    narrowMin(agg, "minimum", value);
+    narrowMax(agg, "maximum", value);
+};
+const addDivisor = (agg, value) => {
+    agg.multipleOf ?? (agg.multipleOf = []);
+    if (!agg.multipleOf.includes(value))
+        agg.multipleOf.push(value);
+};
+const addPattern = (agg, pattern) => {
+    agg.patterns ?? (agg.patterns = new Set());
+    agg.patterns.add(pattern);
+};
+const intersectMime = (agg, mime) => {
+    agg.mime = agg.mime ? agg.mime.filter((m) => mime.includes(m)) : [...mime];
+};
+// last-wins, matching the bag's historical write order; the flag keeps an integer format from being lost to a later float one
+const setFormat = (agg, format) => {
+    agg.format = format;
+    if (format.includes("int"))
+        agg.isInt = true;
+};
+const minContributor = (agg, def) => narrowMin(agg, "minimum", def.minimum);
+const maxContributor = (agg, def) => narrowMax(agg, "maximum", def.maximum);
+const formatContributor = (ranges) => (agg, def) => {
+    setFormat(agg, def.format);
+    const [minimum, maximum] = ranges[def.format];
+    narrowMin(agg, "minimum", minimum);
+    narrowMax(agg, "maximum", maximum);
+};
+const contributors = {
+    greater_than: (agg, def) => narrowMin(agg, def.inclusive ? "minimum" : "exclusiveMinimum", def.value),
+    less_than: (agg, def) => narrowMax(agg, def.inclusive ? "maximum" : "exclusiveMaximum", def.value),
+    multiple_of: (agg, def) => addDivisor(agg, def.value),
+    number_format: formatContributor(NUMBER_FORMAT_RANGES),
+    bigint_format: formatContributor(BIGINT_FORMAT_RANGES),
+    min_length: minContributor,
+    max_length: maxContributor,
+    length_equals: (agg, def) => narrowBoth(agg, def.length),
+    min_size: minContributor,
+    max_size: maxContributor,
+    size_equals: (agg, def) => narrowBoth(agg, def.size),
+    string_format: (agg, def) => {
+        setFormat(agg, def.format);
+        if (def.pattern)
+            addPattern(agg, def.pattern);
+        if (def.format === "base64" || def.format === "base64url")
+            agg.contentEncoding = def.format;
+        if (def.local || def.precision === -1)
+            agg.laxFormat = true;
+    },
+    mime_type: (agg, def) => intersectMime(agg, def.mime),
+};
+function aggregateChecks(schema) {
+    const agg = {};
+    const def = schema._zod.def;
+    // a format schema is its own first check, same rule as $ZodType init
+    const list = schema._zod.traits.has("$ZodCheck")
+        ? [schema, ...(def.checks ?? [])]
+        : (def.checks ?? []);
+    for (const ch of list)
+        contributors[ch._zod.def.check]?.(agg, ch._zod.def);
+    // reconcile with the bag so third-party onattach contributions still land; first-party residue is never tighter than the fold, so merging it back is idempotent for one and additive for the other
+    const bag = schema._zod.bag;
+    if (bag.minimum !== undefined)
+        narrowMin(agg, "minimum", bag.minimum);
+    if (bag.exclusiveMinimum !== undefined)
+        narrowMin(agg, "exclusiveMinimum", bag.exclusiveMinimum);
+    if (bag.maximum !== undefined)
+        narrowMax(agg, "maximum", bag.maximum);
+    if (bag.exclusiveMaximum !== undefined)
+        narrowMax(agg, "exclusiveMaximum", bag.exclusiveMaximum);
+    if (bag.multipleOf !== undefined)
+        addDivisor(agg, bag.multipleOf);
+    if (bag.format !== undefined) {
+        agg.format ?? (agg.format = bag.format);
+        if (bag.format.includes("int"))
+            agg.isInt = true;
+    }
+    if (bag.mime)
+        intersectMime(agg, bag.mime);
+    for (const pattern of bag.patterns ?? [])
+        addPattern(agg, pattern);
+    return agg;
+}
+const formatMap = {
+    guid: "uuid",
+    url: "uri",
+    datetime: "date-time",
+    json_string: "json-string",
+    regex: "", // do not set
+};
+// ==================== SIMPLE TYPE PROCESSORS ====================
+// the runtime patterns are lax so parse paths never overflow the regex stack; the emitted schema swaps in the exact block forms, which zod itself never executes
+const exactPatterns = new Map([
+    [base64Charset, base64],
+    [base64urlCharset, base64url],
+]);
+const exactPattern = (p) => exactPatterns.get(p) ?? p;
+const stringProcessor = (schema, ctx, _json, _params) => {
+    const json = _json;
+    json.type = "string";
+    const { minimum, maximum, format, patterns, contentEncoding, laxFormat } = aggregateChecks(schema);
+    if (typeof minimum === "number")
+        json.minLength = minimum;
+    if (typeof maximum === "number")
+        json.maxLength = maximum;
+    // custom pattern overrides format
+    if (format) {
+        json.format = formatMap[format] ?? format;
+        if (json.format === "")
+            delete json.format; // empty format is not valid
+        // `z.iso.time()` is never full-time, and `laxFormat` carries the datetime shapes that also accept what their keyword forbids
+        if (format === "time" || laxFormat) {
+            delete json.format;
+        }
+    }
+    if (contentEncoding)
+        json.contentEncoding = contentEncoding;
+    if (patterns && patterns.size > 0) {
+        const patternList = [...patterns].map(exactPattern);
+        if (patternList.length === 1)
+            json.pattern = patternList[0].source;
+        else if (patternList.length > 1) {
+            json.allOf = [
+                ...patternList.map((regex) => ({
+                    ...(ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0"
+                        ? { type: "string" }
+                        : {}),
+                    pattern: regex.source,
+                })),
+            ];
+        }
+    }
+};
+const numberProcessor = (schema, ctx, _json, params) => {
+    const json = _json;
+    const { minimum, maximum, multipleOf, exclusiveMaximum, exclusiveMinimum, isInt } = aggregateChecks(schema);
+    json.type = isInt ? "integer" : "number";
+    // when both minimum and exclusiveMinimum exist, pick the more restrictive one
+    const exMin = typeof exclusiveMinimum === "number" && exclusiveMinimum >= (minimum ?? Number.NEGATIVE_INFINITY);
+    const exMax = typeof exclusiveMaximum === "number" && exclusiveMaximum <= (maximum ?? Number.POSITIVE_INFINITY);
+    const legacy = ctx.target === "draft-04" || ctx.target === "openapi-3.0";
+    if (exMin) {
+        if (legacy) {
+            json.minimum = exclusiveMinimum;
+            json.exclusiveMinimum = true;
+        }
+        else {
+            json.exclusiveMinimum = exclusiveMinimum;
+        }
+    }
+    else if (typeof minimum === "number") {
+        json.minimum = minimum;
+    }
+    if (exMax) {
+        if (legacy) {
+            json.maximum = exclusiveMaximum;
+            json.exclusiveMaximum = true;
+        }
+        else {
+            json.exclusiveMaximum = exclusiveMaximum;
+        }
+    }
+    else if (typeof maximum === "number") {
+        json.maximum = maximum;
+    }
+    if (multipleOf) {
+        // JSON Schema requires a divisor strictly greater than zero, and a non-finite one does not survive JSON at all. A negative divisor accepts exactly what its absolute value accepts, so it still maps; zero, NaN and Infinity have no keyword form.
+        const divisors = new Set();
+        for (const divisor of multipleOf) {
+            if (Number.isFinite(divisor) && divisor !== 0)
+                divisors.add(Math.abs(divisor));
+            else
+                handleUnrepresentable(schema, ctx, json, params, `A multipleOf divisor of ${divisor} cannot be represented in JSON Schema`);
+        }
+        // chained divisors are a conjunction the keyword cannot carry alone, so extras ride an allOf, same as stacked patterns
+        const [first, ...rest] = divisors;
+        if (first !== undefined)
+            json.multipleOf = first;
+        if (rest.length)
+            json.allOf = [...(json.allOf ?? []), ...rest.map((m) => ({ multipleOf: m }))];
+    }
+};
+const booleanProcessor = (_schema, _ctx, json, _params) => {
+    json.type = "boolean";
+};
+const bigintProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "BigInt cannot be represented in JSON Schema");
+};
+const symbolProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Symbols cannot be represented in JSON Schema");
+};
+const nullProcessor = (_schema, ctx, json, _params) => {
+    if (ctx.target === "openapi-3.0") {
+        json.type = "string";
+        json.nullable = true;
+        json.enum = [null];
+    }
+    else {
+        json.type = "null";
+    }
+};
+const undefinedProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Undefined cannot be represented in JSON Schema");
+};
+const voidProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Void cannot be represented in JSON Schema");
+};
+const neverProcessor = (_schema, _ctx, json, _params) => {
+    json.not = {};
+};
+const anyProcessor = (_schema, _ctx, _json, _params) => {
+    // empty schema accepts anything
+};
+const unknownProcessor = (_schema, _ctx, _json, _params) => {
+    // empty schema accepts anything
+};
+const dateProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Date cannot be represented in JSON Schema");
+};
+const enumProcessor = (schema, _ctx, json, _params) => {
+    const def = schema._zod.def;
+    const values = getEnumValues(def.entries);
+    // an empty enum accepts nothing, same as z.never()
+    if (values.length === 0) {
+        json.not = {};
+        return;
+    }
+    // Number enums can have both string and number values
+    if (values.every((v) => typeof v === "number"))
+        json.type = "number";
+    if (values.every((v) => typeof v === "string"))
+        json.type = "string";
+    json.enum = values;
+};
+const literalProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    // a literal with no values accepts nothing, same as z.never()
+    if (def.values.length === 0) {
+        json.not = {};
+        return;
+    }
+    const vals = [];
+    for (const val of def.values) {
+        if (val === undefined) {
+            // a custom schema replaces the whole literal, so there is nothing left to accumulate
+            if (handleUnrepresentable(schema, ctx, json, params, "Literal `undefined` cannot be represented in JSON Schema"))
+                return;
+            // otherwise do not add to vals
+        }
+        else if (typeof val === "bigint") {
+            if (handleUnrepresentable(schema, ctx, json, params, "BigInt literals cannot be represented in JSON Schema"))
+                return;
+            vals.push(Number(val));
+        }
+        else {
+            vals.push(val);
+        }
+    }
+    if (vals.length === 0) {
+        // do nothing (an undefined literal was stripped)
+    }
+    else if (vals.length === 1) {
+        const val = vals[0];
+        json.type = val === null ? "null" : typeof val;
+        if (ctx.target === "draft-04" || ctx.target === "openapi-3.0") {
+            json.enum = [val];
+        }
+        else {
+            json.const = val;
+        }
+    }
+    else {
+        if (vals.every((v) => typeof v === "number"))
+            json.type = "number";
+        if (vals.every((v) => typeof v === "string"))
+            json.type = "string";
+        if (vals.every((v) => typeof v === "boolean"))
+            json.type = "boolean";
+        if (vals.every((v) => v === null))
+            json.type = "null";
+        json.enum = vals;
+    }
+};
+const nanProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "NaN cannot be represented in JSON Schema");
+};
+const templateLiteralProcessor = (schema, _ctx, json, _params) => {
+    const _json = json;
+    const pattern = schema._zod.pattern;
+    if (!pattern)
+        throw new Error("Pattern not found in template literal");
+    _json.type = "string";
+    _json.pattern = pattern.source;
+};
+const fileProcessor = (schema, _ctx, json, _params) => {
+    const _json = json;
+    _json.type = "string";
+    _json.format = "binary";
+    _json.contentEncoding = "binary";
+    const { minimum, maximum, mime } = aggregateChecks(schema);
+    if (minimum !== undefined)
+        _json.minLength = minimum;
+    if (maximum !== undefined)
+        _json.maxLength = maximum;
+    if (!mime)
+        return;
+    // an empty intersection means the mime checks share no value, so nothing passes at runtime; `anyOf` must be non-empty, so the false schema is `not: {}`
+    if (mime.length === 0)
+        _json.not = {};
+    else if (mime.length === 1)
+        _json.contentMediaType = mime[0];
+    // only contentMediaType differs, so the shared props stay at the root
+    else
+        _json.anyOf = mime.map((m) => ({ contentMediaType: m }));
+};
+const successProcessor = (_schema, _ctx, json, _params) => {
+    json.type = "boolean";
+};
+const customProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Custom types cannot be represented in JSON Schema");
+};
+const functionProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Function types cannot be represented in JSON Schema");
+};
+const transformProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Transforms cannot be represented in JSON Schema");
+};
+const mapProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Map cannot be represented in JSON Schema");
+};
+const setProcessor = (schema, ctx, json, params) => {
+    handleUnrepresentable(schema, ctx, json, params, "Set cannot be represented in JSON Schema");
+};
+// ==================== COMPOSITE TYPE PROCESSORS ====================
+const arrayProcessor = (schema, ctx, _json, params) => {
+    const json = _json;
+    const def = schema._zod.def;
+    const { minimum, maximum } = aggregateChecks(schema);
+    if (typeof minimum === "number")
+        json.minItems = minimum;
+    if (typeof maximum === "number")
+        json.maxItems = maximum;
+    json.type = "array";
+    json.items = to_json_schema_processSchema(def.element, ctx, {
+        ...params,
+        path: [...params.path, "items"],
+    });
+};
+// Transform and catch set `optin = "optional"` at runtime so the parser lets them observe an
+// absent key, but their declared input type stays required. An input JSON Schema describes the
+// declared type, so resolve past them to the schema that actually carries the optionality.
+// Used by both `objectProcessor` (for `required`) and `tupleProcessor` (for `minItems`); see
+// wiki/optionality.md, "The JSON Schema emitter reads the *static* value".
+function inputOptin(schema) {
+    const def = schema._zod.def;
+    if (def.type === "pipe" && def.in._zod.traits.has("$ZodTransform")) {
+        return inputOptin(def.out);
+    }
+    if (def.type === "catch") {
+        return inputOptin(def.innerType);
+    }
+    return schema._zod.optin;
+}
+const objectProcessor = (schema, ctx, _json, params) => {
+    const json = _json;
+    const def = schema._zod.def;
+    const shape = def.shape;
+    // dropping it while still emitting `additionalProperties: false` would emit a schema that rejects data this one requires
+    const symbolKeys = Object.getOwnPropertySymbols(shape);
+    if (symbolKeys.length &&
+        handleUnrepresentable(schema, ctx, json, params, "Symbol keys cannot be represented in JSON Schema")) {
+        return;
+    }
+    json.type = "object";
+    json.properties = {};
+    for (const key in shape) {
+        // assignProp so a __proto__ key becomes an own property instead of hitting the inherited setter on the plain {} we build into
+        util_assignProp(json.properties, key, to_json_schema_processSchema(shape[key], ctx, {
+            ...params,
+            path: [...params.path, "properties", key],
+        }));
+    }
+    // required keys
+    const requiredKeys = [];
+    for (const key of Object.keys(shape)) {
+        const field = def.shape[key];
+        if (ctx.io === "input" ? inputOptin(field) === undefined : field._zod.optout === undefined) {
+            requiredKeys.push(key);
+        }
+    }
+    if (requiredKeys.length > 0) {
+        json.required = requiredKeys;
+    }
+    // catchall
+    if (def.catchall?._zod.def.type === "never") {
+        // strict
+        json.additionalProperties = false;
+    }
+    else if (!def.catchall) {
+        // regular
+        if (ctx.io === "output")
+            json.additionalProperties = false;
+    }
+    else if (def.catchall) {
+        json.additionalProperties = to_json_schema_processSchema(def.catchall, ctx, {
+            ...params,
+            path: [...params.path, "additionalProperties"],
+        });
+    }
+};
+const unionProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    // Exclusive unions (inclusive === false) use oneOf (exactly one match) instead of anyOf (one or more matches). This includes both z.xor() and discriminated unions
+    const isExclusive = def.inclusive === false;
+    const options = def.options.map((x, i) => to_json_schema_processSchema(x, ctx, {
+        ...params,
+        path: [...params.path, isExclusive ? "oneOf" : "anyOf", i],
+    }));
+    if (isExclusive) {
+        json.oneOf = options;
+    }
+    else {
+        json.anyOf = options;
+    }
+};
+const intersectionProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    const a = to_json_schema_processSchema(def.left, ctx, {
+        ...params,
+        path: [...params.path, "allOf", 0],
+    });
+    const b = to_json_schema_processSchema(def.right, ctx, {
+        ...params,
+        path: [...params.path, "allOf", 1],
+    });
+    const isSimpleIntersection = (val) => "allOf" in val && Object.keys(val).length === 1;
+    const allOf = [
+        ...(isSimpleIntersection(a) ? a.allOf : [a]),
+        ...(isSimpleIntersection(b) ? b.allOf : [b]),
+    ];
+    json.allOf = allOf;
+    // Recorded innermost first, so a nested intersection has already folded by the time this one is considered. The array is the handle rather than the schema, because a wrapper that inherits this schema shares the same array; `finalize` folds every object holding it. See `foldIntersection`.
+    ctx.intersections.push(allOf);
+};
+const tupleProcessor = (schema, ctx, _json, params) => {
+    const json = _json;
+    const def = schema._zod.def;
+    json.type = "array";
+    const prefixPath = ctx.target === "draft-2020-12" ? "prefixItems" : "items";
+    const restPath = ctx.target === "draft-2020-12" ? "items" : ctx.target === "openapi-3.0" ? "items" : "additionalItems";
+    const prefixItems = def.items.map((x, i) => to_json_schema_processSchema(x, ctx, {
+        ...params,
+        path: [...params.path, prefixPath, i],
+    }));
+    const rest = def.rest
+        ? to_json_schema_processSchema(def.rest, ctx, {
+            ...params,
+            path: [...params.path, restPath, ...(ctx.target === "openapi-3.0" ? [def.items.length] : [])],
+        })
+        : null;
+    let minItems = def.items.length;
+    while (minItems > 0) {
+        const item = def.items[minItems - 1];
+        const optional = ctx.io === "input" ? inputOptin(item) !== undefined : item._zod.optout === "optional";
+        if (!optional)
+            break;
+        minItems--;
+    }
+    const maxItems = def.items.length;
+    const isClosed = !def.rest;
+    if (ctx.target === "draft-2020-12") {
+        json.prefixItems = prefixItems;
+        if (isClosed) {
+            json.items = false;
+        }
+        else if (rest) {
+            json.items = rest;
+        }
+        if (minItems > 0)
+            json.minItems = minItems;
+        if (isClosed)
+            json.maxItems = maxItems;
+    }
+    else if (ctx.target === "openapi-3.0") {
+        json.items = {
+            anyOf: prefixItems,
+        };
+        if (rest) {
+            json.items.anyOf.push(rest);
+        }
+        if (minItems > 0)
+            json.minItems = minItems;
+        if (isClosed)
+            json.maxItems = maxItems;
+    }
+    else {
+        json.items = prefixItems;
+        if (isClosed) {
+            json.additionalItems = false;
+        }
+        else if (rest) {
+            json.additionalItems = rest;
+        }
+        if (minItems > 0)
+            json.minItems = minItems;
+        if (isClosed)
+            json.maxItems = maxItems;
+    }
+    // explicit user-defined length checks take precedence
+    const { minimum, maximum } = aggregateChecks(schema);
+    if (typeof minimum === "number")
+        json.minItems = minimum;
+    if (typeof maximum === "number")
+        json.maxItems = maximum;
+};
+/** JSON object keys are always strings, so a numeric record key schema is re-expressed over the
+ * numeric-string form the record parser matches. Deferred to `finalize`, after the flatten: a key
+ * behind a wrapper only carries its own `type` before then, and a union key only has its branches.
+ *
+ * A numeric bound cannot apply to a property name, so `minimum` and its siblings are dropped rather
+ * than carried over: keeping them beside `type: "string"` reproduces the match-nothing schema this
+ * exists to fix. A key that carries one therefore emits wider than the record parses — `z.record(z.number().min(5), V)`
+ * accepts `"3"` — which is the deliberate trade, since throwing on it would reject an ordinary schema
+ * outright. */
+function stringifyKeyNames(bySchema, json, visited) {
+    // an extracted key that rewrites cannot go on sharing its definition — the string form a key position needs is not the number form every other reference wants — so it inlines. One that does not rewrite keeps the `$ref`.
+    if (json.$ref) {
+        // a recursive key holds its own reference inside its definition, so a node already on the path is left alone rather than resolved again
+        if (visited.has(json))
+            return json;
+        visited.add(json);
+        const def = bySchema.get(json)?.def;
+        if (!def)
+            return json;
+        const inlined = stringifyKeyNames(bySchema, def, visited);
+        return inlined === def ? json : inlined;
+    }
+    for (const keyword of ["anyOf", "oneOf"]) {
+        const branches = json[keyword];
+        if (!Array.isArray(branches))
+            continue;
+        const mapped = branches.map((branch) => stringifyKeyNames(bySchema, branch, visited));
+        // rebuilding regardless would detach a key that had nothing to re-express, dropping its `$ref` and leaking the internal `id`
+        if (mapped.some((branch, i) => branch !== branches[i]))
+            json = { ...json, [keyword]: mapped };
+    }
+    // a member that already admits a string leaves the key unconstrained, so the node's own type re-expresses only when every member is numeric
+    const types = Array.isArray(json.type) ? json.type : [json.type];
+    const numericType = !types.includes("string") && types.some((t) => t === "number" || t === "integer");
+    // a heterogeneous key carries no type at all, so its numeric members are caught here instead
+    const values = json.enum ?? (json.const !== undefined ? [json.const] : undefined);
+    if (!numericType && !values?.some((v) => typeof v === "number"))
+        return json;
+    const { minimum, maximum, exclusiveMinimum, exclusiveMaximum, multipleOf, format, id, ...rest } = json;
+    if (rest.enum)
+        rest.enum = rest.enum.map((v) => (typeof v === "number" ? String(v) : v));
+    else if (typeof rest.const === "number")
+        rest.const = String(rest.const);
+    // a heterogeneous key keeps its absent type: the stringified members already say what a key may be
+    if (!numericType)
+        return rest;
+    rest.type = "string";
+    if (!values)
+        rest.pattern = (types.includes("number") ? number : integer).source;
+    return rest;
+}
+/** Every record of one conversion, so the carriers are found in a single pass rather than once per record. */
+const pendingRecords = new WeakMap();
+function rewriteKeyNames(ctx) {
+    // an extracted key is resolved by the object `extractToDef` left in its place, so the map is built once rather than searched per reference. `_zod.toJSONSchema` can hand the same object to two schemas, so the first entry carrying a body wins, as a search would have found it.
+    const bySchema = new Map();
+    for (const entry of ctx.seen.values()) {
+        if (entry.def && !bySchema.has(entry.schema))
+            bySchema.set(entry.schema, entry);
+    }
+    const rewrites = new Map();
+    for (const record of pendingRecords.get(ctx) ?? []) {
+        const seen = ctx.seen.get(record);
+        const names = (seen?.def ?? seen?.schema)?.propertyNames;
+        if (!names || names === true || rewrites.has(names))
+            continue;
+        const rewritten = stringifyKeyNames(bySchema, names, new Set());
+        if (rewritten !== names)
+            rewrites.set(names, rewritten);
+    }
+    if (!rewrites.size)
+        return;
+    // the flatten has already copied each record's own properties onto every wrapper by reference, and an extracted body is another such copy, so every carrier holding a rewritten key is updated together
+    for (const entry of ctx.seen.values()) {
+        for (const carrier of [entry.schema, entry.def]) {
+            const rewritten = carrier && rewrites.get(carrier.propertyNames);
+            if (rewritten)
+                carrier.propertyNames = rewritten;
+        }
+    }
+}
+const recordProcessor = (schema, ctx, _json, params) => {
+    const json = _json;
+    const def = schema._zod.def;
+    json.type = "object";
+    // For looseRecord with regex patterns, use patternProperties. This correctly represents "only validate keys matching the pattern" semantics and composes well with allOf (intersections)
+    const keyType = def.keyType;
+    const patterns = aggregateChecks(keyType).patterns;
+    if (def.mode === "loose" && patterns && patterns.size > 0) {
+        // Use patternProperties for looseRecord with regex patterns
+        const valueSchema = to_json_schema_processSchema(def.valueType, ctx, {
+            ...params,
+            path: [...params.path, "patternProperties", "*"],
+        });
+        json.patternProperties = {};
+        for (const pattern of patterns) {
+            util_assignProp(json.patternProperties, exactPattern(pattern).source, valueSchema);
+        }
+    }
+    else {
+        // Default behavior: use propertyNames + additionalProperties
+        if (ctx.target === "draft-07" || ctx.target === "draft-2020-12") {
+            json.propertyNames = to_json_schema_processSchema(def.keyType, ctx, {
+                ...params,
+                path: [...params.path, "propertyNames"],
+            });
+            let pending = pendingRecords.get(ctx);
+            if (!pending) {
+                pending = [];
+                pendingRecords.set(ctx, pending);
+                ctx.deferred.push(() => rewriteKeyNames(ctx));
+            }
+            pending.push(schema);
+        }
+        json.additionalProperties = to_json_schema_processSchema(def.valueType, ctx, {
+            ...params,
+            path: [...params.path, "additionalProperties"],
+        });
+    }
+    // Add required for keys with discrete values (enum, literal, etc.)
+    const keyValues = keyType._zod.values;
+    // Every key shares one value schema, so an optional-in value makes the whole key set omittable on input. Output keeps them: the exhaustive branch assigns every key, even one whose value came back undefined.
+    const omittableOnInput = ctx.io === "input" && inputOptin(def.valueType) !== undefined;
+    if (keyValues && !def.partial && !omittableOnInput) {
+        const validKeyValues = [...keyValues].filter((v) => typeof v === "string" || typeof v === "number");
+        if (validKeyValues.length > 0) {
+            json.required = validKeyValues.map(String);
+        }
+    }
+};
+const nullableProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    const inner = to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    if (ctx.target === "openapi-3.0") {
+        seen.ref = def.innerType;
+        json.nullable = true;
+    }
+    else {
+        json.anyOf = [inner, { type: "null" }];
+    }
+};
+const nonoptionalProcessor = (schema, ctx, _json, params) => {
+    const def = schema._zod.def;
+    to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+};
+/** Round-trips a default value through JSON so the emitted schema is guaranteed to be valid JSON.
+ * A BigInt has no reliable encoding, so it goes through `unrepresentable` like any other
+ * unrepresentable value. Returns a sentinel when the caller must not write a default of its own. */
+const UNREPRESENTABLE_DEFAULT = Symbol();
+function serializeDefaultValue(value, schema, ctx, json, params) {
+    let unrepresentable = false;
+    const serialized = JSON.stringify(value, (_, val) => {
+        if (typeof val !== "bigint")
+            return val;
+        unrepresentable = true;
+        return null;
+    });
+    if (!unrepresentable)
+        return JSON.parse(serialized);
+    handleUnrepresentable(schema, ctx, json, params, "BigInt defaults cannot be represented in JSON Schema");
+    return UNREPRESENTABLE_DEFAULT;
+}
+const defaultProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    const value = serializeDefaultValue(def.defaultValue, schema, ctx, json, params);
+    if (value !== UNREPRESENTABLE_DEFAULT)
+        json.default = value;
+};
+const prefaultProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    if (ctx.io !== "input")
+        return;
+    const value = serializeDefaultValue(def.defaultValue, schema, ctx, json, params);
+    if (value !== UNREPRESENTABLE_DEFAULT)
+        json._prefault = value;
+};
+const catchProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    let catchValue;
+    try {
+        catchValue = def.catchValue(undefined);
+    }
+    catch {
+        handleUnrepresentable(schema, ctx, json, params, "Dynamic catch values are not supported in JSON Schema");
+        return;
+    }
+    json.default = catchValue;
+};
+const pipeProcessor = (schema, ctx, _json, params) => {
+    const def = schema._zod.def;
+    const inIsTransform = def.in._zod.traits.has("$ZodTransform");
+    const innerType = ctx.io === "input" ? (inIsTransform ? def.out : def.in) : def.out;
+    to_json_schema_processSchema(innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = innerType;
+};
+const readonlyProcessor = (schema, ctx, json, params) => {
+    const def = schema._zod.def;
+    to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+    json.readOnly = true;
+};
+const promiseProcessor = (schema, ctx, _json, params) => {
+    const def = schema._zod.def;
+    to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+};
+const optionalProcessor = (schema, ctx, _json, params) => {
+    const def = schema._zod.def;
+    to_json_schema_processSchema(def.innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = def.innerType;
+};
+const lazyProcessor = (schema, ctx, _json, params) => {
+    const innerType = schema._zod.innerType;
+    to_json_schema_processSchema(innerType, ctx, params);
+    const seen = ctx.seen.get(schema);
+    seen.ref = innerType;
+};
+// ==================== ALL PROCESSORS ====================
+const allProcessors = {
+    string: stringProcessor,
+    number: numberProcessor,
+    boolean: booleanProcessor,
+    bigint: bigintProcessor,
+    symbol: symbolProcessor,
+    null: nullProcessor,
+    undefined: undefinedProcessor,
+    void: voidProcessor,
+    never: neverProcessor,
+    any: anyProcessor,
+    unknown: unknownProcessor,
+    date: dateProcessor,
+    enum: enumProcessor,
+    literal: literalProcessor,
+    nan: nanProcessor,
+    template_literal: templateLiteralProcessor,
+    file: fileProcessor,
+    success: successProcessor,
+    custom: customProcessor,
+    function: functionProcessor,
+    transform: transformProcessor,
+    map: mapProcessor,
+    set: setProcessor,
+    array: arrayProcessor,
+    object: objectProcessor,
+    union: unionProcessor,
+    intersection: intersectionProcessor,
+    tuple: tupleProcessor,
+    record: recordProcessor,
+    nullable: nullableProcessor,
+    nonoptional: nonoptionalProcessor,
+    default: defaultProcessor,
+    prefault: prefaultProcessor,
+    catch: catchProcessor,
+    pipe: pipeProcessor,
+    readonly: readonlyProcessor,
+    promise: promiseProcessor,
+    optional: optionalProcessor,
+    lazy: lazyProcessor,
+};
+function toJSONSchema(input, params) {
+    if ("_idmap" in input) {
+        // Registry case
+        const registry = input;
+        const ctx = initializeContext({ ...params, processors: allProcessors });
+        const defs = {};
+        // First pass: process all schemas to build the seen map
+        for (const entry of registry._idmap.entries()) {
+            const [_, schema] = entry;
+            processSchema(schema, ctx);
+        }
+        const schemas = {};
+        const external = {
+            registry,
+            uri: params?.uri,
+            defs,
+        };
+        // Update the context with external configuration
+        ctx.external = external;
+        // Second pass: emit each schema
+        for (const entry of registry._idmap.entries()) {
+            const [key, schema] = entry;
+            extractDefs(ctx, schema);
+            assignProp(schemas, key, finalize(ctx, schema));
+        }
+        if (Object.keys(defs).length > 0) {
+            const defsSegment = ctx.target === "draft-2020-12" ? "$defs" : "definitions";
+            schemas.__shared = {
+                [defsSegment]: defs,
+            };
+        }
+        return { schemas };
+    }
+    // Single schema case
+    const ctx = initializeContext({ ...params, processors: allProcessors });
+    processSchema(input, ctx);
+    extractDefs(ctx, input);
+    return finalize(ctx, input);
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/locales/en.js
+
+const error = () => {
+    const Sizable = {
+        string: { unit: "characters", verb: "to have" },
+        file: { unit: "bytes", verb: "to have" },
+        array: { unit: "items", verb: "to have" },
+        set: { unit: "items", verb: "to have" },
+        map: { unit: "entries", verb: "to have" },
+    };
+    function getSizing(origin) {
+        return Sizable[origin] ?? null;
+    }
+    const FormatDictionary = {
+        regex: "input",
+        email: "email address",
+        url: "URL",
+        emoji: "emoji",
+        uuid: "UUID",
+        uuidv4: "UUIDv4",
+        uuidv6: "UUIDv6",
+        nanoid: "nanoid",
+        guid: "GUID",
+        cuid: "cuid",
+        cuid2: "cuid2",
+        ulid: "ULID",
+        xid: "XID",
+        ksuid: "KSUID",
+        datetime: "ISO datetime",
+        date: "ISO date",
+        time: "ISO time",
+        duration: "ISO duration",
+        ipv4: "IPv4 address",
+        ipv6: "IPv6 address",
+        mac: "MAC address",
+        cidrv4: "IPv4 range",
+        cidrv6: "IPv6 range",
+        base64: "base64-encoded string",
+        base64url: "base64url-encoded string",
+        json_string: "JSON string",
+        e164: "E.164 number",
+        currency_code: "currency code",
+        credit_card: "credit card number",
+        iban: "IBAN",
+        jwt: "JWT",
+        template_literal: "input",
+    };
+    // type names: missing keys = do not translate (use raw value via ?? fallback)
+    const TypeDictionary = {
+        // Compatibility: "nan" -> "NaN" for display
+        nan: "NaN",
+        // All other type names omitted - they fall back to raw values via ?? operator
+    };
+    function getTypeName(type, input) {
+        if (type === "number" && typeof input === "number" && !Number.isFinite(input)) {
+            return String(input);
+        }
+        return TypeDictionary[type] ?? type;
+    }
+    return (issue) => {
+        switch (issue.code) {
+            case "invalid_type": {
+                const expected = getTypeName(issue.expected);
+                const receivedType = parsedType(issue.input);
+                const received = getTypeName(receivedType, issue.input);
+                return `Invalid input: expected ${expected}, received ${received}`;
+            }
+            case "invalid_value":
+                if (issue.values.length === 1)
+                    return `Invalid input: expected ${stringifyPrimitive(issue.values[0])}`;
+                return `Invalid option: expected one of ${joinValues(issue.values, "|")}`;
+            case "too_big": {
+                const adj = issue.exact ? "exactly " : issue.inclusive ? "<=" : "<";
+                const sizing = getSizing(issue.origin);
+                if (sizing)
+                    return `Too big: expected ${issue.origin ?? "value"} to have ${adj}${issue.maximum.toString()} ${sizing.unit ?? "elements"}`;
+                return `Too big: expected ${issue.origin ?? "value"} to be ${adj}${issue.maximum.toString()}`;
+            }
+            case "too_small": {
+                const adj = issue.exact ? "exactly " : issue.inclusive ? ">=" : ">";
+                const sizing = getSizing(issue.origin);
+                if (sizing) {
+                    return `Too small: expected ${issue.origin} to have ${adj}${issue.minimum.toString()} ${sizing.unit}`;
+                }
+                return `Too small: expected ${issue.origin} to be ${adj}${issue.minimum.toString()}`;
+            }
+            case "invalid_format": {
+                const _issue = issue;
+                if (_issue.format === "starts_with") {
+                    return `Invalid string: must start with "${_issue.prefix}"`;
+                }
+                if (_issue.format === "ends_with")
+                    return `Invalid string: must end with "${_issue.suffix}"`;
+                if (_issue.format === "includes")
+                    return `Invalid string: must include "${_issue.includes}"`;
+                if (_issue.format === "regex")
+                    return `Invalid string: must match pattern ${_issue.pattern}`;
+                return `Invalid ${FormatDictionary[_issue.format] ?? issue.format}`;
+            }
+            case "not_multiple_of":
+                return `Invalid number: must be a multiple of ${issue.divisor}`;
+            case "unrecognized_keys":
+                return `Unrecognized key${issue.keys.length > 1 ? "s" : ""}: ${joinValues(issue.keys, ", ")}`;
+            case "invalid_key":
+                return `Invalid key in ${issue.origin}`;
+            case "invalid_union":
+                if (issue.options && Array.isArray(issue.options) && issue.options.length > 0) {
+                    const opts = issue.options.map((o) => `'${o}'`).join(" | ");
+                    return `Invalid discriminator value. Expected ${opts}`;
+                }
+                if (issue.inclusive === false) {
+                    return "Invalid input: more than one option matched";
+                }
+                return "Invalid input";
+            case "invalid_element":
+                return `Invalid value in ${issue.origin}`;
+            default:
+                return `Invalid input`;
+        }
+    };
+};
+/* harmony default export */ function en() {
+    return {
+        localeError: error(),
+    };
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/errors.js
+
+
+/* Computing the message eagerly is expensive (pretty-printed JSON of all
+ * issues), so defer it until first read. The accessor functions and
+ * descriptors are shared across instances to keep error construction
+ * cheap; the computed message is cached on the internals object. The
+ * setter preserves plain assignment semantics for consumers that
+ * overwrite `message`. */
+function _getMessage() {
+    const internals = this._zod;
+    internals.message ?? (internals.message = JSON.stringify(internals.def, jsonStringifyReplacer, 2));
+    return internals.message;
+}
+function _setMessage(value) {
+    this._zod.message = value;
+}
+const _messageDesc = {
+    get: _getMessage,
+    set: _setMessage,
+    enumerable: true,
+    configurable: true,
+};
+const _issuesDesc = { value: undefined, enumerable: false };
+/* Prototypes that already carry the lazy `toString`. Seeded with the
+ * intrinsics so that `init` on a foreign object — it accepts any object —
+ * can never install an accessor onto a prototype we do not own. */
+const _installedToString = /* @__PURE__ */ new WeakSet([Object.prototype, Error.prototype]);
+const initializer = (inst, def) => {
+    inst.name = "$ZodError";
+    // `_zod` is already non-enumerable: $constructor's init defined it with this same descriptor
+    _issuesDesc.value = def;
+    Object.defineProperty(inst, "issues", _issuesDesc);
+    // Clear the shared slot; a retained `value` pins the last error's issues.
+    _issuesDesc.value = undefined;
+    Object.defineProperty(inst, "message", _messageDesc);
+    /* `toString` lives as a non-enumerable lazy getter on the shared
+     * prototype; on first access it caches a per-instance closure so
+     * detached usage still works. */
+    const proto = Object.getPrototypeOf(inst);
+    if (!_installedToString.has(proto)) {
+        _installedToString.add(proto);
+        Object.defineProperty(proto, "toString", {
+            configurable: true,
+            enumerable: false,
+            get() {
+                const value = () => this.message;
+                Object.defineProperty(this, "toString", { value, configurable: true, writable: true });
+                return value;
+            },
+            set(value) {
+                Object.defineProperty(this, "toString", { value, configurable: true, writable: true });
+            },
+        });
+    }
+};
+const $ZodError = $constructor("$ZodError", initializer);
+const $ZodRealError = $constructor("$ZodError", initializer, undefined, {
+    Parent: Error,
+});
+/** Get-or-create `obj[key]` as an own data property. A path segment naming an inherited member
+ * ("toString", "constructor") would otherwise read through to the prototype, and assigning
+ * "__proto__" would hit the setter instead of creating a key. */
+function node(obj, key, make) {
+    if (!Object.prototype.hasOwnProperty.call(obj, key)) {
+        if (key === "__proto__") {
+            Object.defineProperty(obj, key, { value: make(), writable: true, enumerable: true, configurable: true });
+        }
+        else {
+            obj[key] = make();
+        }
+    }
+    return obj[key];
+}
+function flattenError(error, mapper = (issue) => issue.message) {
+    const fieldErrors = {};
+    const formErrors = [];
+    for (const sub of error.issues) {
+        if (sub.path.length > 0) {
+            node(fieldErrors, sub.path[0], () => []).push(mapper(sub));
+        }
+        else {
+            formErrors.push(mapper(sub));
+        }
+    }
+    return { formErrors, fieldErrors };
+}
+function formatError(error, mapper = (issue) => issue.message) {
+    const fieldErrors = { _errors: [] };
+    const processError = (error, path = []) => {
+        for (const issue of error.issues) {
+            if (issue.code === "invalid_union" && issue.errors.length) {
+                issue.errors.map((issues) => processError({ issues }, [...path, ...issue.path]));
+            }
+            else if (issue.code === "invalid_key") {
+                processError({ issues: issue.issues }, [...path, ...issue.path]);
+            }
+            else if (issue.code === "invalid_element") {
+                processError({ issues: issue.issues }, [...path, ...issue.path]);
+            }
+            else {
+                const fullpath = [...path, ...issue.path];
+                if (fullpath.length === 0) {
+                    fieldErrors._errors.push(mapper(issue));
+                }
+                else {
+                    let curr = fieldErrors;
+                    let i = 0;
+                    while (i < fullpath.length) {
+                        const el = fullpath[i];
+                        const terminal = i === fullpath.length - 1;
+                        // `_errors` is reserved by this legacy format, so merge a matching path segment into the current node instead of treating its array as a child.
+                        if (el === "_errors") {
+                            if (terminal)
+                                curr._errors.push(mapper(issue));
+                            i++;
+                            continue;
+                        }
+                        // A path element may collide with an inherited property name such as
+                        // "__proto__" or "constructor". Truthiness checks read the prototype
+                        // (so no node is created, then ._errors.push throws), and bracket
+                        // assignment of "__proto__" hits the setter instead of creating an
+                        // own key. Guard the read with hasOwnProperty and create the node
+                        // with defineProperty so any path element becomes a real own key.
+                        if (!Object.prototype.hasOwnProperty.call(curr, el)) {
+                            Object.defineProperty(curr, el, {
+                                value: { _errors: [] },
+                                enumerable: true,
+                                writable: true,
+                                configurable: true,
+                            });
+                        }
+                        const node = curr[el];
+                        if (terminal) {
+                            node._errors.push(mapper(issue));
+                        }
+                        curr = node;
+                        i++;
+                    }
+                }
+            }
+        }
+    };
+    processError(error);
+    return fieldErrors;
+}
+function treeifyError(error, mapper = (issue) => issue.message) {
+    const result = { errors: [] };
+    const processError = (error, path = []) => {
+        var _a;
+        for (const issue of error.issues) {
+            if (issue.code === "invalid_union" && issue.errors.length) {
+                // regular union error
+                issue.errors.map((issues) => processError({ issues }, [...path, ...issue.path]));
+            }
+            else if (issue.code === "invalid_key") {
+                processError({ issues: issue.issues }, [...path, ...issue.path]);
+            }
+            else if (issue.code === "invalid_element") {
+                processError({ issues: issue.issues }, [...path, ...issue.path]);
+            }
+            else {
+                const fullpath = [...path, ...issue.path];
+                if (fullpath.length === 0) {
+                    result.errors.push(mapper(issue));
+                    continue;
+                }
+                let curr = result;
+                let i = 0;
+                while (i < fullpath.length) {
+                    const el = fullpath[i];
+                    const terminal = i === fullpath.length - 1;
+                    if (typeof el === "string") {
+                        curr.properties ?? (curr.properties = {});
+                        // el may collide with an inherited property name ("__proto__",
+                        // "constructor", ...); ??= reads the prototype so the node is never
+                        // created and curr.errors.push throws. Guard with hasOwnProperty and
+                        // create the node with defineProperty so "__proto__" becomes a real
+                        // own key rather than invoking the prototype setter.
+                        if (!Object.prototype.hasOwnProperty.call(curr.properties, el)) {
+                            Object.defineProperty(curr.properties, el, {
+                                value: { errors: [] },
+                                enumerable: true,
+                                writable: true,
+                                configurable: true,
+                            });
+                        }
+                        curr = curr.properties[el];
+                    }
+                    else {
+                        curr.items ?? (curr.items = []);
+                        (_a = curr.items)[el] ?? (_a[el] = { errors: [] });
+                        curr = curr.items[el];
+                    }
+                    if (terminal) {
+                        curr.errors.push(mapper(issue));
+                    }
+                    i++;
+                }
+            }
+        }
+    };
+    processError(error);
+    return result;
+}
+/** Format a ZodError as a human-readable string in the following form.
+ *
+ * From
+ *
+ * ```ts
+ * ZodError {
+ *   issues: [
+ *     {
+ *       expected: 'string',
+ *       code: 'invalid_type',
+ *       path: [ 'username' ],
+ *       message: 'Invalid input: expected string'
+ *     },
+ *     {
+ *       expected: 'number',
+ *       code: 'invalid_type',
+ *       path: [ 'favoriteNumbers', 1 ],
+ *       message: 'Invalid input: expected number'
+ *     }
+ *   ];
+ * }
+ * ```
+ *
+ * to
+ *
+ * ```
+ * username
+ *   ✖ Expected number, received string at "username
+ * favoriteNumbers[0]
+ *   ✖ Invalid input: expected number
+ * ```
+ */
+function toDotPath(_path) {
+    const segs = [];
+    const path = _path.map((seg) => (typeof seg === "object" ? seg.key : seg));
+    for (const seg of path) {
+        if (typeof seg === "number")
+            segs.push(`[${seg}]`);
+        else if (typeof seg === "symbol")
+            segs.push(`[${JSON.stringify(String(seg))}]`);
+        else if (/[^\w$]/.test(seg))
+            segs.push(`[${JSON.stringify(seg)}]`);
+        else {
+            if (segs.length)
+                segs.push(".");
+            segs.push(seg);
+        }
+    }
+    return segs.join("");
+}
+function prettifyError(error) {
+    const lines = [];
+    // sort by path length
+    const issues = [...error.issues].sort((a, b) => (a.path ?? []).length - (b.path ?? []).length);
+    // Process each issue
+    for (const issue of issues) {
+        lines.push(`✖ ${issue.message}`);
+        if (issue.path?.length)
+            lines.push(`  → at ${toDotPath(issue.path)}`);
+    }
+    // Convert Map to formatted string
+    return lines.join("\n");
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/core/parse.js
+
+
+
+// Always both keys, so the `_params` read site in `_parse` sees one object shape rather than two.
+function finalizeParams(callee, params) {
+    return { callee: params?.callee ?? callee, Err: params?.Err };
+}
+const _parse = (_Err) => {
+    const fn = (schema, value, _ctx, _params) => {
+        const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
+        const result = schema._zod.run({ value, issues: [] }, ctx);
+        if (result instanceof Promise) {
+            throw new $ZodAsyncError();
+        }
+        if (result.issues.length) {
+            const e = new (_params?.Err ?? _Err)(result.issues.map((iss) => finalizeIssue(iss, ctx, config())));
+            captureStackTrace(e, _params?.callee ?? fn);
+            throw e;
+        }
+        return result.value;
+    };
+    return fn;
+};
+const parse_parse = /* @__PURE__*/ _parse($ZodRealError);
+const _parseAsync = (_Err) => {
+    const fn = async (schema, value, _ctx, params) => {
+        const ctx = _ctx ? { ..._ctx, async: true } : { async: true };
+        let result = schema._zod.run({ value, issues: [] }, ctx);
+        if (result instanceof Promise)
+            result = await result;
+        if (result.issues.length) {
+            const e = new (params?.Err ?? _Err)(result.issues.map((iss) => finalizeIssue(iss, ctx, config())));
+            captureStackTrace(e, params?.callee ?? fn);
+            throw e;
+        }
+        return result.value;
+    };
+    return fn;
+};
+const parse_parseAsync = /* @__PURE__*/ _parseAsync($ZodRealError);
+const _safeParse = (_Err) => (schema, value, _ctx) => {
+    const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
+    const result = schema._zod.run({ value, issues: [] }, ctx);
+    if (result instanceof Promise) {
+        throw new $ZodAsyncError();
+    }
+    return result.issues.length ? failure(_Err, result.issues, ctx) : { success: true, data: result.value };
+};
+const safeParse = /* @__PURE__*/ _safeParse($ZodRealError);
+// the error is built on the first read of `error`: finalizing the issues and constructing the instance is most of a failing parse, and a caller that only branches on `success` never pays it. a getter in the literal keeps this small; the alternative, one shared accessor descriptor plus a hidden state slot, reads ~15% faster but costs ~75 B gzipped in every bundle
+function failure(Err, issues, ctx) {
+    let error;
+    return {
+        success: false,
+        get error() {
+            if (!error) {
+                error = new Err(issues.map((iss) => finalizeIssue(iss, ctx, config())));
+                // finalizeIssue drops `input`, so the built error holds nothing; keeping the raw issues past this point pins the parsed value for the life of the result
+                issues = undefined;
+                ctx = undefined;
+            }
+            return error;
+        },
+        set error(e) {
+            error = e;
+            // a replacement makes the getter's branch unreachable, so the captures have to go here too
+            issues = undefined;
+            ctx = undefined;
+        },
+    };
+}
+const _safeParseAsync = (_Err) => async (schema, value, _ctx) => {
+    const ctx = _ctx ? { ..._ctx, async: true } : { async: true };
+    let result = schema._zod.run({ value, issues: [] }, ctx);
+    if (result instanceof Promise)
+        result = await result;
+    return result.issues.length ? failure(_Err, result.issues, ctx) : { success: true, data: result.value };
+};
+const safeParseAsync = /* @__PURE__*/ _safeParseAsync($ZodRealError);
+// registry mirrors of the compiler's sentinels, so this module never imports the compiler
+const COMPILE_INVALID = /* @__PURE__ */ Symbol.for("zod.compile.invalid");
+const COMPILE_FALLBACK = /* @__PURE__ */ Symbol.for("zod.compile.fallback");
+// Deliberately tiny, because v8 will not inline a body carrying the fallback's object literals and throw. Everything that is not the compiled happy path lives in validateFallback, and that split is worth ~35% on a compiled schema.
+const validate = ((schema, value, _ctx) => {
+    const validator = schema._zod.bag.validator;
+    if (validator !== undefined) {
+        if (validator(value) !== COMPILE_INVALID)
+            return true;
+        // a definite sentinel means the runtime would reject, so skip the re-parse; a ctx can still change the answer
+        if (validator.definite === true && _ctx === undefined)
+            return false;
+    }
+    return validateFallback(schema, value, _ctx);
+});
+function validateFallback(schema, value, _ctx) {
+    const ctx = _ctx
+        ? { ..._ctx, async: false, abortEarly: true }
+        : { async: false, abortEarly: true };
+    const fallbackRun = schema._zod.bag.fallbackRun;
+    let result;
+    if (fallbackRun) {
+        // skip nested fast paths on the fallback, so user callbacks keep the at-most-twice bound
+        ctx[COMPILE_FALLBACK] = true;
+        result = fallbackRun({ value, issues: [] }, ctx);
+    }
+    else {
+        result = schema._zod.run({ value, issues: [] }, ctx);
+    }
+    if (result instanceof Promise) {
+        throw new $ZodAsyncError();
+    }
+    return result.issues.length === 0;
+}
+// no fast path: the compiler keeps async parses on the runtime, because a promise-returning callback that is not declared async compiles to a throw
+const parse_validateAsync = async (schema, value, _ctx) => {
+    const ctx = _ctx
+        ? { ..._ctx, async: true, abortEarly: true }
+        : { async: true, abortEarly: true };
+    let result = schema._zod.run({ value, issues: [] }, ctx);
+    if (result instanceof Promise)
+        result = await result;
+    return result.issues.length === 0;
+};
+const _encode = (_Err) => {
+    const parse = _parse(_Err);
+    const fn = (schema, value, _ctx, _params) => {
+        const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
+        return parse(schema, value, ctx, finalizeParams(fn, _params));
+    };
+    return fn;
+};
+const encode = /* @__PURE__*/ _encode($ZodRealError);
+const _decode = (_Err) => {
+    const parse = _parse(_Err);
+    const fn = (schema, value, _ctx, _params) => {
+        return parse(schema, value, _ctx, finalizeParams(fn, _params));
+    };
+    return fn;
+};
+const decode = /* @__PURE__*/ _decode($ZodRealError);
+const _encodeAsync = (_Err) => {
+    const parseAsync = _parseAsync(_Err);
+    const fn = async (schema, value, _ctx, _params) => {
+        const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
+        return (await parseAsync(schema, value, ctx, finalizeParams(fn, _params)));
+    };
+    return fn;
+};
+const encodeAsync = /* @__PURE__*/ _encodeAsync($ZodRealError);
+const _decodeAsync = (_Err) => {
+    const parseAsync = _parseAsync(_Err);
+    const fn = async (schema, value, _ctx, _params) => {
+        return await parseAsync(schema, value, _ctx, finalizeParams(fn, _params));
+    };
+    return fn;
+};
+const decodeAsync = /* @__PURE__*/ _decodeAsync($ZodRealError);
+const _safeEncode = (_Err) => (schema, value, _ctx) => {
+    const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
+    return _safeParse(_Err)(schema, value, ctx);
+};
+const safeEncode = /* @__PURE__*/ _safeEncode($ZodRealError);
+const _safeDecode = (_Err) => (schema, value, _ctx) => {
+    return _safeParse(_Err)(schema, value, _ctx);
+};
+const safeDecode = /* @__PURE__*/ _safeDecode($ZodRealError);
+const _safeEncodeAsync = (_Err) => async (schema, value, _ctx) => {
+    const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
+    return _safeParseAsync(_Err)(schema, value, ctx);
+};
+const safeEncodeAsync = /* @__PURE__*/ _safeEncodeAsync($ZodRealError);
+const _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
+    return _safeParseAsync(_Err)(schema, value, _ctx);
+};
+const safeDecodeAsync = /* @__PURE__*/ _safeDecodeAsync($ZodRealError);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/classic/errors.js
+
+
+
+/* Prototypes that already carry the lazy helper methods. Seeded with the
+ * intrinsics so that `init` on a foreign object — it accepts any object —
+ * can never install an accessor onto a prototype we do not own. */
+const _installedErrorProtos = /* @__PURE__ */ new WeakSet([Object.prototype, Error.prototype]);
+/* Helper methods live as non-enumerable lazy getters on the shared
+ * prototype instead of own properties on every instance. On first
+ * access the getter allocates the per-instance closure and caches it
+ * as a non-enumerable own property, so detached usage still works and
+ * the allocation only happens for methods actually touched. */
+function _lazyMethod(proto, key, make) {
+    Object.defineProperty(proto, key, {
+        configurable: true,
+        enumerable: false,
+        get() {
+            const value = make(this);
+            Object.defineProperty(this, key, { value, configurable: true, writable: true });
+            return value;
+        },
+        set(value) {
+            Object.defineProperty(this, key, { value, configurable: true, writable: true });
+        },
+    });
+}
+const errors_initializer = (inst, issues) => {
+    $ZodError.init(inst, issues);
+    inst.name = "ZodError";
+    const proto = Object.getPrototypeOf(inst);
+    if (_installedErrorProtos.has(proto))
+        return;
+    _installedErrorProtos.add(proto);
+    _lazyMethod(proto, "format", (self) => (mapper) => formatError(self, mapper));
+    _lazyMethod(proto, "flatten", (self) => (mapper) => flattenError(self, mapper));
+    _lazyMethod(proto, "addIssue", (self) => (issue) => {
+        self.issues.push(issue);
+        self.message = JSON.stringify(self.issues, jsonStringifyReplacer, 2);
+    });
+    _lazyMethod(proto, "addIssues", (self) => (issues) => {
+        self.issues.push(...issues);
+        self.message = JSON.stringify(self.issues, jsonStringifyReplacer, 2);
+    });
+    Object.defineProperty(proto, "isEmpty", {
+        configurable: true,
+        enumerable: false,
+        get() {
+            return this.issues.length === 0;
+        },
+    });
+};
+const ZodError = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodError", errors_initializer)));
+const ZodRealError = /*@__PURE__*/ $constructor("ZodError", errors_initializer, undefined, {
+    Parent: Error,
+});
+// /** @deprecated Use `z.core.$ZodErrorMapCtx` instead. */
+// export type ErrorMapCtx = core.$ZodErrorMapCtx;
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/classic/parse.js
+
+
+const classic_parse_parse = /* @__PURE__ */ _parse(ZodRealError);
+const classic_parse_parseAsync = /* @__PURE__ */ _parseAsync(ZodRealError);
+const parse_safeParse = /* @__PURE__ */ _safeParse(ZodRealError);
+const parse_safeParseAsync = /* @__PURE__ */ _safeParseAsync(ZodRealError);
+
+// Codec functions
+const parse_encode = /* @__PURE__ */ _encode(ZodRealError);
+const parse_decode = /* @__PURE__ */ _decode(ZodRealError);
+const parse_encodeAsync = /* @__PURE__ */ _encodeAsync(ZodRealError);
+const parse_decodeAsync = /* @__PURE__ */ _decodeAsync(ZodRealError);
+const parse_safeEncode = /* @__PURE__ */ _safeEncode(ZodRealError);
+const parse_safeDecode = /* @__PURE__ */ _safeDecode(ZodRealError);
+const parse_safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
+const parse_safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/zod@4.6.7/node_modules/zod/v4/classic/schemas.js
+
+
+
+
+
+
+
+
+// Register English as the default locale on first ZodType construction. Hooked into the `ZodType` `$constructor` (rather than a top-level `config(en())` in `external.ts`) so bundlers honoring `sideEffects: false` can't tree-shake it out — see #5953, #5725. An explicit `z.config(z.locales.xx())` call wins regardless of order, since this only sets the default when none is present.
+function _ensureDefaultLocale() {
+    if (!globalConfig.localeError)
+        config(en());
+}
+// the default memoizer is read by the core container init, which runs before `ZodType.init`, so each container calls this first
+function _ensureDefaultMemoizer() {
+    if (!globalConfig.memoizer)
+        config({ memoizer: memoizer() });
+}
+const ZodType = /*@__PURE__*/ $constructor("ZodType", (inst, def) => {
+    _ensureDefaultLocale();
+    $ZodType.init(inst, def);
+    inst.def = def;
+    inst.type = def.type;
+    return inst;
+}, {
+    check(...chks) {
+        const def = this.def;
+        return this.clone(mergeDefs(def, {
+            checks: [
+                ...(def.checks ?? []),
+                ...chks.map((ch) => typeof ch === "function" ? { _zod: { check: ch, def: { check: "custom" }, onattach: [] } } : ch),
+            ],
+        }), { parent: true });
+    },
+    with(...chks) {
+        return this.check(...chks);
+    },
+    clone(def, params) {
+        return clone(this, def, params);
+    },
+    brand() {
+        return this;
+    },
+    register(reg, meta) {
+        reg.add(this, meta);
+        return this;
+    },
+    refine(check, params) {
+        return this.check(refine(check, params));
+    },
+    superRefine(refinement, params) {
+        return this.check(superRefine(refinement, params));
+    },
+    overwrite(fn) {
+        return this.check(_overwrite(fn));
+    },
+    optional() {
+        return optional(this);
+    },
+    exactOptional() {
+        return exactOptional(this);
+    },
+    nullable() {
+        return nullable(this);
+    },
+    nullish() {
+        return optional(nullable(this));
+    },
+    nonoptional(params) {
+        return nonoptional(this, params);
+    },
+    array() {
+        return array(this);
+    },
+    or(arg) {
+        return union([this, arg]);
+    },
+    and(arg) {
+        return intersection(this, arg);
+    },
+    transform(tx) {
+        return pipe(this, transform(tx));
+    },
+    default(d) {
+        return schemas_default(this, d);
+    },
+    prefault(d) {
+        return prefault(this, d);
+    },
+    catch(params) {
+        return schemas_catch(this, params);
+    },
+    pipe(target) {
+        return pipe(this, target);
+    },
+    readonly() {
+        return readonly(this);
+    },
+    describe(description) {
+        const cl = this.clone();
+        globalRegistry.add(cl, { description });
+        return cl;
+    },
+    meta(...args) {
+        // overloaded: meta() returns the registered metadata, meta(data) returns a clone with `data` registered. The mapped type picks up the second overload, so we accept variadic any-args and return `any` to satisfy both at runtime.
+        if (args.length === 0)
+            return globalRegistry.get(this);
+        const cl = this.clone();
+        globalRegistry.add(cl, args[0]);
+        return cl;
+    },
+    isOptional() {
+        return this.safeParse(undefined).success;
+    },
+    isNullable() {
+        return this.safeParse(null).success;
+    },
+    apply(fn, ...args) {
+        return args.length === 0 ? fn(this) : fn(this, ...args);
+    },
+    // Overrides core's `~standard` to add `jsonSchema`. Must stay a prototype entry: redefining it per instance demotes instances to dictionary mode.
+    get "~standard"() {
+        return hide(this, "~standard", {
+            ...standardProps(this),
+            jsonSchema: {
+                input: createStandardJSONSchemaMethod(this, "input"),
+                output: createStandardJSONSchemaMethod(this, "output"),
+            },
+        });
+    },
+    set "~standard"(value) {
+        own(this, "~standard", value);
+    },
+    parse: function _parse(data, params) {
+        return classic_parse_parse(this, data, params, { callee: _parse });
+    },
+    parseAsync: async function _parseAsync(data, params) {
+        return await classic_parse_parseAsync(this, data, params, { callee: _parseAsync });
+    },
+    safeParse(data, params) {
+        return parse_safeParse(this, data, params);
+    },
+    async safeParseAsync(data, params) {
+        return parse_safeParseAsync(this, data, params);
+    },
+    // `spa` is an alias: same function object as `safeParseAsync`, as before.
+    get spa() {
+        return this?.safeParseAsync;
+    },
+    set spa(value) {
+        own(this, "spa", value);
+    },
+    validate(data, params) {
+        return validate(this, data, params);
+    },
+    validateAsync(data, params) {
+        return parse_validateAsync(this, data, params);
+    },
+    encode: function _encode(data, params) {
+        return parse_encode(this, data, params, { callee: _encode });
+    },
+    decode: function _decode(data, params) {
+        return parse_decode(this, data, params, { callee: _decode });
+    },
+    encodeAsync: async function _encodeAsync(data, params) {
+        return await parse_encodeAsync(this, data, params, { callee: _encodeAsync });
+    },
+    decodeAsync: async function _decodeAsync(data, params) {
+        return await parse_decodeAsync(this, data, params, { callee: _decodeAsync });
+    },
+    safeEncode(data, params) {
+        return parse_safeEncode(this, data, params);
+    },
+    safeDecode(data, params) {
+        return parse_safeDecode(this, data, params);
+    },
+    async safeEncodeAsync(data, params) {
+        return parse_safeEncodeAsync(this, data, params);
+    },
+    async safeDecodeAsync(data, params) {
+        return parse_safeDecodeAsync(this, data, params);
+    },
+    toJSONSchema(params) {
+        return createToJSONSchemaMethod(this, {})(params);
+    },
+    // Reads through to the registry on every access, so it must not cache.
+    get description() {
+        return globalRegistry.get(this)?.description;
+    },
+    // No setter: `schema._def = x` throws, as it did when `_def` was a non-writable own property.
+    get _def() {
+        return this._zod.def;
+    },
+});
+/** @internal */
+const _ZodString = /*@__PURE__*/ $constructor("_ZodString", (inst, def) => {
+    $ZodString.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => stringProcessor(inst, ctx, json, params);
+}, 
+/*@__PURE__*/ derived({
+    format: (inst) => aggregateChecks(inst).format ?? null,
+    minLength: (inst) => aggregateChecks(inst).minimum ?? null,
+    maxLength: (inst) => aggregateChecks(inst).maximum ?? null,
+}, {
+    regex(...args) {
+        return this.check(_regex(...args));
+    },
+    includes(...args) {
+        return this.check(_includes(...args));
+    },
+    startsWith(...args) {
+        return this.check(_startsWith(...args));
+    },
+    endsWith(...args) {
+        return this.check(_endsWith(...args));
+    },
+    min(...args) {
+        return this.check(_minLength(...args));
+    },
+    max(...args) {
+        return this.check(_maxLength(...args));
+    },
+    length(...args) {
+        return this.check(_length(...args));
+    },
+    nonempty(...args) {
+        return this.check(_minLength(1, ...args));
+    },
+    lowercase(params) {
+        return this.check(_lowercase(params));
+    },
+    uppercase(params) {
+        return this.check(_uppercase(params));
+    },
+    trim() {
+        return this.check(_trim());
+    },
+    normalize(...args) {
+        return this.check(_normalize(...args));
+    },
+    toLowerCase() {
+        return this.check(_toLowerCase());
+    },
+    toUpperCase() {
+        return this.check(_toUpperCase());
+    },
+    slugify() {
+        return this.check(_slugify());
+    },
+}));
+const ZodString = /*@__PURE__*/ $constructor("ZodString", (inst, def) => {
+    $ZodString.init(inst, def);
+    _ZodString.init(inst, def);
+}, {
+    email(params) {
+        return this.check(_email(ZodEmail, params));
+    },
+    url(params) {
+        return this.check(_url(ZodURL, params));
+    },
+    jwt(params) {
+        return this.check(_jwt(ZodJWT, params));
+    },
+    emoji(params) {
+        return this.check(api_emoji(ZodEmoji, params));
+    },
+    guid(params) {
+        return this.check(_guid(ZodGUID, params));
+    },
+    uuid(params) {
+        return this.check(_uuid(ZodUUID, params));
+    },
+    uuidv4(params) {
+        return this.check(_uuidv4(ZodUUID, params));
+    },
+    uuidv6(params) {
+        return this.check(_uuidv6(ZodUUID, params));
+    },
+    uuidv7(params) {
+        return this.check(_uuidv7(ZodUUID, params));
+    },
+    nanoid(params) {
+        return this.check(_nanoid(ZodNanoID, params));
+    },
+    cuid(params) {
+        return this.check(_cuid(ZodCUID, params));
+    },
+    cuid2(params) {
+        return this.check(_cuid2(ZodCUID2, params));
+    },
+    ulid(params) {
+        return this.check(_ulid(ZodULID, params));
+    },
+    base64(params) {
+        return this.check(_base64(ZodBase64, params));
+    },
+    base64url(params) {
+        return this.check(_base64url(ZodBase64URL, params));
+    },
+    xid(params) {
+        return this.check(_xid(ZodXID, params));
+    },
+    ksuid(params) {
+        return this.check(_ksuid(ZodKSUID, params));
+    },
+    ipv4(params) {
+        return this.check(_ipv4(ZodIPv4, params));
+    },
+    ipv6(params) {
+        return this.check(_ipv6(ZodIPv6, params));
+    },
+    cidrv4(params) {
+        return this.check(_cidrv4(ZodCIDRv4, params));
+    },
+    cidrv6(params) {
+        return this.check(_cidrv6(ZodCIDRv6, params));
+    },
+    e164(params) {
+        return this.check(_e164(ZodE164, params));
+    },
+    datetime(params) {
+        return this.check(_isoDateTime(ZodISODateTime, params));
+    },
+    date(params) {
+        return this.check(_isoDate(ZodISODate, params));
+    },
+    time(params) {
+        return this.check(_isoTime(ZodISOTime, params));
+    },
+    duration(params) {
+        return this.check(_isoDuration(ZodISODuration, params));
+    },
+});
+function schemas_string(params) {
+    return _string(ZodString, params);
+}
+const ZodStringFormat = /*@__PURE__*/ $constructor("ZodStringFormat", (inst, def) => {
+    $ZodStringFormat.init(inst, def);
+    _ZodString.init(inst, def);
+});
+const ZodISODateTime = /*@__PURE__*/ $constructor("ZodISODateTime", (inst, def) => {
+    $ZodISODateTime.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+const ZodISODate = /*@__PURE__*/ $constructor("ZodISODate", (inst, def) => {
+    $ZodISODate.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+const ZodISOTime = /*@__PURE__*/ $constructor("ZodISOTime", (inst, def) => {
+    $ZodISOTime.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+const ZodISODuration = /*@__PURE__*/ $constructor("ZodISODuration", (inst, def) => {
+    $ZodISODuration.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+const ZodEmail = /*@__PURE__*/ $constructor("ZodEmail", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodEmail.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_email(params) {
+    return core._email(ZodEmail, params);
+}
+const ZodGUID = /*@__PURE__*/ $constructor("ZodGUID", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodGUID.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_guid(params) {
+    return core._guid(ZodGUID, params);
+}
+const ZodUUID = /*@__PURE__*/ $constructor("ZodUUID", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodUUID.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_uuid(params) {
+    return core._uuid(ZodUUID, params);
+}
+function uuidv4(params) {
+    return core._uuidv4(ZodUUID, params);
+}
+// ZodUUIDv6
+function uuidv6(params) {
+    return core._uuidv6(ZodUUID, params);
+}
+// ZodUUIDv7
+function uuidv7(params) {
+    return core._uuidv7(ZodUUID, params);
+}
+const ZodURL = /*@__PURE__*/ $constructor("ZodURL", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodURL.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function url(params) {
+    return core._url(ZodURL, params);
+}
+function httpUrl(params) {
+    return core._url(ZodURL, {
+        protocol: regexes.httpProtocol,
+        hostname: regexes.domain,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodEmoji = /*@__PURE__*/ $constructor("ZodEmoji", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodEmoji.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_emoji(params) {
+    return core._emoji(ZodEmoji, params);
+}
+const ZodNanoID = /*@__PURE__*/ $constructor("ZodNanoID", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodNanoID.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_nanoid(params) {
+    return core._nanoid(ZodNanoID, params);
+}
+/**
+ * @deprecated CUID v1 is deprecated by its authors due to information leakage
+ * (timestamps embedded in the id). Use {@link ZodCUID2} instead.
+ * See https://github.com/paralleldrive/cuid.
+ */
+const ZodCUID = /*@__PURE__*/ $constructor("ZodCUID", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodCUID.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+/**
+ * Validates a CUID v1 string.
+ *
+ * @deprecated CUID v1 is deprecated by its authors due to information leakage
+ * (timestamps embedded in the id). Use {@link cuid2 | `z.cuid2()`} instead.
+ * See https://github.com/paralleldrive/cuid.
+ */
+function schemas_cuid(params) {
+    return core._cuid(ZodCUID, params);
+}
+const ZodCUID2 = /*@__PURE__*/ $constructor("ZodCUID2", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodCUID2.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_cuid2(params) {
+    return core._cuid2(ZodCUID2, params);
+}
+const ZodULID = /*@__PURE__*/ $constructor("ZodULID", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodULID.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_ulid(params) {
+    return core._ulid(ZodULID, params);
+}
+const ZodXID = /*@__PURE__*/ $constructor("ZodXID", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodXID.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_xid(params) {
+    return core._xid(ZodXID, params);
+}
+const ZodKSUID = /*@__PURE__*/ $constructor("ZodKSUID", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodKSUID.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_ksuid(params) {
+    return core._ksuid(ZodKSUID, params);
+}
+const ZodIPv4 = /*@__PURE__*/ $constructor("ZodIPv4", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodIPv4.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_ipv4(params) {
+    return core._ipv4(ZodIPv4, params);
+}
+const ZodMAC = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodMAC", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    core.$ZodMAC.init(inst, def);
+    ZodStringFormat.init(inst, def);
+})));
+function schemas_mac(params) {
+    return core._mac(ZodMAC, params);
+}
+const ZodIPv6 = /*@__PURE__*/ $constructor("ZodIPv6", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodIPv6.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_ipv6(params) {
+    return core._ipv6(ZodIPv6, params);
+}
+const ZodCIDRv4 = /*@__PURE__*/ $constructor("ZodCIDRv4", (inst, def) => {
+    $ZodCIDRv4.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_cidrv4(params) {
+    return core._cidrv4(ZodCIDRv4, params);
+}
+const ZodCIDRv6 = /*@__PURE__*/ $constructor("ZodCIDRv6", (inst, def) => {
+    $ZodCIDRv6.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_cidrv6(params) {
+    return core._cidrv6(ZodCIDRv6, params);
+}
+const ZodBase64 = /*@__PURE__*/ $constructor("ZodBase64", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodBase64.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_base64(params) {
+    return core._base64(ZodBase64, params);
+}
+const ZodBase64URL = /*@__PURE__*/ $constructor("ZodBase64URL", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodBase64URL.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_base64url(params) {
+    return core._base64url(ZodBase64URL, params);
+}
+const ZodE164 = /*@__PURE__*/ $constructor("ZodE164", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodE164.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function schemas_e164(params) {
+    return core._e164(ZodE164, params);
+}
+const ZodCreditCard = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodCreditCard", (inst, def) => {
+    core.$ZodCreditCard.init(inst, def);
+    ZodStringFormat.init(inst, def);
+})));
+function schemas_creditCard(params) {
+    return core._creditCard(ZodCreditCard, params);
+}
+const ZodIBAN = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodIBAN", (inst, def) => {
+    core.$ZodIBAN.init(inst, def);
+    ZodStringFormat.init(inst, def);
+})));
+function schemas_iban(params) {
+    return core._iban(ZodIBAN, params);
+}
+const ZodJWT = /*@__PURE__*/ $constructor("ZodJWT", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    $ZodJWT.init(inst, def);
+    ZodStringFormat.init(inst, def);
+});
+function jwt(params) {
+    return core._jwt(ZodJWT, params);
+}
+const ZodCustomStringFormat = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodCustomStringFormat", (inst, def) => {
+    // ZodStringFormat.init(inst, def);
+    core.$ZodCustomStringFormat.init(inst, def);
+    ZodStringFormat.init(inst, def);
+})));
+function stringFormat(format, fnOrRegex, _params = {}) {
+    return core._stringFormat(ZodCustomStringFormat, format, fnOrRegex, _params);
+}
+function schemas_hostname(_params) {
+    return core._stringFormat(ZodCustomStringFormat, "hostname", regexes.hostname, _params);
+}
+function schemas_hex(_params) {
+    return core._stringFormat(ZodCustomStringFormat, "hex", regexes.hex, _params);
+}
+function schemas_currencyCode(_params) {
+    return core._stringFormat(ZodCustomStringFormat, "currency_code", regexes.currencyCode, _params);
+}
+function hash(alg, params) {
+    const enc = params?.enc ?? "hex";
+    const format = `${alg}_${enc}`;
+    const regex = core.regexes[format];
+    if (!regex)
+        throw new Error(`Unrecognized hash format: ${format}`);
+    return core._stringFormat(ZodCustomStringFormat, format, regex, params);
+}
+const ZodNumber = /*@__PURE__*/ $constructor("ZodNumber", (inst, def) => {
+    $ZodNumber.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => numberProcessor(inst, ctx, json, params);
+    inst.isFinite = true;
+}, 
+/*@__PURE__*/ derived({
+    minValue: (inst) => {
+        const { minimum, exclusiveMinimum } = aggregateChecks(inst);
+        return Math.max(minimum ?? Number.NEGATIVE_INFINITY, exclusiveMinimum ?? Number.NEGATIVE_INFINITY);
+    },
+    maxValue: (inst) => {
+        const { maximum, exclusiveMaximum } = aggregateChecks(inst);
+        return Math.min(maximum ?? Number.POSITIVE_INFINITY, exclusiveMaximum ?? Number.POSITIVE_INFINITY);
+    },
+    isInt: (inst) => {
+        const { isInt, multipleOf } = aggregateChecks(inst);
+        return !!isInt || !!multipleOf?.some(Number.isSafeInteger);
+    },
+    format: (inst) => aggregateChecks(inst).format ?? null,
+}, {
+    gt(value, params) {
+        return this.check(_gt(value, params));
+    },
+    gte(value, params) {
+        return this.check(_gte(value, params));
+    },
+    min(value, params) {
+        return this.check(_gte(value, params));
+    },
+    lt(value, params) {
+        return this.check(_lt(value, params));
+    },
+    lte(value, params) {
+        return this.check(_lte(value, params));
+    },
+    max(value, params) {
+        return this.check(_lte(value, params));
+    },
+    int(params) {
+        return this.check(schemas_int(params));
+    },
+    safe(params) {
+        return this.check(schemas_int(params));
+    },
+    positive(params) {
+        return this.check(_gt(0, params));
+    },
+    nonnegative(params) {
+        return this.check(_gte(0, params));
+    },
+    negative(params) {
+        return this.check(_lt(0, params));
+    },
+    nonpositive(params) {
+        return this.check(_lte(0, params));
+    },
+    multipleOf(value, params) {
+        return this.check(_multipleOf(value, params));
+    },
+    step(value, params) {
+        return this.check(_multipleOf(value, params));
+    },
+    finite() {
+        return this;
+    },
+}));
+function schemas_number(params) {
+    return _number(ZodNumber, params);
+}
+const ZodNumberFormat = /*@__PURE__*/ $constructor("ZodNumberFormat", (inst, def) => {
+    $ZodNumberFormat.init(inst, def);
+    ZodNumber.init(inst, def);
+});
+function schemas_int(params) {
+    return _int(ZodNumberFormat, params);
+}
+function float32(params) {
+    return core._float32(ZodNumberFormat, params);
+}
+function float64(params) {
+    return core._float64(ZodNumberFormat, params);
+}
+function int32(params) {
+    return core._int32(ZodNumberFormat, params);
+}
+function uint32(params) {
+    return core._uint32(ZodNumberFormat, params);
+}
+const ZodBoolean = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodBoolean", (inst, def) => {
+    core.$ZodBoolean.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.booleanProcessor(inst, ctx, json, params);
+})));
+function schemas_boolean(params) {
+    return core._boolean(ZodBoolean, params);
+}
+const ZodBigInt = /*@__PURE__*/ $constructor("ZodBigInt", (inst, def) => {
+    $ZodBigInt.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => bigintProcessor(inst, ctx, json, params);
+}, 
+/*@__PURE__*/ derived({
+    minValue: (inst) => aggregateChecks(inst).minimum ?? null,
+    maxValue: (inst) => aggregateChecks(inst).maximum ?? null,
+    format: (inst) => aggregateChecks(inst).format ?? null,
+}, {
+    gte(value, params) {
+        return this.check(_gte(value, params));
+    },
+    min(value, params) {
+        return this.check(_gte(value, params));
+    },
+    gt(value, params) {
+        return this.check(_gt(value, params));
+    },
+    lt(value, params) {
+        return this.check(_lt(value, params));
+    },
+    lte(value, params) {
+        return this.check(_lte(value, params));
+    },
+    max(value, params) {
+        return this.check(_lte(value, params));
+    },
+    positive(params) {
+        return this.check(_gt(BigInt(0), params));
+    },
+    negative(params) {
+        return this.check(_lt(BigInt(0), params));
+    },
+    nonpositive(params) {
+        return this.check(_lte(BigInt(0), params));
+    },
+    nonnegative(params) {
+        return this.check(_gte(BigInt(0), params));
+    },
+    multipleOf(value, params) {
+        return this.check(_multipleOf(value, params));
+    },
+}));
+function schemas_bigint(params) {
+    return core._bigint(ZodBigInt, params);
+}
+const ZodBigIntFormat = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodBigIntFormat", (inst, def) => {
+    core.$ZodBigIntFormat.init(inst, def);
+    ZodBigInt.init(inst, def);
+})));
+function int64(params) {
+    return core._int64(ZodBigIntFormat, params);
+}
+function uint64(params) {
+    return core._uint64(ZodBigIntFormat, params);
+}
+const ZodSymbol = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodSymbol", (inst, def) => {
+    core.$ZodSymbol.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.symbolProcessor(inst, ctx, json, params);
+})));
+function symbol(params) {
+    return core._symbol(ZodSymbol, params);
+}
+const ZodUndefined = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodUndefined", (inst, def) => {
+    core.$ZodUndefined.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.undefinedProcessor(inst, ctx, json, params);
+})));
+function schemas_undefined(params) {
+    return core._undefined(ZodUndefined, params);
+}
+
+const ZodNull = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodNull", (inst, def) => {
+    core.$ZodNull.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.nullProcessor(inst, ctx, json, params);
+})));
+function schemas_null(params) {
+    return core._null(ZodNull, params);
+}
+
+const ZodAny = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodAny", (inst, def) => {
+    core.$ZodAny.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.anyProcessor(inst, ctx, json, params);
+})));
+function any() {
+    return core._any(ZodAny);
+}
+const ZodUnknown = /*@__PURE__*/ $constructor("ZodUnknown", (inst, def) => {
+    $ZodUnknown.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => unknownProcessor(inst, ctx, json, params);
+});
+function unknown() {
+    return _unknown(ZodUnknown);
+}
+const ZodNever = /*@__PURE__*/ $constructor("ZodNever", (inst, def) => {
+    $ZodNever.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => neverProcessor(inst, ctx, json, params);
+});
+function never(params) {
+    return _never(ZodNever, params);
+}
+const ZodVoid = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodVoid", (inst, def) => {
+    core.$ZodVoid.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.voidProcessor(inst, ctx, json, params);
+})));
+function schemas_void(params) {
+    return core._void(ZodVoid, params);
+}
+
+const ZodDate = /*@__PURE__*/ $constructor("ZodDate", (inst, def) => {
+    $ZodDate.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => dateProcessor(inst, ctx, json, params);
+    inst.min = (value, params) => inst.check(_gte(value, params));
+    inst.max = (value, params) => inst.check(_lte(value, params));
+}, 
+/*@__PURE__*/ derived({
+    minDate: (inst) => {
+        const { minimum } = aggregateChecks(inst);
+        return minimum ? new Date(minimum) : null;
+    },
+    maxDate: (inst) => {
+        const { maximum } = aggregateChecks(inst);
+        return maximum ? new Date(maximum) : null;
+    },
+}, {}));
+function schemas_date(params) {
+    return core._date(ZodDate, params);
+}
+const ZodArray = /*@__PURE__*/ $constructor("ZodArray", (inst, def) => {
+    _ensureDefaultMemoizer();
+    $ZodArray.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => arrayProcessor(inst, ctx, json, params);
+    inst.element = def.element;
+}, {
+    min(n, params) {
+        return this.check(_minLength(n, params));
+    },
+    nonempty(params) {
+        return this.check(_minLength(1, params));
+    },
+    max(n, params) {
+        return this.check(_maxLength(n, params));
+    },
+    length(n, params) {
+        return this.check(_length(n, params));
+    },
+    unwrap() {
+        return this.element;
+    },
+});
+function array(element, params) {
+    return _array(ZodArray, element, params);
+}
+// .keyof
+function keyof(schema) {
+    const shape = schema._zod.def.shape;
+    return schemas_enum(Object.keys(shape));
+}
+const ZodObject = /*@__PURE__*/ $constructor("ZodObject", (inst, def) => {
+    _ensureDefaultMemoizer();
+    $ZodObjectJIT.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => objectProcessor(inst, ctx, json, params);
+    installLazyProp(inst, "shape", (self) => self._zod.def.shape, false);
+}, {
+    keyof() {
+        return schemas_enum(Object.keys(this._zod.def.shape));
+    },
+    catchall(catchall) {
+        // `mergeDefs` rather than a spread: spreading reads `shape`, and resolving it can mint a whole fresh subtree
+        return this.clone(mergeDefs(this._zod.def, { catchall: catchall }));
+    },
+    passthrough() {
+        return this.clone(mergeDefs(this._zod.def, { catchall: unknown() }));
+    },
+    loose() {
+        return this.clone(mergeDefs(this._zod.def, { catchall: unknown() }));
+    },
+    strict() {
+        return this.clone(mergeDefs(this._zod.def, { catchall: never() }));
+    },
+    strip() {
+        return this.clone(mergeDefs(this._zod.def, { catchall: undefined }));
+    },
+    extend(incoming) {
+        return extend(this, incoming);
+    },
+    safeExtend(incoming) {
+        return safeExtend(this, incoming);
+    },
+    merge(other) {
+        return util_merge(this, other);
+    },
+    pick(mask) {
+        return pick(this, mask);
+    },
+    omit(mask) {
+        return util_omit(this, mask);
+    },
+    partial(...args) {
+        return partial(ZodOptional, this, args[0]);
+    },
+    exactPartial(...args) {
+        return partial(ZodExactOptional, this, args[0], "exactPartial");
+    },
+    required(...args) {
+        return required(ZodNonOptional, this, args[0]);
+    },
+});
+function object(shape, params) {
+    const def = {
+        type: "object",
+        shape: shape ?? {},
+        ...normalizeParams(params),
+    };
+    return new ZodObject(def);
+}
+// strictObject
+function strictObject(shape, params) {
+    return new ZodObject({
+        type: "object",
+        shape,
+        catchall: never(),
+        ...util.normalizeParams(params),
+    });
+}
+// looseObject
+function looseObject(shape, params) {
+    return new ZodObject({
+        type: "object",
+        shape,
+        catchall: unknown(),
+        ...util.normalizeParams(params),
+    });
+}
+const ZodUnion = /*@__PURE__*/ $constructor("ZodUnion", (inst, def) => {
+    $ZodUnion.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => unionProcessor(inst, ctx, json, params);
+    inst.options = def.options;
+});
+function union(options, params) {
+    return new ZodUnion({
+        type: "union",
+        options: options,
+        ...normalizeParams(params),
+    });
+}
+const ZodXor = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodXor", (inst, def) => {
+    ZodUnion.init(inst, def);
+    core.$ZodXor.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.unionProcessor(inst, ctx, json, params);
+    inst.options = def.options;
+})));
+/** Creates an exclusive union (XOR) where exactly one option must match.
+ * Unlike regular unions that succeed when any option matches, xor fails if
+ * zero or more than one option matches the input. */
+function xor(options, params) {
+    return new ZodXor({
+        type: "union",
+        options: options,
+        inclusive: false,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodDiscriminatedUnion = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodDiscriminatedUnion", (inst, def) => {
+    ZodUnion.init(inst, def);
+    core.$ZodDiscriminatedUnion.init(inst, def);
+})));
+function discriminatedUnion(discriminator, options, params) {
+    // const [options, params] = args;
+    return new ZodDiscriminatedUnion({
+        type: "union",
+        options: options,
+        discriminator,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodIntersection = /*@__PURE__*/ $constructor("ZodIntersection", (inst, def) => {
+    $ZodIntersection.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => intersectionProcessor(inst, ctx, json, params);
+});
+function intersection(left, right) {
+    return new ZodIntersection({
+        type: "intersection",
+        left: left,
+        right: right,
+    });
+}
+const ZodTuple = /*@__PURE__*/ $constructor("ZodTuple", (inst, def) => {
+    _ensureDefaultMemoizer();
+    $ZodTuple.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => tupleProcessor(inst, ctx, json, params);
+}, {
+    rest(rest) {
+        return this.clone({
+            ...this._zod.def,
+            rest: rest,
+        });
+    },
+    partial() {
+        const def = this._zod.def;
+        // a refinement was authored against the full arity; partialing would run it on a shorter array
+        if (def.checks?.length)
+            throw new Error(".partial() cannot be used on tuple schemas containing refinements");
+        return this.clone({
+            ...def,
+            items: def.items.map((item) => new ZodOptional({ type: "optional", innerType: item })),
+        });
+    },
+});
+function tuple(items, _paramsOrRest, _params) {
+    const hasRest = _paramsOrRest instanceof core.$ZodType;
+    const params = hasRest ? _params : _paramsOrRest;
+    const rest = hasRest ? _paramsOrRest : null;
+    return new ZodTuple({
+        type: "tuple",
+        items: items,
+        rest,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodRecord = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodRecord", (inst, def) => {
+    _ensureDefaultMemoizer();
+    core.$ZodRecord.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.recordProcessor(inst, ctx, json, params);
+    inst.keyType = def.keyType;
+    inst.valueType = def.valueType;
+})));
+function record(keyType, valueType, params) {
+    // v3-compat: z.record(valueType, params?) — defaults keyType to z.string()
+    if (!valueType || !valueType._zod) {
+        return new ZodRecord({
+            type: "record",
+            keyType: schemas_string(),
+            valueType: keyType,
+            ...util.normalizeParams(valueType),
+        });
+    }
+    return new ZodRecord({
+        type: "record",
+        keyType,
+        valueType: valueType,
+        ...util.normalizeParams(params),
+    });
+}
+// type alksjf = core.output<core.$ZodRecordKey>;
+function partialRecord(keyType, valueType, params) {
+    return new ZodRecord({
+        type: "record",
+        keyType,
+        valueType: valueType,
+        ...util.normalizeParams(params),
+        partial: true,
+    });
+}
+function looseRecord(keyType, valueType, params) {
+    return new ZodRecord({
+        type: "record",
+        keyType,
+        valueType: valueType,
+        mode: "loose",
+        ...util.normalizeParams(params),
+    });
+}
+const ZodMap = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodMap", (inst, def) => {
+    _ensureDefaultMemoizer();
+    core.$ZodMap.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.mapProcessor(inst, ctx, json, params);
+    inst.keyType = def.keyType;
+    inst.valueType = def.valueType;
+    inst.min = (...args) => inst.check(core._minSize(...args));
+    inst.nonempty = (params) => inst.check(core._minSize(1, params));
+    inst.max = (...args) => inst.check(core._maxSize(...args));
+    inst.size = (...args) => inst.check(core._size(...args));
+})));
+function map(keyType, valueType, params) {
+    return new ZodMap({
+        type: "map",
+        keyType: keyType,
+        valueType: valueType,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodSet = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodSet", (inst, def) => {
+    _ensureDefaultMemoizer();
+    core.$ZodSet.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.setProcessor(inst, ctx, json, params);
+    inst.min = (...args) => inst.check(core._minSize(...args));
+    inst.nonempty = (params) => inst.check(core._minSize(1, params));
+    inst.max = (...args) => inst.check(core._maxSize(...args));
+    inst.size = (...args) => inst.check(core._size(...args));
+})));
+function set(valueType, params) {
+    return new ZodSet({
+        type: "set",
+        valueType: valueType,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodEnum = /*@__PURE__*/ $constructor("ZodEnum", (inst, def) => {
+    $ZodEnum.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => enumProcessor(inst, ctx, json, params);
+    inst.enum = def.entries;
+    // reuse the parsed value set so a numeric TS enum's reverse-mapping keys stay out
+    inst.options = [...inst._zod.values];
+    const keys = new Set(Object.keys(def.entries));
+    inst.extract = (values, params) => {
+        const newEntries = {};
+        for (const value of values) {
+            if (keys.has(value)) {
+                newEntries[value] = def.entries[value];
+            }
+            else
+                throw new Error(`Key ${value} not found in enum`);
+        }
+        return new ZodEnum({
+            ...def,
+            checks: [],
+            ...normalizeParams(params),
+            entries: newEntries,
+        });
+    };
+    inst.exclude = (values, params) => {
+        const newEntries = { ...def.entries };
+        for (const value of values) {
+            if (keys.has(value)) {
+                delete newEntries[value];
+            }
+            else
+                throw new Error(`Key ${value} not found in enum`);
+        }
+        return new ZodEnum({
+            ...def,
+            checks: [],
+            ...normalizeParams(params),
+            entries: newEntries,
+        });
+    };
+});
+function schemas_enum(values, params) {
+    const entries = Array.isArray(values) ? Object.fromEntries(values.map((v) => [v, v])) : values;
+    return new ZodEnum({
+        type: "enum",
+        entries,
+        ...normalizeParams(params),
+    });
+}
+
+/** @deprecated This API has been merged into `z.enum()`. Use `z.enum()` instead.
+ *
+ * ```ts
+ * enum Colors { red, green, blue }
+ * z.enum(Colors);
+ * ```
+ */
+function nativeEnum(entries, params) {
+    return new ZodEnum({
+        type: "enum",
+        entries,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodLiteral = /*@__PURE__*/ $constructor("ZodLiteral", (inst, def) => {
+    $ZodLiteral.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => literalProcessor(inst, ctx, json, params);
+    inst.values = new Set(def.values);
+    Object.defineProperty(inst, "value", {
+        get() {
+            if (def.values.length > 1) {
+                throw new Error("This schema contains multiple valid literal values. Use `.values` instead.");
+            }
+            return def.values[0];
+        },
+    });
+});
+function literal(value, params) {
+    return new ZodLiteral({
+        type: "literal",
+        values: Array.isArray(value) ? value : [value],
+        ...normalizeParams(params),
+    });
+}
+const ZodFile = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodFile", (inst, def) => {
+    core.$ZodFile.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.fileProcessor(inst, ctx, json, params);
+    inst.min = (size, params) => inst.check(core._minSize(size, params));
+    inst.max = (size, params) => inst.check(core._maxSize(size, params));
+    inst.mime = (types, params) => inst.check(core._mime(Array.isArray(types) ? types : [types], params));
+})));
+function file(params) {
+    return core._file(ZodFile, params);
+}
+const ZodTransform = /*@__PURE__*/ $constructor("ZodTransform", (inst, def) => {
+    _ensureDefaultMemoizer();
+    $ZodTransform.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => transformProcessor(inst, ctx, json, params);
+    inst._zod.parse = (payload, _ctx) => {
+        if (_ctx.direction === "backward") {
+            throw new $ZodEncodeError(inst.constructor.name);
+        }
+        payload.addIssue = (issue) => {
+            if (typeof issue === "string") {
+                payload.issues.push(util_issue(issue, payload.value, def));
+            }
+            else {
+                // for Zod 3 backwards compatibility
+                const _issue = issue;
+                if (_issue.fatal)
+                    _issue.continue = false;
+                _issue.code ?? (_issue.code = "custom");
+                if (!("input" in _issue))
+                    _issue.input = payload.value;
+                _issue.inst ?? (_issue.inst = inst);
+                // _issue.continue ??= true;
+                payload.issues.push(util_issue(_issue));
+            }
+        };
+        const output = def.transform(payload.value, payload);
+        if (output instanceof Promise) {
+            return output.then((output) => {
+                payload.value = output;
+                return payload;
+            });
+        }
+        payload.value = output;
+        return payload;
+    };
+});
+function transform(fn) {
+    return new ZodTransform({
+        type: "transform",
+        transform: fn,
+    });
+}
+const ZodOptional = /*@__PURE__*/ $constructor("ZodOptional", (inst, def) => {
+    $ZodOptional.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+});
+function optional(innerType) {
+    return new ZodOptional({
+        type: "optional",
+        innerType: innerType,
+    });
+}
+const ZodExactOptional = /*@__PURE__*/ $constructor("ZodExactOptional", (inst, def) => {
+    $ZodExactOptional.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => optionalProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+});
+function exactOptional(innerType) {
+    return new ZodExactOptional({
+        type: "optional",
+        innerType: innerType,
+    });
+}
+const ZodNullable = /*@__PURE__*/ $constructor("ZodNullable", (inst, def) => {
+    $ZodNullable.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => nullableProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+});
+function nullable(innerType) {
+    return new ZodNullable({
+        type: "nullable",
+        innerType: innerType,
+    });
+}
+// nullish
+function schemas_nullish(innerType) {
+    return optional(nullable(innerType));
+}
+const ZodDefault = /*@__PURE__*/ $constructor("ZodDefault", (inst, def) => {
+    $ZodDefault.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => defaultProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+    inst.removeDefault = inst.unwrap;
+});
+function schemas_default(innerType, defaultValue) {
+    return new ZodDefault({
+        type: "default",
+        innerType: innerType,
+        get defaultValue() {
+            return typeof defaultValue === "function" ? defaultValue() : shallowClone(defaultValue);
+        },
+    });
+}
+const ZodPrefault = /*@__PURE__*/ $constructor("ZodPrefault", (inst, def) => {
+    $ZodPrefault.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => prefaultProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+});
+function prefault(innerType, defaultValue) {
+    return new ZodPrefault({
+        type: "prefault",
+        innerType: innerType,
+        get defaultValue() {
+            return typeof defaultValue === "function" ? defaultValue() : shallowClone(defaultValue);
+        },
+    });
+}
+const ZodNonOptional = /*@__PURE__*/ $constructor("ZodNonOptional", (inst, def) => {
+    $ZodNonOptional.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => nonoptionalProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+});
+function nonoptional(innerType, params) {
+    return new ZodNonOptional({
+        type: "nonoptional",
+        innerType: innerType,
+        ...normalizeParams(params),
+    });
+}
+const ZodSuccess = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodSuccess", (inst, def) => {
+    core.$ZodSuccess.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.successProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+})));
+function success(innerType) {
+    return new ZodSuccess({
+        type: "success",
+        innerType: innerType,
+    });
+}
+const ZodCatch = /*@__PURE__*/ $constructor("ZodCatch", (inst, def) => {
+    $ZodCatch.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => catchProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+    inst.removeCatch = inst.unwrap;
+});
+function schemas_catch(innerType, catchValue) {
+    return new ZodCatch({
+        type: "catch",
+        innerType: innerType,
+        catchValue: (typeof catchValue === "function" ? catchValue : constantCatch(catchValue)),
+    });
+}
+
+const ZodNaN = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodNaN", (inst, def) => {
+    core.$ZodNaN.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.nanProcessor(inst, ctx, json, params);
+})));
+function nan(params) {
+    return core._nan(ZodNaN, params);
+}
+const ZodPipe = /*@__PURE__*/ $constructor("ZodPipe", (inst, def) => {
+    $ZodPipe.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => pipeProcessor(inst, ctx, json, params);
+    inst.in = def.in;
+    inst.out = def.out;
+});
+function pipe(in_, out) {
+    return new ZodPipe({
+        type: "pipe",
+        in: in_,
+        out: out,
+        // ...util.normalizeParams(params),
+    });
+}
+const ZodCodec = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodCodec", (inst, def) => {
+    ZodPipe.init(inst, def);
+    core.$ZodCodec.init(inst, def);
+})));
+function codec(in_, out, params) {
+    return new ZodCodec({
+        type: "pipe",
+        in: in_,
+        out: out,
+        transform: params.decode,
+        reverseTransform: params.encode,
+    });
+}
+function invertCodec(codec) {
+    const def = codec._zod.def;
+    return new ZodCodec({
+        type: "pipe",
+        in: def.out,
+        out: def.in,
+        transform: def.reverseTransform,
+        reverseTransform: def.transform,
+    });
+}
+const ZodPreprocess = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodPreprocess", (inst, def) => {
+    ZodPipe.init(inst, def);
+    core.$ZodPreprocess.init(inst, def);
+})));
+const ZodReadonly = /*@__PURE__*/ $constructor("ZodReadonly", (inst, def) => {
+    $ZodReadonly.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => readonlyProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+});
+function readonly(innerType) {
+    return new ZodReadonly({
+        type: "readonly",
+        innerType: innerType,
+    });
+}
+const ZodTemplateLiteral = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodTemplateLiteral", (inst, def) => {
+    core.$ZodTemplateLiteral.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.templateLiteralProcessor(inst, ctx, json, params);
+})));
+function templateLiteral(parts, params) {
+    return new ZodTemplateLiteral({
+        type: "template_literal",
+        parts,
+        ...util.normalizeParams(params),
+    });
+}
+const ZodLazy = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodLazy", (inst, def) => {
+    core.$ZodLazy.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.lazyProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.getter();
+})));
+function lazy(getter) {
+    return new ZodLazy({
+        type: "lazy",
+        getter: getter,
+    });
+}
+const ZodPromise = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodPromise", (inst, def) => {
+    core.$ZodPromise.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.promiseProcessor(inst, ctx, json, params);
+    inst.unwrap = () => inst._zod.def.innerType;
+})));
+function promise(innerType) {
+    return new ZodPromise({
+        type: "promise",
+        innerType: innerType,
+    });
+}
+const ZodFunction = /*@__PURE__*/ (/* unused pure expression or super */ null && (core.$constructor("ZodFunction", (inst, def) => {
+    core.$ZodFunction.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => processors.functionProcessor(inst, ctx, json, params);
+})));
+function _function(params) {
+    return new ZodFunction({
+        type: "function",
+        input: Array.isArray(params?.input) ? tuple(params?.input) : (params?.input ?? array(unknown())),
+        output: params?.output ?? unknown(),
+    });
+}
+
+const ZodCustom = /*@__PURE__*/ $constructor("ZodCustom", (inst, def) => {
+    $ZodCustom.init(inst, def);
+    ZodType.init(inst, def);
+    inst._zod.processJSONSchema = (ctx, json, params) => customProcessor(inst, ctx, json, params);
+});
+// custom checks
+function check(fn) {
+    const ch = new core.$ZodCheck({
+        check: "custom",
+        // ...util.normalizeParams(params),
+    });
+    ch._zod.check = fn;
+    return ch;
+}
+function custom(fn, _params) {
+    return core._custom(ZodCustom, fn ?? (() => true), _params);
+}
+function refine(fn, _params = {}) {
+    return _refine(ZodCustom, fn, _params);
+}
+// superRefine
+function superRefine(fn, params) {
+    return _superRefine(fn, params);
+}
+// Re-export describe and meta from core
+const schemas_describe = describe;
+const schemas_meta = meta;
+const ZodInstanceOf = /*@__PURE__*/ $constructor("ZodInstanceOf", (inst, def) => {
+    ZodCustom.init(inst, def);
+}, {
+    properties(shape, params) {
+        // asserts in place, so the narrowed output type is truthful without a wrapper
+        return this.check(_properties(shape, params));
+    },
+});
+function _instanceof(cls, params = {}) {
+    const inst = new ZodInstanceOf({
+        type: "custom",
+        check: "custom",
+        fn: (data) => data instanceof cls,
+        abort: true,
+        ...util.normalizeParams(params),
+    });
+    inst._zod.bag.Class = cls;
+    // Override check to emit invalid_type instead of custom
+    inst._zod.check = (payload) => {
+        if (!(payload.value instanceof cls)) {
+            payload.issues.push({
+                code: "invalid_type",
+                expected: cls.name,
+                input: payload.value,
+                inst,
+                path: [...(inst._zod.def.path ?? [])],
+            });
+        }
+    };
+    return inst;
+}
+
+// stringbool
+const stringbool = (...args) => core._stringbool({
+    Codec: ZodCodec,
+    Boolean: ZodBoolean,
+    String: ZodString,
+}, ...args);
+function json(params) {
+    const jsonSchema = lazy(() => {
+        return union([schemas_string(params), schemas_number(), schemas_boolean(), schemas_null(), array(jsonSchema), record(schemas_string(), jsonSchema)]);
+    });
+    return jsonSchema;
+}
+// preprocess
+function preprocess(fn, schema) {
+    return new ZodPreprocess({
+        type: "pipe",
+        in: transform(fn),
+        out: schema,
+    });
+}
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/tslib.mjs
+var tslib = __nccwpck_require__(7421);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/values.mjs
+var utils_values = __nccwpck_require__(7427);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/sleep.mjs
 /**
  * Resolve after `ms`, or immediately when `signal` aborts.
  *
@@ -39453,12 +48988,12 @@ const sleep = (ms, signal) => new Promise((resolve) => {
     signal?.addEventListener('abort', onAbort, { once: true });
 });
 //# sourceMappingURL=sleep.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/errors.mjs
-var errors = __nccwpck_require__(5451);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/version.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/errors.mjs
+var errors = __nccwpck_require__(830);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/version.mjs
 const sdk_version_VERSION = '1.8.0'; // x-release-please-version
 //# sourceMappingURL=version.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/detect-platform.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/detect-platform.mjs
 
 const isRunningInBrowser = () => {
     return (
@@ -39615,7 +49150,7 @@ const getPlatformHeaders = () => {
     return (_platformHeaders ?? (_platformHeaders = getPlatformProperties()));
 };
 //# sourceMappingURL=detect-platform.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/request-signal.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/request-signal.mjs
 /**
  * Tracks the removal of the per-request abort listener that
  * `fetchWithTimeout` attaches to a caller-provided signal, so the listener's
@@ -39631,7 +49166,7 @@ const getPlatformHeaders = () => {
  * `releaseRequestSignal` with the request's controller.
  */
 const cleanups = new WeakMap();
-const registry = typeof globalThis.FinalizationRegistry === 'function' ?
+const request_signal_registry = typeof globalThis.FinalizationRegistry === 'function' ?
     new globalThis.FinalizationRegistry((controller) => releaseRequestSignal(controller))
     : null;
 // Module-scope factory so the cleanup closure captures exactly the signal and
@@ -39650,18 +49185,18 @@ function registerRequestSignalCleanup(controller, signal, listener) {
 // body is what a live read keeps alive.
 function armAbandonmentBackstop(body, controller) {
     if (cleanups.has(controller))
-        registry?.register(body, controller, controller);
+        request_signal_registry?.register(body, controller, controller);
 }
 function releaseRequestSignal(controller) {
     const cleanup = cleanups.get(controller);
     if (cleanup) {
         cleanups.delete(controller);
-        registry?.unregister(controller);
+        request_signal_registry?.unregister(controller);
         cleanup();
     }
 }
 //# sourceMappingURL=request-signal.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/shims.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/shims.mjs
 function getDefaultFetch() {
     if (typeof fetch !== 'undefined') {
         return fetch;
@@ -39767,7 +49302,7 @@ async function CancelReadableStream(stream) {
     await cancelPromise;
 }
 //# sourceMappingURL=shims.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/request-options.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/request-options.mjs
 /**
  * Tracks which fallback a sequence of requests is pinned to.
  *
@@ -41063,11 +50598,11 @@ const context_api_context = ContextAPI.getInstance();
 
 
 //# sourceMappingURL=context-api.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/error.mjs
-var sdk_core_error = __nccwpck_require__(4854);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/bytes.mjs
-var utils_bytes = __nccwpck_require__(7961);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/decoders/line.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/error.mjs
+var sdk_core_error = __nccwpck_require__(113);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/bytes.mjs
+var utils_bytes = __nccwpck_require__(630);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/decoders/line.mjs
 var _LineDecoder_buffer, _LineDecoder_carriageReturnIndex;
 
 
@@ -41185,9 +50720,9 @@ function findDoubleNewlineIndex(buffer) {
     return -1;
 }
 //# sourceMappingURL=line.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/log.mjs
-var utils_log = __nccwpck_require__(674);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/streaming.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/log.mjs
+var utils_log = __nccwpck_require__(553);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/streaming.mjs
 var _Stream_client;
 
 
@@ -41461,7 +50996,7 @@ async function* _iterSSEMessages(response, controller) {
     }
 }
 //# sourceMappingURL=streaming.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/headers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/headers.mjs
 
 const brand_privateNullableHeaders = Symbol.for('brand.privateNullableHeaders');
 function* iterateHeaders(headers) {
@@ -41575,9 +51110,9 @@ const isEmptyHeaders = (headers) => {
     return true;
 };
 //# sourceMappingURL=headers.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/env.mjs
-var utils_env = __nccwpck_require__(7165);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/tracing.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/env.mjs
+var utils_env = __nccwpck_require__(1614);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/tracing.mjs
 /**
  * OpenTelemetry tracing of the client's API calls.
  *
@@ -42233,7 +51768,7 @@ function errorType(error) {
     return 'client_error';
 }
 //# sourceMappingURL=tracing.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/qs/formats.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/qs/formats.mjs
 const default_format = 'RFC3986';
 const default_formatter = (v) => String(v);
 const formatters = {
@@ -42243,7 +51778,7 @@ const formatters = {
 const RFC1738 = 'RFC1738';
 const RFC3986 = 'RFC3986';
 //# sourceMappingURL=formats.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/qs/utils.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/qs/utils.mjs
 
 
 let has = (obj, key) => ((has = Object.hasOwn ?? Function.prototype.call.bind(Object.prototype.hasOwnProperty)),
@@ -42342,7 +51877,7 @@ function assign_single_source(target, source) {
         return acc;
     }, target);
 }
-function decode(str, _, charset) {
+function utils_decode(str, _, charset) {
     const strWithoutPlus = str.replace(/\+/g, ' ');
     if (charset === 'iso-8859-1') {
         // unescape never throws, no try...catch needed:
@@ -42357,7 +51892,7 @@ function decode(str, _, charset) {
     }
 }
 const limit = 1024;
-const encode = (str, _defaultEncoder, charset, _kind, format) => {
+const utils_encode = (str, _defaultEncoder, charset, _kind, format) => {
     // This code was originally written by Brian White for the io.js core querystring library.
     // It has been adapted here for stricter adherence to RFC 3986
     if (str.length === 0) {
@@ -42461,7 +51996,7 @@ function maybe_map(val, fn) {
     return fn(val);
 }
 //# sourceMappingURL=utils.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/qs/stringify.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/qs/stringify.mjs
 
 
 
@@ -42491,7 +52026,7 @@ const stringify_defaults = {
     delimiter: '&',
     encode: true,
     encodeDotInKeys: false,
-    encoder: encode,
+    encoder: utils_encode,
     encodeValuesOnly: false,
     format: default_format,
     formatter: default_formatter,
@@ -42736,20 +52271,20 @@ function stringify(object, opts = {}) {
     return joined.length > 0 ? prefix + joined : '';
 }
 //# sourceMappingURL=stringify.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/query.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/query.mjs
 
 function stringifyQuery(query) {
     return stringify(query, { arrayFormat: 'brackets' });
 }
 //# sourceMappingURL=query.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/resource.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/resource.mjs
 class APIResource {
     constructor(client) {
         this._client = client;
     }
 }
 //# sourceMappingURL=resource.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/parse.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/parse.mjs
 
 
 
@@ -42811,7 +52346,7 @@ function addResponseIDs(value, response) {
     });
 }
 //# sourceMappingURL=parse.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/uploads.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/uploads.mjs
 
 
 const checkFileSupport = () => {
@@ -42965,7 +52500,7 @@ const addFormValue = async (form, key, value, stripFilenames) => {
     }
 };
 //# sourceMappingURL=uploads.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/attributes.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/attributes.mjs
 // Named as `@opentelemetry/semantic-conventions` names them, and copied: that package exports the
 // `gen_ai.*` names only from its unstable `incubating` entry point, which says to copy them.
 const ATTR_GEN_AI_AGENT_ID = 'gen_ai.agent.id';
@@ -42996,7 +52531,7 @@ const ATTR_ANTHROPIC_TOOLSET_NAME = 'anthropic.toolset.name';
 const ATTR_ANTHROPIC_USAGE_COMPACTION_INPUT_TOKENS = 'anthropic.usage.compaction.input_tokens';
 const ATTR_ANTHROPIC_USAGE_COMPACTION_OUTPUT_TOKENS = 'anthropic.usage.compaction.output_tokens';
 //# sourceMappingURL=attributes.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/content.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/content.mjs
 
 /**
  * Sets the content attributes of a `messages.create` API call, within `limit` bytes: first
@@ -43352,7 +52887,7 @@ function utf8Length(text) {
     return size;
 }
 //# sourceMappingURL=content.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/response.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/response.mjs
 
 
 /**
@@ -43393,7 +52928,7 @@ function count(usage, name) {
     return typeof value === 'number' ? value : 0;
 }
 //# sourceMappingURL=response.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/streaming.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/streaming.mjs
 
 
 
@@ -43592,7 +53127,7 @@ function without(data, path) {
     return (0,utils_values/* isObj */.sA)(value) ? { ...data, [name]: without(value, rest) } : data;
 }
 //# sourceMappingURL=streaming.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/api-promise.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/api-promise.mjs
 var _APIPromise_client;
 
 
@@ -43721,7 +53256,7 @@ var APIPromise = /* @__PURE__ */ (() => {
     return APIPromise;
 })();
 //# sourceMappingURL=api-promise.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/pagination.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/pagination.mjs
 var _AbstractPage_client;
 
 
@@ -43981,7 +53516,7 @@ class ReportPageCursor extends AbstractPage {
     }
 }
 //# sourceMappingURL=pagination.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/stainless-helper-header.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/stainless-helper-header.mjs
 /**
  * Single source of truth for the `x-stainless-helper` telemetry header — the
  * key, the closed value vocabulary, and per-object helper tagging. The
@@ -44070,7 +53605,7 @@ function stainlessHelperHeaderFromFile(file) {
     return {};
 }
 //# sourceMappingURL=stainless-helper-header.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/path.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/path.mjs
 
 /**
  * Percent-encode everything that isn't safe to have in a path without encoding safe chars.
@@ -44152,7 +53687,7 @@ const createPathTagFunction = (pathEncoder = encodeURIPath) => function path(sta
  */
 const path_path = /* @__PURE__ */ createPathTagFunction(encodeURIPath);
 //# sourceMappingURL=path.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/files.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/files.mjs
 
 
 
@@ -44368,7 +53903,7 @@ var Files = /* @__PURE__ */ (() => {
     return Files;
 })();
 //# sourceMappingURL=files.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/shared.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/shared.mjs
 
 /**
  * The API key belongs to the Claude Code workspace, and the user who created it is
@@ -44579,7 +54114,7 @@ var CMEKKeyUnreachableError = /* @__PURE__ */ (() => {
     return CMEKKeyUnreachableError;
 })();
 //# sourceMappingURL=shared.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/deployment-runs.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/deployment-runs.mjs
 
 
 
@@ -44657,7 +54192,7 @@ class DeploymentRuns extends APIResource {
     }
 }
 //# sourceMappingURL=deployment-runs.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/deployments.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/deployments.mjs
 
 
 
@@ -44923,7 +54458,7 @@ class Deployments extends APIResource {
     }
 }
 //# sourceMappingURL=deployments.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/dreams.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/dreams.mjs
 
 
 
@@ -45116,7 +54651,7 @@ class Dreams extends APIResource {
     }
 }
 //# sourceMappingURL=dreams.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/files.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/files.mjs
 
 
 
@@ -45303,7 +54838,7 @@ class files_Files extends APIResource {
     }
 }
 //# sourceMappingURL=files.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/models.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/models.mjs
 
 
 
@@ -45384,7 +54919,7 @@ class Models extends APIResource {
 //# sourceMappingURL=models.mjs.map
 // EXTERNAL MODULE: ./node_modules/.pnpm/standardwebhooks@1.1.1/node_modules/standardwebhooks/dist/index.js
 var dist = __nccwpck_require__(8382);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/webhooks.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/webhooks.mjs
 
 
 class Webhooks extends APIResource {
@@ -45413,7 +54948,7 @@ class Webhooks extends APIResource {
     }
 }
 //# sourceMappingURL=webhooks.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/agents/versions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/agents/versions.mjs
 
 
 
@@ -45455,7 +54990,7 @@ class Versions extends APIResource {
     }
 }
 //# sourceMappingURL=versions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/agents/agents.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/agents/agents.mjs
 
 
 
@@ -45626,7 +55161,7 @@ var Agents = /* @__PURE__ */ (() => {
     return Agents;
 })();
 //# sourceMappingURL=agents.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/uuid.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/uuid.mjs
 /**
  * https://stackoverflow.com/a/2117523
  */
@@ -45641,7 +55176,7 @@ let uuid_uuid4 = function () {
     return '10000000-1000-4000-8000-100000000000'.replace(/[018]/g, (c) => (+c ^ (randomByte() & (15 >> (+c / 4)))).toString(16));
 };
 //# sourceMappingURL=uuid.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/abort.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/abort.mjs
 /**
  * Chain an external {@link AbortSignal} into a local {@link AbortController}:
  * the controller aborts whenever `external` aborts (synchronously if it is
@@ -45665,9 +55200,9 @@ function linkAbort(external, controller) {
     return () => external.removeEventListener('abort', onAbort);
 }
 //# sourceMappingURL=abort.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/backoff.mjs
-var utils_backoff = __nccwpck_require__(5480);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/helper-client.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/backoff.mjs
+var utils_backoff = __nccwpck_require__(9807);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/helper-client.mjs
 
 
 
@@ -45718,7 +55253,7 @@ function copyClientForHelper(client, { authToken, helper }) {
     });
 }
 //# sourceMappingURL=helper-client.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/environments.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/environments.mjs
 
 
 
@@ -45781,7 +55316,7 @@ async function withEnvironmentWorkSpan(client, span, signal, handle) {
     guardTracing(client, () => endEnvironmentWorkSpan(span, signal));
 }
 //# sourceMappingURL=environments.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/environments/poller.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/environments/poller.mjs
 var _WorkPoller_runnerClient, _WorkPoller_consumed, _WorkPoller_controller, _WorkPoller_detachExternal, _WorkPoller_autoStop, _WorkPoller_drain, _WorkPoller_blockMs, _WorkPoller_reclaimOlderThanMs, _WorkPoller_requestOpts, _IdleLog_log, _IdleLog_environmentId, _IdleLog_idleSince, _IdleLog_lastReport;
 
 
@@ -46036,7 +55571,7 @@ function defaultWorkerId() {
     return host ? `${host}-${uuid_uuid4()}` : uuid_uuid4();
 }
 //# sourceMappingURL=poller.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/base64.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/base64.mjs
 
 
 const toBase64 = (data) => {
@@ -46069,7 +55604,7 @@ const fromBase64 = (str) => {
     throw new sdk_core_error/* AnthropicError */.pJ('Cannot decode base64 string; Expected `Buffer` or `atob` to be defined');
 };
 //# sourceMappingURL=base64.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/async-queue.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/async-queue.mjs
 var _AsyncQueue_items, _AsyncQueue_waiters, _AsyncQueue_closed;
 
 /**
@@ -46151,9 +55686,9 @@ var AsyncQueue = /* @__PURE__ */ (() => {
     return AsyncQueue;
 })();
 //# sourceMappingURL=async-queue.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/tools/ToolError.mjs
-var tools_ToolError = __nccwpck_require__(3092);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/sanitize.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/tools/ToolError.mjs
+var tools_ToolError = __nccwpck_require__(1697);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/sanitize.mjs
 /**
  * C0 and C1 controls, the line separators and the bidi controls: anything that would break or reorder the one line a
  * page- or model-supplied value goes into.
@@ -46246,7 +55781,7 @@ function errorTextContent(content) {
         .map((block) => ({ ...block, text: sanitize_wellFormed(block.text) }));
 }
 //# sourceMappingURL=sanitize.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/tools/BetaRunnableTool.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/tools/BetaRunnableTool.mjs
 
 
 /**
@@ -46274,7 +55809,7 @@ async function runRunnableTool(tool, rawInput, context) {
     }
 }
 //# sourceMappingURL=BetaRunnableTool.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/tools.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/tools.mjs
 
 
 
@@ -46372,7 +55907,7 @@ async function withToolUseSpan(client, tool, toolUse, options, run) {
     }
 }
 //# sourceMappingURL=tools.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/tools/SessionToolRunner.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/tools/SessionToolRunner.mjs
 var _IdleClock_maxIdleMs, _IdleClock_onExpire, _IdleClock_blockers, _IdleClock_armPending, _IdleClock_timer, _SessionToolRunner_instances, _SessionToolRunner_consumed, _SessionToolRunner_controller, _SessionToolRunner_detachExternal, _SessionToolRunner_requestOpts, _SessionToolRunner_toolByName, _SessionToolRunner_logger, _SessionToolRunner_seen, _SessionToolRunner_answered, _SessionToolRunner_confirmationVerdicts, _SessionToolRunner_awaitingConfirmation, _SessionToolRunner_results, _SessionToolRunner_inFlightCount, _SessionToolRunner_sendRetryWindowMs, _SessionToolRunner_onIdle, _SessionToolRunner_idleClock, _SessionToolRunner_otelContext, _SessionToolRunner_primaryThreadId, _SessionToolRunner_historyRead, _SessionToolRunner_requestOptions, _SessionToolRunner_streamLoop, _SessionToolRunner_reconcile, _SessionToolRunner_ingestHistory, _SessionToolRunner_notePrimaryThread, _SessionToolRunner_handleStreamEvent, _SessionToolRunner_routeToolEvent, _SessionToolRunner_noteConfirmation, _SessionToolRunner_applyVerdict, _SessionToolRunner_surfaceCall, _SessionToolRunner_execute, _SessionToolRunner_sendResult, _SessionToolRunner_drain;
 
 
@@ -47210,9 +56745,9 @@ function toSessionContent(content) {
     return out.length > 0 ? out : [{ type: 'text', text: '(no output)' }];
 }
 //# sourceMappingURL=SessionToolRunner.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/tools/agent-toolset/sync-interval.mjs
-var sync_interval = __nccwpck_require__(4642);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/environments/worker.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/tools/agent-toolset/sync-interval.mjs
+var sync_interval = __nccwpck_require__(1003);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/environments/worker.mjs
 var _EnvironmentWorker_instances, _EnvironmentWorker_signal, _EnvironmentWorker_handleItem, _Lease_ctrl, _Lease_endReason;
 
 
@@ -47527,7 +57062,7 @@ var EnvironmentWorker = /* @__PURE__ */ (() => {
         const detachExternal = linkAbort(externalSignal, ctrl);
         const lease = new Lease(ctrl);
         // Lazily load the Node-only toolset module — see the import note at the top.
-        const agentToolset = await __nccwpck_require__.e(/* import() */ 810).then(__nccwpck_require__.bind(__nccwpck_require__, 2810));
+        const agentToolset = await __nccwpck_require__.e(/* import() */ 727).then(__nccwpck_require__.bind(__nccwpck_require__, 4727));
         // Start the lease heartbeat BEFORE the session fetch and the skill /
         // memory downloads: those can take longer than the lease TTL, and an
         // unheartbeated lease lapsing mid-download would let another worker
@@ -47841,7 +57376,7 @@ onLeaseTtl) {
     }
 }
 //# sourceMappingURL=worker.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/environments/work.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/environments/work.mjs
 
 
 
@@ -48183,7 +57718,7 @@ var Work = /* @__PURE__ */ (() => {
 
 
 //# sourceMappingURL=work.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/environments/environments.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/environments/environments.mjs
 
 
 
@@ -48497,7 +58032,7 @@ var Environments = /* @__PURE__ */ (() => {
     return Environments;
 })();
 //# sourceMappingURL=environments.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/memory-stores/memories.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/memory-stores/memories.mjs
 
 
 
@@ -48671,7 +58206,7 @@ class Memories extends APIResource {
     }
 }
 //# sourceMappingURL=memories.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/memory-stores/memory-versions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/memory-stores/memory-versions.mjs
 
 
 
@@ -48792,7 +58327,7 @@ class MemoryVersions extends APIResource {
     }
 }
 //# sourceMappingURL=memory-versions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/memory-stores/memory-stores.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/memory-stores/memory-stores.mjs
 
 
 
@@ -48987,7 +58522,7 @@ var MemoryStores = /* @__PURE__ */ (() => {
     return MemoryStores;
 })();
 //# sourceMappingURL=memory-stores.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/decoders/jsonl.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/decoders/jsonl.mjs
 
 
 
@@ -49035,7 +58570,7 @@ var JSONLDecoder = /* @__PURE__ */ (() => {
     return JSONLDecoder;
 })();
 //# sourceMappingURL=jsonl.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/messages/batches.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/messages/batches.mjs
 
 
 
@@ -49308,7 +58843,7 @@ class Batches extends APIResource {
     }
 }
 //# sourceMappingURL=batches.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/constants.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/constants.mjs
 // File containing shared constants
 /**
  * Model-specific timeout constraints for non-streaming requests
@@ -49319,7 +58854,7 @@ const MODEL_NONSTREAMING_TOKENS = {
     'claude-opus-4-1@20250805': 8192,
 };
 //# sourceMappingURL=constants.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/api-call.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/api-call.mjs
 
 
 
@@ -49396,7 +58931,7 @@ function recordMessagesCreateResponse(client, call, body, data) {
     }
 }
 //# sourceMappingURL=api-call.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/beta-parser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/beta-parser.mjs
 
 function getOutputFormat(params) {
     // Prefer output_format (deprecated) over output_config.format for backward compatibility
@@ -49472,7 +59007,7 @@ function parseBetaOutputFormat(params, content) {
     }
 }
 //# sourceMappingURL=beta-parser.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/beta-messages-request.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/beta-messages-request.mjs
 
 
 
@@ -49533,7 +59068,7 @@ function assertOneOutputFormat(params) {
     }
 }
 //# sourceMappingURL=beta-messages-request.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/_vendor/partial-json-parser/parser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/_vendor/partial-json-parser/parser.mjs
 const tokenize = (input) => {
     let current = 0;
     let tokens = [];
@@ -49782,7 +59317,7 @@ const tokenize = (input) => {
 }, partialParse = (input) => JSON.parse(generate(unstrip(strip(tokenize(input)))));
 
 //# sourceMappingURL=parser.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/message-stream-utils.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/message-stream-utils.mjs
 
 const JSON_BUF_PROPERTY = '__json_buf';
 /**
@@ -49813,7 +59348,7 @@ function withLazyInput(prev, jsonBuf) {
     return next;
 }
 //# sourceMappingURL=message-stream-utils.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/BetaMessageStream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/BetaMessageStream.mjs
 var _BetaMessageStream_instances, _BetaMessageStream_currentMessageSnapshot, _BetaMessageStream_params, _BetaMessageStream_connectedPromise, _BetaMessageStream_resolveConnectedPromise, _BetaMessageStream_rejectConnectedPromise, _BetaMessageStream_endPromise, _BetaMessageStream_resolveEndPromise, _BetaMessageStream_rejectEndPromise, _BetaMessageStream_listeners, _BetaMessageStream_ended, _BetaMessageStream_errored, _BetaMessageStream_aborted, _BetaMessageStream_catchingPromiseCreated, _BetaMessageStream_response, _BetaMessageStream_request_id, _BetaMessageStream_workspace_id, _BetaMessageStream_logger, _BetaMessageStream_client, _BetaMessageStream_span, _BetaMessageStream_spanBody, _BetaMessageStream_getFinalMessage, _BetaMessageStream_getFinalText, _BetaMessageStream_handleError, _BetaMessageStream_beginRequest, _BetaMessageStream_addStreamEvent, _BetaMessageStream_endRequest, _BetaMessageStream_accumulateMessage, _BetaMessageStream_toolInputParseError;
 
 
@@ -50543,7 +60078,7 @@ var BetaMessageStream = /* @__PURE__ */ (() => {
     return BetaMessageStream;
 })();
 //# sourceMappingURL=BetaMessageStream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/family.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/family.mjs
 /** Dated `tools[]` entry `type` → the family stamped on member blocks. */
 const TOOLSET_TYPE_TO_FAMILY = {
     browser_toolset_20260801: 'browser',
@@ -50558,7 +60093,7 @@ function isRunnableToolset(t) {
     return 'run' in t && t.type != null && Object.prototype.hasOwnProperty.call(TOOLSET_TYPE_TO_FAMILY, t.type);
 }
 //# sourceMappingURL=family.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/errors.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/errors.mjs
 
 
 
@@ -50685,7 +60220,7 @@ class UploadRefusedError extends tools_ToolError/* ToolError */.v {
 /** The refusal for a `file_upload` by path when no upload root is configured (no file policy, or one without roots). */
 const NO_UPLOAD_ROOTS = 'file_upload has no configured upload roots';
 //# sourceMappingURL=errors.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/run.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/toolsets/run.mjs
 
 
 
@@ -50777,7 +60312,7 @@ async function runToolsetMember(toolset, toolUse, options = {}) {
     }
 }
 //# sourceMappingURL=run.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/BetaToolRunnerStream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/BetaToolRunnerStream.mjs
 var _BetaToolRunnerStream_instances, _BetaToolRunnerStream_onToolCall, _BetaToolRunnerStream_emitted, _BetaToolRunnerStream_readers, _BetaToolRunnerStream_toolCalls, _BetaToolRunnerStream_closed, _BetaToolRunnerStream_ready, _BetaToolRunnerStream_fallback, _BetaToolRunnerStream_track, _BetaToolRunnerStream_release, _BetaToolRunnerStream_removeReader;
 
 
@@ -50900,9 +60435,9 @@ var BetaToolRunnerStream = /* @__PURE__ */ (() => {
     return BetaToolRunnerStream;
 })();
 //# sourceMappingURL=BetaToolRunnerStream.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/promise.mjs
-var promise = __nccwpck_require__(4723);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/threads/ThreadState.mjs
+// EXTERNAL MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/promise.mjs
+var utils_promise = __nccwpck_require__(2692);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/threads/ThreadState.mjs
 var _ThreadState_instances, _ThreadState_fields, _ThreadState_stored, _ThreadState_staged, _ThreadState_anchor, _ThreadState_turn, _ThreadState_logger, _ThreadState_lastReply_get, _ThreadState_repeatsLastReply, _ThreadState_startNewThread, _ThreadState_retryPartialTurn, _ThreadState_dropsRefusedTurn, _ThreadState_storeTurn, _ThreadState_adoptContainer, _ThreadState_checkCreateOnly, _ThreadState_requestOptions;
 
 
@@ -51398,7 +60933,7 @@ function toMessageList(input) {
     return (0,utils_values/* isReadonlyArray */.MH)(input) ? input : [input];
 }
 //# sourceMappingURL=ThreadState.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/threads/tool-runner-params.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/threads/tool-runner-params.mjs
 /**
  * `params` split into the runner's own settings, the `thread` choice, and the params of the thread it runs over. Throws
  * on a `thread` the params type leaves out.
@@ -51412,7 +60947,7 @@ function splitToolRunnerParams(params) {
     return { settings: { stream, max_iterations, runToolsEagerly }, thread, threadParams };
 }
 //# sourceMappingURL=tool-runner-params.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/tools/BetaToolRunner.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/tools/BetaToolRunner.mjs
 var _BetaToolRunner_instances, _BetaToolRunner_consumed, _BetaToolRunner_mutated, _BetaToolRunner_thread, _BetaToolRunner_settings, _BetaToolRunner_options, _BetaToolRunner_helperHeader, _BetaToolRunner_messagesWithoutReply, _BetaToolRunner_message, _BetaToolRunner_stream, _BetaToolRunner_toolResponse, _BetaToolRunner_completion, _BetaToolRunner_iterationCount, _BetaToolRunner_toolRunnerOtelContext, _BetaToolRunner_compaction, _BetaToolRunner_calls, _BetaToolRunner_lastStopReason, _BetaToolRunner_toolOverrides, _BetaToolRunner_pendingToolChanges, _BetaToolRunner_withToolRunnerSpan, _BetaToolRunner_send, _BetaToolRunner_turnOptions, _BetaToolRunner_streamThatStartsTools, _BetaToolRunner_startedCallsSettled, _BetaToolRunner_compact, _BetaToolRunner_compactionThread, _BetaToolRunner_runnableTools, _BetaToolRunner_availableToolNames, _BetaToolRunner_recordRemovalsFromHistory, _BetaToolRunner_compactAfterFinalTurn, _BetaToolRunner_generateToolResponse, _BetaToolRunner_toolsetFamilies, _BetaToolRunner_toolsetParams, _BetaToolRunner_flushPendingToolChanges, _BetaToolRunner_pendingToolChangesMessage;
 
 
@@ -51521,7 +61056,7 @@ var BetaToolRunner = /* @__PURE__ */ (() => {
                 helperHeader('BetaToolRunner'),
                 collected.length ? { [STAINLESS_HELPER_HEADER]: collected.join(', ') } : undefined,
             ]), "f");
-            (0,tslib/* __classPrivateFieldSet */.G)(this, _BetaToolRunner_completion, (0,promise/* promiseWithResolvers */.n)(), "f");
+            (0,tslib/* __classPrivateFieldSet */.G)(this, _BetaToolRunner_completion, (0,utils_promise/* promiseWithResolvers */.n)(), "f");
         }
         async *[(_BetaToolRunner_consumed = new WeakMap(), _BetaToolRunner_mutated = new WeakMap(), _BetaToolRunner_thread = new WeakMap(), _BetaToolRunner_settings = new WeakMap(), _BetaToolRunner_options = new WeakMap(), _BetaToolRunner_helperHeader = new WeakMap(), _BetaToolRunner_messagesWithoutReply = new WeakMap(), _BetaToolRunner_message = new WeakMap(), _BetaToolRunner_stream = new WeakMap(), _BetaToolRunner_toolResponse = new WeakMap(), _BetaToolRunner_completion = new WeakMap(), _BetaToolRunner_iterationCount = new WeakMap(), _BetaToolRunner_toolRunnerOtelContext = new WeakMap(), _BetaToolRunner_compaction = new WeakMap(), _BetaToolRunner_calls = new WeakMap(), _BetaToolRunner_lastStopReason = new WeakMap(), _BetaToolRunner_toolOverrides = new WeakMap(), _BetaToolRunner_pendingToolChanges = new WeakMap(), _BetaToolRunner_instances = new WeakSet(), _BetaToolRunner_withToolRunnerSpan = function _BetaToolRunner_withToolRunnerSpan(fn) {
             if (!(0,tslib/* __classPrivateFieldGet */.g)(this, _BetaToolRunner_toolRunnerOtelContext, "f")) {
@@ -51628,7 +61163,7 @@ var BetaToolRunner = /* @__PURE__ */ (() => {
                 // Silence unhandled promise errors
                 (0,tslib/* __classPrivateFieldGet */.g)(this, _BetaToolRunner_completion, "f").promise.catch(() => { });
                 (0,tslib/* __classPrivateFieldGet */.g)(this, _BetaToolRunner_completion, "f").reject(error);
-                (0,tslib/* __classPrivateFieldSet */.G)(this, _BetaToolRunner_completion, (0,promise/* promiseWithResolvers */.n)(), "f");
+                (0,tslib/* __classPrivateFieldSet */.G)(this, _BetaToolRunner_completion, (0,utils_promise/* promiseWithResolvers */.n)(), "f");
                 throw error;
             }
             finally {
@@ -52464,7 +61999,7 @@ function determineNextStepFromStopReason(stopReason) {
     }
 }
 //# sourceMappingURL=BetaToolRunner.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/threads/BetaMessageThread.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/threads/BetaMessageThread.mjs
 
 
 
@@ -52634,7 +62169,7 @@ class BetaMessageThread {
     }
 }
 //# sourceMappingURL=BetaMessageThread.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/messages/messages.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/messages/messages.mjs
 
 
 
@@ -52910,7 +62445,7 @@ const BETA_COMPUTER_MEMBER_NAME_VALUES = (/* unused pure expression or super */ 
 
 
 //# sourceMappingURL=messages.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/api-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/api-keys.mjs
 
 
 
@@ -52988,7 +62523,7 @@ class APIKeys extends APIResource {
     }
 }
 //# sourceMappingURL=api-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/compliance-settings.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/compliance-settings.mjs
 
 
 class ComplianceSettings extends APIResource {
@@ -53055,7 +62590,7 @@ class ComplianceSettings extends APIResource {
     }
 }
 //# sourceMappingURL=compliance-settings.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/external-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/external-keys.mjs
 
 
 
@@ -53222,7 +62757,7 @@ class ExternalKeys extends APIResource {
     }
 }
 //# sourceMappingURL=external-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/invites.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/invites.mjs
 
 
 
@@ -53333,7 +62868,7 @@ class Invites extends APIResource {
     }
 }
 //# sourceMappingURL=invites.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugin-marketplaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugin-marketplaces.mjs
 
 
 
@@ -53582,7 +63117,7 @@ class PluginMarketplaces extends APIResource {
     }
 }
 //# sourceMappingURL=plugin-marketplaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/rate-limits.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/rate-limits.mjs
 
 
 
@@ -53618,7 +63153,7 @@ class RateLimits extends APIResource {
     }
 }
 //# sourceMappingURL=rate-limits.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/users.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/users.mjs
 
 
 
@@ -53873,7 +63408,7 @@ var Users = /* @__PURE__ */ (() => {
     return Users;
 })();
 //# sourceMappingURL=users.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/webhooks.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/webhooks.mjs
 
 
 
@@ -54103,7 +63638,7 @@ class webhooks_Webhooks extends APIResource {
     }
 }
 //# sourceMappingURL=webhooks.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/artifacts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/artifacts.mjs
 
 
 
@@ -54139,7 +63674,7 @@ class Artifacts extends APIResource {
     }
 }
 //# sourceMappingURL=artifacts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/connectors.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/connectors.mjs
 
 
 
@@ -54187,7 +63722,7 @@ class Connectors extends APIResource {
     }
 }
 //# sourceMappingURL=connectors.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/cost.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/cost.mjs
 
 
 
@@ -54261,7 +63796,7 @@ class Cost extends APIResource {
     }
 }
 //# sourceMappingURL=cost.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/cost-report.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/cost-report.mjs
 
 
 
@@ -54321,7 +63856,7 @@ class CostReport extends APIResource {
     }
 }
 //# sourceMappingURL=cost-report.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/plugins.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/plugins.mjs
 
 
 
@@ -54372,7 +63907,7 @@ class Plugins extends APIResource {
     }
 }
 //# sourceMappingURL=plugins.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/skills.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/skills.mjs
 
 
 
@@ -54418,7 +63953,7 @@ class Skills extends APIResource {
     }
 }
 //# sourceMappingURL=skills.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/summaries.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/summaries.mjs
 
 
 
@@ -54459,7 +63994,7 @@ class Summaries extends APIResource {
     }
 }
 //# sourceMappingURL=summaries.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/usage.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/usage.mjs
 
 
 
@@ -54534,7 +64069,7 @@ class Usage extends APIResource {
     }
 }
 //# sourceMappingURL=usage.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/usage-report.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/usage-report.mjs
 
 
 
@@ -54594,7 +64129,7 @@ class UsageReport extends APIResource {
     }
 }
 //# sourceMappingURL=usage-report.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/user-cost-report.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/user-cost-report.mjs
 
 
 
@@ -54661,7 +64196,7 @@ class UserCostReport extends APIResource {
     }
 }
 //# sourceMappingURL=user-cost-report.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/user-usage-report.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/user-usage-report.mjs
 
 
 
@@ -54728,7 +64263,7 @@ class UserUsageReport extends APIResource {
     }
 }
 //# sourceMappingURL=user-usage-report.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/users.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/users.mjs
 
 
 
@@ -54774,7 +64309,7 @@ class users_Users extends APIResource {
     }
 }
 //# sourceMappingURL=users.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/apps/chat/projects.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/apps/chat/projects.mjs
 
 
 
@@ -54819,7 +64354,7 @@ class Projects extends APIResource {
     }
 }
 //# sourceMappingURL=projects.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/apps/chat/chat.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/apps/chat/chat.mjs
 
 
 
@@ -54834,7 +64369,7 @@ var Chat = /* @__PURE__ */ (() => {
     return Chat;
 })();
 //# sourceMappingURL=chat.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/apps/apps.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/apps/apps.mjs
 
 
 
@@ -54849,7 +64384,7 @@ var Apps = /* @__PURE__ */ (() => {
     return Apps;
 })();
 //# sourceMappingURL=apps.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/analytics.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/analytics/analytics.mjs
 
 
 
@@ -54912,7 +64447,7 @@ var Analytics = /* @__PURE__ */ (() => {
     return Analytics;
 })();
 //# sourceMappingURL=analytics.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/slack-channels.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/slack-channels.mjs
 
 
 
@@ -55133,7 +64668,7 @@ class SlackChannels extends APIResource {
     }
 }
 //# sourceMappingURL=slack-channels.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/slack-workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/slack-workspaces.mjs
 
 
 
@@ -55258,7 +64793,7 @@ class SlackWorkspaces extends APIResource {
     }
 }
 //# sourceMappingURL=slack-workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/bundles/targets.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/bundles/targets.mjs
 
 
 
@@ -55418,7 +64953,7 @@ class Targets extends APIResource {
     }
 }
 //# sourceMappingURL=targets.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/bundles/bundles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/bundles/bundles.mjs
 
 
 
@@ -55502,7 +65037,7 @@ var Bundles = /* @__PURE__ */ (() => {
     return Bundles;
 })();
 //# sourceMappingURL=bundles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/claude-tag.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/claude-tag/claude-tag.mjs
 
 
 
@@ -55636,7 +65171,7 @@ var ClaudeTag = /* @__PURE__ */ (() => {
     return ClaudeTag;
 })();
 //# sourceMappingURL=claude-tag.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/issuers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/issuers.mjs
 
 
 
@@ -55834,7 +65369,7 @@ class Issuers extends APIResource {
     }
 }
 //# sourceMappingURL=issuers.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/rules/workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/rules/workspaces.mjs
 
 
 
@@ -55970,7 +65505,7 @@ class Workspaces extends APIResource {
     }
 }
 //# sourceMappingURL=workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/rules/rules.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/rules/rules.mjs
 
 
 
@@ -56199,7 +65734,7 @@ var Rules = /* @__PURE__ */ (() => {
     return Rules;
 })();
 //# sourceMappingURL=rules.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/federation.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/federation/federation.mjs
 
 
 
@@ -56218,7 +65753,7 @@ var Federation = /* @__PURE__ */ (() => {
     return Federation;
 })();
 //# sourceMappingURL=federation.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/installation-settings.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/installation-settings.mjs
 
 
 
@@ -56384,7 +65919,7 @@ class InstallationSettings extends APIResource {
     }
 }
 //# sourceMappingURL=installation-settings.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/shares.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/shares.mjs
 
 
 
@@ -56441,7 +65976,7 @@ class Shares extends APIResource {
     }
 }
 //# sourceMappingURL=shares.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/versions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/versions.mjs
 
 
 
@@ -56670,7 +66205,7 @@ class versions_Versions extends APIResource {
     }
 }
 //# sourceMappingURL=versions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/plugins.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/plugins/plugins.mjs
 
 
 
@@ -57062,7 +66597,7 @@ var plugins_Plugins = /* @__PURE__ */ (() => {
     return Plugins;
 })();
 //# sourceMappingURL=plugins.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-groups/members.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-groups/members.mjs
 
 
 
@@ -57164,7 +66699,7 @@ class Members extends APIResource {
     }
 }
 //# sourceMappingURL=members.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-groups/rbac-groups.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-groups/rbac-groups.mjs
 
 
 
@@ -57314,7 +66849,7 @@ var RBACGroups = /* @__PURE__ */ (() => {
     return RBACGroups;
 })();
 //# sourceMappingURL=rbac-groups.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-roles/permissions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-roles/permissions.mjs
 
 
 
@@ -57349,7 +66884,7 @@ class Permissions extends APIResource {
     }
 }
 //# sourceMappingURL=permissions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-roles/rbac-roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/rbac-roles/rbac-roles.mjs
 
 
 
@@ -57414,7 +66949,7 @@ var RBACRoles = /* @__PURE__ */ (() => {
     return RBACRoles;
 })();
 //# sourceMappingURL=rbac-roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/service-accounts/workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/service-accounts/workspaces.mjs
 
 
 
@@ -57561,7 +67096,7 @@ class workspaces_Workspaces extends APIResource {
     }
 }
 //# sourceMappingURL=workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/service-accounts/service-accounts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/service-accounts/service-accounts.mjs
 
 
 
@@ -57766,7 +67301,7 @@ var ServiceAccounts = /* @__PURE__ */ (() => {
     return ServiceAccounts;
 })();
 //# sourceMappingURL=service-accounts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/spend-limits/effective.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/spend-limits/effective.mjs
 
 
 
@@ -57802,7 +67337,7 @@ class Effective extends APIResource {
     }
 }
 //# sourceMappingURL=effective.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/spend-limits/increase-requests.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/spend-limits/increase-requests.mjs
 
 
 
@@ -57922,7 +67457,7 @@ class IncreaseRequests extends APIResource {
     }
 }
 //# sourceMappingURL=increase-requests.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/spend-limits/spend-limits.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/spend-limits/spend-limits.mjs
 
 
 
@@ -58093,7 +67628,7 @@ var SpendLimits = /* @__PURE__ */ (() => {
     return SpendLimits;
 })();
 //# sourceMappingURL=spend-limits.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/telemetry-destinations/workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/telemetry-destinations/workspaces.mjs
 
 
 
@@ -58222,7 +67757,7 @@ class telemetry_destinations_workspaces_Workspaces extends APIResource {
     }
 }
 //# sourceMappingURL=workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/telemetry-destinations/telemetry-destinations.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/telemetry-destinations/telemetry-destinations.mjs
 
 
 
@@ -58449,7 +67984,7 @@ var TelemetryDestinations = /* @__PURE__ */ (() => {
     return TelemetryDestinations;
 })();
 //# sourceMappingURL=telemetry-destinations.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/members.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/members.mjs
 
 
 
@@ -58600,7 +68135,7 @@ class members_Members extends APIResource {
     }
 }
 //# sourceMappingURL=members.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/rate-limits.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/rate-limits.mjs
 
 
 
@@ -58683,7 +68218,7 @@ class rate_limits_RateLimits extends APIResource {
     }
 }
 //# sourceMappingURL=rate-limits.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/service-accounts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/service-accounts.mjs
 
 
 
@@ -58912,7 +68447,7 @@ class service_accounts_ServiceAccounts extends APIResource {
     }
 }
 //# sourceMappingURL=service-accounts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/workspaces/workspaces.mjs
 
 
 
@@ -59071,7 +68606,7 @@ var workspaces_workspaces_Workspaces = /* @__PURE__ */ (() => {
     return Workspaces;
 })();
 //# sourceMappingURL=workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/organization/organization.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/organization/organization.mjs
 
 
 
@@ -59193,7 +68728,7 @@ var Organization = /* @__PURE__ */ (() => {
     return Organization;
 })();
 //# sourceMappingURL=organization.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/sessions/events.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/sessions/events.mjs
 
 
 
@@ -59349,7 +68884,7 @@ var Events = /* @__PURE__ */ (() => {
 })();
 
 //# sourceMappingURL=events.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/sessions/resources.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/sessions/resources.mjs
 
 
 
@@ -59520,7 +69055,7 @@ class Resources extends APIResource {
     }
 }
 //# sourceMappingURL=resources.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/sessions/threads/events.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/sessions/threads/events.mjs
 
 
 
@@ -59599,7 +69134,7 @@ class events_Events extends APIResource {
     }
 }
 //# sourceMappingURL=events.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/sessions/threads/threads.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/sessions/threads/threads.mjs
 
 
 
@@ -59711,7 +69246,7 @@ var Threads = /* @__PURE__ */ (() => {
     return Threads;
 })();
 //# sourceMappingURL=threads.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/sessions/sessions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/sessions/sessions.mjs
 
 
 
@@ -59948,7 +69483,7 @@ var Sessions = /* @__PURE__ */ (() => {
     return Sessions;
 })();
 //# sourceMappingURL=sessions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/skills/versions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/skills/versions.mjs
 
 
 
@@ -60129,7 +69664,7 @@ class skills_versions_Versions extends APIResource {
     }
 }
 //# sourceMappingURL=versions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/skills/skills.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/skills/skills.mjs
 
 
 
@@ -60279,7 +69814,7 @@ var skills_Skills = /* @__PURE__ */ (() => {
     return Skills;
 })();
 //# sourceMappingURL=skills.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/tunnels/certificates.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/tunnels/certificates.mjs
 
 
 
@@ -60439,7 +69974,7 @@ class Certificates extends APIResource {
     }
 }
 //# sourceMappingURL=certificates.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/tunnels/tunnels.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/tunnels/tunnels.mjs
 
 
 
@@ -60667,7 +70202,7 @@ var Tunnels = /* @__PURE__ */ (() => {
     return Tunnels;
 })();
 //# sourceMappingURL=tunnels.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/user-profiles/action-urls.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/user-profiles/action-urls.mjs
 
 
 
@@ -60706,7 +70241,7 @@ class ActionURLs extends APIResource {
     }
 }
 //# sourceMappingURL=action-urls.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/user-profiles/user-profiles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/user-profiles/user-profiles.mjs
 
 
 
@@ -60901,7 +70436,7 @@ var UserProfiles = /* @__PURE__ */ (() => {
     return UserProfiles;
 })();
 //# sourceMappingURL=user-profiles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/vaults/credentials.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/vaults/credentials.mjs
 
 
 
@@ -61133,7 +70668,7 @@ class Credentials extends APIResource {
     }
 }
 //# sourceMappingURL=credentials.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/vaults/vaults.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/vaults/vaults.mjs
 
 
 
@@ -61330,7 +70865,7 @@ var Vaults = /* @__PURE__ */ (() => {
     return Vaults;
 })();
 //# sourceMappingURL=vaults.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/beta/beta.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/beta/beta.mjs
 
 
 
@@ -61444,7 +70979,7 @@ var Beta = /* @__PURE__ */ (() => {
     return Beta;
 })();
 //# sourceMappingURL=beta.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/messages-request.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/messages-request.mjs
 
 
 
@@ -61478,7 +71013,7 @@ function messages_request_startMessagesStreamSpan(client, body, options) {
     return startApiCallSpan(client, 'anthropic.messages.create', options, messagesCreateSpanSettings(client, { body, headers, stream: true }));
 }
 //# sourceMappingURL=messages-request.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/parser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/parser.mjs
 
 function parser_getOutputFormat(params) {
     return params?.output_config?.format;
@@ -61541,7 +71076,7 @@ function parseOutputFormat(params, content) {
     }
 }
 //# sourceMappingURL=parser.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/MessageStream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/MessageStream.mjs
 var _MessageStream_instances, _MessageStream_currentMessageSnapshot, _MessageStream_params, _MessageStream_connectedPromise, _MessageStream_resolveConnectedPromise, _MessageStream_rejectConnectedPromise, _MessageStream_endPromise, _MessageStream_resolveEndPromise, _MessageStream_rejectEndPromise, _MessageStream_listeners, _MessageStream_ended, _MessageStream_errored, _MessageStream_aborted, _MessageStream_catchingPromiseCreated, _MessageStream_response, _MessageStream_request_id, _MessageStream_workspace_id, _MessageStream_logger, _MessageStream_client, _MessageStream_span, _MessageStream_getFinalMessage, _MessageStream_getFinalText, _MessageStream_handleError, _MessageStream_beginRequest, _MessageStream_addStreamEvent, _MessageStream_endRequest, _MessageStream_accumulateMessage;
 
 
@@ -62188,7 +71723,7 @@ var MessageStream = /* @__PURE__ */ (() => {
     return MessageStream;
 })();
 //# sourceMappingURL=MessageStream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/messages/batches.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/messages/batches.mjs
 
 
 
@@ -62436,7 +71971,7 @@ class batches_Batches extends APIResource {
     }
 }
 //# sourceMappingURL=batches.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/messages/messages.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/messages/messages.mjs
 
 
 
@@ -62934,7 +72469,7 @@ const messages_DEPRECATED_MODELS = {
 };
 const messages_MODELS_TO_WARN_WITH_THINKING_ENABLED = ['claude-mythos-preview', 'claude-opus-4-6'];
 //# sourceMappingURL=messages.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/api-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/api-keys.mjs
 
 
 
@@ -63039,7 +72574,7 @@ var api_keys_APIKeys = /* @__PURE__ */ (() => {
     return APIKeys;
 })();
 //# sourceMappingURL=api-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/external-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/external-keys.mjs
 
 
 
@@ -63268,7 +72803,7 @@ var external_keys_ExternalKeys = /* @__PURE__ */ (() => {
     return ExternalKeys;
 })();
 //# sourceMappingURL=external-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/invites.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/invites.mjs
 
 
 
@@ -63440,7 +72975,7 @@ var invites_Invites = /* @__PURE__ */ (() => {
     return Invites;
 })();
 //# sourceMappingURL=invites.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/compliance-settings.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/compliance-settings.mjs
 
 
 class compliance_settings_ComplianceSettings extends APIResource {
@@ -63505,7 +73040,7 @@ class compliance_settings_ComplianceSettings extends APIResource {
     }
 }
 //# sourceMappingURL=compliance-settings.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/rate-limits.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/rate-limits.mjs
 
 
 
@@ -63540,7 +73075,7 @@ class organization_rate_limits_RateLimits extends APIResource {
     }
 }
 //# sourceMappingURL=rate-limits.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/users.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/users.mjs
 
 
 
@@ -63653,7 +73188,7 @@ var organization_users_Users = /* @__PURE__ */ (() => {
     return Users;
 })();
 //# sourceMappingURL=users.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/artifacts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/artifacts.mjs
 
 
 
@@ -63688,7 +73223,7 @@ class artifacts_Artifacts extends APIResource {
     }
 }
 //# sourceMappingURL=artifacts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/connectors.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/connectors.mjs
 
 
 
@@ -63735,7 +73270,7 @@ class connectors_Connectors extends APIResource {
     }
 }
 //# sourceMappingURL=connectors.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/plugins.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/plugins.mjs
 
 
 
@@ -63785,7 +73320,7 @@ class analytics_plugins_Plugins extends APIResource {
     }
 }
 //# sourceMappingURL=plugins.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/skills.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/skills.mjs
 
 
 
@@ -63830,7 +73365,7 @@ class analytics_skills_Skills extends APIResource {
     }
 }
 //# sourceMappingURL=skills.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/summaries.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/summaries.mjs
 
 
 
@@ -63870,7 +73405,7 @@ class summaries_Summaries extends APIResource {
     }
 }
 //# sourceMappingURL=summaries.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/users.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/users.mjs
 
 
 
@@ -63915,7 +73450,7 @@ class analytics_users_Users extends APIResource {
     }
 }
 //# sourceMappingURL=users.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/apps/chat/projects.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/apps/chat/projects.mjs
 
 
 
@@ -63959,7 +73494,7 @@ class projects_Projects extends APIResource {
     }
 }
 //# sourceMappingURL=projects.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/apps/chat/chat.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/apps/chat/chat.mjs
 
 
 
@@ -63974,7 +73509,7 @@ var chat_Chat = /* @__PURE__ */ (() => {
     return Chat;
 })();
 //# sourceMappingURL=chat.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/apps/apps.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/apps/apps.mjs
 
 
 
@@ -63989,7 +73524,7 @@ var apps_Apps = /* @__PURE__ */ (() => {
     return Apps;
 })();
 //# sourceMappingURL=apps.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/analytics/analytics.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/analytics/analytics.mjs
 
 
 
@@ -64028,7 +73563,7 @@ var analytics_Analytics = /* @__PURE__ */ (() => {
     return Analytics;
 })();
 //# sourceMappingURL=analytics.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/federation/issuers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/federation/issuers.mjs
 
 
 
@@ -64195,7 +73730,7 @@ class issuers_Issuers extends APIResource {
     }
 }
 //# sourceMappingURL=issuers.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/federation/rules/workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/federation/rules/workspaces.mjs
 
 
 
@@ -64313,7 +73848,7 @@ class rules_workspaces_Workspaces extends APIResource {
     }
 }
 //# sourceMappingURL=workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/federation/rules/rules.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/federation/rules/rules.mjs
 
 
 
@@ -64511,7 +74046,7 @@ var rules_Rules = /* @__PURE__ */ (() => {
     return Rules;
 })();
 //# sourceMappingURL=rules.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/federation/federation.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/federation/federation.mjs
 
 
 
@@ -64530,7 +74065,7 @@ var federation_Federation = /* @__PURE__ */ (() => {
     return Federation;
 })();
 //# sourceMappingURL=federation.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/rbac-groups/members.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/rbac-groups/members.mjs
 
 
 
@@ -64629,7 +74164,7 @@ class rbac_groups_members_Members extends APIResource {
     }
 }
 //# sourceMappingURL=members.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/rbac-groups/rbac-groups.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/rbac-groups/rbac-groups.mjs
 
 
 
@@ -64813,7 +74348,7 @@ var rbac_groups_RBACGroups = /* @__PURE__ */ (() => {
     return RBACGroups;
 })();
 //# sourceMappingURL=rbac-groups.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/rbac-roles/permissions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/rbac-roles/permissions.mjs
 
 
 
@@ -64847,7 +74382,7 @@ class permissions_Permissions extends APIResource {
     }
 }
 //# sourceMappingURL=permissions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/rbac-roles/rbac-roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/rbac-roles/rbac-roles.mjs
 
 
 
@@ -64910,7 +74445,7 @@ var rbac_roles_RBACRoles = /* @__PURE__ */ (() => {
     return RBACRoles;
 })();
 //# sourceMappingURL=rbac-roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/service-accounts/workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/service-accounts/workspaces.mjs
 
 
 
@@ -65039,7 +74574,7 @@ class service_accounts_workspaces_Workspaces extends APIResource {
     }
 }
 //# sourceMappingURL=workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/service-accounts/service-accounts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/service-accounts/service-accounts.mjs
 
 
 
@@ -65213,7 +74748,7 @@ var service_accounts_service_accounts_ServiceAccounts = /* @__PURE__ */ (() => {
     return ServiceAccounts;
 })();
 //# sourceMappingURL=service-accounts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/spend-limits/effective.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/spend-limits/effective.mjs
 
 
 
@@ -65248,7 +74783,7 @@ class effective_Effective extends APIResource {
     }
 }
 //# sourceMappingURL=effective.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/spend-limits/increase-requests.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/spend-limits/increase-requests.mjs
 
 
 
@@ -65364,7 +74899,7 @@ class increase_requests_IncreaseRequests extends APIResource {
     }
 }
 //# sourceMappingURL=increase-requests.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/spend-limits/spend-limits.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/spend-limits/spend-limits.mjs
 
 
 
@@ -65383,7 +74918,7 @@ var spend_limits_SpendLimits = /* @__PURE__ */ (() => {
     return SpendLimits;
 })();
 //# sourceMappingURL=spend-limits.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/members.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/members.mjs
 
 
 
@@ -65529,7 +75064,7 @@ class workspaces_members_Members extends APIResource {
     }
 }
 //# sourceMappingURL=members.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/rate-limits.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/rate-limits.mjs
 
 
 
@@ -65610,7 +75145,7 @@ class workspaces_rate_limits_RateLimits extends APIResource {
     }
 }
 //# sourceMappingURL=rate-limits.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/service-accounts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/service-accounts.mjs
 
 
 
@@ -65811,7 +75346,7 @@ class workspaces_service_accounts_ServiceAccounts extends APIResource {
     }
 }
 //# sourceMappingURL=service-accounts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/workspaces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/workspaces/workspaces.mjs
 
 
 
@@ -66010,7 +75545,7 @@ var organization_workspaces_workspaces_Workspaces = /* @__PURE__ */ (() => {
     return Workspaces;
 })();
 //# sourceMappingURL=workspaces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/organization/organization.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/organization/organization.mjs
 
 
 
@@ -66141,7 +75676,7 @@ var organization_Organization = /* @__PURE__ */ (() => {
     return Organization;
 })();
 //# sourceMappingURL=organization.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/skills/versions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/skills/versions.mjs
 
 
 
@@ -66272,7 +75807,7 @@ class resources_skills_versions_Versions extends APIResource {
     }
 }
 //# sourceMappingURL=versions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/skills/skills.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/skills/skills.mjs
 
 
 
@@ -66419,7 +75954,7 @@ var skills_skills_Skills = /* @__PURE__ */ (() => {
     return Skills;
 })();
 //# sourceMappingURL=skills.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/user-profiles/action-urls.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/user-profiles/action-urls.mjs
 
 
 
@@ -66454,7 +75989,7 @@ class action_urls_ActionURLs extends APIResource {
     }
 }
 //# sourceMappingURL=action-urls.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/user-profiles/user-profiles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/user-profiles/user-profiles.mjs
 
 
 
@@ -66615,7 +76150,7 @@ var user_profiles_UserProfiles = /* @__PURE__ */ (() => {
     return UserProfiles;
 })();
 //# sourceMappingURL=user-profiles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/error-classes.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/error-classes.mjs
 
 
 
@@ -66721,7 +76256,7 @@ const ERROR_CODE_CLASSES = /* @__PURE__ */ new Map([
     ['529 compaction_unavailable', CompactionUnavailableError],
 ]);
 //# sourceMappingURL=error-classes.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/credentials/types.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/credentials/types.mjs
 
 const GRANT_TYPE_JWT_BEARER = 'urn:ietf:params:oauth:grant-type:jwt-bearer';
 const GRANT_TYPE_REFRESH_TOKEN = 'refresh_token';
@@ -66833,7 +76368,7 @@ function redactSensitive(body) {
 async function checkCredentialsFileSafety(path, onWarn = (m) => console.warn(`anthropic-sdk: ${m}`)) {
     if (typeof process === 'undefined' || process.platform === 'win32')
         return;
-    const { fs } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+    const { fs } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
     let resolved = path;
     let st;
     try {
@@ -66863,7 +76398,7 @@ async function checkCredentialsFileSafety(path, onWarn = (m) => console.warn(`an
  * Creates the parent directory with mode 0700 and the file with mode 0600.
  */
 async function writeCredentialsFileAtomic(targetPath, data) {
-    const { fs, path } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+    const { fs, path } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
     const dir = path.dirname(targetPath);
     await fs.promises.mkdir(dir, { recursive: true, mode: 0o700 });
     // Unique temp name avoids two concurrent writers (different processes or
@@ -66949,13 +76484,13 @@ var WorkloadIdentityError = /* @__PURE__ */ (() => {
     return WorkloadIdentityError;
 })();
 //# sourceMappingURL=types.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/utils/time.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/utils/time.mjs
 /** Current time as unix epoch seconds. */
 function nowAsSeconds() {
     return Math.floor(Date.now() / 1000);
 }
 //# sourceMappingURL=time.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/credentials/token-cache.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/credentials/token-cache.mjs
 
 
 /**
@@ -67064,7 +76599,7 @@ class TokenCache {
     }
 }
 //# sourceMappingURL=token-cache.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/trace-headers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/trace-headers.mjs
 
 
 /**
@@ -67087,7 +76622,7 @@ function traceHeaderNames() {
     return names;
 }
 //# sourceMappingURL=trace-headers.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/internal/tracing/headers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/internal/tracing/headers.mjs
 
 /**
  * Removes the trace-context headers ({@link traceHeaderNames}) from `headers` and returns them.
@@ -67118,7 +76653,7 @@ function withoutTraceHeaders(middleware) {
     };
 }
 //# sourceMappingURL=headers.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/credentials.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/credentials.mjs
 
 
 
@@ -67225,7 +76760,7 @@ const loadConfigWithSource = async (profile) => {
         return null;
     }
     validateProfileName(profileName);
-    const { fs, path } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+    const { fs, path } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
     const configPath = path.join(rootConfigPath, 'configs', `${profileName}.json`);
     let configRaw;
     try {
@@ -67303,7 +76838,7 @@ const loadCredentials = async () => {
     if (!credentialsPath) {
         return null;
     }
-    const { fs } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+    const { fs } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
     let raw;
     try {
         raw = await fs.promises.readFile(credentialsPath, 'utf-8');
@@ -67347,14 +76882,14 @@ const getCredentialsPath = async (config, profile) => {
         return null;
     }
     validateProfileName(profileName);
-    const { path } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+    const { path } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
     return path.join(rootConfigPath, 'credentials', `${profileName}.json`);
 };
 const getRootConfigPath = async () => {
     if (!supportsLocalConfigFiles()) {
         return null;
     }
-    const { path } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+    const { path } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
     // ANTHROPIC_CONFIG_DIR is treated as a trusted path: it is set by the
     // process operator, not by remote input, so it is not validated.
     const configDir = (0,utils_env/* readEnv */.s)('ANTHROPIC_CONFIG_DIR');
@@ -67398,7 +76933,7 @@ const getActiveProfileName = async () => {
     if (profileName) {
         return profileName;
     }
-    const { fs, path } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+    const { fs, path } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
     const filePath = path.join(rootConfigPath, 'active_config');
     try {
         return (await fs.promises.readFile(filePath, 'utf-8')).trim() || 'default';
@@ -67411,7 +76946,7 @@ const getActiveProfileName = async () => {
     }
 };
 //# sourceMappingURL=credentials.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/credentials/identity-token.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/credentials/identity-token.mjs
 
 /**
  * Reads a JWT from a file on every call. Supports automatic rotation
@@ -67422,7 +76957,7 @@ function identityTokenFromFile(path) {
         throw new sdk_core_error/* AnthropicError */.pJ('Identity token file path is empty');
     }
     return async () => {
-        const { fs } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+        const { fs } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
         let content;
         try {
             content = await fs.promises.readFile(path, 'utf-8');
@@ -67447,7 +76982,7 @@ function identityTokenFromValue(token) {
     return () => token;
 }
 //# sourceMappingURL=identity-token.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/credentials/oidc-federation.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/credentials/oidc-federation.mjs
 
 
 
@@ -67528,7 +77063,7 @@ function oidcFederationProvider(config) {
     };
 }
 //# sourceMappingURL=oidc-federation.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/credentials/user-oauth.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/credentials/user-oauth.mjs
 
 
 
@@ -67544,7 +77079,7 @@ function oidcFederationProvider(config) {
  */
 function userOAuthProvider(config) {
     return async (opts) => {
-        const { fs } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+        const { fs } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
         await checkCredentialsFileSafety(config.credentialsPath, config.onSafetyWarning);
         let raw;
         try {
@@ -67624,7 +77159,7 @@ function userOAuthProvider(config) {
     };
 }
 //# sourceMappingURL=user-oauth.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/lib/credentials/credential-chain.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/lib/credentials/credential-chain.mjs
 
 
 
@@ -67788,7 +77323,7 @@ function resolveIdentityTokenProvider(auth) {
  */
 function cachedExchangeProvider(exchange, credentialsPath, onCacheWriteError, onSafetyWarning) {
     return async (opts) => {
-        const { fs } = await __nccwpck_require__.e(/* import() */ 738).then(__nccwpck_require__.bind(__nccwpck_require__, 2738));
+        const { fs } = await __nccwpck_require__.e(/* import() */ 799).then(__nccwpck_require__.bind(__nccwpck_require__, 4799));
         await checkCredentialsFileSafety(credentialsPath, onSafetyWarning);
         // Try cached credentials file
         let existing;
@@ -67836,7 +77371,7 @@ function cachedExchangeProvider(exchange, credentialsPath, onCacheWriteError, on
     };
 }
 //# sourceMappingURL=credential-chain.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/core/middleware.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/core/middleware.mjs
 
 
 
@@ -68005,7 +77540,7 @@ function applyMiddleware(fetchFn, middleware, options, client) {
     return next;
 }
 //# sourceMappingURL=middleware.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/internal/to-file.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/internal/to-file.mjs
 
 
 /**
@@ -68099,7 +77634,7 @@ function propsForError(value) {
     return `; props: [${props.map((p) => `"${p}"`).join(', ')}]`;
 }
 //# sourceMappingURL=to-file.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/resources/models.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/resources/models.mjs
 
 
 
@@ -68168,8 +77703,8 @@ class models_Models extends APIResource {
     }
 }
 //# sourceMappingURL=models.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0/node_modules/@anthropic-ai/sdk/client.mjs
-var _BaseAnthropic_instances, _a, _BaseAnthropic_encoder, _BaseAnthropic_apiKeyFunction, _BaseAnthropic_openTelemetry, _BaseAnthropic_baseURLOverridden;
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@anthropic-ai+sdk@1.8.0_zod@4.6.7/node_modules/@anthropic-ai/sdk/client.mjs
+var _BaseAnthropic_instances, client_a, _BaseAnthropic_encoder, _BaseAnthropic_apiKeyFunction, _BaseAnthropic_openTelemetry, _BaseAnthropic_baseURLOverridden;
 
 
 
@@ -68325,7 +77860,7 @@ var BaseAnthropic = /* @__PURE__ */ (() => {
             // propagates the parent's flag via __baseURLIsExplicit so a non-overriding
             // clone doesn't mistake the inherited baseURL for a caller-supplied one.
             this._baseURLIsExplicit = opts.__baseURLIsExplicit ?? !!baseURL;
-            this.timeout = options.timeout ?? _a.DEFAULT_TIMEOUT /* 10 minutes */;
+            this.timeout = options.timeout ?? client_a.DEFAULT_TIMEOUT /* 10 minutes */;
             this.logger = options.logger ?? console;
             // Set default logLevel early so that we can log a warning in parseLogLevel.
             this.logLevel = utils_log/* defaultLogLevel */.Ic;
@@ -69213,10 +78748,10 @@ var BaseAnthropic = /* @__PURE__ */ (() => {
                     (Symbol.iterator in body && 'next' in body && typeof body.next === 'function')));
         }
     }
-    _a = BaseAnthropic, _BaseAnthropic_encoder = new WeakMap(), _BaseAnthropic_apiKeyFunction = new WeakMap(), _BaseAnthropic_openTelemetry = new WeakMap(), _BaseAnthropic_instances = new WeakSet(), _BaseAnthropic_baseURLOverridden = function _BaseAnthropic_baseURLOverridden() {
+    client_a = BaseAnthropic, _BaseAnthropic_encoder = new WeakMap(), _BaseAnthropic_apiKeyFunction = new WeakMap(), _BaseAnthropic_openTelemetry = new WeakMap(), _BaseAnthropic_instances = new WeakSet(), _BaseAnthropic_baseURLOverridden = function _BaseAnthropic_baseURLOverridden() {
         return this.baseURL !== 'https://api.anthropic.com';
     };
-    BaseAnthropic.Anthropic = _a;
+    BaseAnthropic.Anthropic = client_a;
     BaseAnthropic.DEFAULT_TIMEOUT = 600000; // 10 minutes
     BaseAnthropic.AnthropicError = sdk_core_error/* AnthropicError */.pJ;
     BaseAnthropic.APIError = sdk_core_error/* APIError */.LG;
@@ -69320,7 +78855,10 @@ class AnthropicProvider {
     client;
     logger;
     constructor(apiKey, logger, baseURL) {
-        this.client = new Anthropic({ apiKey, ...(baseURL ? { baseURL } : {}) });
+        const options = { apiKey };
+        if (baseURL)
+            options.baseURL = baseURL;
+        this.client = new Anthropic(options);
         this.logger = logger.child({ module: "llm" });
     }
     async complete(model, systemPrompt, messages, maxTokens = 2048) {
@@ -69356,7 +78894,7 @@ class AnthropicProvider {
     }
 }
 //# sourceMappingURL=client.js.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/tslib.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/tslib.mjs
 function __classPrivateFieldSet(receiver, state, value, kind, f) {
     if (kind === "m")
         throw new TypeError("Private method is not writable");
@@ -69380,7 +78918,7 @@ function __classPrivateFieldIn(state, receiver) {
 }
 
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/uuid.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/uuid.mjs
 /**
  * https://stackoverflow.com/a/2117523
  */
@@ -69395,7 +78933,7 @@ let utils_uuid_uuid4 = function () {
     return '10000000-1000-4000-8000-100000000000'.replace(/[018]/g, (c) => (+c ^ (randomByte() & (15 >> (+c / 4)))).toString(16));
 };
 //# sourceMappingURL=uuid.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/errors.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/errors.mjs
 function isAbortError(err) {
     return (typeof err === 'object' &&
         err !== null &&
@@ -69432,7 +78970,7 @@ const castToError = (err) => {
     return new Error(err);
 };
 //# sourceMappingURL=errors.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/core/error.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/core/error.mjs
 
 class error_OpenAIError extends Error {
 }
@@ -69581,7 +79119,7 @@ class SubjectTokenProviderError extends error_OpenAIError {
     }
 }
 //# sourceMappingURL=error.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/values.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/values.mjs
 
 // https://url.spec.whatwg.org/#url-scheme-string
 const startsWithSchemeRegexp = /^[a-z][a-z0-9+.-]*:/i;
@@ -69675,7 +79213,7 @@ const safeJSON = (text) => {
     }
 };
 //# sourceMappingURL=values.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/sleep.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/sleep.mjs
 const sleep_sleep = (ms, ...signals) => new Promise((resolve, reject) => {
     const activeSignals = [...new Set(signals.filter((signal) => signal != null))];
     let timeout;
@@ -69728,7 +79266,7 @@ const sleep_sleep = (ms, ...signals) => new Promise((resolve, reject) => {
     }
 });
 //# sourceMappingURL=sleep.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/abort.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/abort.mjs
 // Keep these optional runtime features out of the SDK's ES2020 type requirements.
 // SAFETY: These host features are optional and checked before use; the structural view avoids requiring newer ambient library declarations.
 const weakGlobals = globalThis;
@@ -69819,7 +79357,7 @@ function addRequestAbortListener(signal, abort, requestSignal) {
     return cleanup;
 }
 //# sourceMappingURL=abort.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/shims.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/shims.mjs
 /**
  * This module provides internal shims and utility functions for environments where certain Node.js or global types may not be available.
  *
@@ -69910,7 +79448,7 @@ async function shims_CancelReadableStream(stream) {
     await cancelPromise;
 }
 //# sourceMappingURL=shims.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/bytes.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/bytes.mjs
 /** Copies byte arrays into one contiguous `Uint8Array` while preserving their order. */
 function bytes_concatBytes(buffers) {
     let length = 0;
@@ -69942,7 +79480,7 @@ function decodeUTF8(bytes) {
         ((decoder = new globalThis.TextDecoder()), (decodeUTF8_ = decoder.decode.bind(decoder))))(bytes);
 }
 //# sourceMappingURL=bytes.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/decoders/line.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/decoders/line.mjs
 var _LineDecoder_instances, line_LineDecoder_buffer, _LineDecoder_start, _LineDecoder_end, _LineDecoder_searchIndex, _LineDecoder_skipLeadingLF, _LineDecoder_append;
 
 
@@ -70137,7 +79675,7 @@ function lineEndingLength(buffer, index) {
     return 0;
 }
 //# sourceMappingURL=line.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/log.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/log.mjs
 
 const levelNumbers = {
     off: 0,
@@ -70282,7 +79820,7 @@ const formatRequestDetails = (details) => {
     return details;
 };
 //# sourceMappingURL=log.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/core/streaming.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/core/streaming.mjs
 var _Stream_instances, streaming_Stream_client, _Stream_isTeeBranch, _Stream_cancelIterator;
 
 
@@ -70937,7 +80475,7 @@ function partition(str, delimiter) {
     return [str, '', ''];
 }
 //# sourceMappingURL=streaming.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/parse.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/parse.mjs
 
 
 
@@ -71018,11 +80556,11 @@ function addRequestID(value, response) {
     });
 }
 //# sourceMappingURL=parse.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/version.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/version.mjs
 /** Version of the installed OpenAI SDK package. */
 const openai_version_VERSION = '7.57.0'; // x-release-please-version
 //# sourceMappingURL=version.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/detect-platform.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/detect-platform.mjs
 
 const detect_platform_isRunningInBrowser = () => {
     return (
@@ -71179,7 +80717,7 @@ const detect_platform_getPlatformHeaders = () => {
     return (detect_platform_platformHeaders ?? (detect_platform_platformHeaders = detect_platform_getPlatformProperties()));
 };
 //# sourceMappingURL=detect-platform.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/request-options.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/request-options.mjs
 const jsonRequestBodyObservers = new WeakMap();
 /** Observes values produced by the actual JSON request serializer without changing them. */
 function observeJSONRequestBody(body, observer) {
@@ -71230,7 +80768,7 @@ const request_options_FallbackEncoder = ({ headers, body }) => {
     };
 };
 //# sourceMappingURL=request-options.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/qs/formats.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/qs/formats.mjs
 const formats_default_format = 'RFC3986';
 const formats_default_formatter = String;
 const formats_formatters = {
@@ -71240,7 +80778,7 @@ const formats_formatters = {
 const formats_RFC1738 = 'RFC1738';
 const formats_RFC3986 = 'RFC3986';
 //# sourceMappingURL=formats.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/qs/utils.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/qs/utils.mjs
 
 
 // oxlint-disable-next-line anti-slop/no-object-parameters -- The cached own-property predicate accepts arrays, callable objects, and records.
@@ -71653,7 +81191,7 @@ function utils_assign_single_source(target, source) {
     }
     return target;
 }
-function utils_decode(str, _, charset) {
+function qs_utils_decode(str, _, charset) {
     const strWithoutPlus = str.replace(/\+/g, ' ');
     if (charset === 'iso-8859-1') {
         // unescape never throws, no try...catch needed:
@@ -71668,7 +81206,7 @@ function utils_decode(str, _, charset) {
     }
 }
 const utils_limit = 1024;
-const utils_encode = (str, _defaultEncoder, charset, _kind, format) => {
+const qs_utils_encode = (str, _defaultEncoder, charset, _kind, format) => {
     // This code was originally written by Brian White for the io.js core querystring library.
     // It has been adapted here for stricter adherence to RFC 3986
     if (str.length === 0) {
@@ -71776,7 +81314,7 @@ function utils_maybe_map(val, fn) {
     return fn(val);
 }
 //# sourceMappingURL=utils.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/qs/stringify.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/qs/stringify.mjs
 
 
 
@@ -71805,7 +81343,7 @@ const qs_stringify_defaults = {
     delimiter: '&',
     encode: true,
     encodeDotInKeys: false,
-    encoder: utils_encode,
+    encoder: qs_utils_encode,
     encodeValuesOnly: false,
     format: formats_default_format,
     formatter: formats_default_formatter,
@@ -72058,13 +81596,13 @@ function stringify_stringify(object, opts = {}) {
     return joined.length > 0 ? prefix + joined : '';
 }
 //# sourceMappingURL=stringify.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/query.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/query.mjs
 
 function query_stringifyQuery(query) {
     return stringify_stringify(query, { arrayFormat: 'brackets' });
 }
 //# sourceMappingURL=query.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/data-residency.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/data-residency.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -72098,7 +81636,7 @@ function assertNoDataResidency(dataResidency, clientName) {
     }
 }
 //# sourceMappingURL=data-residency.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/core/api-promise.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/core/api-promise.mjs
 var api_promise_APIPromise_client;
 
 
@@ -72170,7 +81708,7 @@ class api_promise_APIPromise extends Promise {
 }
 api_promise_APIPromise_client = new WeakMap();
 //# sourceMappingURL=api-promise.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/core/pagination.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/core/pagination.mjs
 var pagination_AbstractPage_client;
 
 
@@ -72378,7 +81916,7 @@ class pagination_TokenPage extends pagination_AbstractPage {
     }
 }
 //# sourceMappingURL=pagination.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/auth/workload-identity-auth.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/auth/workload-identity-auth.mjs
 
 
 const SUBJECT_TOKEN_TYPES = {
@@ -72630,7 +82168,7 @@ class WorkloadIdentityAuth {
     }
 }
 //# sourceMappingURL=workload-identity-auth.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-api-origin.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-api-origin.mjs
 
 
 /** Sole API authority approved for OpenAI X.509 workload-identity federation. */
@@ -72655,7 +82193,7 @@ function assertX509APIOrigin(value) {
     return target;
 }
 //# sourceMappingURL=x509-api-origin.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/headers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/headers.mjs
 
 const headers_brand_privateNullableHeaders = /* @__PURE__ */ Symbol('brand.privateNullableHeaders');
 const httpTokenHeaderName = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
@@ -72732,7 +82270,7 @@ const headers_isEmptyHeaders = (headers) => {
     return true;
 };
 //# sourceMappingURL=headers.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-transport-state-browser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-transport-state-browser.mjs
 /** Browser-safe capability state keeps CommonJS outside the ordinary SDK ESM graph. */
 const registeredX509Transports = new WeakMap();
 const transientX509ConnectionErrors = new WeakSet();
@@ -72765,10 +82303,10 @@ const rememberX509Credential = WeakMap.prototype.set.bind(approvedX509Credential
 /** Resolves only credentials registered by the optional Node authentication helper. */
 const findX509Credential = WeakMap.prototype.get.bind(approvedX509Credentials);
 //# sourceMappingURL=x509-transport-state-browser.mjs.map
-// EXTERNAL MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-transport-state.js
-var x509_transport_state = __nccwpck_require__(7951);
+// EXTERNAL MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-transport-state.js
+var x509_transport_state = __nccwpck_require__(448);
 var x509_transport_state_namespaceObject = /*#__PURE__*/__nccwpck_require__.t(x509_transport_state, 2);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-transport-state.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-transport-state.mjs
 
 
 
@@ -72790,7 +82328,7 @@ const {
   findX509Credential: x509_transport_state_findX509Credential,
 } = state;
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-transport-registry.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-transport-registry.mjs
 
 
 const transientX509TransportCodes = new Set([
@@ -72839,7 +82377,7 @@ function resolveX509Transport(value) {
     return registered;
 }
 //# sourceMappingURL=x509-transport-registry.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-workload-identity-auth.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-workload-identity-auth.mjs
 var _X509WorkloadIdentityAuth_instances, x509_workload_identity_auth_a, _X509WorkloadIdentityAuth_identityProviderId, _X509WorkloadIdentityAuth_serviceAccountId, _X509WorkloadIdentityAuth_configuredRefreshBufferMs, _X509WorkloadIdentityAuth_configuredRefreshBufferSeconds, _X509WorkloadIdentityAuth_organization, _X509WorkloadIdentityAuth_project, _X509WorkloadIdentityAuth_transport, _X509WorkloadIdentityAuth_refreshBufferMs, _X509WorkloadIdentityAuth_cachedToken, _X509WorkloadIdentityAuth_refresh, _X509WorkloadIdentityAuth_tokenGeneration, _X509WorkloadIdentityAuth_cancelRequestBody, _X509WorkloadIdentityAuth_assignToken, _X509WorkloadIdentityAuth_recoverRefreshFailure, _X509WorkloadIdentityAuth_fallbackToken, _X509WorkloadIdentityAuth_retireRefresh, _X509WorkloadIdentityAuth_beginRefresh, _X509WorkloadIdentityAuth_refreshToken, _X509WorkloadIdentityAuth_preflight, _X509WorkloadIdentityAuth_scope, _X509WorkloadIdentityAuth_assertTenantHeaders;
 
 
@@ -73618,7 +83156,7 @@ x509_workload_identity_auth_a = X509WorkloadIdentityAuth, _X509WorkloadIdentityA
     }
 };
 //# sourceMappingURL=x509-workload-identity-auth.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/auth/x509-credential-options.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/auth/x509-credential-options.mjs
 
 
 
@@ -73740,7 +83278,7 @@ function prepareX509ClientClone(inherited, overrides, credential, currentlyX509)
     return { credential: nextCredential, provider: prepareProviderClone(inherited, overrides) };
 }
 //# sourceMappingURL=x509-credential-options.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/uploads.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/uploads.mjs
 
 
 
@@ -74261,7 +83799,7 @@ const uploads_addFormValue = async (form, key, value, options) => {
     }
 };
 //# sourceMappingURL=uploads.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/to-file.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/to-file.mjs
 
 /**
  * This check adds the arrayBuffer() method type because it is available and used at runtime
@@ -74373,18 +83911,18 @@ function to_file_propsForError(value) {
     return `; props: [${props.map((p) => `"${p}"`).join(', ')}]`;
 }
 //# sourceMappingURL=to-file.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/core/uploads.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/core/uploads.mjs
 
 
 //# sourceMappingURL=uploads.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/core/resource.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/core/resource.mjs
 class resource_APIResource {
     constructor(client) {
         this._client = client;
     }
 }
 //# sourceMappingURL=resource.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/path.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/path.mjs
 
 /**
  * Percent-encodes a single URI path parameter while preserving RFC 3986 path characters.
@@ -74479,7 +84017,7 @@ const path_createPathTagFunction = (pathEncoder = path_encodeURIPath) => functio
  */
 const utils_path_path = /* @__PURE__ */ path_createPathTagFunction(path_encodeURIPath);
 //# sourceMappingURL=path.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/chat/completions/messages.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/chat/completions/messages.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -74559,11 +84097,11 @@ class completions_messages_Messages extends resource_APIResource {
     }
 }
 //# sourceMappingURL=messages.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/error.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/error.mjs
 /** @deprecated Import from ./core/error instead */
 
 //# sourceMappingURL=error.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/parser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/parser.mjs
 
 /** Returns whether an optional chat completion tool contains a function-tool definition. */
 function isChatCompletionFunctionTool(tool) {
@@ -74824,7 +84362,7 @@ function validateInputTools(tools) {
     }
 }
 //# sourceMappingURL=parser.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/chatCompletionUtils.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/chatCompletionUtils.mjs
 /** Returns whether a conversation message was produced by the assistant. */
 const isAssistantMessage = (message) => message?.role === 'assistant';
 /** Returns whether a conversation message contains the result of a tool call. */
@@ -74834,7 +84372,7 @@ function isPresent(obj) {
     return obj != null;
 }
 //# sourceMappingURL=chatCompletionUtils.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/EventStream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/EventStream.mjs
 var _EventStream_instances, _EventStream_connectedPromise, _EventStream_resolveConnectedPromise, _EventStream_rejectConnectedPromise, _EventStream_endPromise, _EventStream_resolveEndPromise, _EventStream_rejectEndPromise, _EventStream_listeners, _EventStream_abortListeners, _EventStream_emittedListenerRegistrations, _EventStream_pendingListenerCleanup, _EventStream_pendingBufferedEventChecks, _EventStream_listenerDispatchDepth, _EventStream_ended, _EventStream_errored, _EventStream_aborted, _EventStream_catchingPromiseCreated, _EventStream_terminalFailure, _EventStream_abortFromSignal, _EventStream_removeAbortListeners, _EventStream_onceForEmitted, _EventStream_removeEmittedListener, _EventStream_cleanupEmittedListeners, _EventStream_handleError, _EventStream_settleTerminalEvent;
 
 
@@ -76502,7 +86040,7 @@ _EventStream_connectedPromise = new WeakMap(), _EventStream_resolveConnectedProm
     }
 };
 //# sourceMappingURL=EventStream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/RunnableFunction.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/RunnableFunction.mjs
 /** Returns whether a runnable function provides a parser for its raw argument string. */
 function isRunnableFunctionWithParse(fn) {
     return typeof fn.parse === 'function';
@@ -76520,7 +86058,7 @@ class ParsingToolFunction {
     }
 }
 //# sourceMappingURL=RunnableFunction.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/AbstractChatCompletionRunner.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/AbstractChatCompletionRunner.mjs
 var _AbstractChatCompletionRunner_instances, AbstractChatCompletionRunner_a, _AbstractChatCompletionRunner_completionArrivedBeforeAbort, _AbstractChatCompletionRunner_afterCompletionInvoked, _AbstractChatCompletionRunner_getFinalContent, _AbstractChatCompletionRunner_getFinalMessage, _AbstractChatCompletionRunner_getFinalFunctionToolCall, _AbstractChatCompletionRunner_getFinalFunctionToolCallResult, _AbstractChatCompletionRunner_calculateTotalUsage, _AbstractChatCompletionRunner_throwIfAborted, _AbstractChatCompletionRunner_validateParams, _AbstractChatCompletionRunner_stringifyFunctionCallResult;
 
 
@@ -77013,7 +86551,7 @@ AbstractChatCompletionRunner_a = AbstractChatCompletionRunner, _AbstractChatComp
     return JSON.stringify(rawContent);
 };
 //# sourceMappingURL=AbstractChatCompletionRunner.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/ChatCompletionRunner.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/ChatCompletionRunner.mjs
 
 
 /** Executes function tools and follows up with non-streaming chat completion requests. */
@@ -77041,7 +86579,7 @@ class ChatCompletionRunner extends AbstractChatCompletionRunner {
     }
 }
 //# sourceMappingURL=ChatCompletionRunner.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/_vendor/partial-json-parser/parser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/_vendor/partial-json-parser/parser.mjs
 const STR = 1;
 const NUM = 2;
 const ARR = 4;
@@ -77300,11 +86838,11 @@ const _parseJSON = (jsonString, allow) => {
 const parser_partialParse = (input) => parseJSON(input, Allow.ALL ^ Allow.NUM);
 
 //# sourceMappingURL=parser.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/streaming.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/streaming.mjs
 /** @deprecated Import from ./core/streaming instead */
 
 //# sourceMappingURL=streaming.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/chat-completions/streaming.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/chat-completions/streaming.mjs
 function normalizeChatCompletionChunk(chunk) {
     if (!Array.isArray(chunk?.choices)) {
         // SAFETY: This is an opaque provider record, with no choices to normalize.
@@ -77328,7 +86866,7 @@ function normalizeChatCompletionStream(stream) {
     return stream;
 }
 //# sourceMappingURL=streaming.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/ChatCompletionStream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/ChatCompletionStream.mjs
 var _ChatCompletionStream_instances, _ChatCompletionStream_params, _ChatCompletionStream_rejectsUnfinishedTurns, _ChatCompletionStream_audioDoneChoiceIndexes, _ChatCompletionStream_choiceEventStates, _ChatCompletionStream_currentChatCompletionSnapshot, _ChatCompletionStream_hasAutoParseableTool, _ChatCompletionStream_partialJSONParseBudget, _ChatCompletionStream_beginRequest, _ChatCompletionStream_getChoiceEventState, _ChatCompletionStream_addChunk, _ChatCompletionStream_emitToolCallDoneEvent, _ChatCompletionStream_emitContentDoneEvents, _ChatCompletionStream_validateStructuredSnapshots, _ChatCompletionStream_endRequest, _ChatCompletionStream_accumulateChatCompletion;
 
 
@@ -78390,7 +87928,7 @@ class ChatCompletionStream extends AbstractChatCompletionRunner {
                     });
                 }
                 else if (toolCallSnapshot.type !== 'custom') {
-                    assertNever(toolCallSnapshot);
+                    ChatCompletionStream_assertNever(toolCallSnapshot);
                 }
             }
         }
@@ -78451,7 +87989,7 @@ class ChatCompletionStream extends AbstractChatCompletionRunner {
             });
         }
         else if (toolCallSnapshot.type !== 'custom') {
-            assertNever(toolCallSnapshot);
+            ChatCompletionStream_assertNever(toolCallSnapshot);
         }
     }, _ChatCompletionStream_emitContentDoneEvents = function _ChatCompletionStream_emitContentDoneEvents(choiceSnapshot) {
         const state = __classPrivateFieldGet(this, _ChatCompletionStream_instances, "m", _ChatCompletionStream_getChoiceEventState).call(this, choiceSnapshot);
@@ -79061,11 +88599,11 @@ function isCompleteAudio(audio) {
 function assertIsEmpty(obj) {
     void obj;
 }
-function assertNever(_x) {
+function ChatCompletionStream_assertNever(_x) {
     return _x;
 }
 //# sourceMappingURL=ChatCompletionStream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/ChatCompletionStreamingRunner.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/ChatCompletionStreamingRunner.mjs
 
 
 
@@ -79124,7 +88662,7 @@ class ChatCompletionStreamingRunner extends ChatCompletionStream {
     }
 }
 //# sourceMappingURL=ChatCompletionStreamingRunner.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/chat/completions/completions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/chat/completions/completions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -79297,7 +88835,7 @@ class Completions extends resource_APIResource {
 
 Completions.Messages = completions_messages_Messages;
 //# sourceMappingURL=completions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/chat/chat.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/chat/chat.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -79310,17 +88848,17 @@ class chat_chat_Chat extends resource_APIResource {
 }
 chat_chat_Chat.Completions = Completions;
 //# sourceMappingURL=chat.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/chat/completions/index.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/chat/completions/index.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
 //# sourceMappingURL=index.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/chat/index.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/chat/index.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
 //# sourceMappingURL=index.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/admin-api-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/admin-api-keys.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -79449,7 +88987,7 @@ class AdminAPIKeys extends resource_APIResource {
     }
 }
 //# sourceMappingURL=admin-api-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/audit-logs.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/audit-logs.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -79539,7 +89077,7 @@ class AuditLogs extends resource_APIResource {
     }
 }
 //# sourceMappingURL=audit-logs.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/certificates.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/certificates.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -79733,7 +89271,7 @@ class certificates_Certificates extends resource_APIResource {
     }
 }
 //# sourceMappingURL=certificates.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/data-retention.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/data-retention.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function data_retention_resolveResourceRequestOptions(options, buildOptions) {
@@ -79775,7 +89313,7 @@ class DataRetention extends resource_APIResource {
     }
 }
 //# sourceMappingURL=data-retention.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/external-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/external-keys.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -79925,7 +89463,7 @@ class organization_external_keys_ExternalKeys extends resource_APIResource {
     }
 }
 //# sourceMappingURL=external-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/external-storage.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/external-storage.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -80079,7 +89617,7 @@ class ExternalStorage extends resource_APIResource {
     }
 }
 //# sourceMappingURL=external-storage.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/invites.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/invites.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -80210,7 +89748,7 @@ class organization_invites_Invites extends resource_APIResource {
     }
 }
 //# sourceMappingURL=invites.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/roles.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -80354,7 +89892,7 @@ class Roles extends resource_APIResource {
     }
 }
 //# sourceMappingURL=roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/spend-alerts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/spend-alerts.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -80516,7 +90054,7 @@ class SpendAlerts extends resource_APIResource {
     }
 }
 //# sourceMappingURL=spend-alerts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/spend-limit.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/spend-limit.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function spend_limit_resolveResourceRequestOptions(options, buildOptions) {
@@ -80575,7 +90113,7 @@ class SpendLimit extends resource_APIResource {
     }
 }
 //# sourceMappingURL=spend-limit.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/usage.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/usage.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function usage_resolveResourceRequestOptions(options, buildOptions) {
@@ -80800,7 +90338,7 @@ class usage_Usage extends resource_APIResource {
     }
 }
 //# sourceMappingURL=usage.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/groups/roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/groups/roles.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -80934,7 +90472,7 @@ class roles_Roles extends resource_APIResource {
     }
 }
 //# sourceMappingURL=roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/groups/users.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/groups/users.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81068,7 +90606,7 @@ class groups_users_Users extends resource_APIResource {
     }
 }
 //# sourceMappingURL=users.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/groups/groups.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/groups/groups.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81224,7 +90762,7 @@ class Groups extends resource_APIResource {
 Groups.Users = groups_users_Users;
 Groups.Roles = roles_Roles;
 //# sourceMappingURL=groups.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/api-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/api-keys.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81385,7 +90923,7 @@ class projects_api_keys_APIKeys extends resource_APIResource {
     }
 }
 //# sourceMappingURL=api-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/certificates.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/certificates.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81509,7 +91047,7 @@ class projects_certificates_Certificates extends resource_APIResource {
     }
 }
 //# sourceMappingURL=certificates.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/data-retention.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/data-retention.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81555,7 +91093,7 @@ class data_retention_DataRetention extends resource_APIResource {
     }
 }
 //# sourceMappingURL=data-retention.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/hosted-tool-permissions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/hosted-tool-permissions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81600,7 +91138,7 @@ class HostedToolPermissions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=hosted-tool-permissions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/model-permissions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/model-permissions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81663,7 +91201,7 @@ class ModelPermissions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=model-permissions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/rate-limits.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/rate-limits.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81760,7 +91298,7 @@ class projects_rate_limits_RateLimits extends resource_APIResource {
     }
 }
 //# sourceMappingURL=rate-limits.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/roles.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81914,7 +91452,7 @@ class projects_roles_Roles extends resource_APIResource {
     }
 }
 //# sourceMappingURL=roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/service-tier-settings.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/service-tier-settings.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -81961,7 +91499,7 @@ class ServiceTierSettings extends resource_APIResource {
     }
 }
 //# sourceMappingURL=service-tier-settings.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/spend-alerts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/spend-alerts.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82132,7 +91670,7 @@ class spend_alerts_SpendAlerts extends resource_APIResource {
     }
 }
 //# sourceMappingURL=spend-alerts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/spend-limit.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/spend-limit.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82199,7 +91737,7 @@ class spend_limit_SpendLimit extends resource_APIResource {
     }
 }
 //# sourceMappingURL=spend-limit.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/groups/roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/groups/roles.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82290,7 +91828,7 @@ class groups_roles_Roles extends resource_APIResource {
     }
 }
 //# sourceMappingURL=roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/groups/groups.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/groups/groups.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82432,7 +91970,7 @@ class groups_Groups extends resource_APIResource {
 }
 groups_Groups.Roles = groups_roles_Roles;
 //# sourceMappingURL=groups.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/service-accounts/api-keys.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/service-accounts/api-keys.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82462,7 +92000,7 @@ class service_accounts_api_keys_APIKeys extends resource_APIResource {
     }
 }
 //# sourceMappingURL=api-keys.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/service-accounts/service-accounts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/service-accounts/service-accounts.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82627,7 +92165,7 @@ class projects_service_accounts_service_accounts_ServiceAccounts extends resourc
 }
 projects_service_accounts_service_accounts_ServiceAccounts.APIKeys = service_accounts_api_keys_APIKeys;
 //# sourceMappingURL=service-accounts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/users/roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/users/roles.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82718,7 +92256,7 @@ class users_roles_Roles extends resource_APIResource {
     }
 }
 //# sourceMappingURL=roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/users/users.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/users/users.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -82883,7 +92421,7 @@ class users_users_Users extends resource_APIResource {
 }
 users_users_Users.Roles = users_roles_Roles;
 //# sourceMappingURL=users.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/projects/projects.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/projects/projects.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83087,7 +92625,7 @@ projects_projects_Projects.SpendLimit = spend_limit_SpendLimit;
 projects_projects_Projects.SpendAlerts = spend_alerts_SpendAlerts;
 projects_projects_Projects.Certificates = projects_certificates_Certificates;
 //# sourceMappingURL=projects.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/users/roles.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/users/roles.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83221,7 +92759,7 @@ class organization_users_roles_Roles extends resource_APIResource {
     }
 }
 //# sourceMappingURL=roles.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/users/users.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/users/users.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83352,7 +92890,7 @@ class organization_users_users_Users extends resource_APIResource {
 }
 organization_users_users_Users.Roles = organization_users_roles_Roles;
 //# sourceMappingURL=users.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/workload-identity-providers/federation-rules.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/workload-identity-providers/federation-rules.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83510,7 +93048,7 @@ class FederationRules extends resource_APIResource {
     }
 }
 //# sourceMappingURL=federation-rules.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/workload-identity-providers/workload-identity-providers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/workload-identity-providers/workload-identity-providers.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83669,7 +93207,7 @@ class WorkloadIdentityProviders extends resource_APIResource {
 }
 WorkloadIdentityProviders.FederationRules = FederationRules;
 //# sourceMappingURL=workload-identity-providers.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/organization/organization.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/organization/organization.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83738,7 +93276,7 @@ organization_organization_Organization.SpendAlerts = SpendAlerts;
 organization_organization_Organization.Certificates = certificates_Certificates;
 organization_organization_Organization.Projects = projects_projects_Projects;
 //# sourceMappingURL=organization.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/admin/admin.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/admin/admin.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83751,7 +93289,7 @@ class Admin extends resource_APIResource {
 }
 Admin.Organization = organization_organization_Organization;
 //# sourceMappingURL=admin.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/audio/speech.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/audio/speech.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83798,7 +93336,7 @@ class Speech extends resource_APIResource {
     }
 }
 //# sourceMappingURL=speech.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/audio/transcriptions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/audio/transcriptions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83822,7 +93360,7 @@ class Transcriptions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=transcriptions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/audio/translations.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/audio/translations.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83842,7 +93380,7 @@ class Translations extends resource_APIResource {
     }
 }
 //# sourceMappingURL=translations.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/audio/voice-consents.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/audio/voice-consents.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -83982,7 +93520,7 @@ class VoiceConsents extends resource_APIResource {
     }
 }
 //# sourceMappingURL=voice-consents.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/audio/voices.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/audio/voices.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84041,7 +93579,7 @@ class Voices extends resource_APIResource {
     }
 }
 //# sourceMappingURL=voices.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/audio/audio.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/audio/audio.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84070,7 +93608,7 @@ Audio.Speech = Speech;
 Audio.Voices = Voices;
 Audio.VoiceConsents = VoiceConsents;
 //# sourceMappingURL=audio.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/batches.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/batches.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84174,7 +93712,7 @@ class resources_batches_Batches extends resource_APIResource {
     }
 }
 //# sourceMappingURL=batches.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/assistants.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/assistants.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84306,7 +93844,7 @@ class Assistants extends resource_APIResource {
     }
 }
 //# sourceMappingURL=assistants.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/automations/invocations.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/automations/invocations.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84423,7 +93961,7 @@ class Invocations extends resource_APIResource {
     }
 }
 //# sourceMappingURL=invocations.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/automations/automations.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/automations/automations.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84634,7 +94172,7 @@ class Automations extends resource_APIResource {
 }
 Automations.Invocations = Invocations;
 //# sourceMappingURL=automations.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/files.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/files.mjs
 
 
 /** Beta: uploaded file IDs remain available after partial preparation or staging failure. */
@@ -84733,7 +94271,7 @@ async function uploadAgentFile(client, resource, environmentID, params, options)
     }
 }
 //# sourceMappingURL=files.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/environments/files.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/environments/files.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84800,7 +94338,7 @@ class environments_files_Files extends resource_APIResource {
     }
 }
 //# sourceMappingURL=files.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/environments/templates.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/environments/templates.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -84959,7 +94497,7 @@ class Templates extends resource_APIResource {
     }
 }
 //# sourceMappingURL=templates.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/environments/environments.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/environments/environments.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85104,7 +94642,7 @@ class EnvironmentInfosPage extends CursorPage {
 environments_Environments.Files = environments_files_Files;
 environments_Environments.Templates = Templates;
 //# sourceMappingURL=environments.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/pages.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/pages.mjs
 
 
 /** Retain server cursor metadata for legacy Agents items with nullable IDs.
@@ -85134,7 +94672,7 @@ async function* agentItems(load) {
     }
 }
 //# sourceMappingURL=pages.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/result-artifacts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/result-artifacts.mjs
 var _AgentResultArtifacts_resource, _AgentResultArtifacts_sessionID, _AgentResultArtifacts_turnID;
 
 
@@ -85198,7 +94736,7 @@ class AgentResultArtifacts {
 }
 _AgentResultArtifacts_resource = new WeakMap(), _AgentResultArtifacts_sessionID = new WeakMap(), _AgentResultArtifacts_turnID = new WeakMap();
 //# sourceMappingURL=result-artifacts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/artifacts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/artifacts.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85354,7 +94892,7 @@ class sessions_artifacts_Artifacts extends resource_APIResource {
     }
 }
 //# sourceMappingURL=artifacts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/events.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/events.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85428,7 +94966,7 @@ class sessions_events_Events extends resource_APIResource {
     }
 }
 //# sourceMappingURL=events.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85507,7 +95045,7 @@ class Items extends resource_APIResource {
     }
 }
 //# sourceMappingURL=items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/traces.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/traces.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85586,7 +95124,7 @@ class Traces extends resource_APIResource {
     }
 }
 //# sourceMappingURL=traces.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/subagents/items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/subagents/items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85622,7 +95160,7 @@ class items_Items extends resource_APIResource {
     }
 }
 //# sourceMappingURL=items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/subagents/turns/items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/subagents/turns/items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85658,7 +95196,7 @@ class turns_items_Items extends resource_APIResource {
     }
 }
 //# sourceMappingURL=items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/subagents/turns/turns.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/subagents/turns/turns.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85725,7 +95263,7 @@ class Turns extends resource_APIResource {
 }
 Turns.Items = turns_items_Items;
 //# sourceMappingURL=turns.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/subagents/subagents.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/subagents/subagents.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85836,7 +95374,7 @@ class Subagents extends resource_APIResource {
 Subagents.Items = items_Items;
 Subagents.Turns = Turns;
 //# sourceMappingURL=subagents.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/turns/items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/turns/items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85873,7 +95411,7 @@ class sessions_turns_items_Items extends resource_APIResource {
     }
 }
 //# sourceMappingURL=items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/turns/turns.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/turns/turns.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -85981,7 +95519,7 @@ class turns_Turns extends resource_APIResource {
 }
 turns_Turns.Items = sessions_turns_items_Items;
 //# sourceMappingURL=turns.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/agents/turn-state.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/agents/turn-state.mjs
 var _TurnState_turnID, _TurnState_turnEnded, _TurnState_eventIDs, _TurnState_calls;
 
 /** Tracks one helper invocation's coordinator turn and duplicate deliveries.
@@ -86040,7 +95578,7 @@ class TurnState {
 }
 _TurnState_turnID = new WeakMap(), _TurnState_turnEnded = new WeakMap(), _TurnState_eventIDs = new WeakMap(), _TurnState_calls = new WeakMap();
 //# sourceMappingURL=turn-state.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/tool-output.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/tool-output.mjs
 
 /**
  * Recognizes supported content blocks without confusing JSON business data with content.
@@ -86064,11 +95602,11 @@ function isInputContent(value) {
     return values_hasOwn(content, 'type') && values_hasOwn(content, field) && typeof content[field] === 'string';
 }
 //# sourceMappingURL=tool-output.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/tool-stages.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/tool-stages.mjs
 /** @internal */
 const toolStages = Symbol.for('openai.beta.agents.toolStages');
 //# sourceMappingURL=tool-stages.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/tool-dispatcher.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/tool-dispatcher.mjs
 var _AgentToolDispatcher_instances, _AgentToolDispatcher_handlers, _AgentToolDispatcher_options, _AgentToolDispatcher_sessions, _AgentToolDispatcher_controller, _AgentToolDispatcher_onToolError, _AgentToolDispatcher_result, _AgentToolDispatcher_checkAbort, _AgentToolDispatcher_abortError, _AgentToolDispatcher_wait, _AgentToolDispatcher_submit;
 
 
@@ -86250,13 +95788,13 @@ _AgentToolDispatcher_handlers = new WeakMap(), _AgentToolDispatcher_options = ne
     }
 };
 //# sourceMappingURL=tool-dispatcher.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/agents/output-text.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/agents/output-text.mjs
 /** Joins output_text blocks in content order, without filtering phase, fetching, or mutating the message. */
 function outputText(message) {
     return message.content.map((block) => (block.type === 'output_text' ? block.text : '')).join('');
 }
 //# sourceMappingURL=output-text.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/agent-turn-result.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/agent-turn-result.mjs
 
 /** Beta: the completed final assistant messages from one hosted root turn. */
 class AgentTurnResult {
@@ -86275,7 +95813,7 @@ class AgentTurnResult {
     }
 }
 //# sourceMappingURL=agent-turn-result.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/parsed-agent-turn-result.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/parsed-agent-turn-result.mjs
 
 /** Beta: a completed hosted turn whose output passed the local parser. */
 class ParsedAgentTurnResult extends AgentTurnResult {
@@ -86286,7 +95824,7 @@ class ParsedAgentTurnResult extends AgentTurnResult {
     }
 }
 //# sourceMappingURL=parsed-agent-turn-result.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/output-parse-error.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/output-parse-error.mjs
 var _AgentOutputParseError_rawResult;
 
 
@@ -86305,7 +95843,7 @@ class AgentOutputParseError extends error_OpenAIError {
 }
 _AgentOutputParseError_rawResult = new WeakMap();
 //# sourceMappingURL=output-parse-error.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/parse-result.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/parse-result.mjs
 
 
 
@@ -86416,7 +95954,7 @@ async function parseAgentResultPromise(result, format) {
     return parseAgentResult(await result, format);
 }
 //# sourceMappingURL=parse-result.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/agent-turn-result-error.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/agent-turn-result-error.mjs
 
 /** Beta: final collection failed; partial state is evidence, not a successful result. */
 class AgentTurnResultError extends error_OpenAIError {
@@ -86435,7 +95973,7 @@ class AgentTurnResultError extends error_OpenAIError {
     }
 }
 //# sourceMappingURL=agent-turn-result-error.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/agent-turn-result-collector.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/agent-turn-result-collector.mjs
 var _AgentTurnResultCollector_instances, _AgentTurnResultCollector_sessionID, _AgentTurnResultCollector_turn, _AgentTurnResultCollector_messages, _AgentTurnResultCollector_requiredActions, _AgentTurnResultCollector_checkedActionsFor, _AgentTurnResultCollector_sessionFailed, _AgentTurnResultCollector_terminal, _AgentTurnResultCollector_idle, _AgentTurnResultCollector_acceptTurn, _AgentTurnResultCollector_acceptOutput, _AgentTurnResultCollector_finalMessages;
 
 
@@ -86539,7 +96077,7 @@ _AgentTurnResultCollector_sessionID = new WeakMap(), _AgentTurnResultCollector_t
         .map(({ message }) => message));
 };
 //# sourceMappingURL=agent-turn-result-collector.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/result-collection.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/result-collection.mjs
 var _ResultCollection_instances, _ResultCollection_iterator, _ResultCollection_ended, _ResultCollection_enabled, _ResultCollection_uncollectedEvents, _ResultCollection_error, _ResultCollection_result, _ResultCollection_source, _ResultCollection_signal, _ResultCollection_canHandle, _ResultCollection_observe, _ResultCollection_collect;
 
 
@@ -86646,7 +96184,7 @@ _ResultCollection_iterator = new WeakMap(), _ResultCollection_ended = new WeakMa
     }
 };
 //# sourceMappingURL=result-collection.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/agents/agent-session-stream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/agents/agent-session-stream.mjs
 var _AgentSessionStream_instances, _AgentSessionStream_consumed, _AgentSessionStream_format, _AgentSessionStream_parsedResult, _AgentSessionStream_collection, _AgentSessionStream_stream, _AgentSessionStream_response, _AgentSessionStream_reading, _AgentSessionStream_sessions, _AgentSessionStream_sessionID, _AgentSessionStream_input, _AgentSessionStream_dispatcher, _AgentSessionStream_inputKey, _AgentSessionStream_options, _AgentSessionStream_iterate, _AgentSessionStream_checkAbort, _AgentSessionStream_abortError;
 
 
@@ -86818,7 +96356,7 @@ _AgentSessionStream_iterate = async function* _AgentSessionStream_iterate() {
     return error;
 };
 //# sourceMappingURL=agent-session-stream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/beta/agents/agent-session-create-stream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/beta/agents/agent-session-create-stream.mjs
 
 
 
@@ -86908,7 +96446,7 @@ function captureCreationTools(body, options) {
     };
 }
 //# sourceMappingURL=agent-session-create-stream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/sessions/sessions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/sessions/sessions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87100,7 +96638,7 @@ sessions_Sessions.Events = sessions_events_Events;
 sessions_Sessions.Traces = Traces;
 sessions_Sessions.Turns = turns_Turns;
 //# sourceMappingURL=sessions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/vaults/credentials.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/vaults/credentials.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87272,7 +96810,7 @@ class credentials_Credentials extends resource_APIResource {
     }
 }
 //# sourceMappingURL=credentials.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/vaults/vaults.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/vaults/vaults.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87432,7 +96970,7 @@ class vaults_Vaults extends resource_APIResource {
 }
 vaults_Vaults.Credentials = credentials_Credentials;
 //# sourceMappingURL=vaults.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/agents/agents.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/agents/agents.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87600,7 +97138,7 @@ agents_Agents.Environments = environments_Environments;
 agents_Agents.Vaults = vaults_Vaults;
 agents_Agents.Sessions = sessions_Sessions;
 //# sourceMappingURL=agents.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/chatkit/sessions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/chatkit/sessions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87649,7 +97187,7 @@ class chatkit_sessions_Sessions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=sessions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/chatkit/threads.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/chatkit/threads.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87775,7 +97313,7 @@ class threads_Threads extends resource_APIResource {
     }
 }
 //# sourceMappingURL=threads.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/chatkit/chatkit.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/chatkit/chatkit.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87792,7 +97330,7 @@ class ChatKit extends resource_APIResource {
 ChatKit.Sessions = chatkit_sessions_Sessions;
 ChatKit.Threads = threads_Threads;
 //# sourceMappingURL=chatkit.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/responses/input-items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/responses/input-items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87878,7 +97416,7 @@ class InputItems extends resource_APIResource {
     }
 }
 //# sourceMappingURL=input-items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/responses/input-tokens.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/responses/input-tokens.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -87915,7 +97453,7 @@ class InputTokens extends resource_APIResource {
     }
 }
 //# sourceMappingURL=input-tokens.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/responses/responses.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/responses/responses.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -88103,7 +97641,7 @@ class Responses extends resource_APIResource {
 Responses.InputItems = InputItems;
 Responses.InputTokens = InputTokens;
 //# sourceMappingURL=responses.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/threads/messages.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/threads/messages.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -88240,7 +97778,7 @@ class threads_messages_Messages extends resource_APIResource {
     }
 }
 //# sourceMappingURL=messages.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/threads/runs/steps.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/threads/runs/steps.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -88285,7 +97823,7 @@ class Steps extends resource_APIResource {
     }
 }
 //# sourceMappingURL=steps.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/polling.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/polling.mjs
 
 
 
@@ -88414,7 +97952,7 @@ async function pollWithResponse(retrieve, intermediateStatuses, terminalStatuses
     }
 }
 //# sourceMappingURL=polling.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/assistant-run-polling.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/assistant-run-polling.mjs
 
 /**
  * Polls an assistant run through the resource's retrieve method, preserving the
@@ -88429,7 +97967,7 @@ function pollAssistantRun(resource, runID, params, options) {
     }), ['queued', 'in_progress', 'cancelling'], ['requires_action', 'incomplete', 'cancelled', 'completed', 'failed', 'expired'], options);
 }
 //# sourceMappingURL=assistant-run-polling.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/base64.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/base64.mjs
 
 
 const base64_toBase64 = (data) => {
@@ -88487,7 +98025,7 @@ const toFloat32Array = (base64Str) => {
     }
 };
 //# sourceMappingURL=base64.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils/env.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils/env.mjs
 /**
  * Read an environment variable.
  *
@@ -88510,7 +98048,7 @@ const env_readEnv = (env) => {
     return undefined;
 };
 //# sourceMappingURL=env.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/utils.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/utils.mjs
 
 
 
@@ -88519,7 +98057,7 @@ const env_readEnv = (env) => {
 
 
 //# sourceMappingURL=utils.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/assistant-stream-delta.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/assistant-stream-delta.mjs
 
 
 const MAX_ASSISTANT_STREAM_ARRAY_GROWTH = 1024;
@@ -88828,7 +98366,7 @@ function createAssistantStreamArrayDeltaCommit(accumulator, delta, kind, cacheAr
     return () => commitAssistantStreamArrayProjection(projection);
 }
 //# sourceMappingURL=assistant-stream-delta.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/AssistantStream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/AssistantStream.mjs
 var _AssistantStream_instances, _AssistantStream_runStepSnapshots, _AssistantStream_runStepIDOwners, _AssistantStream_activeRunStepID, _AssistantStream_messageSnapshots, _AssistantStream_messageIDOwners, _AssistantStream_messageSnapshot, _AssistantStream_activeMessageID, _AssistantStream_finalRun, _AssistantStream_currentContentIndex, _AssistantStream_currentContent, _AssistantStream_currentToolCallIndex, _AssistantStream_currentToolCall, _AssistantStream_currentEvent, _AssistantStream_currentRunSnapshot, _AssistantStream_currentRunStepSnapshot, _AssistantStream_addEvent, _AssistantStream_endRequest, _AssistantStream_validateRunStepEvent, _AssistantStream_reserveRunStepAlias, _AssistantStream_validateMessageEvent, _AssistantStream_reserveMessageAlias, _AssistantStream_handleMessage, _AssistantStream_handleRunStep, _AssistantStream_emitExposed, _AssistantStream_handleEvent, _AssistantStream_accumulateRunStep, _AssistantStream_accumulateMessage, _AssistantStream_accumulateContent, _AssistantStream_handleRun;
 
 
@@ -89549,7 +99087,7 @@ function AssistantStream_assertNever(_x) {
     return _x;
 }
 //# sourceMappingURL=AssistantStream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/threads/runs/runs.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/threads/runs/runs.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -89752,7 +99290,7 @@ class Runs extends resource_APIResource {
 }
 Runs.Steps = Steps;
 //# sourceMappingURL=runs.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/threads/threads.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/threads/threads.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -89858,7 +99396,7 @@ class threads_threads_Threads extends resource_APIResource {
 threads_threads_Threads.Runs = Runs;
 threads_threads_Threads.Messages = threads_messages_Messages;
 //# sourceMappingURL=threads.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/realtime/sessions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/realtime/sessions.mjs
 
 
 class realtime_sessions_Sessions extends resource_APIResource {
@@ -89887,7 +99425,7 @@ class realtime_sessions_Sessions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=sessions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/realtime/transcription-sessions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/realtime/transcription-sessions.mjs
 
 
 class TranscriptionSessions extends resource_APIResource {
@@ -89916,7 +99454,7 @@ class TranscriptionSessions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=transcription-sessions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/realtime/realtime.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/realtime/realtime.mjs
 
 
 
@@ -89935,7 +99473,7 @@ class Realtime extends resource_APIResource {
 Realtime.Sessions = realtime_sessions_Sessions;
 Realtime.TranscriptionSessions = TranscriptionSessions;
 //# sourceMappingURL=realtime.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/beta/beta.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/beta/beta.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -89969,7 +99507,7 @@ beta_Beta.ChatKit = ChatKit;
 beta_Beta.Assistants = Assistants;
 beta_Beta.Threads = threads_threads_Threads;
 //# sourceMappingURL=beta.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/completions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/completions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function resources_completions_resolveResourceRequestOptions(options, buildOptions) {
@@ -89987,7 +99525,7 @@ class completions_Completions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=completions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/containers/files/content.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/containers/files/content.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90010,7 +99548,7 @@ class Content extends resource_APIResource {
     }
 }
 //# sourceMappingURL=content.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/containers/files/files.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/containers/files/files.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90126,7 +99664,7 @@ class files_files_Files extends resource_APIResource {
 }
 files_files_Files.Content = Content;
 //# sourceMappingURL=files.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/containers/containers.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/containers/containers.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90237,7 +99775,7 @@ class Containers extends resource_APIResource {
 }
 Containers.Files = files_files_Files;
 //# sourceMappingURL=containers.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/content-provenance-checks.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/content-provenance-checks.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90261,7 +99799,7 @@ class ContentProvenanceChecks extends resource_APIResource {
     }
 }
 //# sourceMappingURL=content-provenance-checks.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/conversations/items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/conversations/items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90371,7 +99909,7 @@ class conversations_items_Items extends resource_APIResource {
     }
 }
 //# sourceMappingURL=items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/conversations/conversations.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/conversations/conversations.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90423,7 +99961,7 @@ class Conversations extends resource_APIResource {
 }
 Conversations.Items = conversations_items_Items;
 //# sourceMappingURL=conversations.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/decisions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/decisions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function decisions_resolveResourceRequestOptions(options, buildOptions) {
@@ -90443,7 +99981,7 @@ class Decisions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=decisions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/embeddings.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/embeddings.mjs
 
 /**
  * Sends the optimized embeddings request while preserving explicit encodings and
@@ -90499,7 +100037,7 @@ function createEmbedding(client, body, options) {
     });
 }
 //# sourceMappingURL=embeddings.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/embeddings.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/embeddings.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90512,7 +100050,7 @@ class Embeddings extends resource_APIResource {
     }
 }
 //# sourceMappingURL=embeddings.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/evals/runs/output-items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/evals/runs/output-items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90544,7 +100082,7 @@ class OutputItems extends resource_APIResource {
     }
 }
 //# sourceMappingURL=output-items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/evals/runs/runs.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/evals/runs/runs.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90664,7 +100202,7 @@ class runs_Runs extends resource_APIResource {
 }
 runs_Runs.OutputItems = OutputItems;
 //# sourceMappingURL=runs.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/evals/evals.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/evals/evals.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90788,7 +100326,7 @@ class Evals extends resource_APIResource {
 }
 Evals.Runs = runs_Runs;
 //# sourceMappingURL=evals.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/file-processing.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/file-processing.mjs
 
 
 /**
@@ -90817,7 +100355,7 @@ async function waitForFileProcessing(resource, id, pollInterval, maxWait) {
     return file;
 }
 //# sourceMappingURL=file-processing.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/files.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/files.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -90961,13 +100499,13 @@ class resources_files_Files extends resource_APIResource {
     }
 }
 //# sourceMappingURL=files.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/methods.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/methods.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 class Methods extends resource_APIResource {
 }
 //# sourceMappingURL=methods.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/alpha/graders.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/alpha/graders.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function graders_resolveResourceRequestOptions(options, buildOptions) {
@@ -91027,7 +100565,7 @@ class Graders extends resource_APIResource {
     }
 }
 //# sourceMappingURL=graders.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/alpha/alpha.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/alpha/alpha.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91040,7 +100578,7 @@ class Alpha extends resource_APIResource {
 }
 Alpha.Graders = Graders;
 //# sourceMappingURL=alpha.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/checkpoints/permissions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/checkpoints/permissions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91185,7 +100723,7 @@ class checkpoints_permissions_Permissions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=permissions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/checkpoints/checkpoints.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/checkpoints/checkpoints.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91198,7 +100736,7 @@ class Checkpoints extends resource_APIResource {
 }
 Checkpoints.Permissions = checkpoints_permissions_Permissions;
 //# sourceMappingURL=checkpoints.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/jobs/checkpoints.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/jobs/checkpoints.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91278,7 +100816,7 @@ class checkpoints_Checkpoints extends resource_APIResource {
     }
 }
 //# sourceMappingURL=checkpoints.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/jobs/jobs.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/jobs/jobs.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91456,7 +100994,7 @@ class Jobs extends resource_APIResource {
 }
 Jobs.Checkpoints = checkpoints_Checkpoints;
 //# sourceMappingURL=jobs.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/fine-tuning/fine-tuning.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/fine-tuning/fine-tuning.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91481,13 +101019,13 @@ FineTuning.Jobs = Jobs;
 FineTuning.Checkpoints = Checkpoints;
 FineTuning.Alpha = Alpha;
 //# sourceMappingURL=fine-tuning.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/graders/grader-models.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/graders/grader-models.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 class GraderModels extends resource_APIResource {
 }
 //# sourceMappingURL=grader-models.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/graders/graders.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/graders/graders.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91500,7 +101038,7 @@ class graders_Graders extends resource_APIResource {
 }
 graders_Graders.GraderModels = GraderModels;
 //# sourceMappingURL=graders.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/images.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/images.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91561,7 +101099,7 @@ class Images extends resource_APIResource {
     }
 }
 //# sourceMappingURL=images.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/live/sessions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/live/sessions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91685,19 +101223,19 @@ class live_sessions_Sessions extends resource_APIResource {
     }
 }
 //# sourceMappingURL=sessions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/live/forks/forks.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/live/forks/forks.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 class Forks extends resource_APIResource {
 }
 //# sourceMappingURL=forks.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/live/sideband/sideband.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/live/sideband/sideband.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 class Sideband extends resource_APIResource {
 }
 //# sourceMappingURL=sideband.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/live/live.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/live/live.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91740,7 +101278,7 @@ Live.Sideband = Sideband;
 Live.Forks = Forks;
 Live.Sessions = live_sessions_Sessions;
 //# sourceMappingURL=live.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/models.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/models.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91775,7 +101313,7 @@ class resources_models_Models extends resource_APIResource {
     }
 }
 //# sourceMappingURL=models.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/moderations.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/moderations.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function moderations_resolveResourceRequestOptions(options, buildOptions) {
@@ -91799,7 +101337,7 @@ class Moderations extends resource_APIResource {
     }
 }
 //# sourceMappingURL=moderations.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/multipart-encoding.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/multipart-encoding.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91848,7 +101386,7 @@ async function encodedMultipartFormRequestOptions(options, client, encodings, ra
     };
 }
 //# sourceMappingURL=multipart-encoding.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/realtime/calls.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/realtime/calls.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -91951,7 +101489,7 @@ class Calls extends resource_APIResource {
     }
 }
 //# sourceMappingURL=calls.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/realtime/client-secrets.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/realtime/client-secrets.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function client_secrets_resolveResourceRequestOptions(options, buildOptions) {
@@ -91990,7 +101528,7 @@ class ClientSecrets extends resource_APIResource {
     }
 }
 //# sourceMappingURL=client-secrets.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/realtime/translations/client-secrets.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/realtime/translations/client-secrets.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function translations_client_secrets_resolveResourceRequestOptions(options, buildOptions) {
@@ -92026,7 +101564,7 @@ class client_secrets_ClientSecrets extends resource_APIResource {
     }
 }
 //# sourceMappingURL=client-secrets.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/realtime/translations/translations.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/realtime/translations/translations.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -92039,7 +101577,7 @@ class translations_Translations extends resource_APIResource {
 }
 translations_Translations.ClientSecrets = client_secrets_ClientSecrets;
 //# sourceMappingURL=translations.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/realtime/realtime.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/realtime/realtime.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -92060,7 +101598,7 @@ realtime_Realtime.ClientSecrets = ClientSecrets;
 realtime_Realtime.Calls = Calls;
 realtime_Realtime.Translations = translations_Translations;
 //# sourceMappingURL=realtime.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/responses/input-items.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/responses/input-items.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -92140,7 +101678,7 @@ class input_items_InputItems extends resource_APIResource {
     }
 }
 //# sourceMappingURL=input-items.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/responses/input-tokens.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/responses/input-tokens.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function responses_input_tokens_resolveResourceRequestOptions(options, buildOptions) {
@@ -92170,7 +101708,7 @@ class input_tokens_InputTokens extends resource_APIResource {
     }
 }
 //# sourceMappingURL=input-tokens.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/ResponsesParser.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/ResponsesParser.mjs
 
 
 
@@ -92439,7 +101977,7 @@ function addOutputText(rsp) {
     rsp.output_text = texts.join('');
 }
 //# sourceMappingURL=ResponsesParser.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/responses/output-text-index.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/responses/output-text-index.mjs
 /**
  * Stores output text lengths in a complete binary segment tree.
  *
@@ -92513,7 +102051,7 @@ class OutputTextIndex {
     }
 }
 //# sourceMappingURL=output-text-index.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/responses/canonical-output-text.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/responses/canonical-output-text.mjs
 
 function createCanonicalResponseContext() {
     return {
@@ -92640,7 +102178,7 @@ function updateOutputText(context, snapshot, outputIndex, previousText, nextText
             snapshot.output_text.slice(offset + previousText.length);
 }
 //# sourceMappingURL=canonical-output-text.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/responses/response-accumulator.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/responses/response-accumulator.mjs
 
 
 
@@ -93670,7 +103208,7 @@ function accumulateResponseWithContext(event, snapshot, context, rejectInvalidSh
     return response_accumulator_assertNever(dispatchEvent);
 }
 //# sourceMappingURL=response-accumulator.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/responses/ResponseStream.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/responses/ResponseStream.mjs
 var _ResponseStream_instances, _ResponseStream_params, _ResponseStream_currentResponseSnapshot, _ResponseStream_finalResponse, _ResponseStream_accumulatorContext, _ResponseStream_outputPositions, _ResponseStream_wireByIdentity, _ResponseStream_interimOrderDirty, _ResponseStream_completedOutput, _ResponseStream_unfinishedOutput, _ResponseStream_beginRequest, _ResponseStream_prepareEvent, _ResponseStream_prepareOutputEvent, _ResponseStream_outputAtWireIndex, _ResponseStream_assertComplete, _ResponseStream_recordOutput, _ResponseStream_reorderInterimOutput, _ResponseStream_updateInterimResponse, _ResponseStream_addEvent, _ResponseStream_endRequest;
 
 
@@ -94227,7 +103765,7 @@ function finalizeResponse(snapshot, params, format) {
     return maybeParseResponse(snapshot, params, format);
 }
 //# sourceMappingURL=ResponseStream.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/responses/responses.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/responses/responses.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94402,7 +103940,7 @@ class responses_Responses extends resource_APIResource {
 responses_Responses.InputItems = input_items_InputItems;
 responses_Responses.InputTokens = input_tokens_InputTokens;
 //# sourceMappingURL=responses.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/safety/alerts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/safety/alerts.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94418,7 +103956,7 @@ class Alerts extends resource_APIResource {
     }
 }
 //# sourceMappingURL=alerts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/safety/cases.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/safety/cases.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94434,7 +103972,7 @@ class Cases extends resource_APIResource {
     }
 }
 //# sourceMappingURL=cases.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/safety/safety.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/safety/safety.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94451,7 +103989,7 @@ class Safety extends resource_APIResource {
 Safety.Cases = Cases;
 Safety.Alerts = Alerts;
 //# sourceMappingURL=safety.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/skills/content.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/skills/content.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94473,7 +104011,7 @@ class content_Content extends resource_APIResource {
     }
 }
 //# sourceMappingURL=content.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/skills/versions/content.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/skills/versions/content.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94496,7 +104034,7 @@ class versions_content_Content extends resource_APIResource {
     }
 }
 //# sourceMappingURL=content.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/skills/versions/versions.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/skills/versions/versions.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94604,7 +104142,7 @@ class versions_versions_Versions extends resource_APIResource {
 }
 versions_versions_Versions.Content = versions_content_Content;
 //# sourceMappingURL=versions.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/skills/skills.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/skills/skills.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94724,7 +104262,7 @@ class resources_skills_skills_Skills extends resource_APIResource {
 resources_skills_skills_Skills.Content = content_Content;
 resources_skills_skills_Skills.Versions = versions_versions_Versions;
 //# sourceMappingURL=skills.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/uploads/parts.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/uploads/parts.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94755,7 +104293,7 @@ class Parts extends resource_APIResource {
     }
 }
 //# sourceMappingURL=parts.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/uploads/uploads.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/uploads/uploads.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -94837,7 +104375,7 @@ class Uploads extends resource_APIResource {
 }
 Uploads.Parts = Parts;
 //# sourceMappingURL=uploads.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/vector-store-polling.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/vector-store-polling.mjs
 
 /**
  * Polls an attached file through the resource's retrieve method until it completes,
@@ -94858,7 +104396,7 @@ function pollVectorStoreFileBatch(resource, vectorStoreID, batchID, options) {
     return pollWithResponse((headers) => resource.retrieve(batchID, { vector_store_id: vectorStoreID }, { ...options, headers }), ['in_progress'], ['failed', 'cancelled', 'completed'], options);
 }
 //# sourceMappingURL=vector-store-polling.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/Util.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/Util.mjs
 /**
  * Like `Promise.allSettled()` but throws an error if any promises are rejected.
  * Rejection reasons remain available on the thrown error's non-enumerable `rejections`
@@ -94884,7 +104422,7 @@ const allSettledWithThrow = async (promises) => {
     return values;
 };
 //# sourceMappingURL=Util.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/vector-store-upload.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/vector-store-upload.mjs
 
 /**
  * Uploads files with a shared iterator, then creates and polls the batch. Every
@@ -94923,7 +104461,7 @@ async function uploadAndPollVectorStoreFileBatch(resource, client, vectorStoreId
     return await resource.createAndPoll(vectorStoreId, { file_ids: allFileIds }, options);
 }
 //# sourceMappingURL=vector-store-upload.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/vector-stores/file-batches.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/vector-stores/file-batches.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -95007,7 +104545,7 @@ class FileBatches extends resource_APIResource {
     }
 }
 //# sourceMappingURL=file-batches.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/vector-stores/files.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/vector-stores/files.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -95181,7 +104719,7 @@ class vector_stores_files_Files extends resource_APIResource {
     }
 }
 //# sourceMappingURL=files.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/vector-stores/vector-stores.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/vector-stores/vector-stores.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -95326,7 +104864,7 @@ class VectorStores extends resource_APIResource {
 VectorStores.Files = vector_stores_files_Files;
 VectorStores.FileBatches = FileBatches;
 //# sourceMappingURL=vector-stores.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/videos.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/videos.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -95491,7 +105029,7 @@ class Videos extends resource_APIResource {
     }
 }
 //# sourceMappingURL=videos.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/webhooks/event-types.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/webhooks/event-types.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 function event_types_resolveResourceRequestOptions(options, buildOptions) {
@@ -95512,7 +105050,7 @@ class EventTypes extends resource_APIResource {
     }
 }
 //# sourceMappingURL=event-types.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/lib/webhook-signature.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/lib/webhook-signature.mjs
 
 
 
@@ -95634,7 +105172,7 @@ async function verifyWebhookSignature(payload, signatureHeader, timestamp, webho
     throw new InvalidWebhookSignatureError('The given webhook signature does not match the expected signature');
 }
 //# sourceMappingURL=webhook-signature.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/webhooks/webhooks.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/webhooks/webhooks.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 var _Webhooks_instances, _Webhooks_validateSecret, _Webhooks_getRequiredHeader;
 
@@ -95865,7 +105403,7 @@ _Webhooks_instances = new WeakSet(), _Webhooks_validateSecret = function _Webhoo
 };
 webhooks_webhooks_Webhooks.EventTypes = EventTypes;
 //# sourceMappingURL=webhooks.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/resources/index.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/resources/index.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
 
 
@@ -95896,7 +105434,7 @@ webhooks_webhooks_Webhooks.EventTypes = EventTypes;
 
 
 //# sourceMappingURL=index.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/bedrock.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/bedrock.mjs
 
 
 /** Identifies legacy Bedrock clients without importing the client class into WebSocket modules. */
@@ -96321,7 +105859,7 @@ function resolveBedrockBearerAuth(options, { allowEnvironment = true, } = {}) {
     return { factory: undefined, explicit: false };
 }
 //# sourceMappingURL=bedrock.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/ws.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/ws.mjs
 
 
 const webSocketErrors = new WeakMap();
@@ -96753,7 +106291,7 @@ function isRecoverableClose(code) {
     }
 }
 //# sourceMappingURL=ws.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/realtime-credentials.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/realtime-credentials.mjs
 
 
 /** Native Realtime accepts routing metadata through these two server-supported subprotocols. */
@@ -96840,7 +106378,7 @@ async function resolveRealtimeAPIKey(client, deferCache = false) {
     };
 }
 //# sourceMappingURL=realtime-credentials.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/provider.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/provider.mjs
 
 const providerTimeoutKey = Symbol.for('openai.node.providerTimeout.v1');
 /** Preserve timeout classification across SDK copies and CJS/ESM entrypoints. */
@@ -96897,9 +106435,9 @@ function configureProvider(provider) {
     return definition.configure();
 }
 //# sourceMappingURL=provider.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/client.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/client.mjs
 // File generated from our OpenAPI spec by Castiron. See CONTRIBUTING.md for details.
-var _OpenAI_instances, client_a, _OpenAI_encoder, _OpenAI_x509Authentication, _OpenAI_x509Credential, _OpenAI_x509Fetch, _OpenAI_explicitDataResidency, _OpenAI_responseAttempts, _OpenAI_sanitizedLoggers, _OpenAI_baseURLOverridden, _OpenAI_normalizeRetries, _OpenAI_isSensitiveLogKey, _OpenAI_sanitizeLogValue, _OpenAI_sanitizeLogger;
+var _OpenAI_instances, openai_client_a, _OpenAI_encoder, _OpenAI_x509Authentication, _OpenAI_x509Credential, _OpenAI_x509Fetch, _OpenAI_explicitDataResidency, _OpenAI_responseAttempts, _OpenAI_sanitizedLoggers, _OpenAI_baseURLOverridden, _OpenAI_normalizeRetries, _OpenAI_isSensitiveLogKey, _OpenAI_sanitizeLogValue, _OpenAI_sanitizeLogger;
 
 
 
@@ -97119,8 +106657,8 @@ class OpenAI {
             }
             assertX509APIOrigin(options.baseURL);
             assertX509RequestOptions(options.fetchOptions);
-            if (this.fetchWithAuth !== client_a.prototype.fetchWithAuth ||
-                this.fetchWithTimeout !== client_a.prototype.fetchWithTimeout) {
+            if (this.fetchWithAuth !== openai_client_a.prototype.fetchWithAuth ||
+                this.fetchWithTimeout !== openai_client_a.prototype.fetchWithTimeout) {
                 throw new error_OpenAIError('X.509 workload identity does not support overridden fetch dispatch hooks.');
             }
         }
@@ -97135,7 +106673,7 @@ class OpenAI {
         }
         this.baseURL = options.baseURL;
         __classPrivateFieldSet(this, _OpenAI_explicitDataResidency, residencyBaseURL !== undefined || inheritedResidencySelection, "f");
-        this.timeout = options.timeout ?? client_a.DEFAULT_TIMEOUT; /* 10 minutes */
+        this.timeout = options.timeout ?? openai_client_a.DEFAULT_TIMEOUT; /* 10 minutes */
         this.logger = __classPrivateFieldGet(this, _OpenAI_instances, "m", _OpenAI_sanitizeLogger).call(this, options.logger ?? console);
         const defaultLogLevel = 'warn';
         // Set default logLevel early so that we can log a warning in parseLogLevel.
@@ -97300,8 +106838,8 @@ class OpenAI {
         if (authentication) {
             if (authentication instanceof X509WorkloadIdentityAuth) {
                 if (authentication === this._workloadIdentityAuth &&
-                    (this.fetchWithAuth !== client_a.prototype.fetchWithAuth ||
-                        this.fetchWithTimeout !== client_a.prototype.fetchWithTimeout)) {
+                    (this.fetchWithAuth !== openai_client_a.prototype.fetchWithAuth ||
+                        this.fetchWithTimeout !== openai_client_a.prototype.fetchWithTimeout)) {
                     throw new error_OpenAIError('X.509 workload identity does not support overridden fetch dispatch hooks.');
                 }
                 const snapshots = authentication.headerSnapshots();
@@ -97760,7 +107298,7 @@ class OpenAI {
         }
         const security = options.__security ?? { bearerAuth: true };
         // Request hooks may replace the caller signal before it reaches fetch.
-        const controller = x509Authentication || this.fetchWithTimeout === client_a.prototype.fetchWithTimeout
+        const controller = x509Authentication || this.fetchWithTimeout === openai_client_a.prototype.fetchWithTimeout
             ? createRequestController(req.signal ?? (x509Authentication ? callerSignal : undefined), x509Authentication ? callerSignal : undefined)
             : new AbortController();
         const remainingTimeout = x509Authentication?.remainingTimeout(options, timeout) ??
@@ -97768,7 +107306,7 @@ class OpenAI {
         if (providerAuthStartedAt && remainingTimeout <= 0) {
             providerAuthTimeout ?? (providerAuthTimeout = new error_APIConnectionTimeoutError());
         }
-        const fetchWithAuth = x509Authentication ? client_a.prototype.fetchWithAuth : this.fetchWithAuth;
+        const fetchWithAuth = x509Authentication ? openai_client_a.prototype.fetchWithAuth : this.fetchWithAuth;
         x509Authentication?.releaseRequestBody(req.body);
         const response = providerAuthTimeout ??
             (await fetchWithAuth.call(this, url, req, remainingTimeout, controller, security).catch(castToError));
@@ -97976,7 +107514,7 @@ class OpenAI {
                 headers.set('Authorization', `Bearer ${token}`);
             }
         }
-        const fetchWithTimeout = __classPrivateFieldGet(this, _OpenAI_x509Fetch, "f") ? client_a.prototype.fetchWithTimeout : this.fetchWithTimeout;
+        const fetchWithTimeout = __classPrivateFieldGet(this, _OpenAI_x509Fetch, "f") ? openai_client_a.prototype.fetchWithTimeout : this.fetchWithTimeout;
         const response = await fetchWithTimeout.call(this, url, init, timeout, controller);
         return response;
     }
@@ -98112,7 +107650,7 @@ class OpenAI {
         if (__classPrivateFieldGet(this, _OpenAI_x509Authentication, "f") && !__classPrivateFieldGet(this, _OpenAI_x509Authentication, "f").inRequest(this)) {
             const authentication = __classPrivateFieldGet(this, _OpenAI_x509Authentication, "f");
             return await authentication.runRequest(async () => {
-                const built = await client_a.prototype.buildRequest.call(this, inputOptions, { retryCount });
+                const built = await openai_client_a.prototype.buildRequest.call(this, inputOptions, { retryCount });
                 authentication.releaseRequestBody(built.req.body);
                 return built;
             }, this);
@@ -98396,7 +107934,7 @@ class OpenAI {
         }
     }
 }
-client_a = OpenAI, _OpenAI_encoder = new WeakMap(), _OpenAI_x509Authentication = new WeakMap(), _OpenAI_x509Credential = new WeakMap(), _OpenAI_x509Fetch = new WeakMap(), _OpenAI_explicitDataResidency = new WeakMap(), _OpenAI_responseAttempts = new WeakMap(), _OpenAI_instances = new WeakSet(), _OpenAI_baseURLOverridden = function _OpenAI_baseURLOverridden() {
+openai_client_a = OpenAI, _OpenAI_encoder = new WeakMap(), _OpenAI_x509Authentication = new WeakMap(), _OpenAI_x509Credential = new WeakMap(), _OpenAI_x509Fetch = new WeakMap(), _OpenAI_explicitDataResidency = new WeakMap(), _OpenAI_responseAttempts = new WeakMap(), _OpenAI_instances = new WeakSet(), _OpenAI_baseURLOverridden = function _OpenAI_baseURLOverridden() {
     return (__classPrivateFieldGet(this, _OpenAI_explicitDataResidency, "f") ||
         this._provider !== undefined ||
         this.baseURL !== 'https://api.openai.com/v1');
@@ -98694,7 +108232,7 @@ client_a = OpenAI, _OpenAI_encoder = new WeakMap(), _OpenAI_x509Authentication =
     }
     return sanitizedValue;
 }, _OpenAI_sanitizeLogger = function _OpenAI_sanitizeLogger(logger) {
-    if (__classPrivateFieldGet(client_a, client_a, "f", _OpenAI_sanitizedLoggers).has(logger))
+    if (__classPrivateFieldGet(openai_client_a, openai_client_a, "f", _OpenAI_sanitizedLoggers).has(logger))
         return logger;
     const sanitized = new globalThis.Proxy(Object.create(null), {
         get: (_facade, property) => {
@@ -98712,11 +108250,11 @@ client_a = OpenAI, _OpenAI_encoder = new WeakMap(), _OpenAI_x509Authentication =
         },
         set: (_facade, property, value) => globalThis.Reflect.set(logger, property, value, logger),
     });
-    __classPrivateFieldGet(client_a, client_a, "f", _OpenAI_sanitizedLoggers).add(sanitized);
+    __classPrivateFieldGet(openai_client_a, openai_client_a, "f", _OpenAI_sanitizedLoggers).add(sanitized);
     return sanitized;
 };
 _OpenAI_sanitizedLoggers = { value: new globalThis.WeakSet() };
-OpenAI.OpenAI = client_a;
+OpenAI.OpenAI = openai_client_a;
 OpenAI.DEFAULT_TIMEOUT = 600000; // 10 minutes
 OpenAI.OpenAIError = error_OpenAIError;
 OpenAI.APIError = APIError;
@@ -98811,7 +108349,7 @@ function isUndiciDispatcherVersionMismatchError(error) {
     return false;
 }
 //# sourceMappingURL=client.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/runner-diagnostics.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/runner-diagnostics.mjs
 const failureReasons = {
     run: 'invalid_output',
     request: 'api_failed',
@@ -98865,7 +108403,7 @@ function runner_diagnostics_reportDiagnostic(observer, event, started, nativeUsa
     }
 }
 //# sourceMappingURL=runner-diagnostics.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/runner-lifecycle.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/runner-lifecycle.mjs
 
 
 
@@ -99087,7 +108625,7 @@ function runner_lifecycle_protectRunnerJSON(value) {
     }
 }
 //# sourceMappingURL=runner-lifecycle.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/internal/native-response-message.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/internal/native-response-message.mjs
 // oxlint-disable anti-slop/no-unknown-parameters, anti-slop/no-runtime-typeof -- This validates captured provider data at the native replay boundary.
 
 // Native replay values have already been cloned from provider output.
@@ -99262,7 +108800,7 @@ function native_response_message_isNativeResponseReasoning(value) {
         (status === undefined || status === 'completed' || status === 'incomplete' || status === 'in_progress'));
 }
 //# sourceMappingURL=native-response-message.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/helpers/computer.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/helpers/computer.mjs
 
 
 
@@ -100041,7 +109579,7 @@ class ComputerToolset {
     }
 }
 //# sourceMappingURL=computer.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/azure.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/azure.mjs
 
 
 
@@ -100188,7 +109726,7 @@ const _deployments_endpoints = new Set([
     '/images/edits',
 ]);
 //# sourceMappingURL=azure.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/bedrock.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/bedrock.mjs
 var bedrock_a;
 
 
@@ -100358,7 +109896,7 @@ class BedrockOpenAI extends OpenAI {
 }
 bedrock_a = brand_privateBedrockClient;
 //# sourceMappingURL=bedrock.mjs.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0/node_modules/openai/index.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/openai@7.57.0_undici@6.29.1_ws@8.23.0_zod@4.6.7/node_modules/openai/index.mjs
 
 
 
@@ -100375,7 +109913,10 @@ class OpenAIProvider {
     client;
     logger;
     constructor(apiKey, logger, baseURL) {
-        this.client = new OpenAI({ apiKey, ...(baseURL ? { baseURL } : {}) });
+        const options = { apiKey };
+        if (baseURL)
+            options.baseURL = baseURL;
+        this.client = new OpenAI(options);
         this.logger = logger.child({ module: "llm" });
     }
     async complete(model, systemPrompt, messages, maxTokens = 2048) {
@@ -101003,7 +110544,7 @@ function js_yaml_isPlainObject(data) {
 	const prototype = Object.getPrototypeOf(data);
 	return prototype === null || prototype === Object.prototype;
 }
-function pick(object, keys) {
+function js_yaml_pick(object, keys) {
 	const result = {};
 	for (const key of keys) if (object[key] !== void 0) result[key] = object[key];
 	return result;
@@ -101592,7 +111133,7 @@ function makeSnippet(mark, options) {
 }
 //#endregion
 //#region src/common/exception.ts
-function formatError(exception, compact) {
+function js_yaml_formatError(exception, compact) {
 	let where = "";
 	if (!exception.mark) return exception.reason;
 	if (exception.mark.name) where += `in "${exception.mark.name}" `;
@@ -101618,14 +111159,14 @@ var YAMLException = class YAMLException extends Error {
 		this.name = "YAMLException";
 		this.reason = reason;
 		this.mark = mark;
-		this.message = formatError(this, false);
+		this.message = js_yaml_formatError(this, false);
 		if (Error.captureStackTrace) Error.captureStackTrace(this, this.constructor);
 	}
 	/**
 	* Returns the formatted error, omitting the source snippet in compact mode.
 	*/
 	toString(compact) {
-		return `${this.name}: ${formatError(this, compact)}`;
+		return `${this.name}: ${js_yaml_formatError(this, compact)}`;
 	}
 	/**
 	* Builds a YAMLException with a source snippet and throws it. `source` is
@@ -103081,8 +112622,8 @@ function loadDocuments(input, options = {}) {
 	const source = String(input);
 	const PARSER_OPT_KEYS = Object.keys(DEFAULT_PARSER_OPTIONS);
 	const CONSTRUCTOR_OPT_KEYS = Object.keys(DEFAULT_CONSTRUCTOR_OPTIONS);
-	return constructFromEvents(parseEvents(source, pick(opts, PARSER_OPT_KEYS)), {
-		...pick(opts, CONSTRUCTOR_OPT_KEYS),
+	return constructFromEvents(parseEvents(source, js_yaml_pick(opts, PARSER_OPT_KEYS)), {
+		...js_yaml_pick(opts, CONSTRUCTOR_OPT_KEYS),
 		source
 	});
 }
@@ -103904,7 +113445,7 @@ function dump(input, options = {}) {
 	}
 	opts.transform(documents);
 	return present(documents, {
-		...pick(opts, Object.keys(DEFAULT_PRESENTER_OPTIONS)),
+		...js_yaml_pick(opts, Object.keys(DEFAULT_PRESENTER_OPTIONS)),
 		schema: opts.schema
 	});
 }
@@ -104128,6 +113669,7 @@ const DEFAULT_CONFIG = {
 ;// CONCATENATED MODULE: ./lib/config/loader.js
 
 
+
 async function loader_loadConfig(owner, repo, 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 octokit, configPath = ".github/issue-ai.yml") {
@@ -104139,8 +113681,9 @@ octokit, configPath = ".github/issue-ai.yml") {
             repo,
             path: configPath,
         });
-        if ("content" in data && typeof data.content === "string") {
-            const yamlText = Buffer.from(data.content, "base64").toString("utf-8");
+        const file = object({ content: schemas_string() }).safeParse(data);
+        if (file.success) {
+            const yamlText = Buffer.from(file.data.content, "base64").toString("utf-8");
             const documents = loadAll(yamlText, {
                 schema: CORE_SCHEMA.withTags(mergeTag, timestampTag, binaryTag, legacyMapTag),
             });
@@ -104154,8 +113697,8 @@ octokit, configPath = ".github/issue-ai.yml") {
         }
     }
     catch (error) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        if (error.status === 404) {
+        const result = object({ status: literal(404) }).safeParse(error);
+        if (result.success) {
             return DEFAULT_CONFIG;
         }
         throw error;
@@ -104188,8 +113731,9 @@ octokit, configPath = ".github/issue-ai.yml") {
 }
 //# sourceMappingURL=loader.js.map
 ;// CONCATENATED MODULE: ./lib/sanitizer.js
-const INVISIBLE_CHARS_REGEX = /[​‌‍‎‏‪-‮﻿­⁠-⁤᠎]/g;
-const CONTROL_CHARS_REGEX = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g;
+const INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u202A-\u202E\uFEFF\u00AD\u2060-\u2064\u180E]/g;
+// Preserve tab, newline, carriage return, and C1 controls while removing C0 controls and DEL.
+const CONTROL_CHARS_REGEX = /(?![\t\n\r\u0080-\u009F])\p{Cc}/gu;
 function sanitizeIssueBody(body, config) {
     if (!body)
         return "(No issue body provided)";
@@ -104518,6 +114062,7 @@ Which candidates are duplicates of the new issue? Return JSON.`;
 //# sourceMappingURL=duplicate.js.map
 ;// CONCATENATED MODULE: ./lib/duplicate.js
 
+
 function parseDuplicateResponse(raw) {
     const stripped = raw.trim();
     let jsonStr = stripped;
@@ -104527,13 +114072,19 @@ function parseDuplicateResponse(raw) {
     }
     try {
         const parsed = JSON.parse(jsonStr);
+        const values = array(unknown()).safeParse(parsed.duplicates);
+        const duplicates = [];
+        if (values.success) {
+            for (const value of values.data) {
+                const number = schemas_number().safeParse(value);
+                if (number.success)
+                    duplicates.push(number.data);
+            }
+        }
+        const reasoning = schemas_string().safeParse(parsed.reasoning);
         return {
-            duplicates: Array.isArray(parsed.duplicates)
-                ? parsed.duplicates.filter((n) => typeof n === "number")
-                : [],
-            reasoning: typeof parsed.reasoning === "string"
-                ? parsed.reasoning.slice(0, 300)
-                : "No reasoning provided",
+            duplicates,
+            reasoning: reasoning.success ? reasoning.data.slice(0, 300) : "No reasoning provided",
         };
     }
     catch {
@@ -104616,7 +114167,7 @@ async function runPipeline(actx) {
     };
     const sanitizedTitle = sanitizeIssueTitle(issue.title);
     const sanitizedBody = sanitizeIssueBody(issue.body, config);
-    const providerName = (config.llm.provider ?? detectProvider());
+    const providerName = config.llm.provider ?? detectProvider();
     const llmClient = factory_createProvider(providerName, log);
     const devMode = !llmClient;
     if (devMode) {
@@ -104803,7 +114354,7 @@ async function handleComment(actx) {
         return;
     }
     const commentBody = (comment.body ?? "").slice(0, MAX_COMMENT_LENGTH);
-    const providerName = (config.llm.provider ?? detectProvider());
+    const providerName = config.llm.provider ?? detectProvider();
     const llmClient = factory_createProvider(providerName, actx.logger);
     if (!llmClient) {
         actx.logger.warn("No LLM API key configured, skipping comment reply");
@@ -104847,10 +114398,10 @@ async function handleComment(actx) {
 
 
 
+
 function formatMessage(msgOrObj, msg) {
-    return typeof msgOrObj === "string"
-        ? msgOrObj
-        : `${msg ?? ""} ${JSON.stringify(msgOrObj)}`.trim();
+    const message = schemas_string().safeParse(msgOrObj);
+    return message.success ? message.data : `${msg ?? ""} ${JSON.stringify(msgOrObj)}`.trim();
 }
 function createActionLogger() {
     const logger = {
@@ -104862,6 +114413,33 @@ function createActionLogger() {
     };
     return logger;
 }
+const eventPayloadSchema = object({
+    action: schemas_string(),
+    issue: object({
+        number: schemas_number(),
+        title: schemas_string(),
+        body: schemas_string().nullable(),
+        html_url: schemas_string(),
+        user: object({ login: schemas_string(), type: schemas_string().optional() }).optional(),
+        labels: array(object({ name: schemas_string(), id: schemas_number() })).optional(),
+        created_at: schemas_string(),
+        pull_request: unknown().optional(),
+    }),
+    comment: object({
+        id: schemas_number(),
+        body: schemas_string().nullable(),
+        html_url: schemas_string(),
+        user: object({ login: schemas_string() }).optional(),
+        created_at: schemas_string(),
+    })
+        .optional(),
+    sender: object({ login: schemas_string(), type: schemas_string().optional() }).optional(),
+    repository: object({
+        name: schemas_string(),
+        owner: object({ login: schemas_string() }),
+        default_branch: schemas_string(),
+    }),
+});
 async function main() {
     const token = getInput("github-token") || process.env.GITHUB_TOKEN;
     if (!token) {
@@ -104891,6 +114469,15 @@ async function main() {
     const octokit = getOctokit(token);
     const ctx = github_context;
     const { owner, repo } = ctx.repo;
+    if (ctx.eventName !== "issues" && ctx.eventName !== "issue_comment") {
+        warning(`Unsupported event: ${ctx.eventName}`);
+        return;
+    }
+    const payload = eventPayloadSchema.safeParse(ctx.payload);
+    if (!payload.success) {
+        setFailed(`Invalid event payload: ${payload.error.message}`);
+        return;
+    }
     const actx = {
         owner,
         repo,
@@ -104898,7 +114485,7 @@ async function main() {
         logger: createActionLogger(),
         configPath,
         eventName: ctx.eventName,
-        payload: ctx.payload,
+        payload: payload.data,
     };
     try {
         if (actx.eventName === "issues") {
@@ -104922,7 +114509,7 @@ async function main() {
         setFailed(`Action failed: ${error instanceof Error ? error.message : String(error)}`);
     }
 }
-main();
+void main();
 //# sourceMappingURL=main.js.map
 
 //# sourceMappingURL=index.js.map

@@ -14,6 +14,7 @@ describe("DEFAULT_CONFIG", () => {
 
   it("maps all issue categories", () => {
     const categories = ["bug", "feature", "question", "docs", "duplicate", "invalid", "security"];
+
     for (const cat of categories) {
       expect(DEFAULT_CONFIG.labelMapping[cat]).toBeDefined();
     }

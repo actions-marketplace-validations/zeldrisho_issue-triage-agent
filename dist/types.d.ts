@@ -61,12 +61,36 @@ export interface PipelineError {
     message: string;
     cause?: Error;
 }
+export interface LogFields {
+    module?: string;
+    title?: string;
+    category?: IssueCategory;
+    priority?: IssuePriority;
+    confidence?: number;
+    label?: string;
+    owner?: string;
+    repo?: string;
+    issueNumber?: number;
+    commentAuthor?: string;
+    replyLength?: number;
+    model?: string;
+    messageCount?: number;
+    inputTokens?: number;
+    outputTokens?: number;
+    err?: unknown;
+    devMode?: boolean;
+    labels?: string[];
+    candidateCount?: number;
+    duplicateCount?: number;
+    duplicateNumbers?: number[];
+    reasoning?: string;
+}
 export interface Logger {
-    info(msgOrObj: unknown, msg?: string): void;
-    warn(msgOrObj: unknown, msg?: string): void;
-    error(msgOrObj: unknown, msg?: string): void;
-    debug(msgOrObj: unknown, msg?: string): void;
-    child(bindings: Record<string, unknown>): Logger;
+    info(msgOrObj: string | LogFields, msg?: string): void;
+    warn(msgOrObj: string | LogFields, msg?: string): void;
+    error(msgOrObj: string | LogFields, msg?: string): void;
+    debug(msgOrObj: string | LogFields, msg?: string): void;
+    child(bindings: LogFields): Logger;
 }
 export interface ActionContext {
     owner: string;
@@ -74,7 +98,7 @@ export interface ActionContext {
     octokit: any;
     logger: Logger;
     configPath?: string;
-    eventName: "issues" | "issue_comment";
+    eventName: string;
     payload: {
         action: string;
         issue: {
@@ -113,6 +137,5 @@ export interface ActionContext {
             };
             default_branch: string;
         };
-        [key: string]: unknown;
     };
 }

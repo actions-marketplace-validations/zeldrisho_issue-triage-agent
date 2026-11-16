@@ -1,4 +1,5 @@
 import { CORE_SCHEMA, loadAll, mergeTag, timestampTag, binaryTag, legacyMapTag } from "js-yaml";
+import { z } from "zod";
 import type { RepoConfig } from "../types.js";
 import { DEFAULT_CONFIG } from "./schema.js";
 
@@ -19,23 +20,30 @@ export async function loadConfig(
       path: configPath,
     });
 
-    if ("content" in data && typeof data.content === "string") {
-      const yamlText = Buffer.from(data.content, "base64").toString("utf-8");
+    const file = z.object({ content: z.string() }).safeParse(data);
+
+    if (file.success) {
+      const yamlText = Buffer.from(file.data.content, "base64").toString("utf-8");
+
       const documents = loadAll(yamlText, {
         schema: CORE_SCHEMA.withTags(mergeTag, timestampTag, binaryTag, legacyMapTag),
       });
+
       if (documents.length > 1) {
         throw new Error("Expected a single YAML document");
       }
+
       repoConfig = documents[0];
     } else {
       return DEFAULT_CONFIG;
     }
   } catch (error: unknown) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    if ((error as any).status === 404) {
+    const result = z.object({ status: z.literal(404) }).safeParse(error);
+
+    if (result.success) {
       return DEFAULT_CONFIG;
     }
+
     throw error;
   }
 

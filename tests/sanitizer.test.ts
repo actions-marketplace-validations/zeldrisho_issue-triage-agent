@@ -17,6 +17,10 @@ describe("sanitizeIssueBody", () => {
     expect(sanitizeIssueBody(input, DEFAULT_CONFIG)).toBe("HelloWorld");
   });
 
+  it("preserves whitespace and C1 controls while removing other controls", () => {
+    expect(sanitizeIssueBody("a\t\n\r\u0085\u007fb", DEFAULT_CONFIG)).toBe("a\t\n\r\u0085b");
+  });
+
   it("truncates to max length", () => {
     const config = { ...DEFAULT_CONFIG, security: { maxIssueLength: 10 } };
     const result = sanitizeIssueBody("This is a very long string", config);

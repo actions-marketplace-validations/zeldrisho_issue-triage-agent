@@ -1,3 +1,4 @@
+import { z } from "zod";
 import type { Logger } from "./types.js";
 import type { GitHubIssue, RelatedIssue, RepoConfig } from "./types.js";
 import type { LLMProvider } from "./llm/provider.js";
@@ -13,20 +14,30 @@ export function parseDuplicateResponse(raw: string): DuplicateResponse {
 
   let jsonStr = stripped;
   const codeBlockMatch = stripped.match(/```(?:json)?\s*([\s\S]*?)```/);
+
   if (codeBlockMatch) {
     jsonStr = codeBlockMatch[1].trim();
   }
 
   try {
     const parsed = JSON.parse(jsonStr);
+
+    const values = z.array(z.unknown()).safeParse(parsed.duplicates);
+    const duplicates: number[] = [];
+
+    if (values.success) {
+      for (const value of values.data) {
+        const number = z.number().safeParse(value);
+
+        if (number.success) duplicates.push(number.data);
+      }
+    }
+
+    const reasoning = z.string().safeParse(parsed.reasoning);
+
     return {
-      duplicates: Array.isArray(parsed.duplicates)
-        ? parsed.duplicates.filter((n: unknown) => typeof n === "number")
-        : [],
-      reasoning:
-        typeof parsed.reasoning === "string"
-          ? parsed.reasoning.slice(0, 300)
-          : "No reasoning provided",
+      duplicates,
+      reasoning: reasoning.success ? reasoning.data.slice(0, 300) : "No reasoning provided",
     };
   } catch {
     return { duplicates: [], reasoning: "Failed to parse duplicate detection response" };

@@ -19,12 +19,14 @@ const VALID_CATEGORIES: IssueCategory[] = [
   "invalid",
   "security",
 ];
+
 const VALID_PRIORITIES: IssuePriority[] = ["critical", "high", "medium", "low"];
 
 export function parseClassificationResponse(raw: string): IssueClassification {
   let jsonStr = raw.trim();
 
   const codeBlockMatch = jsonStr.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/);
+
   if (codeBlockMatch) {
     jsonStr = codeBlockMatch[1].trim();
   }

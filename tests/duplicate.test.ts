@@ -28,6 +28,7 @@ describe("parseDuplicateResponse", () => {
       duplicates: [5],
       reasoning: "Same bug report",
     });
+
     const input = "```json\n" + json + "\n```";
 
     const result = parseDuplicateResponse(input);

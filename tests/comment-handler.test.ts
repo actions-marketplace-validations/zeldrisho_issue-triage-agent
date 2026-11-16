@@ -59,7 +59,7 @@ const basePayload = {
   sender: { login: "commenter", type: "User" },
 };
 
-function createMockActionContext(overrides: Record<string, unknown> = {}): ActionContext {
+function createMockActionContext(overrides: Partial<ActionContext> = {}): ActionContext {
   const mockLog = {
     info: vi.fn(),
     error: vi.fn(),
@@ -84,7 +84,7 @@ function createMockActionContext(overrides: Record<string, unknown> = {}): Actio
     eventName: "issue_comment",
     payload: { ...basePayload },
     ...overrides,
-  } as unknown as ActionContext;
+  };
 }
 
 describe("handleComment", () => {
@@ -101,6 +101,7 @@ describe("handleComment", () => {
         sender: { login: "bot-account", type: "Bot" },
       },
     });
+
     await handleComment(actx);
     expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
   });
@@ -115,6 +116,7 @@ describe("handleComment", () => {
         },
       },
     });
+
     await handleComment(actx);
     expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
   });
@@ -149,7 +151,7 @@ describe("handleComment", () => {
     await handleComment(actx);
 
     expect(actx.octokit.rest.issues.createComment).toHaveBeenCalledTimes(1);
-    const call = actx.octokit.rest.issues.createComment.mock.calls[0][0] as { body: string };
+    const call: { body: string } = actx.octokit.rest.issues.createComment.mock.calls[0][0];
     expect(call.body).toContain("Issue AI Agent");
   });
 
@@ -160,12 +162,12 @@ describe("handleComment", () => {
         text: "x".repeat(5000) + "\n\n-- Issue AI Agent :robot:",
         usage: { inputTokens: 100, outputTokens: 100 },
       }),
-    } as any);
+    });
 
     const actx = createMockActionContext();
     await handleComment(actx);
 
-    const call = actx.octokit.rest.issues.createComment.mock.calls[0][0] as { body: string };
+    const call: { body: string } = actx.octokit.rest.issues.createComment.mock.calls[0][0];
     expect(call.body.length).toBeLessThanOrEqual(4050);
     expect(call.body).toContain("truncated");
   });
