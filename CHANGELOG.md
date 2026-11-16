@@ -6,6 +6,8 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-16
+
 ### Added
 
 - Analyze supported GitHub-hosted issue and comment images with vision-capable models.
@@ -51,6 +53,7 @@ follow [Semantic Versioning](https://semver.org/).
 
 - Register supplied GitHub and LLM credentials for masking in workflow logs.
 
-[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/zeldrisho/issue-triage-agent/releases/tag/v0.2.0
