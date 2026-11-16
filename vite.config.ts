@@ -43,7 +43,7 @@ export default defineConfig({
       }),
     ],
   },
-  staged: { "*": "vp check" },
+  staged: { "*": () => "vp check" },
   test: {
     include: ["tests/**/*.test.ts"],
     coverage: {
