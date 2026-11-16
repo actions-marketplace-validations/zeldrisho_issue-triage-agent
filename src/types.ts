@@ -112,6 +112,8 @@ export interface ActionContext {
   octokit: any;
   logger: Logger;
   configPath?: string;
+  botLogin?: string;
+  signal?: AbortSignal;
   eventName: string;
   payload: {
     action: string;

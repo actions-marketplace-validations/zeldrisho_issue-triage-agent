@@ -50,7 +50,9 @@ async function runBundle(provider: "anthropic" | "openai", eventName: "issues" |
     requests.push(`${req.method} ${path}`);
     let body = "";
 
-    if (path.includes("/contents")) {
+    if (req.method === "GET" && path.startsWith("/repos/owner/repo/issues/1/comments")) {
+      body = JSON.stringify([]);
+    } else if (path.includes("/contents")) {
       const config = { llm: { provider }, features: { duplicateSearch: true } };
       body = JSON.stringify({ content: Buffer.from(JSON.stringify(config)).toString("base64") });
     } else if (path.startsWith("/search/issues")) {
@@ -77,8 +79,9 @@ async function runBundle(provider: "anthropic" | "openai", eventName: "issues" |
       body = JSON.stringify({
         id: "test",
         content: [{ type: "text", text }],
+        stop_reason: "end_turn",
         usage: { input_tokens: 1, output_tokens: 1 },
-        choices: [{ message: { role: "assistant", content: text } }],
+        choices: [{ finish_reason: "stop", message: { role: "assistant", content: text } }],
       });
     } else {
       body = JSON.stringify(path.endsWith("/labels") ? [] : { id: 1 });

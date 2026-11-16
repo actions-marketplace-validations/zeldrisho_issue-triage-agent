@@ -108,6 +108,7 @@ describe("loadConfig", () => {
     "llm:\n  provider: invalid\n",
     "llm:\n  model: ''\n",
     "llm:\n  max_tokens: -1\n",
+    "llm:\n  max_tokens: 8193\n",
     "features:\n  reply: nope\n",
     "security:\n  max_issue_length: 0\n",
     "exclude:\n  users: false\n",

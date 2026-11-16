@@ -5,14 +5,18 @@ import { OpenAIProvider } from "./openai.js";
 
 export type ProviderName = "anthropic" | "openai";
 
-export function createProvider(provider: ProviderName, logger: Logger): LLMProvider | null {
+export function createProvider(
+  provider: ProviderName,
+  logger: Logger,
+  signal?: AbortSignal,
+): LLMProvider | null {
   if (provider === "openai") {
     const apiKey = process.env.OPENAI_API_KEY;
 
     if (!apiKey) return null;
     const baseURL = process.env.LLM_BASE_URL || process.env.OPENAI_BASE_URL;
 
-    return new OpenAIProvider(apiKey, logger, baseURL);
+    return new OpenAIProvider(apiKey, logger, baseURL, signal);
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -20,5 +24,5 @@ export function createProvider(provider: ProviderName, logger: Logger): LLMProvi
   if (!apiKey) return null;
   const baseURL = process.env.LLM_BASE_URL || process.env.ANTHROPIC_BASE_URL;
 
-  return new AnthropicProvider(apiKey, logger, baseURL);
+  return new AnthropicProvider(apiKey, logger, baseURL, signal);
 }

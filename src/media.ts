@@ -54,7 +54,10 @@ export function extractMediaUrls(text: string): string[] {
   return [...unique];
 }
 
-async function download(initial: string): Promise<{ bytes: Buffer; type: string }> {
+async function download(
+  initial: string,
+  signal?: AbortSignal,
+): Promise<{ bytes: Buffer; type: string }> {
   let url = initial;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
@@ -62,7 +65,11 @@ async function download(initial: string): Promise<{ bytes: Buffer; type: string 
   try {
     for (let redirects = 0; redirects <= 3; redirects++) {
       if (!approved(new URL(url), redirects > 0)) throw new Error("unapproved host");
-      const response = await fetch(url, { redirect: "manual", signal: controller.signal });
+
+      const response = await fetch(url, {
+        redirect: "manual",
+        signal: signal ? AbortSignal.any([controller.signal, signal]) : controller.signal,
+      });
 
       if (response.status >= 300 && response.status < 400) {
         const location = response.headers.get("location");
@@ -125,14 +132,18 @@ function validImage(bytes: Buffer, type: string): boolean {
   return false;
 }
 
-async function processMediaInternal(texts: string[], enabled: boolean): Promise<MediaResult> {
+async function processMediaInternal(
+  texts: string[],
+  enabled: boolean,
+  signal?: AbortSignal,
+): Promise<MediaResult> {
   const urls = [...new Set(texts.flatMap(extractMediaUrls))];
 
   if (!urls.length) return { images: [], notice: "" };
   const images: LLMImage[] = [];
 
   const notices: string[] = [
-    "Attachments are numbered in the order their URLs appear in the issue, then the comment. Images are provided in that same order.",
+    "Attachments are numbered in the order their URLs were supplied. Available images are provided in that same order.",
   ];
 
   for (const [index, url] of urls.entries()) {
@@ -142,8 +153,10 @@ async function processMediaInternal(texts: string[], enabled: boolean): Promise<
       continue;
     }
 
+    signal?.throwIfAborted();
+
     try {
-      const { bytes, type } = await download(url);
+      const { bytes, type } = await download(url, signal);
 
       if (!validImage(bytes, type)) throw new Error("invalid image");
       // SAFETY: validImage accepts only the four media types supported by LLMImage.
@@ -157,10 +170,16 @@ async function processMediaInternal(texts: string[], enabled: boolean): Promise<
   return { images, notice: notices.join("\n") };
 }
 
-export async function processMedia(texts: string[], enabled: boolean): Promise<MediaResult> {
+export async function processMedia(
+  texts: string[],
+  enabled: boolean,
+  signal?: AbortSignal,
+): Promise<MediaResult> {
   try {
-    return await processMediaInternal(texts, enabled);
+    return await processMediaInternal(texts, enabled, signal);
   } catch {
+    signal?.throwIfAborted();
+
     return {
       images: [],
       notice:

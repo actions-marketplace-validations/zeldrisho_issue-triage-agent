@@ -58,13 +58,10 @@ jobs:
       issues: write
       contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: zeldrisho/issue-triage-agent@3d3ef07a810fcb56c57137a9dafa9e17064d0986 # v0.2.0
         with:
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
-
-> **Repository context:** Adding `actions/checkout` lets the agent read your source files (`ls`, `cat`, `grep`, etc.) to give more specific replies — for example, checking if a reported config option actually exists, or reading `CONTRIBUTING.md` before responding to a question. If checkout is omitted the agent still works but replies without file access.
 
 ### Step 2: Add your API key
 
@@ -194,13 +191,19 @@ llm:
 | `exclude.users`             | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
 | `llm.provider`              | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                           |
 | `llm.model`                 | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
-| `llm.max_tokens`            | `2048`                   | Max tokens for LLM responses                                                                        |
+| `llm.max_tokens`            | `2048`                   | Max tokens per LLM response (1–8192)                                                                |
+
+### Repository context
+
+Repository tools are enabled by default for initial and follow-up replies. The model can list repository paths, search the GitHub code index, and read text files from the default branch at a fixed commit using the GitHub API. Search results may be stale or incomplete and must be verified against file contents. Files selected by the model are sent to the configured LLM provider, including files in private repositories. The Action can read any regular text file within the limits below, but cannot execute commands or browse the web. Repository content is untrusted, and a limited review is not a security audit. The token needs `contents: read`.
+
+Repository access is limited to 40 tool calls, 1,000,000 bytes per file, 12,000 characters per read, 240,000 total returned file bytes, and eight tool rounds per reply. Each Action invocation has a 180-second deadline. Provider requests also time out after 60 seconds and retry eligible failures once. Files with invalid UTF-8 or binary content are skipped. The GitHub tree API can return an incomplete recursive listing for large repositories; the model can list directories individually and read files by path using bounded subtree traversal. Model and gateway support for tool calling is required. The model may quote repository content in its reply, so do not enable this Action where issue or comment authors should not be able to request repository contents.
 
 ### Attachments
 
-With `features.media` enabled, issue descriptions and follow-up comments are scanned for URLs on approved GitHub attachment hosts, including HTML images. Follow-up replies also include images from the original issue. Images are sent to the configured LLM provider (or custom endpoint), so use a vision-capable model and consider the privacy implications. Image content is untrusted. Disable this feature to prevent attachment downloads and image transmission. Videos are not supported.
+With `features.media` enabled, bounded issue descriptions and follow-up comments are scanned for URLs on approved GitHub attachment hosts, including HTML images. Follow-up replies prioritize images in the comment and then include images from the original issue. Images are sent to the configured LLM provider (or custom endpoint), so use a vision-capable model and consider the privacy implications. Image content is untrusted. Disable this feature to prevent attachment downloads and image transmission. Videos are not supported.
 
-Up to four attachments are checked, each limited to 4 MiB and 15 seconds per download. Only PNG, JPEG, GIF and WebP images are supported. Unsupported, inaccessible, oversized, or failed attachments are reported as unavailable to the model; processing continues text-only when needed. Only HTTPS URLs on approved hosts and redirects to approved hosts are fetched. Private or expired links may be inaccessible because downloads do not use GitHub credentials.
+Up to four attachments are checked, each limited to 4 MiB and 15 seconds per download. Only PNG, JPEG, GIF and WebP images are supported. Unsupported, inaccessible, oversized, or failed attachments are reported as unavailable to the model. For identifiable image-validation errors, the Action can make up to four additional per-image requests to isolate rejected images; unrelated provider errors are not retried as media failures. Only HTTPS URLs on approved hosts and redirects to approved hosts are fetched. Private or expired links may be inaccessible because downloads do not use GitHub credentials.
 
 ## Action Inputs & Outputs
 
@@ -214,6 +217,7 @@ Up to four attachments are checked, each limited to 4 MiB and 15 seconds per dow
 | `llm-provider`      | No       | Auto-detected                    | LLM provider; overrides repository configuration           |
 | `llm-model`         | No       | Provider-specific                | Model identifier; overrides repository configuration       |
 | `llm-base-url`      | No       |                                  | Custom base URL for LLM API (applies to selected provider) |
+| `bot-login`         | No       | `github-actions[bot]`            | Login used to identify existing Action replies             |
 | `config-path`       | No       | `.github/issue-triage-agent.yml` | Path to config file in repo                                |
 
 At least one API key is required. If neither is set, the bot runs in **dev mode** with mock responses.
@@ -228,6 +232,8 @@ At least one API key is required. If neither is set, the bot runs in **dev mode*
 | `reply-posted`   | Whether a reply comment was posted     |
 
 Outputs are set for `issues` events only; `issue_comment` events do not set outputs.
+
+Replies include a hidden event marker to avoid posting again on ordinary workflow reruns. Set `bot-login` to the account that posts comments when using a custom token. The check is best-effort: concurrent runs can both post before either sees the other's reply. If the comment history cannot be checked or reaches 2,000 comments, the reply is skipped.
 
 ## Contributing
 

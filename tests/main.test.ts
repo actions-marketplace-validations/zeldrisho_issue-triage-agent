@@ -80,6 +80,18 @@ describe("action entrypoint", () => {
     expect(mocks.setFailed).not.toHaveBeenCalled();
   });
 
+  it("ignores unsupported issue actions", async () => {
+    mocks.context.payload.action = "edited";
+
+    try {
+      await import("../src/main.js");
+      expect(mocks.runPipeline).not.toHaveBeenCalled();
+      expect(mocks.setFailed).not.toHaveBeenCalled();
+    } finally {
+      mocks.context.payload.action = "opened";
+    }
+  });
+
   it("fails for an invalid event payload", async () => {
     mocks.context.payload.issue.number = NaN;
 

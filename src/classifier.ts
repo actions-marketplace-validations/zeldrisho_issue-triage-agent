@@ -1,3 +1,4 @@
+import { z } from "zod";
 import type { Logger } from "./types.js";
 import type {
   GitHubIssue,
@@ -34,30 +35,27 @@ export function parseClassificationResponse(raw: string): IssueClassification {
   }
 
   try {
-    const parsed = JSON.parse(jsonStr);
-
-    const category = VALID_CATEGORIES.includes(parsed.category) ? parsed.category : "question";
-    const priority = VALID_PRIORITIES.includes(parsed.priority) ? parsed.priority : "medium";
+    const parsed = z
+      .object({
+        category: z.enum(VALID_CATEGORIES),
+        priority: z.enum(VALID_PRIORITIES),
+        confidence: z.number().finite().optional(),
+        summary: z.string().optional(),
+        suggestedLabels: z.array(z.string()).optional(),
+        reasoning: z.string().optional(),
+      })
+      .parse(JSON.parse(jsonStr));
 
     return {
-      category,
-      priority,
-      confidence: Math.min(1, Math.max(0, Number(parsed.confidence) || 0.5)),
-      summary: String(parsed.summary || "Unable to summarize").substring(0, 200),
-      suggestedLabels: Array.isArray(parsed.suggestedLabels)
-        ? parsed.suggestedLabels.map(String).slice(0, 5)
-        : [category],
-      reasoning: String(parsed.reasoning || "").substring(0, 300),
+      category: parsed.category,
+      priority: parsed.priority,
+      confidence: Math.min(1, Math.max(0, parsed.confidence ?? 0.5)),
+      summary: (parsed.summary || "Unable to summarize").substring(0, 200),
+      suggestedLabels: parsed.suggestedLabels?.slice(0, 5) ?? [parsed.category],
+      reasoning: (parsed.reasoning || "").substring(0, 300),
     };
   } catch {
-    return {
-      category: "question",
-      priority: "medium",
-      confidence: 0.3,
-      summary: "Failed to classify issue automatically",
-      suggestedLabels: ["needs-triage"],
-      reasoning: "LLM response was not valid JSON",
-    };
+    throw new Error("Invalid classification response");
   }
 }
 

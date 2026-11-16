@@ -15,6 +15,35 @@ afterEach(() => vi.unstubAllGlobals());
 
 describe("image messages", () => {
   for (const provider of ["anthropic", "openai"] as const) {
+    it(`rejects truncated responses from ${provider}`, async () => {
+      const response =
+        provider === "anthropic"
+          ? {
+              content: [{ type: "text", text: "partial" }],
+              stop_reason: "max_tokens",
+              usage: { input_tokens: 1, output_tokens: 1 },
+            }
+          : { choices: [{ finish_reason: "length", message: { content: "partial" } }] };
+
+      vi.stubGlobal(
+        "fetch",
+        vi.fn().mockResolvedValue(
+          new Response(JSON.stringify(response), {
+            headers: { "content-type": "application/json" },
+          }),
+        ),
+      );
+
+      const client =
+        provider === "anthropic"
+          ? new AnthropicProvider("key", logger)
+          : new OpenAIProvider("key", logger);
+
+      await expect(
+        client.complete("model", "system", [{ role: "user", content: "hi" }]),
+      ).rejects.toThrow();
+    });
+
     it(`encodes images for ${provider}`, async () => {
       const response =
         provider === "anthropic"

@@ -36,7 +36,7 @@ describe("parseClassificationResponse", () => {
     expect(result.priority).toBe("low");
   });
 
-  it("falls back to question for invalid category", () => {
+  it("rejects an invalid category", () => {
     const input = JSON.stringify({
       category: "unknown_type",
       priority: "medium",
@@ -46,11 +46,10 @@ describe("parseClassificationResponse", () => {
       reasoning: "Test",
     });
 
-    const result = parseClassificationResponse(input);
-    expect(result.category).toBe("question");
+    expect(() => parseClassificationResponse(input)).toThrow("Invalid classification response");
   });
 
-  it("falls back to medium for invalid priority", () => {
+  it("rejects an invalid priority", () => {
     const input = JSON.stringify({
       category: "bug",
       priority: "urgent",
@@ -60,16 +59,22 @@ describe("parseClassificationResponse", () => {
       reasoning: "Test",
     });
 
-    const result = parseClassificationResponse(input);
-    expect(result.priority).toBe("medium");
+    expect(() => parseClassificationResponse(input)).toThrow("Invalid classification response");
   });
 
-  it("returns safe default for malformed JSON", () => {
-    const result = parseClassificationResponse("This is not JSON at all");
-    expect(result.category).toBe("question");
-    expect(result.priority).toBe("medium");
-    expect(result.confidence).toBe(0.3);
-    expect(result.suggestedLabels).toEqual(["needs-triage"]);
+  it("rejects malformed JSON", () => {
+    expect(() => parseClassificationResponse("This is not JSON at all")).toThrow(
+      "Invalid classification response",
+    );
+  });
+
+  it("preserves zero confidence and rejects malformed field types", () => {
+    expect(
+      parseClassificationResponse('{"category":"bug","priority":"low","confidence":0}').confidence,
+    ).toBe(0);
+    expect(() =>
+      parseClassificationResponse('{"category":"bug","priority":"low","summary":{"x":1}}'),
+    ).toThrow("Invalid classification response");
   });
 
   it("clamps confidence to 0-1 range", () => {

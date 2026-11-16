@@ -1,26 +1,113 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { z } from "zod";
 import type { Logger } from "../types.js";
 import type { LLMMessage, LLMResponse } from "./types.js";
-import type { LLMProvider, RepoTool, ToolCall, ToolCallResponse } from "./provider.js";
-
-const DEFAULT_MAX_ROUNDS = 5;
-
-const toolInputSchema = z
-  .object({ command: z.string() })
-  .transform((v): ToolCall["input"] => ({ name: "shell", command: v.command }));
+import type { LLMProvider } from "./provider.js";
+import {
+  repositoryArgsSchema,
+  repositoryToolDefinitions,
+  type RepositoryTools,
+} from "./repository-tools.js";
 
 export class AnthropicProvider implements LLMProvider {
   private client: Anthropic;
   private logger: Logger;
+  private signal?: AbortSignal;
 
-  constructor(apiKey: string, logger: Logger, baseURL?: string) {
-    const options: ConstructorParameters<typeof Anthropic>[0] = { apiKey };
+  constructor(apiKey: string, logger: Logger, baseURL?: string, signal?: AbortSignal) {
+    this.signal = signal;
+
+    const options: ConstructorParameters<typeof Anthropic>[0] = {
+      apiKey,
+      timeout: 60_000,
+      maxRetries: 1,
+    };
 
     if (baseURL) options.baseURL = baseURL;
 
     this.client = new Anthropic(options);
     this.logger = logger.child({ module: "llm" });
+  }
+
+  async completeWithRepository(
+    model: string,
+    system: string,
+    message: LLMMessage,
+    tools: RepositoryTools,
+    maxTokens: number,
+  ): Promise<LLMResponse> {
+    const history: Anthropic.MessageParam[] = [
+      {
+        role: "user",
+        content: message.images?.length
+          ? [
+              { type: "text", text: message.content },
+              ...message.images.map((image) => ({
+                type: "image" as const,
+                source: { type: "base64" as const, media_type: image.mediaType, data: image.data },
+              })),
+            ]
+          : message.content,
+      },
+    ];
+
+    let inputTokens = 0;
+    let outputTokens = 0;
+
+    for (let round = 0; round < 9; round++) {
+      const request: Anthropic.MessageCreateParamsNonStreaming = {
+        model,
+        system,
+        max_tokens: maxTokens,
+        messages: history,
+      };
+
+      if (round < 8)
+        request.tools = repositoryToolDefinitions.map((tool) => ({
+          name: tool.name,
+          description: tool.description,
+          input_schema: tool.parameters,
+        }));
+      const response = await this.client.messages.create(request, { signal: this.signal });
+
+      inputTokens += response.usage.input_tokens;
+      outputTokens += response.usage.output_tokens;
+
+      const calls = response.content.filter(
+        (block): block is Anthropic.ToolUseBlock => block.type === "tool_use",
+      );
+
+      if (calls.length === 0) {
+        const text = response.content
+          .filter((block): block is Anthropic.TextBlock => block.type === "text")
+          .map((block) => block.text)
+          .join("\n")
+          .trim();
+
+        if (!text || response.stop_reason !== "end_turn")
+          throw new Error("Incomplete Claude reply");
+
+        return { text, usage: { inputTokens, outputTokens } };
+      }
+
+      history.push({ role: "assistant", content: response.content });
+      const results: Anthropic.ToolResultBlockParam[] = [];
+
+      for (const call of calls) {
+        const args = repositoryArgsSchema.safeParse(call.input);
+
+        results.push({
+          type: "tool_result",
+          tool_use_id: call.id,
+          content: args.success
+            ? await tools.run(call.name, args.data)
+            : "Invalid repository tool request.",
+        });
+      }
+
+      history.push({ role: "user", content: results });
+    }
+
+    throw new Error("Repository tool round limit reached without a final reply");
   }
 
   async complete(
@@ -32,27 +119,38 @@ export class AnthropicProvider implements LLMProvider {
     try {
       this.logger.debug({ model, messageCount: messages.length }, "Sending request to Claude");
 
-      const response = await this.client.messages.create({
-        model,
-        max_tokens: maxTokens,
-        system: systemPrompt,
-        messages: messages.map((m) => ({
-          role: m.role,
-          content: m.images?.length
-            ? [
-                { type: "text" as const, text: m.content },
-                ...m.images.map((image) => ({
-                  type: "image" as const,
-                  source: {
-                    type: "base64" as const,
-                    media_type: image.mediaType,
-                    data: image.data,
-                  },
-                })),
-              ]
-            : m.content,
-        })),
-      });
+      const response = await this.client.messages.create(
+        {
+          model,
+          max_tokens: maxTokens,
+          system: systemPrompt,
+          messages: messages.map((m) => ({
+            role: m.role,
+            content: m.images?.length
+              ? [
+                  { type: "text" as const, text: m.content },
+                  ...m.images.map((image) => ({
+                    type: "image" as const,
+                    source: {
+                      type: "base64" as const,
+                      media_type: image.mediaType,
+                      data: image.data,
+                    },
+                  })),
+                ]
+              : m.content,
+          })),
+        },
+        { signal: this.signal },
+      );
+
+      if (
+        response.stop_reason &&
+        response.stop_reason !== "end_turn" &&
+        response.stop_reason !== "stop_sequence"
+      ) {
+        throw new Error(`Incomplete Claude response: ${response.stop_reason}`);
+      }
 
       const textBlock = response.content.find(
         (block): block is Anthropic.TextBlock => block.type === "text",
@@ -82,118 +180,5 @@ export class AnthropicProvider implements LLMProvider {
       this.logger.error({ err: error, model }, "Claude API call failed");
       throw error;
     }
-  }
-
-  async completeWithTools(
-    model: string,
-    systemPrompt: string,
-    messages: LLMMessage[],
-    tools: RepoTool[],
-    runTool: (call: ToolCall) => Promise<string>,
-    maxTokens: number = 2048,
-    maxRounds: number = DEFAULT_MAX_ROUNDS,
-  ): Promise<ToolCallResponse> {
-    const anthropicTools: Anthropic.Tool[] = tools.map((t) => ({
-      name: t.name,
-      description: t.description,
-      input_schema: {
-        type: "object" as const,
-        properties: t.parameters.properties,
-        required: t.parameters.required,
-      },
-    }));
-
-    // Build initial message list in Anthropic format
-    const history: Anthropic.MessageParam[] = messages.map((m) => ({
-      role: m.role,
-      content: m.images?.length
-        ? [
-            { type: "text" as const, text: m.content },
-            ...m.images.map((image) => ({
-              type: "image" as const,
-              source: {
-                type: "base64" as const,
-                media_type: image.mediaType,
-                data: image.data,
-              },
-            })),
-          ]
-        : m.content,
-    }));
-
-    let totalInput = 0;
-    let totalOutput = 0;
-    let lastText = "";
-
-    for (let round = 0; round < maxRounds; round++) {
-      this.logger.debug({ model }, `Claude tool-call round ${round}`);
-
-      const response = await this.client.messages.create({
-        model,
-        max_tokens: maxTokens,
-        system: systemPrompt,
-        tools: anthropicTools,
-        messages: history,
-      });
-
-      totalInput += response.usage.input_tokens;
-      totalOutput += response.usage.output_tokens;
-
-      // Collect any text from this response
-      const textBlock = response.content.find((b): b is Anthropic.TextBlock => b.type === "text");
-
-      if (textBlock) lastText = textBlock.text;
-
-      const toolUseBlocks = response.content.filter(
-        (b): b is Anthropic.ToolUseBlock => b.type === "tool_use",
-      );
-
-      // No tool calls → model is done
-      if (toolUseBlocks.length === 0 || response.stop_reason === "end_turn") {
-        break;
-      }
-
-      // Append assistant turn to history
-      history.push({ role: "assistant", content: response.content });
-
-      // Execute tools and build result blocks
-      const resultBlocks: Anthropic.ToolResultBlockParam[] = await Promise.all(
-        toolUseBlocks.map(async (block) => {
-          let output: string;
-
-          try {
-            if (block.name !== "shell") throw new Error("Unknown tool");
-
-            const parsed = toolInputSchema.safeParse(block.input);
-
-            if (!parsed.success) {
-              output = `Error: invalid tool input: ${parsed.error.message}`;
-            } else {
-              output = await runTool({ id: block.id, input: parsed.data });
-            }
-          } catch (err) {
-            output = `Error: ${err instanceof Error ? err.message : String(err)}`;
-          }
-
-          return {
-            type: "tool_result" as const,
-            tool_use_id: block.id,
-            content: output,
-          };
-        }),
-      );
-
-      history.push({ role: "user", content: resultBlocks });
-    }
-
-    this.logger.info(
-      { model, inputTokens: totalInput, outputTokens: totalOutput },
-      "Claude tool-call loop complete",
-    );
-
-    return {
-      text: lastText,
-      usage: { inputTokens: totalInput, outputTokens: totalOutput },
-    };
   }
 }

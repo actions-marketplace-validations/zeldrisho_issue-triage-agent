@@ -25,7 +25,7 @@ const configSchema = z.object({
     .object({
       provider: providerSchema.optional(),
       model: z.string().trim().min(1).optional(),
-      max_tokens: z.number().int().positive().optional(),
+      max_tokens: z.number().int().positive().max(8192).optional(),
     })
     .optional(),
 });

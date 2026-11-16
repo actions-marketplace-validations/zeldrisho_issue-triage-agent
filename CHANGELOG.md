@@ -9,7 +9,15 @@ follow [Semantic Versioning](https://semver.org/).
 ### Added
 
 - Analyze supported GitHub-hosted issue and comment images with vision-capable models.
-- Repository context: when `actions/checkout` is present the agent can run read-only shell commands (`ls`, `cat`, `grep`, `find`, `head`, `tail`, `wc`) against the checked-out repo to give more specific replies.
+- Allow issue and follow-up replies to inspect repository files using bounded, read-only GitHub API tools.
+
+### Fixed
+
+- Ignore unsupported issue and comment event actions and honor issue exclusions for follow-up comments.
+- Reject incomplete provider responses and invalid classifications instead of applying fallback labels.
+- Avoid duplicate replies on ordinary reruns using event markers and the posting account's login.
+- Bound Action runtime, token settings, and image-fallback retries; allow bounded subtree traversal for truncated Git trees.
+- Prioritize follow-up comment images, respect text limits during attachment discovery, and isolate provider-rejected images.
 
 ## [0.3.0] - 2026-11-16
 
