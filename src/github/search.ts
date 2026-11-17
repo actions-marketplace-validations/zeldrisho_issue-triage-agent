@@ -16,18 +16,27 @@ export async function searchSimilarIssues(
     return [];
   }
 
-  const response = await octokit.rest.search.issuesAndPullRequests({
-    q: query,
-    per_page: 5,
-    sort: "updated",
-    order: "desc",
-  });
+  const responses = await Promise.all(
+    (["open", "closed"] as const).map((state) =>
+      octokit.rest.search.issuesAndPullRequests({
+        q: buildSearchQuery(title, owner, repo, "issue", state),
+        per_page: 5,
+        sort: "updated",
+        order: "desc",
+      }),
+    ),
+  );
 
-  return response.data.items
-    .filter(
-      (item: { number: number; pull_request?: unknown }) =>
-        item.number !== issueNumber && !item.pull_request,
-    )
+  const seen = new Set<number>();
+
+  return responses
+    .flatMap((response) => response.data.items)
+    .filter((item: { number: number; pull_request?: unknown }) => {
+      if (item.number === issueNumber || item.pull_request || seen.has(item.number)) return false;
+      seen.add(item.number);
+
+      return true;
+    })
     .map((item: { number: number; title: string; html_url: string; body?: string | null }) => ({
       number: item.number,
       title: item.title,
@@ -44,7 +53,7 @@ export async function searchRelatedPullRequests(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   octokit: any,
 ): Promise<RelatedIssue[]> {
-  const query = buildSearchQuery(title, owner, repo).replace("is:issue", "is:pr is:open");
+  const query = buildSearchQuery(title, owner, repo, "pr", "open");
 
   if (!query.split("in:title ")[1]?.trim()) return [];
 
@@ -61,7 +70,7 @@ export async function searchRelatedPullRequests(
       number: item.number,
       title: item.title,
       url: item.html_url,
-      body: (item.body ?? "").slice(0, 2000),
+      body: (item.body ?? "").slice(0, 500),
     }));
 }
 
@@ -85,7 +94,13 @@ export const STOP_WORDS = new Set([
   "our",
 ]);
 
-export function buildSearchQuery(title: string, owner: string, repo: string): string {
+export function buildSearchQuery(
+  title: string,
+  owner: string,
+  repo: string,
+  type: "issue" | "pr" = "issue",
+  state?: "open" | "closed",
+): string {
   const words = title
     .replace(/[^\w\s]/g, " ")
     .split(/\s+/)
@@ -93,5 +108,5 @@ export function buildSearchQuery(title: string, owner: string, repo: string): st
     .slice(0, 5)
     .join(" ");
 
-  return `repo:${owner}/${repo} is:issue in:title ${words}`;
+  return `repo:${owner}/${repo} is:${type}${state ? ` is:${state}` : ""} in:title ${words}`;
 }

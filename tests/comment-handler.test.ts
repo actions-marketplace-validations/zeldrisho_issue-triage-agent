@@ -250,16 +250,32 @@ describe("handleComment", () => {
     expect(call.body).toContain("Issue Triage Agent");
   });
 
-  it("skips a no-reply response", async () => {
+  it.each([
+    "NO_REPLY",
+    "`NO_REPLY`",
+    "```\nNO_REPLY\n```",
+    "NO_REPLY\n\n-- Issue Triage Agent :robot:",
+  ])("skips a no-reply response: %s", async (text) => {
     const { createProvider } = await import("../src/llm/factory.js");
     vi.mocked(createProvider).mockReturnValueOnce({
-      complete: vi
-        .fn()
-        .mockResolvedValue({ text: "NO_REPLY", usage: { inputTokens: 0, outputTokens: 0 } }),
+      complete: vi.fn().mockResolvedValue({ text, usage: { inputTokens: 0, outputTokens: 0 } }),
     });
     const actx = createMockActionContext();
     await handleComment(actx);
     expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+  });
+
+  it("does not suppress ordinary text containing NO_REPLY", async () => {
+    const { createProvider } = await import("../src/llm/factory.js");
+    vi.mocked(createProvider).mockReturnValueOnce({
+      complete: vi.fn().mockResolvedValue({
+        text: "Please use NO_REPLY here.",
+        usage: { inputTokens: 0, outputTokens: 0 },
+      }),
+    });
+    const actx = createMockActionContext();
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).toHaveBeenCalledTimes(1);
   });
 
   it("provides earlier comments but not later comments to the model", async () => {

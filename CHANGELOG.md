@@ -6,6 +6,15 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Search open and closed duplicate candidates separately and limit related pull request descriptions sent to the model.
+- Distinguish related pull request search errors in triage reports and log confidence fallback and threshold skips.
+
+### Fixed
+
+- Avoid posting a signed `NO_REPLY` sentinel as a follow-up comment.
+
 ## [0.5.0] - 2026-11-16
 
 ### Added
@@ -15,9 +24,12 @@ follow [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- Skip issue mutations when the selected LLM provider has no credentials instead of posting mock results.
 - Use bounded conversation history for follow-up replies and skip responses that are not needed.
 - Consider closed issues and bounded candidate descriptions during duplicate detection, including when classification fails or is disabled.
+
+### Removed
+
+- Mock results when the selected LLM provider has no credentials; issue mutations are now skipped instead.
 
 ## [0.4.0] - 2026-11-16
 

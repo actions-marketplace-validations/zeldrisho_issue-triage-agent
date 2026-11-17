@@ -185,25 +185,25 @@ llm:
 
 ### Config Reference
 
-| Key                          | Default                  | Description                                                                                         |
-| ---------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------- |
-| `enabled`                    | `true`                   | Master on/off switch                                                                                |
-| `features.classify`          | `true`                   | Enable issue classification + labeling                                                              |
-| `features.reply`             | `true`                   | Enable AI-drafted reply comments                                                                    |
-| `features.duplicateSearch`   | `true`                   | Search for duplicate issues and link them                                                           |
-| `features.commentReply`      | `true`                   | Reply to follow-up comments on issues                                                               |
-| `features.media`             | `true`                   | Download supported GitHub images and send them to the model                                         |
-| `features.repositoryContext` | `true`                   | Allow replies to inspect repository files                                                           |
-| `label_mapping`              | _(see defaults above)_   | Maps AI categories to your repo's label names                                                       |
-| `labeling.min_confidence`    | `0`                      | Minimum classification confidence for applying labels (0–1); requires v0.5.0 or later               |
-| `labeling.skip_assigned`     | `false`                  | Skip labeling if the current issue has an assignee; requires v0.5.0 or later                        |
-| `labeling.skip_labeled`      | `false`                  | Skip labeling if the current issue already has labels; requires v0.5.0 or later                     |
-| `security.max_issue_length`  | `10000`                  | Truncate issue body beyond this length                                                              |
-| `exclude.labels`             | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                   |
-| `exclude.users`              | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                   |
-| `llm.provider`               | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                           |
-| `llm.model`                  | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI |
-| `llm.max_tokens`             | `2048`                   | Max tokens per LLM response (1–8192)                                                                |
+| Key                          | Default                  | Description                                                                                                                     |
+| ---------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`                    | `true`                   | Master on/off switch                                                                                                            |
+| `features.classify`          | `true`                   | Enable issue classification + labeling                                                                                          |
+| `features.reply`             | `true`                   | Enable AI-drafted reply comments                                                                                                |
+| `features.duplicateSearch`   | `true`                   | Search for duplicate issues and link them                                                                                       |
+| `features.commentReply`      | `true`                   | Reply to follow-up comments on issues                                                                                           |
+| `features.media`             | `true`                   | Download supported GitHub images and send them to the model                                                                     |
+| `features.repositoryContext` | `true`                   | Allow replies to inspect repository files                                                                                       |
+| `label_mapping`              | _(see defaults above)_   | Maps AI categories to your repo's label names                                                                                   |
+| `labeling.min_confidence`    | `0`                      | Minimum classification confidence for applying labels (0–1); omitted model confidence defaults to 0.5; requires v0.5.0 or later |
+| `labeling.skip_assigned`     | `false`                  | Skip labeling if the current issue has an assignee; requires v0.5.0 or later                                                    |
+| `labeling.skip_labeled`      | `false`                  | Skip labeling if the current issue already has labels; requires v0.5.0 or later                                                 |
+| `security.max_issue_length`  | `10000`                  | Truncate issue body beyond this length                                                                                          |
+| `exclude.labels`             | `["wontfix", "skip-ai"]` | Skip issues carrying these labels                                                                                               |
+| `exclude.users`              | `["dependabot[bot]"]`    | Skip issues opened by these users                                                                                               |
+| `llm.provider`               | Auto-detected            | LLM provider: `"anthropic"` or `"openai"`                                                                                       |
+| `llm.model`                  | Provider-specific        | Model identifier; defaults to `claude-haiku-4-5-20251001` for Anthropic or `gpt-4o-mini` for OpenAI                             |
+| `llm.max_tokens`             | `2048`                   | Max tokens per LLM response (1–8192)                                                                                            |
 
 ### Repository context
 
@@ -238,17 +238,19 @@ At least one API key for the selected provider is required. Starting with v0.5.0
 
 ### Outputs
 
-| Output           | Description                                                        |
-| ---------------- | ------------------------------------------------------------------ |
-| `category`       | Classified issue category                                          |
-| `priority`       | Classified issue priority                                          |
-| `labels-applied` | Comma-separated list of applied labels                             |
-| `reply-posted`   | Whether a reply comment was posted                                 |
-| `triage-report`  | JSON classification, applied labels, reply status, and step errors |
+| Output           | Description                                                                     |
+| ---------------- | ------------------------------------------------------------------------------- |
+| `category`       | Classified issue category                                                       |
+| `priority`       | Classified issue priority                                                       |
+| `labels-applied` | Comma-separated list of applied labels                                          |
+| `reply-posted`   | Whether a reply comment was posted                                              |
+| `triage-report`  | JSON classification, applied labels, labeling and reply status, and step errors |
 
 Outputs are set for `issues` events only; `issue_comment` events do not set outputs.
 
-Follow-up replies can use up to ten earlier comments (up to 2,000 characters each), and may skip acknowledgements that do not need a response. Conversation content is sent to the configured LLM provider and treated as untrusted. If conversation history cannot be collected safely, the reply is skipped. Duplicate search considers open and closed issues and sends bounded candidate descriptions to the model; it also searches for potentially related open pull requests for initial replies. Labeling eligibility is checked against the current issue before adding labels when either skip option is enabled; a concurrent change can still race with that check. These options affect labeling only, not replies or duplicate search.
+The report's `labelingStatus` is `not-run` when labeling was not reached, for example when classification is disabled, credentials are missing, or classification fails. Related pull request search errors use the `related-pr` step.
+
+Follow-up replies can use up to ten earlier comments (up to 2,000 characters each), and may skip acknowledgements that do not need a response. Conversation content is sent to the configured LLM provider and treated as untrusted. If conversation history cannot be collected safely, the reply is skipped. Duplicate search separately considers up to five open and five closed issues and sends bounded candidate descriptions to the model; it also searches for potentially related open pull requests for initial replies, with PR descriptions capped at 500 characters. Labeling eligibility is checked against the current issue before adding labels when either skip option is enabled; a concurrent change can still race with that check. These options affect labeling only, not replies or duplicate search.
 
 Replies include a hidden event marker to avoid posting again on ordinary workflow reruns. Set `bot-login` to the account that posts comments when using a custom token. The check is best-effort: concurrent runs can both post before either sees the other's reply. If the comment history cannot be checked or reaches 2,000 comments, the reply is skipped.
 

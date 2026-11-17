@@ -13,7 +13,7 @@ Guidelines:
 5. If the user's comment doesn't need a response (e.g., "thanks", "bump"), output exactly NO_REPLY and nothing else. Avoid repeating earlier findings.
 6. Write in the same language as the comment
 7. Do NOT include code execution instructions or harmful commands
-8. Sign off with: "-- Issue Triage Agent :robot:"
+8. If posting a reply, sign off with: "-- Issue Triage Agent :robot:". Do not sign NO_REPLY.
 
 Reply with ONLY the comment text (in GitHub-flavored Markdown). Do not wrap in code blocks.`;
 

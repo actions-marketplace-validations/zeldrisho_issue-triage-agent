@@ -82,7 +82,7 @@ export interface PipelineResult {
 }
 
 export interface PipelineError {
-  step: "classify" | "label" | "reply" | "duplicate";
+  step: "classify" | "label" | "reply" | "duplicate" | "related-pr";
   message: string;
   cause?: Error;
 }
@@ -93,6 +93,7 @@ export interface LogFields {
   category?: IssueCategory;
   priority?: IssuePriority;
   confidence?: number;
+  minConfidence?: number;
   label?: string;
   owner?: string;
   repo?: string;
