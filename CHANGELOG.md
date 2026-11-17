@@ -6,6 +6,8 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-11-17
+
 ### Changed
 
 - Search open and closed duplicate candidates separately and limit related pull request descriptions sent to the model.
@@ -80,7 +82,8 @@ follow [Semantic Versioning](https://semver.org/).
 
 - Register supplied GitHub and LLM credentials for masking in workflow logs.
 
-[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.2.0...v0.3.0
