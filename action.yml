@@ -45,7 +45,7 @@ outputs:
   reply-posted:
     description: "Whether a reply comment was posted (issues events only)"
   triage-report:
-    description: "JSON report of classification, labels, reply status, and step errors (issues events only)"
+    description: "JSON report of classification, labels, labeling and reply status, and step errors (issues events only)"
 
 runs:
   using: "node24"

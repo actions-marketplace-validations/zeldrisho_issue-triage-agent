@@ -1,3 +1,5 @@
+import { MAX_RELATED_PR_BODY_LENGTH } from "../github/search-limits.js";
+
 export const REPLY_SYSTEM_PROMPT = `You are a helpful GitHub Issue triage assistant.
 Your job is to draft a brief, professional reply to a newly opened GitHub Issue.
 
@@ -56,7 +58,7 @@ export function buildReplyUserMessage(
         number: pr.number,
         title: pr.title,
         url: pr.url,
-        body: pr.body?.slice(0, 500),
+        body: pr.body?.slice(0, MAX_RELATED_PR_BODY_LENGTH),
       })),
     ),
     "=== UNTRUSTED POTENTIALLY RELATED OPEN PULL REQUESTS END ===",

@@ -31,6 +31,55 @@ describe("searchSimilarIssues", () => {
     expect(result[0].body).toHaveLength(2000);
   });
 
+  it.each(["open", "closed"])(
+    "retains successful results when the %s search fails",
+    async (failed) => {
+      const search = vi.fn().mockImplementation(async ({ q }: { q: string }) => {
+        if (q.includes(`is:${failed}`)) throw new Error("unavailable");
+
+        return { data: { items: [{ number: 2, title: "match", html_url: "url" }] } };
+      });
+
+      const warn = vi.fn();
+      const logger = { warn };
+
+      const result = await searchSimilarIssues(
+        "owner",
+        "repo",
+        "app crash",
+        1,
+        { rest: { search: { issuesAndPullRequests: search } } },
+        logger,
+      );
+
+      expect(result.map((item) => item.number)).toEqual([2]);
+      expect(warn).toHaveBeenCalledWith(`Failed to search ${failed} issues for duplicates`);
+    },
+  );
+
+  it("runs state searches serially", async () => {
+    let resolveFirst!: (value: { data: { items: never[] } }) => void;
+
+    const search = vi
+      .fn()
+      .mockImplementationOnce(
+        () =>
+          new Promise<{ data: { items: never[] } }>((resolve) => {
+            resolveFirst = resolve;
+          }),
+      )
+      .mockResolvedValueOnce({ data: { items: [] } });
+
+    const pending = searchSimilarIssues("owner", "repo", "app crash", 1, {
+      rest: { search: { issuesAndPullRequests: search } },
+    });
+
+    expect(search).toHaveBeenCalledTimes(1);
+    resolveFirst({ data: { items: [] } });
+    await pending;
+    expect(search).toHaveBeenCalledTimes(2);
+  });
+
   it("skips empty keywords and propagates search failures", async () => {
     const search = vi.fn().mockRejectedValue(new Error("unavailable"));
     const octokit = { rest: { search: { issuesAndPullRequests: search } } };

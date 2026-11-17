@@ -189,6 +189,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
         sanitizedTitle,
         issue.number,
         actx.octokit,
+        log,
       );
 
       if (candidates.length > 0) {

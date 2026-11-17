@@ -91,7 +91,10 @@ export async function classifyIssue(
     config.llm.maxTokens,
   );
 
-  const classification = parseClassificationResponse(response.text, logger);
+  const classification = parseClassificationResponse(
+    response.text,
+    config.labeling.minConfidence > 0 ? logger : undefined,
+  );
 
   logger.info(
     {

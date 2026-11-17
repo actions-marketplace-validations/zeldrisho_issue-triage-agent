@@ -255,6 +255,8 @@ describe("handleComment", () => {
     "`NO_REPLY`",
     "```\nNO_REPLY\n```",
     "NO_REPLY\n\n-- Issue Triage Agent :robot:",
+    "NO_REPLY -- Issue Triage Agent :robot:",
+    "NO_REPLY — Issue Triage Agent 🤖",
   ])("skips a no-reply response: %s", async (text) => {
     const { createProvider } = await import("../src/llm/factory.js");
     vi.mocked(createProvider).mockReturnValueOnce({

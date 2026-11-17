@@ -144,7 +144,7 @@ export async function handleComment(actx: ActionContext): Promise<void> {
 
     if (
       !replyText ||
-      /^(?:NO_REPLY\.?|`NO_REPLY`\.?)(?:\s*\n\s*-- Issue Triage Agent(?:\s+:robot:)?\s*)?$/i.test(
+      /^(?:NO_REPLY\.?|`NO_REPLY`\.?)(?:\s+(?:--|—)\s*Issue Triage Agent(?:\s+(?::robot:|🤖))?\s*)?$/i.test(
         replyText,
       )
     ) {

@@ -1,4 +1,5 @@
-import type { RelatedIssue } from "../types.js";
+import type { Logger, RelatedIssue } from "../types.js";
+import { MAX_RELATED_PR_BODY_LENGTH } from "./search-limits.js";
 
 export async function searchSimilarIssues(
   owner: string,
@@ -7,6 +8,7 @@ export async function searchSimilarIssues(
   issueNumber: number,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   octokit: any,
+  logger?: Pick<Logger, "warn">,
 ): Promise<RelatedIssue[]> {
   const query = buildSearchQuery(title, owner, repo);
 
@@ -16,33 +18,51 @@ export async function searchSimilarIssues(
     return [];
   }
 
-  const responses = await Promise.all(
-    (["open", "closed"] as const).map((state) =>
-      octokit.rest.search.issuesAndPullRequests({
+  const items: Array<{
+    number: number;
+    title: string;
+    html_url: string;
+    body?: string | null;
+    pull_request?: unknown;
+  }> = [];
+
+  let failures = 0;
+  let lastError: unknown;
+
+  for (const state of ["open", "closed"] as const) {
+    try {
+      const response = await octokit.rest.search.issuesAndPullRequests({
         q: buildSearchQuery(title, owner, repo, "issue", state),
         per_page: 5,
         sort: "updated",
         order: "desc",
-      }),
-    ),
-  );
+      });
+
+      items.push(...response.data.items);
+    } catch (error) {
+      failures++;
+      lastError = error;
+      logger?.warn(`Failed to search ${state} issues for duplicates`);
+    }
+  }
+
+  if (failures === 2) throw lastError;
 
   const seen = new Set<number>();
 
-  return responses
-    .flatMap((response) => response.data.items)
-    .filter((item: { number: number; pull_request?: unknown }) => {
-      if (item.number === issueNumber || item.pull_request || seen.has(item.number)) return false;
-      seen.add(item.number);
+  return items.flatMap((item) => {
+    if (item.number === issueNumber || item.pull_request || seen.has(item.number)) return [];
+    seen.add(item.number);
 
-      return true;
-    })
-    .map((item: { number: number; title: string; html_url: string; body?: string | null }) => ({
-      number: item.number,
-      title: item.title,
-      url: item.html_url,
-      body: (item.body ?? "").slice(0, 2000),
-    }));
+    return [
+      {
+        number: item.number,
+        title: item.title,
+        url: item.html_url,
+        body: (item.body ?? "").slice(0, 2000),
+      },
+    ];
+  });
 }
 
 export async function searchRelatedPullRequests(
@@ -70,7 +90,7 @@ export async function searchRelatedPullRequests(
       number: item.number,
       title: item.title,
       url: item.html_url,
-      body: (item.body ?? "").slice(0, 500),
+      body: (item.body ?? "").slice(0, MAX_RELATED_PR_BODY_LENGTH),
     }));
 }
 

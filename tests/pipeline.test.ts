@@ -324,6 +324,25 @@ describe("runPipeline", () => {
       );
   });
 
+  it("does not warn about omitted confidence when the threshold is zero", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce({
+      ...DEFAULT_CONFIG,
+      features: { ...DEFAULT_CONFIG.features, reply: false, duplicateSearch: false, media: false },
+      labeling: { ...DEFAULT_CONFIG.labeling, minConfidence: 0 },
+    });
+    vi.mocked(createProvider).mockReturnValueOnce({
+      complete: vi.fn().mockResolvedValue({
+        text: JSON.stringify({ category: "bug", priority: "high" }),
+        usage: { inputTokens: 0, outputTokens: 0 },
+      }),
+    });
+    const actx = createMockActionContext();
+    await runPipeline(actx);
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    expect(actx.logger.warn).not.toHaveBeenCalled();
+  });
+
   it.each(["assigned", "labeled"])("skips labeling when the current issue is %s", async (state) => {
     const { loadConfig } = await import("../src/config/loader.js");
     vi.mocked(loadConfig).mockResolvedValueOnce({
