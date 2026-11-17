@@ -293,6 +293,56 @@ describe("runPipeline", () => {
     expect(actx.octokit.rest.issues.addLabels).not.toHaveBeenCalled();
   });
 
+  it.each([
+    [0.6, "skipped-confidence"],
+    [0.4, "applied"],
+  ] as const)("uses fallback confidence with threshold %s", async (threshold, status) => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce({
+      ...DEFAULT_CONFIG,
+      features: { ...DEFAULT_CONFIG.features, reply: false, duplicateSearch: false, media: false },
+      labeling: { ...DEFAULT_CONFIG.labeling, minConfidence: threshold },
+    });
+    vi.mocked(createProvider).mockReturnValueOnce({
+      complete: vi.fn().mockResolvedValue({
+        text: JSON.stringify({ category: "bug", priority: "high" }),
+        usage: { inputTokens: 0, outputTokens: 0 },
+      }),
+    });
+    const actx = createMockActionContext();
+    const result = await runPipeline(actx);
+    expect(result.labelingStatus).toBe(status);
+    // Mock logger methods do not use `this`.
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    expect(actx.logger.warn).toHaveBeenCalledWith(expect.stringContaining("omitted confidence"));
+
+    if (threshold > 0.5)
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      expect(actx.logger.info).toHaveBeenCalledWith(
+        { confidence: 0.5, minConfidence: threshold },
+        expect.stringContaining("confidence threshold"),
+      );
+  });
+
+  it("does not warn about omitted confidence when the threshold is zero", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce({
+      ...DEFAULT_CONFIG,
+      features: { ...DEFAULT_CONFIG.features, reply: false, duplicateSearch: false, media: false },
+      labeling: { ...DEFAULT_CONFIG.labeling, minConfidence: 0 },
+    });
+    vi.mocked(createProvider).mockReturnValueOnce({
+      complete: vi.fn().mockResolvedValue({
+        text: JSON.stringify({ category: "bug", priority: "high" }),
+        usage: { inputTokens: 0, outputTokens: 0 },
+      }),
+    });
+    const actx = createMockActionContext();
+    await runPipeline(actx);
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    expect(actx.logger.warn).not.toHaveBeenCalled();
+  });
+
   it.each(["assigned", "labeled"])("skips labeling when the current issue is %s", async (state) => {
     const { loadConfig } = await import("../src/config/loader.js");
     vi.mocked(loadConfig).mockResolvedValueOnce({
@@ -344,7 +394,7 @@ describe("runPipeline", () => {
     expect(result.errors).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
-          step: "duplicate",
+          step: "related-pr",
           message: "Related pull request search failed",
         }),
       ]),

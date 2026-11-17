@@ -12,6 +12,22 @@ describe("buildReplyUserMessage", () => {
     expect(result).toContain("Please draft a reply for this bug issue.");
   });
 
+  it("bounds PR descriptions at the untrusted prompt boundary", () => {
+    const result = buildReplyUserMessage(
+      "Title",
+      "Body",
+      "bug",
+      "low",
+      [],
+      [],
+      [{ number: 2, title: "Fix", url: "url", body: "x".repeat(600) }],
+    );
+
+    expect(result).toContain("=== UNTRUSTED POTENTIALLY RELATED OPEN PULL REQUESTS BEGIN ===");
+    expect(result).toContain("x".repeat(500));
+    expect(result).not.toContain("x".repeat(501));
+  });
+
   it("handles empty labels", () => {
     const result = buildReplyUserMessage("Title", "Body", "feature", "low", []);
     expect(result).toContain("Labels: (none)");

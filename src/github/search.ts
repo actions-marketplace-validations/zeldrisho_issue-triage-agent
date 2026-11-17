@@ -1,4 +1,5 @@
-import type { RelatedIssue } from "../types.js";
+import type { Logger, RelatedIssue } from "../types.js";
+import { MAX_RELATED_PR_BODY_LENGTH } from "./search-limits.js";
 
 export async function searchSimilarIssues(
   owner: string,
@@ -7,6 +8,7 @@ export async function searchSimilarIssues(
   issueNumber: number,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   octokit: any,
+  logger?: Pick<Logger, "warn">,
 ): Promise<RelatedIssue[]> {
   const query = buildSearchQuery(title, owner, repo);
 
@@ -16,24 +18,51 @@ export async function searchSimilarIssues(
     return [];
   }
 
-  const response = await octokit.rest.search.issuesAndPullRequests({
-    q: query,
-    per_page: 5,
-    sort: "updated",
-    order: "desc",
-  });
+  const items: Array<{
+    number: number;
+    title: string;
+    html_url: string;
+    body?: string | null;
+    pull_request?: unknown;
+  }> = [];
 
-  return response.data.items
-    .filter(
-      (item: { number: number; pull_request?: unknown }) =>
-        item.number !== issueNumber && !item.pull_request,
-    )
-    .map((item: { number: number; title: string; html_url: string; body?: string | null }) => ({
-      number: item.number,
-      title: item.title,
-      url: item.html_url,
-      body: (item.body ?? "").slice(0, 2000),
-    }));
+  let failures = 0;
+  let lastError: unknown;
+
+  for (const state of ["open", "closed"] as const) {
+    try {
+      const response = await octokit.rest.search.issuesAndPullRequests({
+        q: buildSearchQuery(title, owner, repo, "issue", state),
+        per_page: 5,
+        sort: "updated",
+        order: "desc",
+      });
+
+      items.push(...response.data.items);
+    } catch (error) {
+      failures++;
+      lastError = error;
+      logger?.warn(`Failed to search ${state} issues for duplicates`);
+    }
+  }
+
+  if (failures === 2) throw lastError;
+
+  const seen = new Set<number>();
+
+  return items.flatMap((item) => {
+    if (item.number === issueNumber || item.pull_request || seen.has(item.number)) return [];
+    seen.add(item.number);
+
+    return [
+      {
+        number: item.number,
+        title: item.title,
+        url: item.html_url,
+        body: (item.body ?? "").slice(0, 2000),
+      },
+    ];
+  });
 }
 
 export async function searchRelatedPullRequests(
@@ -44,7 +73,7 @@ export async function searchRelatedPullRequests(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   octokit: any,
 ): Promise<RelatedIssue[]> {
-  const query = buildSearchQuery(title, owner, repo).replace("is:issue", "is:pr is:open");
+  const query = buildSearchQuery(title, owner, repo, "pr", "open");
 
   if (!query.split("in:title ")[1]?.trim()) return [];
 
@@ -61,7 +90,7 @@ export async function searchRelatedPullRequests(
       number: item.number,
       title: item.title,
       url: item.html_url,
-      body: (item.body ?? "").slice(0, 2000),
+      body: (item.body ?? "").slice(0, MAX_RELATED_PR_BODY_LENGTH),
     }));
 }
 
@@ -85,7 +114,13 @@ export const STOP_WORDS = new Set([
   "our",
 ]);
 
-export function buildSearchQuery(title: string, owner: string, repo: string): string {
+export function buildSearchQuery(
+  title: string,
+  owner: string,
+  repo: string,
+  type: "issue" | "pr" = "issue",
+  state?: "open" | "closed",
+): string {
   const words = title
     .replace(/[^\w\s]/g, " ")
     .split(/\s+/)
@@ -93,5 +128,5 @@ export function buildSearchQuery(title: string, owner: string, repo: string): st
     .slice(0, 5)
     .join(" ");
 
-  return `repo:${owner}/${repo} is:issue in:title ${words}`;
+  return `repo:${owner}/${repo} is:${type}${state ? ` is:${state}` : ""} in:title ${words}`;
 }

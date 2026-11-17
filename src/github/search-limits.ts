@@ -1,0 +1,1 @@
+export const MAX_RELATED_PR_BODY_LENGTH = 500;

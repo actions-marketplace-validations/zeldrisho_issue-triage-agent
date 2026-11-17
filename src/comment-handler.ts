@@ -142,7 +142,12 @@ export async function handleComment(actx: ActionContext): Promise<void> {
       replyText = codeBlockMatch[1].trim();
     }
 
-    if (!replyText || /^(?:NO_REPLY\.?|`NO_REPLY`\.?)$/i.test(replyText)) {
+    if (
+      !replyText ||
+      /^(?:NO_REPLY\.?|`NO_REPLY`\.?)(?:\s+(?:--|—)\s*Issue Triage Agent(?:\s+(?::robot:|🤖))?\s*)?$/i.test(
+        replyText,
+      )
+    ) {
       actx.logger.info("No follow-up reply needed");
 
       return;

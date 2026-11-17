@@ -25,7 +25,7 @@ const VALID_CATEGORIES: IssueCategory[] = [
 
 const VALID_PRIORITIES: IssuePriority[] = ["critical", "high", "medium", "low"];
 
-export function parseClassificationResponse(raw: string): IssueClassification {
+export function parseClassificationResponse(raw: string, logger?: Logger): IssueClassification {
   let jsonStr = raw.trim();
 
   const codeBlockMatch = jsonStr.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/);
@@ -45,6 +45,10 @@ export function parseClassificationResponse(raw: string): IssueClassification {
         reasoning: z.string().optional(),
       })
       .parse(JSON.parse(jsonStr));
+
+    if (parsed.confidence === undefined) {
+      logger?.warn("Classification omitted confidence; defaulting to 0.5");
+    }
 
     return {
       category: parsed.category,
@@ -87,7 +91,10 @@ export async function classifyIssue(
     config.llm.maxTokens,
   );
 
-  const classification = parseClassificationResponse(response.text);
+  const classification = parseClassificationResponse(
+    response.text,
+    config.labeling.minConfidence > 0 ? logger : undefined,
+  );
 
   logger.info(
     {

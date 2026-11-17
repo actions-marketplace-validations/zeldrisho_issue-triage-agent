@@ -107,7 +107,16 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
       try {
         let eligible = result.classification.confidence >= config.labeling.minConfidence;
 
-        if (!eligible) result.labelingStatus = "skipped-confidence";
+        if (!eligible) {
+          result.labelingStatus = "skipped-confidence";
+          log.info(
+            {
+              confidence: result.classification.confidence,
+              minConfidence: config.labeling.minConfidence,
+            },
+            "Labeling skipped due to confidence threshold",
+          );
+        }
 
         if (eligible && (config.labeling.skipAssigned || config.labeling.skipLabeled)) {
           const current = await actx.octokit.rest.issues.get({
@@ -180,6 +189,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
         sanitizedTitle,
         issue.number,
         actx.octokit,
+        log,
       );
 
       if (candidates.length > 0) {
@@ -217,7 +227,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
       );
     } catch (error) {
       result.errors.push({
-        step: "duplicate",
+        step: "related-pr",
         message: "Related pull request search failed",
         cause: error instanceof Error ? error : new Error(String(error)),
       });
