@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type { ActionContext } from "../types.js";
+import { ISSUE_TRIAGE_SIGNATURE } from "../reply-format.js";
 
 const markerPattern = /<!-- issue-triage-agent:(?:issue|comment):\d+ -->/g;
 
@@ -10,7 +11,12 @@ export function replyMarker(actx: ActionContext): string {
 }
 
 export function markReply(text: string, marker: string): string {
-  return `${text.replace(markerPattern, "").trim()}\n\n${marker}`;
+  const clean = text
+    .replace(markerPattern, "")
+    .replace(/(?:^|\n)\s*-- Issue Triage Agent\s*(?::robot:|🤖)?\s*$/i, "")
+    .trim();
+
+  return `${clean}\n\n${ISSUE_TRIAGE_SIGNATURE}\n\n${marker}`;
 }
 
 export async function replyAlreadyPosted(actx: ActionContext, marker: string): Promise<boolean> {

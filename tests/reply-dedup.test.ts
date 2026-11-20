@@ -49,7 +49,7 @@ describe("reply deduplication", () => {
         "hello <!-- issue-triage-agent:comment:99 -->",
         "<!-- issue-triage-agent:comment:12 -->",
       ),
-    ).toBe("hello\n\n<!-- issue-triage-agent:comment:12 -->");
+    ).toBe("hello\n\n-- Issue Triage Agent :robot:\n\n<!-- issue-triage-agent:comment:12 -->");
   });
 
   it("propagates lookup errors rather than posting blindly", async () => {

@@ -3,6 +3,7 @@ import { TruncatedResponseError, type LLMProvider } from "./provider.js";
 import type { LLMMessage, LLMResponse } from "./types.js";
 import type { MediaResult } from "../media.js";
 import type { RepositoryTools } from "./repository-tools.js";
+import { REPOSITORY_TOOLS_UNAVAILABLE } from "../prompts/shared.js";
 
 export function mediaMessage(content: string, media?: MediaResult): LLMMessage {
   const message: LLMMessage = {
@@ -46,8 +47,7 @@ export async function completeWithMediaFallback(
 
     return provider.complete(
       model,
-      system +
-        "\nRepository tools are unavailable; do not claim to have inspected repository files.",
+      system + `\n${REPOSITORY_TOOLS_UNAVAILABLE}`,
       [input],
       maxTokens,
     );
