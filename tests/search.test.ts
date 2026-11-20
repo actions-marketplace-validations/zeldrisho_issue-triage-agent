@@ -12,6 +12,10 @@ describe("searchSimilarIssues", () => {
       title: "title",
       html_url: "url",
       body: "x".repeat(3000),
+      state: number === 3 ? "closed" : "open",
+      state_reason: number === 3 ? "completed" : null,
+      closed_at: number === 3 ? "2026-01-01T00:00:00Z" : null,
+      labels: [{ name: "bug" }],
     });
 
     const search = vi
@@ -29,6 +33,12 @@ describe("searchSimilarIssues", () => {
     expect(search.mock.calls[1][0].q).toContain("is:issue is:closed");
     expect(result.map((entry) => entry.number)).toEqual([2, 3]);
     expect(result[0].body).toHaveLength(2000);
+    expect(result[1]).toMatchObject({
+      state: "closed",
+      stateReason: "completed",
+      closedAt: "2026-01-01T00:00:00Z",
+      labels: ["bug"],
+    });
   });
 
   it.each(["open", "closed"])(
