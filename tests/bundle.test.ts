@@ -148,10 +148,10 @@ async function runBundle(provider: "anthropic" | "openai", eventName: "issues" |
       expect(result.output).toContain("Duplicate detection completed");
       expect(result.output).toContain("reply-posted::true");
       expect(requests).toContain("POST /repos/owner/repo/issues/1/labels");
-      expect(llmRequests).toBe(3);
+      expect(llmRequests).toBe(4);
     } else {
       expect(result.output).toContain("Comment reply posted");
-      expect(llmRequests).toBe(1);
+      expect(llmRequests).toBe(2);
     }
   } finally {
     await new Promise<void>((done, reject) =>
