@@ -78408,7 +78408,7 @@ async function loadConfig(owner, repo, octokit, configPath = ".github/issue-tria
 // src/sanitizer.ts
 const INVISIBLE_CHARS_REGEX = /[\u200B-\u200F\u202A-\u202E\uFEFF\u00AD\u2060-\u2064\u2066-\u2069\u180E\u{E0000}-\u{E007F}]/gu;
 const CONTROL_CHARS_REGEX = /(?![\t\n\r\u0080-\u009F])\p{Cc}/gu;
-const PROMPT_MARKERS_REGEX = /={2,}\s*(?:ISSUE\s+DATA|ORIGINAL\s+ISSUE|EARLIER\s+COMMENTS|NEW\s+COMMENT|UNTRUSTED(?:\s+[^=\n]*)?)[^=\n]*\b(?:BEGIN|END)\b[^=\n]*={2,}/gi;
+const PROMPT_MARKERS_REGEX = /={2,}\s*(?:ISSUE\s+DATA|ORIGINAL\s+ISSUE|EARLIER\s+COMMENTS|NEW\s+COMMENT|UNTRUSTED)[^=\n]*\b(?:BEGIN|END)\b[^=\n]*={2,}/gi;
 function removeInvisibleAndControlCharacters(value) {
 	return value.replace(INVISIBLE_CHARS_REGEX, "").replace(CONTROL_CHARS_REGEX, "");
 }
@@ -78759,7 +78759,12 @@ function truncateReply(text, maxLength) {
 }
 // src/reply-quality.ts
 function replaceForbiddenDashes(text) {
-	return text.replace(/(?<=\d)[—–](?=\d)/gu, "-").replace(/\s*[—–]\s*/gu, ", ");
+	const protectedParts = [];
+	return text.replace(/```[\s\S]*?```|`[^`]*`|\[[^\]]*\]\([^)]*\)/g, (part) => {
+		const token = `__REPLY_PROTECTED_${protectedParts.length}__`;
+		protectedParts.push(part);
+		return token;
+	}).replace(/(?<=\d)[—–](?=\d)/gu, "-").replace(/\s*[—–]\s*/gu, ", ").replace(/__REPLY_PROTECTED_(\d+)__/g, (_, index) => protectedParts[Number(index)]);
 }
 function replyStyleViolations(text) {
 	const value = unwrapFullCodeFence(text);
@@ -79691,19 +79696,19 @@ async function handleComment(actx) {
 				author_association: string().nullish()
 			})).parse(response.data);
 			for (const entry of entries) {
-				if (entry.id >= comment.id) continue;
 				const login = String(entry.user?.login ?? "unknown");
 				const association = String(entry.author_association ?? "").toUpperCase();
 				if (login.toLowerCase() === botLogin) maintainerSinceBot = false;
 				else if (maintainerAssociations.has(association)) maintainerSinceBot = true;
+				if (entry.id >= comment.id) continue;
 				history.push({
-					author: String(entry.user?.login ?? "unknown").slice(0, 100),
+					author: login.slice(0, 100),
 					author_association: entry.author_association ?? void 0,
 					body: stripEmailQuotedContent(String(entry.body ?? "")).replace(/<!--\s*issue-triage-agent:[\s\S]*?-->/g, "").slice(0, 2e3)
 				});
 				if (history.length > 10) history.shift();
 			}
-			if (entries.length < 100 || entries.some((entry) => entry.id === comment.id)) break;
+			if (entries.length < 100) break;
 			if (page === 20) throw new Error("Too many comments to safely collect conversation history");
 		}
 		if (config.features.skipMaintainerComments && (maintainerAssociations.has(String(comment.author_association ?? "").toUpperCase()) || maintainerSinceBot)) return;
@@ -79718,7 +79723,8 @@ async function handleComment(actx) {
 			voiceSample
 		});
 		const media = await processMedia([commentBody, issueBody], config.features.media, actx.signal);
-		let replyText = await completeWithReplyStyleGate(userMessage, (message) => completeWithMediaFallback(llmClient, config.llm.model, COMMENT_REPLY_SYSTEM_PROMPT + (media.notice ? `\n${MEDIA_UNTRUSTED_NOTICE}` : "") + (config.features.repositoryContext ? "" : `\n${REPOSITORY_TOOLS_UNAVAILABLE}`), mediaMessage(message, media), config.llm.maxTokens, config.features.repositoryContext ? repositoryTools(actx) : void 0), (violations) => actx.logger.warn(`Comment reply style violations: ${violations.join(", ")}`));
+		const commentRepositoryTools = config.features.repositoryContext ? repositoryTools(actx) : void 0;
+		let replyText = await completeWithReplyStyleGate(userMessage, (message) => completeWithMediaFallback(llmClient, config.llm.model, COMMENT_REPLY_SYSTEM_PROMPT + (media.notice ? `\n${MEDIA_UNTRUSTED_NOTICE}` : "") + (config.features.repositoryContext ? "" : `\n${REPOSITORY_TOOLS_UNAVAILABLE}`), mediaMessage(message, media), config.llm.maxTokens, commentRepositoryTools), (violations) => actx.logger.warn(`Comment reply style violations: ${violations.join(", ")}`));
 		if (!replyText || isNoReply(replyText)) {
 			actx.logger.info("No follow-up reply needed");
 			return;
