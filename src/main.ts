@@ -33,6 +33,12 @@ const eventPayloadSchema = z.object({
     user: z.object({ login: z.string(), type: z.string().optional() }).nullish(),
     labels: z.array(z.object({ name: z.string(), id: z.number() })).optional(),
     created_at: z.string(),
+    state: z.enum(["open", "closed"]).optional(),
+    state_reason: z
+      .enum(["completed", "not_planned", "not planned", "duplicate", "reopened"])
+      .nullable()
+      .optional(),
+    locked: z.boolean().optional(),
     pull_request: z.unknown().optional(),
   }),
   comment: z
@@ -41,6 +47,7 @@ const eventPayloadSchema = z.object({
       body: z.string().nullable(),
       html_url: z.string(),
       user: z.object({ login: z.string() }).optional(),
+      author_association: z.string().optional(),
       created_at: z.string(),
     })
     .optional(),

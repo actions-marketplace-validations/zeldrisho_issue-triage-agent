@@ -15,7 +15,14 @@ vi.mock("../src/llm/factory.js", () => ({
 vi.mock("../src/config/loader.js", () => ({
   loadConfig: vi.fn().mockResolvedValue({
     enabled: true,
-    features: { classify: true, reply: true, duplicateSearch: true, commentReply: true },
+    features: {
+      classify: true,
+      reply: true,
+      duplicateSearch: true,
+      commentReply: true,
+      skipMaintainerComments: true,
+      commentReplyOnClosed: false,
+    },
     labelMapping: {
       bug: ["bug"],
       feature: ["enhancement"],
@@ -41,7 +48,7 @@ const basePayload = {
     user: { login: "issue-author" },
     labels: [{ name: "bug", id: 1 }],
     created_at: "2026-05-18T00:00:00Z",
-    state: "open",
+    state: "open" as const,
   },
   comment: {
     id: 100,
@@ -135,6 +142,35 @@ describe("handleComment", () => {
 
     await handleComment(actx);
     expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    { state: "closed" as const, state_reason: "completed" as const, locked: false },
+    { state: "closed" as const, state_reason: "not_planned" as const, locked: false },
+    { state: "closed" as const, state_reason: "duplicate" as const, locked: false },
+    { state: "open" as const, state_reason: null, locked: true },
+  ])("skips replies for closed or locked issues by default", async (issueState) => {
+    const actx = createMockActionContext({
+      payload: { ...basePayload, issue: { ...basePayload.issue, ...issueState } },
+    });
+
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+  });
+
+  it("allows replies for closed issues when configured", async () => {
+    const { loadConfig } = await import("../src/config/loader.js");
+    vi.mocked(loadConfig).mockResolvedValueOnce({
+      ...DEFAULT_CONFIG,
+      features: { ...DEFAULT_CONFIG.features, commentReplyOnClosed: true },
+    });
+
+    const actx = createMockActionContext({
+      payload: { ...basePayload, issue: { ...basePayload.issue, state: "closed", locked: false } },
+    });
+
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).toHaveBeenCalledTimes(1);
   });
 
   it("skips comments on pull requests", async () => {
@@ -250,22 +286,18 @@ describe("handleComment", () => {
     expect(call.body).toContain("Issue Triage Agent");
   });
 
-  it.each([
-    "NO_REPLY",
-    "`NO_REPLY`",
-    "```\nNO_REPLY\n```",
-    "NO_REPLY\n\n-- Issue Triage Agent :robot:",
-    "NO_REPLY -- Issue Triage Agent :robot:",
-    "NO_REPLY — Issue Triage Agent 🤖",
-  ])("skips a no-reply response: %s", async (text) => {
-    const { createProvider } = await import("../src/llm/factory.js");
-    vi.mocked(createProvider).mockReturnValueOnce({
-      complete: vi.fn().mockResolvedValue({ text, usage: { inputTokens: 0, outputTokens: 0 } }),
-    });
-    const actx = createMockActionContext();
-    await handleComment(actx);
-    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
-  });
+  it.each(["NO_REPLY", "`NO_REPLY`", "```\nNO_REPLY\n```", "NO_REPLY.", "`NO_REPLY`"])(
+    "skips a no-reply response: %s",
+    async (text) => {
+      const { createProvider } = await import("../src/llm/factory.js");
+      vi.mocked(createProvider).mockReturnValueOnce({
+        complete: vi.fn().mockResolvedValue({ text, usage: { inputTokens: 0, outputTokens: 0 } }),
+      });
+      const actx = createMockActionContext();
+      await handleComment(actx);
+      expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
+    },
+  );
 
   it("does not suppress ordinary text containing NO_REPLY", async () => {
     const { createProvider } = await import("../src/llm/factory.js");
@@ -278,6 +310,18 @@ describe("handleComment", () => {
     const actx = createMockActionContext();
     await handleComment(actx);
     expect(actx.octokit.rest.issues.createComment).toHaveBeenCalledTimes(1);
+  });
+
+  it("skips when a maintainer posts after the triggering comment", async () => {
+    const actx = createMockActionContext();
+    actx.octokit.rest.issues.listComments.mockResolvedValue({
+      data: [
+        { id: 100, user: { login: "commenter" }, body: "current" },
+        { id: 101, user: { login: "maintainer" }, author_association: "MEMBER", body: "handled" },
+      ],
+    });
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
   });
 
   it("provides earlier comments but not later comments to the model", async () => {

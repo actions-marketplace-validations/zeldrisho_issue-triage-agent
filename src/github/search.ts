@@ -24,6 +24,10 @@ export async function searchSimilarIssues(
     html_url: string;
     body?: string | null;
     pull_request?: unknown;
+    state?: "open" | "closed";
+    state_reason?: string | null;
+    closed_at?: string | null;
+    labels?: Array<{ name?: string }>;
   }> = [];
 
   let failures = 0;
@@ -33,9 +37,7 @@ export async function searchSimilarIssues(
     try {
       const response = await octokit.rest.search.issuesAndPullRequests({
         q: buildSearchQuery(title, owner, repo, "issue", state),
-        per_page: 5,
-        sort: "updated",
-        order: "desc",
+        per_page: 10,
       });
 
       items.push(...response.data.items);
@@ -50,19 +52,36 @@ export async function searchSimilarIssues(
 
   const seen = new Set<number>();
 
-  return items.flatMap((item) => {
-    if (item.number === issueNumber || item.pull_request || seen.has(item.number)) return [];
-    seen.add(item.number);
+  const terms = title
+    .toLowerCase()
+    .replace(/^(feat|feature|bug|fix|docs?|question|chore|refactor)\s*:\s*/i, "")
+    .split(/\W+/)
+    .filter((word) => word.length > 2 && !STOP_WORDS.has(word));
 
-    return [
-      {
-        number: item.number,
-        title: item.title,
-        url: item.html_url,
-        body: (item.body ?? "").slice(0, 2000),
-      },
-    ];
-  });
+  return items
+    .sort((a, b) => {
+      const score = (value: string) =>
+        terms.filter((term) => value.toLowerCase().includes(term)).length;
+
+      return score(b.title) - score(a.title);
+    })
+    .flatMap((item) => {
+      if (item.number === issueNumber || item.pull_request || seen.has(item.number)) return [];
+      seen.add(item.number);
+
+      return [
+        {
+          number: item.number,
+          title: item.title,
+          url: item.html_url,
+          body: (item.body ?? "").slice(0, 2000),
+          state: item.state,
+          stateReason: item.state_reason,
+          closedAt: item.closed_at,
+          labels: (item.labels ?? []).map((label) => label.name ?? "").filter(Boolean),
+        },
+      ];
+    });
 }
 
 export async function searchRelatedPullRequests(
