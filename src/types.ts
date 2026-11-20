@@ -24,6 +24,10 @@ export interface RelatedIssue {
   title: string;
   url: string;
   body?: string;
+  state?: "open" | "closed";
+  stateReason?: string | null;
+  closedAt?: string | null;
+  labels?: string[];
 }
 
 export interface IssueClassification {
@@ -45,6 +49,8 @@ export interface RepoConfig {
     commentReply: boolean;
     media: boolean;
     repositoryContext: boolean;
+    skipMaintainerComments: boolean;
+    commentReplyOnClosed: boolean;
   };
   labelMapping: Record<string, string[]>;
   labeling: {
@@ -55,6 +61,7 @@ export interface RepoConfig {
   security: {
     maxIssueLength: number;
   };
+  repositoryRef?: string;
   exclude: {
     labels: string[];
     users: string[];
@@ -129,6 +136,7 @@ export interface ActionContext {
   logger: Logger;
   configPath?: string;
   botLogin?: string;
+  repositoryRef?: string;
   signal?: AbortSignal;
   eventName: string;
   payload: {
@@ -142,12 +150,16 @@ export interface ActionContext {
       labels?: Array<{ name: string; id: number }>;
       created_at: string;
       pull_request?: unknown;
+      state?: "open" | "closed";
+      state_reason?: "completed" | "not_planned" | "not planned" | "duplicate" | "reopened" | null;
+      locked?: boolean;
     };
     comment?: {
       id: number;
       body: string | null;
       html_url: string;
-      user?: { login: string };
+      user?: { login: string; type?: string };
+      author_association?: string;
       created_at: string;
     };
     sender?: { login: string; type?: string };

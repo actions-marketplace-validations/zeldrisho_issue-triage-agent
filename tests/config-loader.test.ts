@@ -90,6 +90,18 @@ describe("loadConfig", () => {
     ).rejects.toThrow();
   });
 
+  it("loads closed-comment reply policy and defaults it off", async () => {
+    expect(DEFAULT_CONFIG.features.commentReplyOnClosed).toBe(false);
+
+    const config = await loadConfig(
+      "owner",
+      "repo",
+      octokitFor("features:\n  commentReplyOnClosed: true\n"),
+    );
+
+    expect(config.features.commentReplyOnClosed).toBe(true);
+  });
+
   it("allows repository context to be disabled", async () => {
     const config = await loadConfig(
       "owner",

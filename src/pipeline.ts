@@ -18,6 +18,7 @@ import { detectDuplicates } from "./duplicate.js";
 import { processMedia } from "./media.js";
 import { repositoryTools } from "./github/repository-context.js";
 import { markReply, replyAlreadyPosted, replyMarker } from "./github/reply-dedup.js";
+import { loadVoiceSample } from "./voice.js";
 
 function shouldExclude(payload: ActionContext["payload"], config: RepoConfig): boolean {
   const issue = payload.issue;
@@ -48,6 +49,8 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
   const log: Logger = actx.logger;
 
   const config = await loadConfig(actx.owner, actx.repo, actx.octokit, actx.configPath);
+  actx.repositoryRef = config.repositoryRef ?? actx.payload.repository.default_branch;
+  log.info(`Repository evidence ref: ${actx.repositoryRef}`);
 
   if (!config.enabled) {
     log.info("Bot disabled for this repo, skipping");
@@ -246,6 +249,8 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
         return result;
       }
 
+      const voiceSample = await loadVoiceSample(actx);
+
       const replyBody = await draftReply(
         issue,
         result.classification,
@@ -258,6 +263,7 @@ export async function runPipeline(actx: ActionContext): Promise<PipelineResult> 
         config.features.repositoryContext ? repositoryTools(actx) : undefined,
         relatedIssues,
         relatedPullRequests,
+        voiceSample,
       );
 
       actx.signal?.throwIfAborted();
