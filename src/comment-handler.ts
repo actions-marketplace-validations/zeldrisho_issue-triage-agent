@@ -113,14 +113,15 @@ export async function handleComment(actx: ActionContext): Promise<void> {
         .parse(response.data);
 
       for (const entry of entries) {
-        if (entry.id >= comment.id) continue;
         const login = String(entry.user?.login ?? "unknown");
         const association = String(entry.author_association ?? "").toUpperCase();
 
         if (login.toLowerCase() === botLogin) maintainerSinceBot = false;
         else if (maintainerAssociations.has(association)) maintainerSinceBot = true;
+
+        if (entry.id >= comment.id) continue;
         history.push({
-          author: String(entry.user?.login ?? "unknown").slice(0, 100),
+          author: login.slice(0, 100),
           author_association: entry.author_association ?? undefined,
           body: stripEmailQuotedContent(String(entry.body ?? ""))
             .replace(/<!--\s*issue-triage-agent:[\s\S]*?-->/g, "")
@@ -130,7 +131,7 @@ export async function handleComment(actx: ActionContext): Promise<void> {
         if (history.length > 10) history.shift();
       }
 
-      if (entries.length < 100 || entries.some((entry) => entry.id === comment.id)) break;
+      if (entries.length < 100) break;
 
       if (page === 20) throw new Error("Too many comments to safely collect conversation history");
     }
@@ -156,6 +157,10 @@ export async function handleComment(actx: ActionContext): Promise<void> {
 
     const media = await processMedia([commentBody, issueBody], config.features.media, actx.signal);
 
+    const commentRepositoryTools = config.features.repositoryContext
+      ? repositoryTools(actx)
+      : undefined;
+
     let replyText = await completeWithReplyStyleGate(
       userMessage,
       (message) =>
@@ -167,7 +172,7 @@ export async function handleComment(actx: ActionContext): Promise<void> {
             (config.features.repositoryContext ? "" : `\n${REPOSITORY_TOOLS_UNAVAILABLE}`),
           mediaMessage(message, media),
           config.llm.maxTokens,
-          config.features.repositoryContext ? repositoryTools(actx) : undefined,
+          commentRepositoryTools,
         ),
       (violations) => actx.logger.warn(`Comment reply style violations: ${violations.join(", ")}`),
     );

@@ -20,6 +20,9 @@ describe("reply style gate", () => {
 
   it("replaces dashes without damaging ranges", () => {
     expect(replaceForbiddenDashes("Fix it — now; 10–20")).toBe("Fix it, now; 10-20");
+    expect(replaceForbiddenDashes("[range](https://example.com/a–b) `10–20`")).toBe(
+      "[range](https://example.com/a–b) `10–20`",
+    );
   });
 
   it("uses phrase boundaries", () => {

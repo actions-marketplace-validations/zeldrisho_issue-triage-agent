@@ -7,7 +7,7 @@ const INVISIBLE_CHARS_REGEX =
 const CONTROL_CHARS_REGEX = /(?![\t\n\r\u0080-\u009F])\p{Cc}/gu;
 
 const PROMPT_MARKERS_REGEX =
-  /={2,}\s*(?:ISSUE\s+DATA|ORIGINAL\s+ISSUE|EARLIER\s+COMMENTS|NEW\s+COMMENT|UNTRUSTED(?:\s+[^=\n]*)?)[^=\n]*\b(?:BEGIN|END)\b[^=\n]*={2,}/gi;
+  /={2,}\s*(?:ISSUE\s+DATA|ORIGINAL\s+ISSUE|EARLIER\s+COMMENTS|NEW\s+COMMENT|UNTRUSTED)[^=\n]*\b(?:BEGIN|END)\b[^=\n]*={2,}/gi;
 
 export function removeInvisibleAndControlCharacters(value: string): string {
   return value.replace(INVISIBLE_CHARS_REGEX, "").replace(CONTROL_CHARS_REGEX, "");

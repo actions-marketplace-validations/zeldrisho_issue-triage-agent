@@ -15,7 +15,14 @@ vi.mock("../src/llm/factory.js", () => ({
 vi.mock("../src/config/loader.js", () => ({
   loadConfig: vi.fn().mockResolvedValue({
     enabled: true,
-    features: { classify: true, reply: true, duplicateSearch: true, commentReply: true },
+    features: {
+      classify: true,
+      reply: true,
+      duplicateSearch: true,
+      commentReply: true,
+      skipMaintainerComments: true,
+      commentReplyOnClosed: false,
+    },
     labelMapping: {
       bug: ["bug"],
       feature: ["enhancement"],
@@ -303,6 +310,18 @@ describe("handleComment", () => {
     const actx = createMockActionContext();
     await handleComment(actx);
     expect(actx.octokit.rest.issues.createComment).toHaveBeenCalledTimes(1);
+  });
+
+  it("skips when a maintainer posts after the triggering comment", async () => {
+    const actx = createMockActionContext();
+    actx.octokit.rest.issues.listComments.mockResolvedValue({
+      data: [
+        { id: 100, user: { login: "commenter" }, body: "current" },
+        { id: 101, user: { login: "maintainer" }, author_association: "MEMBER", body: "handled" },
+      ],
+    });
+    await handleComment(actx);
+    expect(actx.octokit.rest.issues.createComment).not.toHaveBeenCalled();
   });
 
   it("provides earlier comments but not later comments to the model", async () => {

@@ -3,7 +3,21 @@ import { BANNED_REPLY_PHRASES } from "./prompts/shared.js";
 import { isNoReply, unwrapFullCodeFence } from "./reply-format.js";
 
 export function replaceForbiddenDashes(text: string): string {
-  return text.replace(/(?<=\d)[—–](?=\d)/gu, "-").replace(/\s*[—–]\s*/gu, ", ");
+  const protectedParts: string[] = [];
+
+  const protectedText = text.replace(/```[\s\S]*?```|`[^`]*`|\[[^\]]*\]\([^)]*\)/g, (part) => {
+    const token = `__REPLY_PROTECTED_${protectedParts.length}__`;
+    protectedParts.push(part);
+
+    return token;
+  });
+
+  const cleaned = protectedText.replace(/(?<=\d)[—–](?=\d)/gu, "-").replace(/\s*[—–]\s*/gu, ", ");
+
+  return cleaned.replace(
+    /__REPLY_PROTECTED_(\d+)__/g,
+    (_, index: string) => protectedParts[Number(index)],
+  );
 }
 
 export function replyStyleViolations(text: string): string[] {
