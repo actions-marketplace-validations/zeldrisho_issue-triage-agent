@@ -6,6 +6,20 @@ follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-11-19
+
+### Changed
+
+- Improve maintainer-style replies, prompt safety, follow-up deduplication, repository-ref selection, and bounded response formatting.
+- Strip email-quoted comment content and distinguish repository tool failures.
+- Carry related issue status into initial replies, disclose the configured repository evidence ref, gate noisy output, support closed-issue reply settings, and allow trusted maintainer voice samples.
+- Keep follow-up prompts free of unverified related-issue claims and improve closed-status wording.
+
+### Fixed
+
+- Preserve answers below quoted email text, sanitize all prompt boundaries, and avoid unwrapping multiple fenced blocks.
+- Handle wrapped email attribution, bounded style phrases, number ranges, and feature-status wording without noisy retries.
+
 ## [0.5.1] - 2026-11-17
 
 ### Changed
@@ -80,7 +94,8 @@ follow [Semantic Versioning](https://semver.org/).
 
 - Register supplied GitHub and LLM credentials for masking in workflow logs.
 
-[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/zeldrisho/issue-triage-agent/compare/v0.3.0...v0.4.0

@@ -14,6 +14,8 @@ export const DEFAULT_CONFIG: RepoConfig = {
     commentReply: true,
     media: true,
     repositoryContext: true,
+    skipMaintainerComments: true,
+    commentReplyOnClosed: false,
   },
   labelMapping: {
     bug: ["bug"],
@@ -36,6 +38,7 @@ export const DEFAULT_CONFIG: RepoConfig = {
     labels: ["wontfix", "skip-ai"],
     users: ["dependabot[bot]"],
   },
+  repositoryRef: undefined,
   llm: {
     provider: "anthropic" as const,
     model: DEFAULT_MODELS.anthropic,

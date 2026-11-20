@@ -27,6 +27,7 @@ const argsSchema = z.object({
 /** Expose read-only files at one commit. No paths are passed to a shell or URL fetcher. */
 export function repositoryTools(actx: ActionContext): RepositoryTools {
   const request = { timeout: 5000, retries: 0, signal: actx.signal };
+  const ref = actx.repositoryRef ?? actx.payload.repository.default_branch;
   let calls = 0;
   let bytesRead = 0;
   let subtreeRequests = 0;
@@ -46,7 +47,7 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
         const commitResult = await actx.octokit.rest.repos.getCommit({
           owner: actx.owner,
           repo: actx.repo,
-          ref: actx.payload.repository.default_branch,
+          ref,
           request,
         });
 
@@ -139,7 +140,10 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
 
   return {
     async run(name, input) {
-      if (++calls > MAX_CALLS) return "Repository tool call limit reached.";
+      calls++;
+      actx.logger.debug(`Repository tool call: ${name}`);
+
+      if (calls > MAX_CALLS) return "Repository tool limit reached: maximum calls exceeded.";
       const args = argsSchema.safeParse(input);
 
       if (!args.success || !["list", "read", "search"].includes(name))
@@ -179,6 +183,7 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
             );
 
             return JSON.stringify({
+              ref,
               commit: snapshot.commit,
               paths: matches.slice(offset, offset + PAGE_SIZE),
               nextOffset: offset + PAGE_SIZE < matches.length ? offset + PAGE_SIZE : null,
@@ -194,6 +199,7 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
           );
 
           return JSON.stringify({
+            ref,
             commit: snapshot.commit,
             paths: matches.slice(offset, offset + PAGE_SIZE).map((entry) => entry.path),
             nextOffset: offset + PAGE_SIZE < matches.length ? offset + PAGE_SIZE : null,
@@ -228,6 +234,7 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
             );
 
           return JSON.stringify({
+            ref,
             paths,
             notice:
               "Search uses GitHub's index, which may be incomplete or stale. Read files to verify at the selected commit.",
@@ -252,10 +259,14 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
           }
         }
 
-        if (!entry) return "File not found in the available tree; the tree may be incomplete.";
+        if (!entry)
+          return "Repository file not found in the available tree; the tree may be incomplete.";
 
-        if (entry.size > MAX_FILE_BYTES || bytesRead >= MAX_TOTAL_BYTES)
-          return "File exceeds the per-file or total read limit.";
+        if (entry.size > MAX_FILE_BYTES)
+          return "Repository file limit reached: file exceeds the per-file size limit.";
+
+        if (bytesRead >= MAX_TOTAL_BYTES)
+          return "Repository file limit reached: total read limit exceeded.";
 
         const result = await actx.octokit.rest.git.getBlob({
           owner: actx.owner,
@@ -281,17 +292,36 @@ export function repositoryTools(actx: ActionContext): RepositoryTools {
         const content = text.slice(offset, offset + MAX_CHARS_PER_READ);
         const size = Buffer.byteLength(content);
 
-        if (bytesRead + size > MAX_TOTAL_BYTES) return "Total read limit reached.";
+        if (bytesRead + size > MAX_TOTAL_BYTES)
+          return "Repository file limit reached: total read limit exceeded.";
         bytesRead += size;
 
         return JSON.stringify({
+          ref,
           commit: snapshot.commit,
           path: entry.path,
           content,
           nextOffset: offset + content.length < text.length ? offset + content.length : null,
         });
-      } catch {
-        return "Repository data unavailable or not valid UTF-8.";
+      } catch (error) {
+        const status = z.object({ status: z.number() }).safeParse(error).data?.status;
+
+        if (status === 404) {
+          actx.logger.warn(`Configured repository ref could not be resolved: ${ref}`);
+
+          return "Repository data not found at the selected ref.";
+        }
+
+        if (status === 408 || status === 429 || status === 502 || status === 503 || status === 504)
+          return "Repository data unavailable: request timed out or was rate limited.";
+
+        if (
+          error instanceof TypeError ||
+          (error instanceof Error && /utf-?8|binary|invalid/i.test(error.message))
+        )
+          return "Repository file unavailable: binary or non-UTF-8 content.";
+
+        return "Repository data unavailable: repository request failed.";
       }
     },
   };

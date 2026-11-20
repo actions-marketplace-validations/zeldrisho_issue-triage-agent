@@ -1,5 +1,14 @@
 import { describe, it, expect } from "vite-plus/test";
-import { buildReplyUserMessage } from "../src/prompts/reply.js";
+import { buildReplyUserMessage, REPLY_SYSTEM_PROMPT } from "../src/prompts/reply.js";
+import { COMMENT_REPLY_SYSTEM_PROMPT } from "../src/prompts/comment-reply.js";
+
+describe("reply prompts", () => {
+  it("keep shared style guidance once and avoid contradictory strategy wording", () => {
+    expect(REPLY_SYSTEM_PROMPT.match(/AUDIENCE:/g)).toHaveLength(1);
+    expect(REPLY_SYSTEM_PROMPT).not.toMatch(/Acknowledge|thank the reporter|Politely ask/i);
+    expect(`${REPLY_SYSTEM_PROMPT}${COMMENT_REPLY_SYSTEM_PROMPT}`).not.toMatch(/[—–]/u);
+  });
+});
 
 describe("buildReplyUserMessage", () => {
   it("includes issue data with markers", () => {
@@ -26,6 +35,13 @@ describe("buildReplyUserMessage", () => {
     expect(result).toContain("=== UNTRUSTED POTENTIALLY RELATED OPEN PULL REQUESTS BEGIN ===");
     expect(result).toContain("x".repeat(500));
     expect(result).not.toContain("x".repeat(501));
+  });
+
+  it("includes a trusted voice sample only when supplied", () => {
+    const withSample = buildReplyUserMessage("Title", "Body", "bug", "low", [], [], [], "Direct.");
+    const withoutSample = buildReplyUserMessage("Title", "Body", "bug", "low", []);
+    expect(withSample).toContain("TRUSTED MAINTAINER VOICE SAMPLE BEGIN");
+    expect(withoutSample).not.toContain("TRUSTED MAINTAINER VOICE SAMPLE BEGIN");
   });
 
   it("handles empty labels", () => {

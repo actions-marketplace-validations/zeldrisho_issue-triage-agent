@@ -15,6 +15,10 @@ const configSchema = z.object({
       commentReply: z.boolean().optional(),
       media: z.boolean().optional(),
       repositoryContext: z.boolean().optional(),
+      skipMaintainerComments: z.boolean().optional(),
+      skip_maintainer_comments: z.boolean().optional(),
+      commentReplyOnClosed: z.boolean().optional(),
+      comment_reply_on_closed: z.boolean().optional(),
     })
     .optional(),
   label_mapping: z.record(z.string(), z.array(z.string())).optional(),
@@ -29,6 +33,7 @@ const configSchema = z.object({
   exclude: z
     .object({ labels: z.array(z.string()).optional(), users: z.array(z.string()).optional() })
     .optional(),
+  repository_ref: z.string().trim().min(1).optional(),
   llm: z
     .object({
       provider: providerSchema.optional(),
@@ -95,6 +100,14 @@ export async function loadConfig(
       media: repoConfig.features?.media ?? DEFAULT_CONFIG.features.media,
       repositoryContext:
         repoConfig.features?.repositoryContext ?? DEFAULT_CONFIG.features.repositoryContext,
+      skipMaintainerComments:
+        repoConfig.features?.skipMaintainerComments ??
+        repoConfig.features?.skip_maintainer_comments ??
+        DEFAULT_CONFIG.features.skipMaintainerComments,
+      commentReplyOnClosed:
+        repoConfig.features?.commentReplyOnClosed ??
+        repoConfig.features?.comment_reply_on_closed ??
+        DEFAULT_CONFIG.features.commentReplyOnClosed,
     },
     labelMapping: repoConfig.label_mapping ?? DEFAULT_CONFIG.labelMapping,
     labeling: {
@@ -110,6 +123,7 @@ export async function loadConfig(
       labels: repoConfig.exclude?.labels ?? DEFAULT_CONFIG.exclude.labels,
       users: repoConfig.exclude?.users ?? DEFAULT_CONFIG.exclude.users,
     },
+    repositoryRef: repoConfig.repository_ref ?? DEFAULT_CONFIG.repositoryRef,
     llm: {
       provider,
       model: process.env.LLM_MODEL?.trim() || (repoConfig.llm?.model ?? DEFAULT_MODELS[provider]),
